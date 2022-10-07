@@ -1,0 +1,42 @@
+@import '/styles/utilities.scss';
+@import '/styles/variables.scss';
+
+$medida: 1920;
+
+.button {
+	box-shadow: none;
+	color: #ffff;
+	transition: all 500ms ease;
+	font-weight: 600;
+}
+
+.tutoImage {
+	width: 560px;
+}
+
+@media (max-width: 1024px) {
+	.tutoImage {
+		width: 330px;
+	}
+}
+
+.MaxWidthLogo {
+	width: 258px;
+}
+
+@media screen and (max-width: 560px) {
+	$medida: 560;
+	.MaxWidthLogo {
+		max-width: calculate-vw(101, $medida);
+	}
+}
+@media screen and (max-width: 414px) {
+	$medida: 414;
+	.MaxWidthLogo {
+		max-width: calculate-vw(156, $medida);
+	}
+}
+
+.FontHelveticaRounded {
+	font-family: 'HelveticaRounded' !important;
+}

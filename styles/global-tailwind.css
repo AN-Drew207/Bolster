@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* background-color: #5b4df14d;
+    color: white;
+    padding: 30px;
+    border: 1px solid #5b4df1;
+    box-shadow: 0px 0px 70px 20px rgb(91 77 241 / 50%); */
+:root {
+	--color-primary: #43ada0;
+	--color-primary-opacity: #aea5fd;
+	--color-secondary: #15141a;
+	--color-overlay: rgba(0, 0, 0, 0.8);
+	--color-white: white;
+	--color-alert-success: #37a211;
+	--color-alert-error: #b52423;
+	--color-gray-0: #222222;
+	--color-gray-200: #dddddd;
+	--color-gray-500: #707070;
+	--color-gray-500-opacity-10: #f0f0f0;
+	--color-gray-800: #444444;
+	--color-gray-900: #000000;
+	--color-black-0: #222222;
+	--color-black-1: #1a1a1a;
+	--color-facebook: #4267b2;
+	--transparent-gray-200: rgb(221, 221, 221, 0.5);
+	--transparent-gray-800: rgb(68, 68, 68, 0.5);
+}
+
+.light {
+	--color-primary: #43ada0;
+	--color-primary-opacity: #aea5fd;
+	--color-secondary: #15141a;
+	--color-overlay: rgba(0, 0, 0, 0.8);
+	--color-white: white;
+	--color-alert-success: #37a211;
+	--color-alert-error: #b52423;
+	--color-gray-0: #222222;
+	--color-gray-200: #dddddd;
+	--color-gray-500: #707070;
+	--color-gray-500-opacity-10: #f0f0f0;
+	--color-gray-800: #444444;
+	--color-gray-900: #000000;
+	--color-black-0: #222222;
+	--color-black-1: #1a1a1a;
+	--color-facebook: #4267b2;
+	--transparent-gray-200: rgb(221, 221, 221, 0.5);
+	--transparent-gray-800: rgb(68, 68, 68, 0.5);
+}
+
+.dark {
+	--color-primary: #43ada0;
+	--color-primary-opacity: #5b4df11a;
+	--color-secondary: #15141a;
+	--color-overlay: rgba(0, 0, 0, 0.5);
+	--color-white: white;
+	--color-alert-success: #37a211;
+	--color-alert-error: #b52423;
+	--color-gray-0: #222222;
+	--color-gray-200: #dddddd;
+	--color-gray-500: #707070;
+	--color-gray-500-opacity-10: #f0f0f0;
+	--color-gray-800: #444444;
+	--color-gray-900: #000000;
+	--color-black-0: #222222;
+	--color-black-1: #1a1a1a;
+	--color-facebook: #4267b2;
+	--transparent-gray-200: rgb(221, 221, 221, 0.5);
+	--transparent-gray-800: rgb(68, 68, 68, 0.5);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+	.hide-scroll-bar::-webkit-scrollbar {
+		display: none;
+	}
+
+	/* Hide scrollbar for IE, Edge and Firefox */
+	.hide-scroll-bar {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
+}

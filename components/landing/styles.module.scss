@@ -1,0 +1,38 @@
+@import '/styles/utilities.scss';
+@import '/styles/variables.scss';
+
+$medida: 1920;
+
+.button {
+	border: 1px solid #43ada0;
+	box-shadow: none;
+	color: #ffff;
+	transition: all 500ms ease;
+	font-weight: 600;
+	&:hover {
+		box-shadow: 1px 1px 20px 5px #43ada0;
+		-webkit-transform: scale(1.1);
+		-ms-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+}
+.MaxWidthLogo {
+	width: 258px;
+}
+
+@media screen and (max-width: 560px) {
+	$medida: 560;
+	.MaxWidthLogo {
+		max-width: calculate-vw(101, $medida);
+	}
+}
+@media screen and (max-width: 414px) {
+	$medida: 414;
+	.MaxWidthLogo {
+		max-width: calculate-vw(156, $medida);
+	}
+}
+
+.FontHelveticaRounded {
+	font-family: 'HelveticaRounded' !important;
+}

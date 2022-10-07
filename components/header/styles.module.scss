@@ -1,0 +1,112 @@
+@import '../../styles/variables.scss';
+.f18l {
+	$f18l: (
+		1920px: 18px,
+		1441px: 13px,
+		1440px: 18px,
+		1025px: 13px,
+		1024px: 24px,
+		769px: 18px,
+		768px: 24px,
+		415px: 18px,
+		414px: 24px,
+		376px: 18px,
+		375px: 24px,
+		240px: 18px,
+	);
+	@include poly-fluid-sizing('font-size', $f18l);
+}
+
+.f18b {
+	$f18b: (
+		1920px: 18px,
+		1441px: 13px,
+		1440px: 18px,
+		1025px: 10px,
+		1024px: 18px,
+		769px: 10px,
+		768px: 18px,
+		415px: 10px,
+		414px: 18px,
+		376px: 10px,
+		375px: 18px,
+		351px: 14px,
+		350px: 18px,
+		240px: 14px,
+	);
+	@include poly-fluid-sizing('font-size', $f18b);
+}
+.containerNavbar {
+	padding-left: calc((344 / 1920) * 100vw);
+	padding-right: calc((344 / 1920) * 100vw);
+}
+.displayOptions {
+	display: flex;
+}
+.displayOptionsMobile {
+	display: none;
+}
+@media (max-width: 1280px) {
+	$medida: 1280;
+
+	.SidebarMenu {
+		padding-left: calc((400 / #{$medida}) * 100vw);
+
+		padding-right: calc((404 / #{$medida}) * 100vw);
+	}
+}
+@media screen and (max-width: 1024px) {
+	$medida: 1024;
+	.displayOptions {
+		display: none;
+	}
+	.displayOptionsMobile {
+		display: flex;
+	}
+
+	.SidebarMenu {
+		padding-left: calc((400 / #{$medida}) * 100vw);
+
+		padding-right: calc((404 / #{$medida}) * 100vw);
+	}
+}
+@media (max-width: 768px) {
+	$medida: 768;
+	.containerNavbar {
+		padding-left: calc((80 / #{$medida}) * 100vw);
+		padding-right: calc((80 / #{$medida}) * 100vw);
+	}
+	.SidebarMenu {
+		padding-left: calc((301 / #{$medida}) * 100vw);
+
+		padding-right: calc((305 / #{$medida}) * 100vw);
+	}
+}
+@media screen and (max-width: 480px) {
+	$medida: 480;
+	.SidebarMenu {
+		padding-left: calc((154 / #{$medida}) * 100vw);
+
+		padding-right: calc((157 / #{$medida}) * 100vw);
+	}
+}
+@media screen and (max-width: 414px) {
+	$medida: 414;
+	.SidebarMenu {
+		padding-left: calc((104 / #{$medida}) * 100vw);
+
+		padding-right: calc((107 / #{$medida}) * 100vw);
+	}
+}
+@media (max-width: 375px) {
+	$medida: 375;
+	.containerNavbar {
+		padding-left: calc((16 / #{$medida}) * 100vw);
+		padding-right: calc((16 / #{$medida}) * 100vw);
+	}
+	.SidebarMenu {
+		padding-left: calc((104 / #{$medida}) * 100vw);
+
+		padding-right: calc((107 / #{$medida}) * 100vw);
+	}
+}
