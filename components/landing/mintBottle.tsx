@@ -749,11 +749,11 @@ export const MintBottle: React.FC<any> = ({ id: xd }) => {
 					isLoading || !bottle.short_name ? 'justify-center' : 'justify-start'
 				)}
 			>
-				<img
+				{/* <img
 					src="/img/bg_membership.jpg"
 					className="fixed h-full w-full"
 					alt=""
-				/>
+				/> */}
 				{!isShow &&
 					(!isLoading && bottle && bottle.address ? (
 						<div className="flex justify-center items-start w-full">

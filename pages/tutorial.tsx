@@ -12,11 +12,11 @@ const Tutorial = () => {
 			{view == 'menu' ? (
 				<div className="min-h-[90vh] w-[100%] flex items-center justify-center relative px-2">
 					{' '}
-					<img
+					{/* <img
 						src="/img/bg_membership.jpg"
 						className="fixed h-full w-full top-0 left-0"
 						alt=""
-					/>
+					/> */}
 					<div className="flex flex-col justify-center items-center p-10 md:gap-10 gap-4 bg-overlay md:p-20 p-10 rounded-md relative">
 						<h2 className="font-bold sm:text-3xl text-2xl text-center text-white">
 							How to Mint?

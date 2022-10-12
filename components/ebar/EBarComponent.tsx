@@ -129,11 +129,11 @@ export const EBarComponent: React.FC<any> = () => {
 
 	return (
 		<div className="flex flex-col sm:px-16 px-4 pt-36 w-full min-h-screen relative">
-			<img
+			{/* <img
 				src="/img/bg_membership.jpg"
 				className="fixed h-full w-full top-0 left-0"
 				alt=""
-			/>{' '}
+			/>{' '} */}
 			<div className="relative flex flex-col w-full">
 				<div className="md:absolute hidden left-0 top-0 font-bold text-xl text-white cursor-pointer">
 					<Link href="/?bottles=true">Go To Bottles</Link>
@@ -418,22 +418,32 @@ export const BottleNFTs = ({
 									{tokens?.tokensOfUser?.map((token: any) => {
 										return (
 											<SwiperSlide>
-												<div
-													className="h-60 sm:w-40 w-[50%] flex flex-col items-center lg:ml-[20%] sm:ml-[20%] ml-[25%] 2xl:ml-[25%] xl:ml-[30%] cursor-pointer"
-													onClick={() => {
-														setToken({
-															id: token.id,
-															name: token.name,
-															image: token.image,
-														});
-														show();
-													}}
+												<Link
+													href={
+														'/bottle/' + bottle.address + '/token/' + token.id
+													}
 												>
-													<img src={token.image} className="w-40 h-40" alt="" />
-													<div className="p-4 flex flex-col items-center justify-center">
-														{token.name}
+													<div
+														className="h-60 sm:w-40 w-[50%] flex flex-col items-center lg:ml-[20%] sm:ml-[20%] ml-[25%] 2xl:ml-[25%] xl:ml-[30%] cursor-pointer"
+														onClick={() => {
+															// setToken({
+															// 	id: token.id,
+															// 	name: token.name,
+															// 	image: token.image,
+															// });
+															// show();
+														}}
+													>
+														<img
+															src={token.image}
+															className="w-40 h-40"
+															alt=""
+														/>
+														<div className="p-4 flex flex-col items-center justify-center">
+															{token.name}
+														</div>
 													</div>
-												</div>
+												</Link>
 											</SwiperSlide>
 										);
 									})}

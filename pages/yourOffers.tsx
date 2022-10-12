@@ -13,11 +13,11 @@ export default function YourOffers() {
 
 	return (
 		<div className="w-full pt-32 px-10 flex items-center justify-center relative">
-			<img
+			{/* <img
 				src="/img/bg_membership.jpg"
 				className="fixed h-full w-full top-0 left-0"
 				alt=""
-			/>
+			/> */}
 			<div className="w-full flex flex-col  gap-4 p-6  right-0 mt-2 relative min-h-[70vh] rounded-md bg-overlay">
 				<div>
 					<h2 className="w-full text-2xl font-bold text-center text-white textMain">

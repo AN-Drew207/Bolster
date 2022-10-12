@@ -18,11 +18,11 @@ export const Bottles: React.FC<any> = ({ setView }) => {
 				'flex flex-col sm:px-16 px-4 py-36 w-full min-h-screen relative overflow-hidden'
 			)}
 		>
-			<img
+			{/* <img
 				src="/img/bg_membership.jpg"
 				className="fixed h-full w-full top-0 left-0"
 				alt=""
-			/>{' '}
+			/>{' '} */}
 			{bottlesView ? (
 				<div className="relative flex flex-col w-full">
 					<div

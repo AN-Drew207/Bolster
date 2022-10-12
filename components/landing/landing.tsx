@@ -46,11 +46,11 @@ export const LandingComponent = () => {
 	return (
 		<div className="min-h-[90vh]  bg-overlay relative">
 			<Toaster position="bottom-center" />
-			<img
+			{/* <img
 				src="/img/bg_membership.jpg"
 				className="fixed h-full w-full top-0 left-0"
 				alt=""
-			/>
+			/> */}
 			<Modal isShow={isShow}>
 				<div className="flex items-center justify-center w-full min-h-[90vh]">
 					<div
@@ -123,7 +123,7 @@ export const LandingComponent = () => {
 						{' '}
 						<div className="flex flex-col justify-center items-center p-10 md:gap-10 gap-4 bg-overlay md:p-20 p-4 md:py-20 py-16 rounded-xl">
 							<div className="flex md:flex-row flex-col md:gap-10 gap-4">
-								<Button
+								{/* <Button
 									className={clsx(
 										'z-10 border borderMain w-72 md:px-16 text-xl p-4 py-4 text-white',
 										Styles.button
@@ -132,7 +132,7 @@ export const LandingComponent = () => {
 									// disabled
 								>
 									Memberships
-								</Button>
+								</Button> */}
 								<Button
 									className={clsx(
 										'z-10 border borderMain md:px-16 p-4 py-4 w-72 text-white text-xl',
@@ -141,7 +141,7 @@ export const LandingComponent = () => {
 									onClick={() => setView('bottle')}
 									// disabled
 								>
-									Bottle Collections
+									Collections
 								</Button>
 							</div>
 						</div>

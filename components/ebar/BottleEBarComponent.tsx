@@ -140,11 +140,11 @@ export const BottleEBarComponent = () => {
 					isLoading || !bottle.address ? 'justify-center' : 'justify-start'
 				)}
 			>
-				<img
+				{/* <img
 					src="/img/bg_membership.jpg"
 					className="fixed h-full w-full"
 					alt=""
-				/>
+				/> */}
 				{!isLoading && bottle && bottle.address ? (
 					<div className="flex justify-center items-start w-full">
 						<div className="min-h-screen flex flex-col gap-4 items-center py-32 xl:w-4/5 w-full xl:px-0 px-8 justify-start relative">
@@ -379,21 +379,23 @@ export const BottleNFTItem = ({
 					</div>
 				</div>
 			</Modal>
-			<div
-				className={clsx(
-					{ ['opacity-50']: !active },
-					{ ['cursor-pointer']: active },
-					'w-40 h-60'
-				)}
-				onClick={active ? () => show() : undefined}
-			>
-				<img
-					src={token.image}
-					className="rounded-xl border border-white overflow-hidden h-40 w-40"
-					alt=""
-				/>{' '}
-				<h2 className="p-4 text-center text-white font-bold">{token.name}</h2>
-			</div>
+			<Link href={'/bottle/' + bottle.address + '/token/' + token.id}>
+				<div
+					className={clsx(
+						{ ['opacity-50']: !active },
+						{ ['cursor-pointer']: active },
+						'w-40 h-60'
+					)}
+					// onClick={active ? () => show() : undefined}
+				>
+					<img
+						src={token.image}
+						className="rounded-xl border border-white overflow-hidden h-40 w-40"
+						alt=""
+					/>{' '}
+					<h2 className="p-4 text-center text-white font-bold">{token.name}</h2>
+				</div>
+			</Link>
 		</>
 	);
 };

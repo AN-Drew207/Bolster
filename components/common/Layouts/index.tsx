@@ -4,7 +4,7 @@ import { useRouter } from 'next/dist/client/router';
 import clsx from 'clsx';
 // import { AreaChartOutlined, GoldenFilled } from '@ant-design/icons';
 import { MenuIcon } from '@heroicons/react/outline';
-import { DropdownMenu } from '../dropdownMenu';
+// import { DropdownMenu } from '../dropdownMenu';
 import { useDispatch, useSelector } from 'react-redux';
 import Styles from '../../landing/styles.module.scss';
 import { Button } from '../button';
@@ -27,8 +27,8 @@ const bottles =
 
 const navItems = [
 	{ name: 'HOME', link: '/', icon: <MenuIcon /> },
-	{ name: 'HOW TO MINT', link: '/tutorial', icon: <MenuIcon /> },
-	{ name: 'GALLERY', link: '/gallery', icon: <MenuIcon /> },
+	// { name: 'HOW TO MINT', link: '/tutorial', icon: <MenuIcon /> },
+	// { name: 'GALLERY', link: '/gallery', icon: <MenuIcon /> },
 	// { name: 'E-BAR', link: '/eBar', icon: <MenuIcon /> },
 ];
 
@@ -159,17 +159,17 @@ export default function AppLayout() {
 						<>
 							<div>
 								<NavbarItem
-									name={'E-BAR'}
+									name={'MY NFTS'}
 									icon={''}
 									link={'/eBar'}
 									route={router.asPath}
 								/>
 							</div>
-							<DropdownMenu
+							{/* <DropdownMenu
 								title="YOUR OFFERS"
 								received={offersActiveReceived}
 								made={offersActiveMade}
-							></DropdownMenu>
+							></DropdownMenu> */}
 							{typeOfWallet == 'magic' && (
 								<Dropdown title="ACCOUNT">
 									<div className="flex flex-col gap-4 p-4 w-72">
@@ -293,8 +293,8 @@ export const Message: React.FunctionComponent<{
 
 export const Logo = () => (
 	<a href="https://thecoco.club/">
-		<div className="mr-4 md:py-0 h-16 cursor-pointer">
-			<img src="/logos/coco.svg" className="h-16" alt="" />
+		<div className="mr-4 md:py-0 h-16 flex items-center justify-center text-white uppercase cursor-pointer">
+			Mezcal Shhh!
 		</div>
 	</a>
 );

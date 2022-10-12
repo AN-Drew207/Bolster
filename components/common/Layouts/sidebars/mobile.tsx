@@ -129,12 +129,12 @@ export const SidebarMobile: React.FC<LayoutDashboardProps & any> = ({
 														)}
 														onClick={() => setSidebarOpen(false)}
 													>
-														E-BAR
+														MY NFTS
 													</p>
 												</Link>
 											</div>
 											<div className="divider mx-3 mt-4 mb-4"></div>
-											<div>
+											{/* <div>
 												<Link href={'/yourOffers'}>
 													<p
 														className={clsx(
@@ -151,7 +151,7 @@ export const SidebarMobile: React.FC<LayoutDashboardProps & any> = ({
 														YOUR OFFERS
 													</p>
 												</Link>
-											</div>
+											</div> */}
 											<div className="divider mx-3 mt-4 mb-4"></div>
 											{typeOfWallet == 'magic' && (
 												<>

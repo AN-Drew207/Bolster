@@ -8,9 +8,9 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Loading } from '../loadingComponent';
 import Link from 'next/link';
-import { Swiper, SwiperSlide } from 'swiper/react';
+// import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { Zoom, Navigation, Autoplay } from 'swiper';
+// import { Zoom, Navigation, Autoplay } from 'swiper';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import {
@@ -123,7 +123,7 @@ export const DesktopView: React.FC<any> = ({
 	content,
 	connectWallet,
 	connectWalletOffer,
-	artist,
+	// artist,
 	litepaper,
 	// Mint,
 	// show,
@@ -140,10 +140,10 @@ export const DesktopView: React.FC<any> = ({
 		setExchanged(newExchanged);
 	}, [newMaxSupply, newQuantity, newExchanged]);
 
-	const styleArrows: any = {
-		'--swiper-navigation-color': '#000',
-		'--swiper-pagination-color': '#000',
-	};
+	// const styleArrows: any = {
+	// 	'--swiper-navigation-color': '#000',
+	// 	'--swiper-pagination-color': '#000',
+	// };
 
 	return (
 		<div className="bg-dark md:flex hidden text-white flex flex-col justify-between w-full items-start relative gap-10">
@@ -246,7 +246,7 @@ export const DesktopView: React.FC<any> = ({
 					</div>
 				)}
 			</div>
-			<div className="flex rounded-xl 2xl:flex-row flex-col items-center justify-center w-full bg-overlay border border-dark-800 py-10 xl:px-16 px-8 gap-4">
+			{/* <div className="flex rounded-xl 2xl:flex-row flex-col items-center justify-center w-full bg-overlay border border-dark-800 py-10 xl:px-16 px-8 gap-4">
 				<div className="2xl:w-3/5 flex flex-col w-full">
 					<h2 className="text-left font-bold text-2xl textMain">
 						{artist.name}
@@ -287,9 +287,9 @@ export const DesktopView: React.FC<any> = ({
 						</Swiper>
 					</div>
 				</div>
-			</div>
-			<div className="flex flex-col w-full p-10 bg-overlay border border-dark-800 rounded-xl">
-				{/* <div className="flex md:flex-row flex-col justify-between items-center w-full mb-6 ">
+			</div> */}
+			{/* <div className="flex flex-col w-full p-10 bg-overlay border border-dark-800 rounded-xl">
+				<div className="flex md:flex-row flex-col justify-between items-center w-full mb-6 ">
 					<h2 className="text-md font-semibold text-left">
 						Tokens Minted <br />
 						<span className="textMain">{quantity}</span> / {maxSupply}
@@ -301,7 +301,7 @@ export const DesktopView: React.FC<any> = ({
 						show={show}
 						connectWallet={connectWallet}
 					/>
-				</div> */}
+				</div> 
 				<div className="flex flex-col w-full gap-8">
 					<div className="flex flex-col">
 						{content.title && (
@@ -327,7 +327,7 @@ export const DesktopView: React.FC<any> = ({
 							);
 						})}
 				</div>
-			</div>
+			</div> */}
 		</div>
 	);
 };
@@ -344,7 +344,7 @@ export const MobileView: React.FC<any> = ({
 	content,
 	connectWallet,
 	connectWalletOffer,
-	artist,
+	// artist,
 	litepaper,
 	// Mint,
 	// show,
@@ -361,10 +361,10 @@ export const MobileView: React.FC<any> = ({
 		setExchanged(newExchanged);
 	}, [newMaxSupply, newQuantity, newExchanged]);
 
-	const styleArrows: any = {
-		'--swiper-navigation-color': '#000',
-		'--swiper-pagination-color': '#000',
-	};
+	// const styleArrows: any = {
+	// 	'--swiper-navigation-color': '#000',
+	// 	'--swiper-pagination-color': '#000',
+	// };
 	return (
 		<div className="bg-dark flex md:hidden text-white flex lg:flex-row flex-col justify-between w-full items-start relative gap-10">
 			<div className="flex flex-col w-full md:p-10 p-4 bg-overlay border border-dark-800 rounded-xl gap-6 relative">
@@ -555,7 +555,7 @@ export const MobileView: React.FC<any> = ({
 					)}
 				</div>
 			</div>
-			<div className="flex rounded-xl flex-col xl:items-start items-center justify-center w-full bg-overlay border border-dark-800 py-10 xl:px-16 md:px-8 px-4 gap-4">
+			{/* <div className="flex rounded-xl flex-col xl:items-start items-center justify-center w-full bg-overlay border border-dark-800 py-10 xl:px-16 md:px-8 px-4 gap-4">
 				<div className="flex flex-col w-full">
 					<h2 className="text-left font-bold text-2xl textMain">
 						{artist.name}
@@ -597,7 +597,7 @@ export const MobileView: React.FC<any> = ({
 						))}
 					</Swiper>
 				</div>
-			</div>
+			</div> */}
 		</div>
 	);
 };

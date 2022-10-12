@@ -55,11 +55,11 @@ export const GalleryComponent: React.FC<any> = () => {
 
 	return (
 		<div className="flex flex-col sm:px-16 px-4 pt-36 w-full min-h-screen relative">
-			<img
+			{/* <img
 				src="/img/bg_membership.jpg"
 				className="fixed h-full w-full top-0 left-0"
 				alt=""
-			/>{' '}
+			/>{' '} */}
 			<div className="relative flex flex-col w-full">
 				<div className="md:absolute hidden left-0 top-0 font-bold text-xl text-white cursor-pointer">
 					<Link href="/?bottles=true">Go To Bottles</Link>
