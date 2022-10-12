@@ -29,8 +29,8 @@ export const BottleEBarComponent = () => {
 
 	const {
 		id: bottleContract,
-		modal: modalShow,
-		offer: offerShow,
+		// modal: modalShow,
+		// offer: offerShow,
 	} = useRouter().query;
 
 	const { bottles, address, networkName, network, typeOfWallet } = useSelector(

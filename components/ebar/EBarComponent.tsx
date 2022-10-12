@@ -278,14 +278,14 @@ export const BottleNFTs = ({
 		handleVideo();
 	}, [video]);
 
-	const { Modal, isShow, show, hide } = useModal();
+	const { Modal, isShow, hide } = useModal();
 	const { transfer } = useMagicLink();
 	const { transferMeta } = useMetamask();
 	const { handleSubmit } = useForm();
 	const [addressSent, setAddress] = useState('');
 	const [isLoading, setIsLoading] = useState(false);
 	const [tokens, setTokens] = useState({ tokensOfUser });
-	const [token, setToken] = useState({ id: 0, image: '', name: '' });
+	const [token] = useState({ id: 0, image: '', name: '' });
 
 	React.useEffect(() => {
 		setTokens({ tokensOfUser });
