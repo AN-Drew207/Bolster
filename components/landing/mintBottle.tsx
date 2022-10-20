@@ -157,90 +157,13 @@ export const MintBottle: React.FC<any> = ({ id: xd }) => {
 		if (address) {
 			const balance = await contractInstance.methods.balanceOf(address).call();
 			setBalance(balance);
-			const balanceUSDC = await contractInstance.methods
-				.balanceUserOfferTokens(address)
-				.call();
-			setBalanceUSDC(balanceUSDC / 10 ** 6);
 		}
-		const maxSupply = await contractInstance.methods.maxSupply().call();
-		const priceUSD = await contractInstance.methods.usdPrice().call();
-		const decimalsUSD = await contractInstance.methods.decimalsUSD().call();
 		const priceMATIC = await contractInstance.methods.getPrice(1).call();
-		const percentageOffer = await contractInstance.methods
-			.percentageExtraToPayPerToken()
-			.call();
-		const minimumPercentageToOffer = await contractInstance.methods
-			.minimumPercentageToOffer()
-			.call();
-		const expirationOfferTimeDefault = await contractInstance.methods
-			.expirationOfferTimeDefault()
-			.call();
-		const passiveNo = await contractInstance.methods
-			.passiveNoUntilTransfer()
-			.call();
-
-		setPercentageExtraToPayPerToken(percentageOffer);
-		setPercentageToMakeAnOffer(minimumPercentageToOffer);
-		setTimesUntilTransfer(passiveNo);
-		setTimeUntilExpireOffer(expirationOfferTimeDefault / 24 / 60 / 60);
-		setPriceUSD(priceUSD / 10 ** decimalsUSD);
 		setQuantity(currentSupply);
-		setMaxSupply(maxSupply);
-		setDecimalsUSD(decimalsUSD);
-
 		setPriceMATIC(Web3.utils.fromWei(priceMATIC, 'ether').substring(0, 8));
 		(window as any).ethereum.on('accountsChanged', accountChangedHandler);
 		(window as any).ethereum.on('chainChanged', chainChangedHandler);
 	};
-
-	// const makeAnOffer = async (price: string) => {
-	// 	setIsLoading(true);
-	// 	try {
-	// 		const web3 = await getWeb3();
-	// 		const BottleCollectionContract = new (web3 as any).eth.Contract(
-	// 			BottleCollectionABI,
-	// 			bottleContract
-	// 		);
-	// 		const Erc20Instance = new (web3 as any).eth.Contract(
-	// 			ERC20ABI,
-	// 			process.env.NEXT_PUBLIC_USDC_ADDRESS
-	// 		);
-	// 		const allowance = await Erc20Instance.methods
-	// 			.allowance(accounts[0], bottleContract)
-	// 			.call();
-
-	// 		if (allowance < multiply(price, '1000000')) {
-	// 			setMessage('Allowing us to Receive USDC... Transaction 1 of 2');
-	// 			await Erc20Instance.methods
-	// 				.increaseAllowance(
-	// 					bottleContract,
-	// 					'1000000000000000000000000000000000000000000000000'
-	// 				)
-	// 				.send({ from: accounts[0] });
-	// 			setMessage('Making your offer... Transaction 2 of 2');
-	// 		} else {
-	// 			setMessage('Making your offer...');
-	// 		}
-
-	// 		const xt = await BottleCollectionContract.methods
-	// 			.makeAnOfferForAll(multiply(price, '1000000'))
-	// 			.send({ from: accounts[0] });
-	// 		toast.success('Your offer was made successfully.', {
-	// 			duration: 7000,
-	// 		});
-	// 		hideOptions();
-	// 	} catch (error) {
-	// 		toast.error(
-	// 			'An error occurred while you made the offer, please look at the console to more information.',
-	// 			{
-	// 				duration: 7000,
-	// 			}
-	// 		);
-	// 		console.log(error);
-	// 	}
-	// 	setMessage('');
-	// 	setIsLoading(false);
-	// };
 
 	const getAmountBack = async () => {
 		setIsLoading(true);

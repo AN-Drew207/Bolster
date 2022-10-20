@@ -24,7 +24,6 @@ import { useMetamask } from 'hooks/useMetamask';
 
 export const BottleEBarComponent = () => {
 	const [isLoading, setIsLoading] = React.useState(false);
-	const [exchanged, setExchanged] = React.useState(false);
 	const [bottle, setBottle] = React.useState<any>({});
 
 	const {
@@ -58,60 +57,32 @@ export const BottleEBarComponent = () => {
 			);
 		}
 		let bottle: any;
-		const exchangeAddress = process.env.NEXT_PUBLIC_EXCHANGE_ADDRESS
-			? process.env.NEXT_PUBLIC_EXCHANGE_ADDRESS
-			: '';
-		let exchange = new web3.eth.Contract(
-			BottleExchangeABI as any,
-			exchangeAddress
-		);
-
 		// console.log(tokensMetadata, 'metadata');
 		bottles.map(async (item, index) => {
 			console.log(item, (bottleContract as string).toLowerCase(), 'compare');
 			if (
 				item.address.toLowerCase() == (bottleContract as string).toLowerCase()
 			) {
-				const collection = await exchange.methods
-					.collections(item.address)
+				bottle = new web3.eth.Contract(BottleCollectionABI, item.address);
+				const tokensOfUser = await bottle.methods
+					.getOwnerTokens(accounts[0])
 					.call();
-				console.log(collection, 'collection');
-				if (collection.exchanged == false) {
-					bottle = new web3.eth.Contract(BottleCollectionABI, item.address);
-					const tokensOfUser = await bottle.methods
-						.getOwnerTokens(accounts[0])
-						.call();
 
-					const supply = await bottle.methods.supply().call();
-					const arraySupply = new Array(parseInt(supply))
-						.fill(false)
-						.map((xd, index) => index);
-					const tokensMetadata = arraySupply.map((token: any) => {
-						return item.metadata[token];
-					});
-					console.log(tokensMetadata, 'response');
-					setBottle({
-						...item,
-						tokensOfUser: tokensOfUser,
-						NFTs: tokensMetadata.map((t: any, index: any) => {
-							return { ...(t as Object), id: (index + 1).toString() };
-						}),
-					});
-					setExchanged(false);
-				} else {
-					console.log('true');
-					const tokenExchangedURI = await exchange.methods
-						.tokenURI(collection.collectionId)
-						.call();
-					const promiseMetadata = await Promise.resolve(
-						await (await fetch(tokenExchangedURI)).json()
-					);
-					setBottle({
-						...item,
-						finalToken: promiseMetadata,
-					});
-					setExchanged(true);
-				}
+				const supply = await bottle.methods.supply().call();
+				const arraySupply = new Array(parseInt(supply))
+					.fill(false)
+					.map((xd, index) => index);
+				const tokensMetadata = arraySupply.map((token: any) => {
+					return item.metadata[token];
+				});
+				console.log(tokensMetadata, 'response');
+				setBottle({
+					...item,
+					tokensOfUser: tokensOfUser,
+					NFTs: tokensMetadata.map((t: any, index: any) => {
+						return { ...(t as Object), id: (index + 1).toString() };
+					}),
+				});
 			}
 		});
 	};
@@ -121,7 +92,7 @@ export const BottleEBarComponent = () => {
 			getNFTsOneBottle();
 		} else if (address && typeOfWallet == 'magic') {
 			console.log('get magic');
-			getNFTsOneBottleMagic(bottleContract, setBottle, setExchanged);
+			getNFTsOneBottleMagic(bottleContract, setBottle);
 		}
 	}, [bottleContract, bottles, address]);
 
@@ -160,110 +131,51 @@ export const BottleEBarComponent = () => {
 									</div>
 								</Link>
 							</div>
-							{exchanged ? (
-								<>
-									<div className="flex rounded-xl flex-col items-center justify-center w-full bg-overlay border border-yellow-400 p-8">
-										<h2 className="text-3xl text-yellow-400 font-bold pb-4">
-											{bottle.name}
-										</h2>
-										<video
-											src={bottle.image}
-											autoPlay
-											loop
-											className="rounded-xl border border-yellow-400 h-auto md:w-2/3 w-full"
-											ref={video}
-										></video>
 
-										<h2 className="text-3xl text-yellow-400 font-bold pt-10">
-											Final NFT Art from {bottle.short_name}
-										</h2>
-										{bottle && bottle.finalToken ? (
-											<div className="flex lg:flex-row flex-col items-center justify-center gap-x-10 gap-y-4 p-4 py-10">
-												<img
-													src={bottle.finalToken.image}
-													className="lg:w-1/2 w-full rounded-xl	border border-yellow-400"
-													alt=""
-												/>
-												<div className="flex lg:flex-col flex-col-reverse items-center justify-center gap-x-2 gap-y-4 lg:w-1/2 w-full">
-													<img
-														src={bottle.artist.photo[0]}
-														className="rounded-xl h-80"
-														alt=""
+							<>
+								<div className="flex rounded-xl flex-col items-center justify-center w-full bg-overlay border border-dark-800 p-8">
+									<h2 className="text-3xl textMain font-bold pb-4">
+										{bottle.name}
+									</h2>
+									<video
+										src={bottle.image}
+										autoPlay
+										loop
+										className="rounded-xl border border-white h-auto md:w-2/3 w-full"
+										ref={video}
+									></video>
+
+									<h2 className="text-3xl textMain font-bold pt-10">
+										NFTs From {bottle.short_name}
+									</h2>
+									{bottle && bottle.NFTs ? (
+										<div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-4 p-4 py-10">
+											{bottle.NFTs.map((token: any) => {
+												console.log(
+													bottle.tokensOfUser,
+													token,
+													token.id,
+													bottle.tokensOfUser.includes(token.id)
+												);
+												return (
+													<BottleNFTItem
+														active={bottle.tokensOfUser.includes(token.id)}
+														token={token}
+														network={network}
+														networkName={networkName}
+														bottle={bottle}
+														setBottle={setBottle}
+														setIsLoading={setIsLoading}
+														typeOfWallet={typeOfWallet}
 													/>
-													<h2 className="text-white text-md font-bold">
-														Art Made By{' '}
-														<span className="text-yellow-400">
-															{bottle.artist.name}
-														</span>
-													</h2>
-													<div className="flex flex-col gap-2">
-														<div className="flex flex-col w-full items-center justify-center gap-4 mt-4">
-															{bottle.artist.paragraphs.map(
-																(paragraph: any) => {
-																	return (
-																		<ParagraphArtist
-																			title={paragraph.title}
-																			text={paragraph.text}
-																		/>
-																	);
-																}
-															)}
-														</div>
-													</div>
-												</div>
-											</div>
-										) : (
-											<Loading />
-										)}
-									</div>
-								</>
-							) : (
-								<>
-									<div className="flex rounded-xl flex-col items-center justify-center w-full bg-overlay border border-dark-800 p-8">
-										<h2 className="text-3xl textMain font-bold pb-4">
-											{bottle.name}
-										</h2>
-										<video
-											src={bottle.image}
-											autoPlay
-											loop
-											className="rounded-xl border border-white h-auto md:w-2/3 w-full"
-											ref={video}
-										></video>
-
-										<h2 className="text-3xl textMain font-bold pt-10">
-											NFTs From {bottle.short_name}
-										</h2>
-										{bottle && bottle.NFTs ? (
-											<div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-4 p-4 py-10">
-												{bottle.NFTs.map((token: any) => {
-													console.log(
-														bottle.tokensOfUser,
-														token,
-														token.id,
-														bottle.tokensOfUser.includes(token.id)
-													);
-													return (
-														<BottleNFTItem
-															active={bottle.tokensOfUser.includes(token.id)}
-															token={token}
-															network={network}
-															networkName={networkName}
-															bottle={bottle}
-															setBottle={setBottle}
-															setExchanged={setExchanged}
-															setIsLoading={setIsLoading}
-															typeOfWallet={typeOfWallet}
-														/>
-													);
-												})}
-											</div>
-										) : (
-											<Loading />
-										)}
-									</div>
-								</>
-							)}
+												);
+											})}
+										</div>
+									) : (
+										<Loading />
+									)}
+								</div>
+							</>
 						</div>
 					</div>
 				) : !address && !account ? (
@@ -289,7 +201,6 @@ export const BottleNFTItem = ({
 	typeOfWallet,
 	token,
 	setBottle,
-	setExchanged,
 	setIsLoading,
 }: any) => {
 	const { Modal, isShow, show, hide } = useModal();
@@ -336,7 +247,6 @@ export const BottleNFTItem = ({
 											bottle.address,
 											token.id,
 											address,
-											setExchanged,
 											hide
 										);
 									} else {
@@ -345,7 +255,6 @@ export const BottleNFTItem = ({
 											bottle.address,
 											token.id,
 											address,
-											setExchanged,
 											hide,
 											setIsLoading
 										);

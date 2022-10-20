@@ -236,7 +236,7 @@ export const BottleFinalNFT = ({ address, id, name, image }: any) => {
 							View Bottle Info
 						</Button>
 					</Link>
-					<Link href={`/eBar/bottle/${address}`}>
+					<Link href={`/eBar/collection/${address}`}>
 						<Button
 							className={clsx(
 								'z-10 border border-yellow-400 font-bold p-2 text-white transition ease-in-out delay-150 hover:-translate-y-1  hover:scale-110 duration-300'
@@ -261,8 +261,8 @@ export const BottleNFTs = ({
 	typeOfWallet,
 	network,
 	networkName,
-	setExchanged,
-}: any) => {
+}: // setExchanged,
+any) => {
 	const videoRef = React.useRef<any>(null);
 
 	const handleVideo = () => {
@@ -330,7 +330,7 @@ export const BottleNFTs = ({
 											bottle.address,
 											token.id,
 											addressSent,
-											setExchanged,
+											// setExchanged,
 											hide
 										);
 									} else {
@@ -339,7 +339,7 @@ export const BottleNFTs = ({
 											bottle.address,
 											token.id,
 											addressSent,
-											setExchanged,
+											// setExchanged,
 											hide,
 											setIsLoading
 										);
@@ -461,7 +461,7 @@ export const BottleNFTs = ({
 										View Bottle Info
 									</Button>
 								</Link>
-								<Link href={`/eBar/bottle/${address}`}>
+								<Link href={`/eBar/collection/${address}`}>
 									<Button
 										className={clsx(
 											'z-10 border borderMain p-2 text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:shadow-button hover:scale-110 duration-300',

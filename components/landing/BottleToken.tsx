@@ -64,25 +64,7 @@ export const BottleToken: React.FC<any> = ({ id: xd }) => {
 		accounts.push(newAccount[0]);
 		accounts[0] = (window as any).ethereum.selectedAddress;
 		setAccounts(accounts);
-		updateData(accounts[0]);
 		setIsLoading(false);
-	};
-
-	const updateData = async (address: string) => {
-		const provider = new Web3.providers.HttpProvider(
-			process.env.NEXT_PUBLIC_SECONDARY_PROVIDER
-				? process.env.NEXT_PUBLIC_SECONDARY_PROVIDER
-				: 'localhost:8545'
-		);
-		const web3 = new Web3(provider);
-		console.log(bottleContract);
-		const contractInstance = new (web3 as any).eth.Contract(
-			BottleCollectionABI,
-			bottleContract
-		);
-
-		(window as any).ethereum.on('accountsChanged', accountChangedHandler);
-		(window as any).ethereum.on('chainChanged', chainChangedHandler);
 	};
 
 	const { account, getNFTsOneBottleMagic } = useMagicLink();
@@ -148,7 +130,6 @@ export const BottleToken: React.FC<any> = ({ id: xd }) => {
 
 	React.useEffect(() => {
 		if (bottleContract !== undefined) {
-			updateData('');
 			bottles.map((item, index) => {
 				console.log(item, bottleContract as string, 'compare');
 				if (item.address == bottleContract) {

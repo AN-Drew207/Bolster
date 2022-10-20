@@ -1,11 +1,11 @@
-import { MintBottle } from 'components/landing/mintBottle';
 // import { useRouter } from 'next/router';
 import * as React from 'react';
 import bottlesTestnet from 'bottles_mumbai.json';
 import bottlesMainnet from 'bottles_polygon.json';
+import { CollectionComponent } from 'components/collection/CollectionComponent';
 
 const Bottle = () => {
-	return <MintBottle />;
+	return <CollectionComponent />;
 };
 
 export async function getStaticPaths() {

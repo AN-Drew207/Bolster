@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Magic } from 'magic-sdk';
 import { ConnectExtension } from '@magic-ext/connect';
 import Web3 from 'web3';
-import BottleCollectionABI from '../contracts/BottleCollection.json';
+import BottleCollectionABI from '../contracts/MezcalCollection.json';
 import ERC20ABI from '../contracts/ERC20.json';
 import BottleExchangeABI from '../contracts/BottleExchange.json';
 import bottlesTestnet from 'bottles_mumbai.json';
@@ -77,7 +77,7 @@ export default function useMagicLink() {
 		bottleContract: string,
 		id: number,
 		address: string,
-		setExchanged: any,
+		// setExchanged: any,
 		hide: any
 	) => {
 		setLoading(true);
@@ -127,7 +127,6 @@ export default function useMagicLink() {
 							return { ...(t as Object), id: (index + 1).toString() };
 						}),
 					});
-					setExchanged(false);
 				}
 			});
 
@@ -141,7 +140,7 @@ export default function useMagicLink() {
 
 	const mint = async (
 		bottleContract: any,
-		quantity: number,
+		nfts: number,
 		address: string,
 		dispatch: any,
 		setMessage: any,
@@ -160,23 +159,19 @@ export default function useMagicLink() {
 			);
 			if (address == process.env.NEXT_PUBLIC_WMATIC_ADDRESS) {
 				const price = await BottleCollectionContract.methods
-					.getPrice(quantity)
+					.getPrice(nfts)
 					.call();
 
-				await BottleCollectionContract.methods
-					.safeMint(quantity, address)
-					.send({
-						from: publicAddress,
-						value: price,
-						gas: 8000000,
-					});
+				await BottleCollectionContract.methods.buy(nfts, address).send({
+					from: publicAddress,
+					value: price,
+					gas: 8000000,
+				});
 			} else {
-				await BottleCollectionContract.methods
-					.safeMint(quantity, address)
-					.send({
-						from: publicAddress,
-						gas: 8000000,
-					});
+				await BottleCollectionContract.methods.buy(nfts, address).send({
+					from: publicAddress,
+					gas: 8000000,
+				});
 			}
 			hideBuy();
 			setMessage('');
@@ -189,12 +184,7 @@ export default function useMagicLink() {
 				.call();
 			setQuantity(currentSupply);
 			setMaxSupply(maxSupply);
-			updateDataExchanged(
-				dispatch,
-				process.env.NEXT_PUBLIC_EXCHANGE_ADDRESS
-					? process.env.NEXT_PUBLIC_EXCHANGE_ADDRESS
-					: ''
-			);
+			updateDataExchanged(dispatch);
 			toast.success('Your NFT has been successfully minted');
 		} catch (error) {
 			console.log(error);
@@ -389,68 +379,36 @@ export default function useMagicLink() {
 		setLoading(false);
 	};
 
-	const getNFTsOneBottleMagic = async (
-		bottleContract: any,
-		setBottle: any,
-		setExchanged: any
-	) => {
+	const getNFTsOneBottleMagic = async (bottleContract: any, setBottle: any) => {
 		setLoading(true);
 		const accounts = await web3.eth.getAccounts();
 		let bottle: any;
-		const exchangeAddress = process.env.NEXT_PUBLIC_EXCHANGE_ADDRESS
-			? process.env.NEXT_PUBLIC_EXCHANGE_ADDRESS
-			: '';
-		let exchange = new web3.eth.Contract(
-			BottleExchangeABI as any,
-			exchangeAddress
-		);
-
 		// console.log(tokensMetadata, 'metadata');
 		bottles.map(async (item) => {
 			console.log(item, (bottleContract as string).toLowerCase(), 'compare');
 			if (
 				item.address.toLowerCase() == (bottleContract as string).toLowerCase()
 			) {
-				const collection = await exchange.methods
-					.collections(item.address)
+				bottle = new web3.eth.Contract(BottleCollectionABI, item.address);
+				const tokensOfUser = await bottle.methods
+					.getOwnerTokens(accounts[0])
 					.call();
-				console.log(collection, 'collection');
-				if (collection.exchanged == false) {
-					bottle = new web3.eth.Contract(BottleCollectionABI, item.address);
-					const tokensOfUser = await bottle.methods
-						.getOwnerTokens(accounts[0])
-						.call();
 
-					const supply = await bottle.methods.supply().call();
-					const arraySupply = new Array(parseInt(supply))
-						.fill(false)
-						.map((xd, index) => index);
-					const tokensMetadata = arraySupply.map((token: any) => {
-						return item.metadata[token];
-					});
-					console.log(tokensMetadata, 'response');
-					setBottle({
-						...item,
-						tokensOfUser: tokensOfUser,
-						NFTs: tokensMetadata.map((t: any, index: any) => {
-							return { ...(t as Object), id: (index + 1).toString() };
-						}),
-					});
-					setExchanged(false);
-				} else {
-					console.log('true');
-					const tokenExchangedURI = await exchange.methods
-						.tokenURI(collection.collectionId)
-						.call();
-					const promiseMetadata = await Promise.resolve(
-						await (await fetch(tokenExchangedURI)).json()
-					);
-					setBottle({
-						...item,
-						finalToken: promiseMetadata,
-					});
-					setExchanged(true);
-				}
+				const supply = await bottle.methods.supply().call();
+				const arraySupply = new Array(parseInt(supply))
+					.fill(false)
+					.map((xd, index) => index);
+				const tokensMetadata = arraySupply.map((token: any) => {
+					return item.metadata[token];
+				});
+				console.log(tokensMetadata, 'response');
+				setBottle({
+					...item,
+					tokensOfUser: tokensOfUser,
+					NFTs: tokensMetadata.map((t: any, index: any) => {
+						return { ...(t as Object), id: (index + 1).toString() };
+					}),
+				});
 			}
 		});
 		setLoading(false);

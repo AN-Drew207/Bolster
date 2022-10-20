@@ -41,15 +41,15 @@ export const stateSlice = createSlice({
 		updateState: (state, action: PayloadAction<any>) => {
 			state.address = action.payload.address;
 			state.typeOfWallet = action.payload.typeOfWallet;
-			state.offersActiveReceived = action.payload.offersActiveReceived;
-			state.offersActiveMade = action.payload.offersActiveMade;
+			// state.offersActiveReceived = action.payload.offersActiveReceived;
+			// state.offersActiveMade = action.payload.offersActiveMade;
 		},
 		updateBalance: (state, action: PayloadAction<any>) => {
 			state.bottles[action.payload.index] = {
 				...state.bottles[action.payload.index],
 				balanceOfUser: action.payload.balanceOfUser,
 				allowance: action.payload.allowance,
-				balanceUSDCInContract: action.payload.balanceUSDCInContract,
+				// balanceUSDCInContract: action.payload.balanceUSDCInContract,
 			};
 		},
 

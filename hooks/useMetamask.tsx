@@ -1,6 +1,6 @@
 import getWeb3 from 'components/getWeb3';
 import { updateBalance, updateState } from 'redux/actions';
-import BottleCollectionABI from '../contracts/BottleCollection.json';
+import BottleCollectionABI from '../contracts/MezcalCollection.json';
 import ERC20ABI from '../contracts/ERC20.json';
 import BottleExchangeABI from '../contracts/BottleExchange.json';
 import bottlesTestnet from 'bottles_mumbai.json';
@@ -115,8 +115,6 @@ export const useMetamask = () => {
 			}
 
 			// Update State
-			const offersReceived = [];
-			const offersDone = [];
 			let bottle: any;
 
 			const usdcAddress = process.env.NEXT_PUBLIC_USDC_ADDRESS
@@ -126,18 +124,11 @@ export const useMetamask = () => {
 			for (let i = 0; i < bottles.length; i++) {
 				bottle = new web3.eth.Contract(BottleCollectionABI, bottles[i].address);
 				const balance = await bottle.methods.balanceOf(accounts[0]).call();
-				const offer = await bottle.methods.lastOffer().call();
-				const balanceUSDC = await bottle.methods
-					.balanceUserOfferTokens(accounts[0])
-					.call();
+
 				const approved = await usdc.methods
 					.allowance(accounts[0], bottles[i].address)
 					.call();
-				const now = new Date().getTime();
-				const expirationLastOffer = new Date(
-					offer.expirationDate * 1000
-				).getTime();
-				console.log(accounts[0], balance, balanceUSDC, 'xd');
+
 				const tokensOfUser = await bottle.methods
 					.getOwnerTokens(accounts[0])
 					.call();
@@ -147,61 +138,13 @@ export const useMetamask = () => {
 						allowance: approved,
 						balanceOfUser: balance,
 						index: i,
-						balanceUSDCInContract: parseInt(balanceUSDC) / 10 ** 6,
 					})
 				);
-				if (
-					balance > 0 &&
-					offer.active &&
-					offer.bidder.toLowerCase() != accounts[0].toLowerCase() &&
-					expirationLastOffer >= now
-				) {
-					offersReceived.push({
-						title: `You have an offer for your tokens of ${bottles[i].name} Collection`,
-						offer: offer,
-						address: bottles[i].address,
-						externalLink: `/bottle/${bottles[i].address}?offer=true`,
-						icon: (
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								className="h-5 w-5"
-								viewBox="0 0 20 20"
-								fill="#fff"
-							>
-								<path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
-							</svg>
-						),
-					});
-				} else if (
-					balance > 0 &&
-					offer.active &&
-					offer.bidder.toLowerCase() == accounts[0].toLowerCase() &&
-					expirationLastOffer >= now
-				) {
-					offersDone.push({
-						title: `You have done an offer for all the tokens of ${bottles[i].name} Collection`,
-						address: bottles[i].address,
-						offer: offer,
-						externalLink: `/bottle/${bottles[i].address}`,
-						icon: (
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								className="h-5 w-5"
-								viewBox="0 0 20 20"
-								fill="#fff"
-							>
-								<path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
-							</svg>
-						),
-					});
-				}
 			}
 			dispatch(
 				updateState({
 					address: accounts[0],
 					typeOfWallet: 'metamask',
-					offersActiveReceived: offersReceived,
-					offersActiveMade: offersDone,
 				})
 			);
 		} catch (error) {
@@ -218,7 +161,7 @@ export const useMetamask = () => {
 		bottleContract: string,
 		id: number,
 		address: string,
-		setExchanged: any,
+		// setExchanged: any,
 		hide: any,
 		setIsLoading: any
 	) => {
@@ -273,7 +216,7 @@ export const useMetamask = () => {
 							return { ...(t as Object), id: (index + 1).toString() };
 						}),
 					});
-					setExchanged(false);
+					// setExchanged(false);
 				}
 			});
 
@@ -286,12 +229,12 @@ export const useMetamask = () => {
 	};
 
 	const Mint = async (
-		quantity: any,
+		nfts: any,
 		address: string,
 		setIsLoading: any,
 		bottleContract: any,
 		setMessage: any,
-		accounts: any,
+		// accounts: any,
 		dispatch: any,
 		network: any,
 		networkName: any,
@@ -303,26 +246,31 @@ export const useMetamask = () => {
 		setIsLoading(true);
 		try {
 			const web3 = await getWeb3();
+			const accounts = await (web3 as any).eth.getAccounts();
 			const BottleCollectionContract = new (web3 as any).eth.Contract(
 				BottleCollectionABI,
 				bottleContract
 			);
+			console.log('yei', address, process.env.NEXT_PUBLIC_WMATIC_ADDRESS);
+
 			if (address == process.env.NEXT_PUBLIC_WMATIC_ADDRESS) {
 				setMessage('Minting your tokens... 1 of 1 transaction');
+				console.log('xd');
 				const price = await BottleCollectionContract.methods
-					.getPrice(quantity)
+					.getPrice(nfts.length)
 					.call();
-				await BottleCollectionContract.methods
-					.safeMint(quantity, address)
-					.send({
-						from: accounts[0],
-						value: price,
-						gasPrice: 25000000000,
-						maxFeePerGas: 25000000000,
-						maxPriorityFeePerGas: 25000000000,
-					});
+				console.log(price);
+				await BottleCollectionContract.methods.buy(nfts, address).send({
+					from: accounts[0],
+					value: price,
+					gasPrice: 25000000000,
+					maxFeePerGas: 25000000000,
+					maxPriorityFeePerGas: 25000000000,
+				});
+				console.log('yei');
 			} else {
 				setMessage('Allowing us to receive USDC... 1 of 2 transactions');
+				console.log('xd');
 				const Erc20Instance = new (web3 as any).eth.Contract(ERC20ABI, address);
 				const allowance = await Erc20Instance.methods
 					.allowance(accounts[0], bottleContract)
@@ -345,11 +293,9 @@ export const useMetamask = () => {
 						});
 				}
 				setMessage('Minting your tokens... 2 of 2 transactions');
-				await BottleCollectionContract.methods
-					.safeMint(quantity, address)
-					.send({
-						from: accounts[0],
-					});
+				await BottleCollectionContract.methods.buy(nfts, address).send({
+					from: accounts[0],
+				});
 			}
 			connectWalletUpdateData(dispatch, network, networkName);
 			hideBuy();

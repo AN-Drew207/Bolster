@@ -10,7 +10,6 @@ import Styles from '../../landing/styles.module.scss';
 import { Button } from '../button';
 import { State, updateBottleState } from 'redux/actions';
 import BottleCollectionABI from '../../../contracts/BottleCollection.json';
-import BottleExchangeABI from '../../../contracts/BottleExchange.json';
 import bottlesTestnet from 'bottles_mumbai.json';
 import bottlesMainnet from 'bottles_polygon.json';
 import Web3 from 'web3';
@@ -32,36 +31,24 @@ const navItems = [
 	// { name: 'E-BAR', link: '/eBar', icon: <MenuIcon /> },
 ];
 
-export const updateDataExchanged = async (
-	dispatch: any,
-	exchangeAddress: string
-) => {
+export const updateDataExchanged = async (dispatch: any) => {
 	const provider = new Web3.providers.HttpProvider(
 		process.env.NEXT_PUBLIC_SECONDARY_PROVIDER
 			? process.env.NEXT_PUBLIC_SECONDARY_PROVIDER
 			: 'localhost:8545'
 	);
 	const web3 = new Web3(provider);
-	let exchange = new web3.eth.Contract(
-		BottleExchangeABI as any,
-		exchangeAddress
-	);
+
 	for (let i = 0; i < bottles.length; i++) {
 		let bottle = new web3.eth.Contract(
 			BottleCollectionABI as any,
 			bottles[i].address
 		);
-		let exchanged = await exchange.methods
-			.collections(bottles[i].address)
-			.call();
 		let supply = await bottle.methods.supply().call();
-		let maxSupply = await bottle.methods.maxSupply().call();
 		dispatch(
 			updateBottleState({
 				index: i,
-				exchanged: exchanged.exchanged,
 				supply: supply,
-				maxSupply: maxSupply,
 			})
 		);
 	}
@@ -75,7 +62,6 @@ export default function AppLayout() {
 		offersActiveMade,
 		network,
 		networkName,
-		exchange,
 		typeOfWallet,
 	} = useSelector((state: { state: State }) => {
 		return state.state;
@@ -97,7 +83,7 @@ export default function AppLayout() {
 	React.useEffect(() => {
 		if (bottles) {
 			// connectWalletUpdateData(dispatch, network, networkName);
-			updateDataExchanged(dispatch, exchange);
+			updateDataExchanged(dispatch);
 		}
 	}, [bottles]);
 

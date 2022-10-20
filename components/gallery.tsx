@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { useSelector } from 'react-redux';
 import { State } from 'redux/actions';
-import BottleCollectionABI from '../contracts/BottleCollection.json';
+import BottleCollectionABI from '../contracts/MezcalCollection.json';
 import { Loading } from 'components/landing/loadingComponent';
 import { Zoom, Navigation } from 'swiper';
 import 'swiper/css/pagination';
@@ -119,7 +119,7 @@ export const BottleFinalNFT = ({ address, id, name, image }: any) => {
 							View Bottle Info
 						</Button>
 					</Link>
-					<Link href={`/eBar/bottle/${address}`}>
+					<Link href={`/eBar/collection/${address}`}>
 						<Button
 							className={clsx(
 								'z-10 border border-yellow-400 font-bold p-2 text-white transition ease-in-out delay-150 hover:-translate-y-1  hover:scale-110 duration-300'
@@ -205,7 +205,7 @@ export const BottleNFTs = ({ address, name, video, tokensOfUser }: any) => {
 							View Bottle Info
 						</Button>
 					</Link>
-					<Link href={`/eBar/bottle/${address}`}>
+					<Link href={`/eBar/collection/${address}`}>
 						<Button
 							className={clsx(
 								'z-10 border borderMain p-2 text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:shadow-button hover:scale-110 duration-300',
