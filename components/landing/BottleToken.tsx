@@ -144,7 +144,7 @@ export const BottleToken: React.FC<any> = ({ id: xd }) => {
 			getNFTsOneBottle();
 		} else if (address && typeOfWallet == 'magic') {
 			console.log('get magic');
-			getNFTsOneBottleMagic(bottleContract, setBottle, setExchanged);
+			getNFTsOneBottleMagic(bottleContract, setBottle);
 		}
 	}, [bottleContract, bottles, address]);
 

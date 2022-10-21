@@ -341,14 +341,14 @@ export const MintBottle: React.FC<any> = ({ id: xd }) => {
 									setIsLoading,
 									bottleContract,
 									setMessage,
-									accounts,
+									// accounts,
 									dispatch,
 									network,
 									networkName,
 									hideBuy,
 									show,
-									setQuantity,
-									setMaxSupply
+									setQuantity
+									// setMaxSupply
 								);
 							} else {
 								console.log('magic');
@@ -361,8 +361,8 @@ export const MintBottle: React.FC<any> = ({ id: xd }) => {
 									setMessage,
 									hideBuy,
 									show,
-									setQuantity,
-									setMaxSupply
+									setQuantity
+									// setMaxSupply
 								);
 							}
 						}}
