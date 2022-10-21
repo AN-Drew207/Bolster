@@ -146,8 +146,7 @@ export default function useMagicLink() {
 		setMessage: any,
 		hideBuy: any,
 		show: any,
-		setQuantity: any,
-		setMaxSupply: any
+		setMinted: any
 	) => {
 		setLoading(true);
 
@@ -176,14 +175,7 @@ export default function useMagicLink() {
 			hideBuy();
 			setMessage('');
 			show();
-			const currentSupply = await BottleCollectionContract.methods
-				.supply()
-				.call();
-			const maxSupply = await BottleCollectionContract.methods
-				.maxSupply()
-				.call();
-			setQuantity(currentSupply);
-			setMaxSupply(maxSupply);
+			setMinted((prev: any) => !prev);
 			updateDataExchanged(dispatch);
 			toast.success('Your NFT has been successfully minted');
 		} catch (error) {

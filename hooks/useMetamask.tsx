@@ -240,8 +240,7 @@ export const useMetamask = () => {
 		networkName: any,
 		hideBuy: any,
 		show: any,
-		setQuantity: any,
-		setMaxSupply: any
+		setMinted: any
 	) => {
 		setIsLoading(true);
 		try {
@@ -297,18 +296,11 @@ export const useMetamask = () => {
 					from: accounts[0],
 				});
 			}
+			setMinted((prev: any) => !prev);
 			connectWalletUpdateData(dispatch, network, networkName);
 			hideBuy();
 			setMessage('');
 			show();
-			const currentSupply = await BottleCollectionContract.methods
-				.supply()
-				.call();
-			const maxSupply = await BottleCollectionContract.methods
-				.maxSupply()
-				.call();
-			setQuantity(currentSupply);
-			setMaxSupply(maxSupply);
 		} catch (error) {
 			console.log(error);
 		}

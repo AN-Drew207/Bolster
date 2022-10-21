@@ -27,6 +27,7 @@ import { useConnectWalletModal } from 'hooks/useModalConnect';
 
 export const CollectionComponent = () => {
 	const [isLoading, setIsLoading] = React.useState(false);
+	const [minted, setMinted] = React.useState(false);
 	const [bottle, setBottle] = React.useState<any>({});
 	const [selected, setSelected] = React.useState<any>([]);
 	const [web3, setWeb3] = React.useState<any>(null);
@@ -38,27 +39,9 @@ export const CollectionComponent = () => {
 	const [priceMATIC, setPriceMATIC] = React.useState<any>(0);
 	const [message, setMessage] = React.useState('');
 
-	const {
-		connectWalletUpdateData,
-		connectWallet,
-		connectWalletOffer,
-		Mint,
-		acceptAnOffer,
-		cancelAnOffer,
-		exchangeCollection,
-		makeAnOffer,
-	} = useMetamask();
+	const { connectWallet, Mint } = useMetamask();
 
-	const {
-		approveBottle,
-		mint,
-		loginUpdateDataOffer,
-		loginBuy,
-		acceptAnOfferMagic,
-		cancelAnOfferMagic,
-		exchangeCollectionMagic,
-		makeAnOfferMagic,
-	} = useMagicLink();
+	const { approveBottle, mint } = useMagicLink();
 
 	const { modal, show: showConnect } = useConnectWalletModal();
 
@@ -69,15 +52,9 @@ export const CollectionComponent = () => {
 		modal: modalShow,
 		offer: offerShow,
 	} = useRouter().query;
-	const {
-		network,
-		address,
-		offersActiveReceived,
-		offersActiveMade,
-		networkName,
-		bottles,
-		typeOfWallet,
-	} = useSelector((state: { state: State }) => state.state);
+	const { network, address, networkName, bottles, typeOfWallet } = useSelector(
+		(state: { state: State }) => state.state
+	);
 
 	const chainChangedHandler = () => {
 		// reload the page to avoid any errors with chain change mid use of application
@@ -159,13 +136,16 @@ export const CollectionComponent = () => {
 					setBottle({
 						...item,
 						metadata: item.metadata.map((item: any, i: any) => {
-							return { ...item, sold: !tokensInSell.includes(i.toString()) };
+							return {
+								...item,
+								sold: !tokensInSell.includes(item.id.toString()),
+							};
 						}),
 					});
 				}
 			});
 		}
-	}, [bottleContract, bottles]);
+	}, [bottleContract, bottles, minted]);
 
 	React.useEffect(() => {
 		if (modalShow && typeOfWallet == 'metamask') {
@@ -195,7 +175,11 @@ export const CollectionComponent = () => {
 				item.address.toLowerCase() == (bottleContract as string).toLowerCase()
 			) {
 				setBottle(item);
-				setSelected(new Array(item.metadata.length).fill(false));
+				setSelected(
+					new Array(item.metadata.length).fill(false).map((token, i) => {
+						return { value: false, id: item.metadata[i]?.id };
+					})
+				);
 			}
 		});
 	};
@@ -228,7 +212,7 @@ export const CollectionComponent = () => {
 							priceusd={priceUSD}
 							priceMATIC={priceMATIC}
 							allowance={bottle.allowance}
-							quantity={selected.filter((q: boolean) => q).length}
+							quantity={selected.filter((q: any) => q.value).length}
 							bottle={bottle}
 							hide={hide}
 							approve={(address: any) => {
@@ -238,13 +222,24 @@ export const CollectionComponent = () => {
 							}}
 							typeOfWallet={typeOfWallet}
 							Mint={(address: any) => {
-								console.log('A?', bottleContract);
+								// console.log('A?', bottleContract);
+								console.log(
+									selected
+										.map((value: any, id: number) => {
+											return { value: value.value, id: value.id };
+										})
+										.filter((q: any) => q.value)
+										.map((nft: any) => nft.id)
+								);
 								if (typeOfWallet == 'metamask') {
 									console.log('meta');
 									Mint(
 										selected
 											.map((value: any, id: number) => {
-												return { value, id };
+												return {
+													value: value.value,
+													id: value.id,
+												};
 											})
 											.filter((q: any) => q.value)
 											.map((nft: any) => nft.id),
@@ -258,15 +253,17 @@ export const CollectionComponent = () => {
 										networkName,
 										hide,
 										show,
-										setQuantity,
-										setMaxSupply
+										setMinted
 									);
 								} else {
 									mint(
 										bottleContract,
 										selected
 											.map((value: any, id: number) => {
-												return { value, id };
+												return {
+													value: value.value,
+													id: value.id,
+												};
 											})
 											.filter((q: any) => q.value)
 											.map((nft: any) => nft.id),
@@ -275,8 +272,7 @@ export const CollectionComponent = () => {
 										setMessage,
 										hide,
 										show,
-										setQuantity,
-										setMaxSupply
+										setMinted
 									);
 								}
 							}}
@@ -333,9 +329,12 @@ export const CollectionComponent = () => {
 
 									{bottle && bottle.metadata.length > 0 ? (
 										<>
-											<h2 className="text-3xl textMain font-bold pt-10">
-												Available NFTs From {bottle.short_name}
-											</h2>
+											{bottle.metadata.filter((token: any) => !token.sold)
+												.length > 0 && (
+												<h2 className="text-3xl textMain font-bold pt-10">
+													Available NFTs From {bottle.short_name}
+												</h2>
+											)}
 											<div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-4 p-4 py-10">
 												{bottle.metadata
 													.filter((token: any) => !token.sold)
@@ -350,11 +349,23 @@ export const CollectionComponent = () => {
 																setBottle={setBottle}
 																setIsLoading={setIsLoading}
 																typeOfWallet={typeOfWallet}
-																selected={selected[i]}
+																selected={
+																	selected.filter((item: any) => {
+																		return item.id == token.id;
+																	})[0]?.value
+																}
 																setSelected={() => {
 																	setSelected((prev: any[]) =>
-																		prev.map((status, id) =>
-																			id == i ? !status : status
+																		prev.map((status) =>
+																			token.id == status.id
+																				? {
+																						value: !status.value,
+																						id: status.id,
+																				  }
+																				: {
+																						value: status.value,
+																						id: status.id,
+																				  }
 																		)
 																	);
 																}}
@@ -362,9 +373,12 @@ export const CollectionComponent = () => {
 														);
 													})}
 											</div>
-											<h2 className="text-3xl textMain font-bold pt-10">
-												Sold NFTs From {bottle.short_name}
-											</h2>
+											{bottle.metadata.filter((token: any) => token.sold)
+												.length > 0 && (
+												<h2 className="text-3xl textMain font-bold pt-10">
+													Sold NFTs From {bottle.short_name}
+												</h2>
+											)}
 											<div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-4 p-4 py-10">
 												{bottle.metadata
 													.filter((token: any) => token.sold)
@@ -379,11 +393,23 @@ export const CollectionComponent = () => {
 																setBottle={setBottle}
 																setIsLoading={setIsLoading}
 																typeOfWallet={typeOfWallet}
-																selected={selected[i]}
+																selected={
+																	selected.filter((item: any) => {
+																		return item.id == token.id;
+																	})[0]?.value
+																}
 																setSelected={() => {
 																	setSelected((prev: any[]) =>
 																		prev.map((status, id) =>
-																			id == i ? !status : status
+																			token.id == status.id
+																				? {
+																						value: !status.value,
+																						id: status.id,
+																				  }
+																				: {
+																						value: status.value,
+																						id: status.id,
+																				  }
 																		)
 																	);
 																}}
