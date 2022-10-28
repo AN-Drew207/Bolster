@@ -255,7 +255,7 @@ export default function useMagicLink() {
 			for (let i = 0; i < bottles.length; i++) {
 				bottle = new web3.eth.Contract(BottleCollectionABI, bottles[i].address);
 				const balance = await bottle.methods.balanceOf(publicAddress).call();
-				const offer = await bottle.methods.lastOffer().call();
+
 				const approved = await usdc.methods
 					.allowance(publicAddress, bottles[i].address)
 					.call();
@@ -263,9 +263,7 @@ export default function useMagicLink() {
 					.balanceUserOfferTokens(publicAddress)
 					.call();
 				const now = new Date().getTime();
-				const expirationLastOffer = new Date(
-					offer.expirationDate * 1000
-				).getTime();
+
 				dispatch(
 					updateBalance({
 						allowance: approved,
@@ -274,58 +272,11 @@ export default function useMagicLink() {
 						balanceUSDCInContract: parseInt(balanceUSDC) / 10 ** 6,
 					})
 				);
-				if (
-					balance > 0 &&
-					offer.active &&
-					offer.bidder.toLowerCase() != publicAddress.toLowerCase() &&
-					expirationLastOffer >= now
-				) {
-					offersReceived.push({
-						title: `You have an offer for your tokens of ${bottles[i].name} Collection`,
-						offer: offer,
-						address: bottles[i].address,
-						externalLink: `/bottle/${bottles[i].address}?offer=true`,
-						icon: (
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								className="h-5 w-5"
-								viewBox="0 0 20 20"
-								fill="#fff"
-							>
-								<path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
-							</svg>
-						),
-					});
-				} else if (
-					balance > 0 &&
-					offer.active &&
-					offer.bidder.toLowerCase() == publicAddress.toLowerCase() &&
-					expirationLastOffer >= now
-				) {
-					offersDone.push({
-						title: `You have done an offer for all the tokens of ${bottles[i].name} Collection`,
-						address: bottles[i].address,
-						offer: offer,
-						externalLink: `/bottle/${bottles[i].address}`,
-						icon: (
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								className="h-5 w-5"
-								viewBox="0 0 20 20"
-								fill="#fff"
-							>
-								<path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
-							</svg>
-						),
-					});
-				}
 			}
 			dispatch(
 				updateState({
 					address: publicAddress,
 					typeOfWallet: 'magic',
-					offersActiveReceived: offersReceived,
-					offersActiveMade: offersDone,
 				})
 			);
 		} catch (error) {
