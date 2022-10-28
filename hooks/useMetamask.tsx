@@ -7,6 +7,7 @@ import bottlesTestnet from 'bottles_mumbai.json';
 import bottlesMainnet from 'bottles_polygon.json';
 import toast from 'react-hot-toast';
 import { multiply } from 'components/common/multiply';
+import { ProfileApiService } from 'api';
 
 const bottles =
 	process.env.NEXT_PUBLIC_NETWORK_NAME == 'mumbai'
@@ -240,7 +241,8 @@ export const useMetamask = () => {
 		networkName: any,
 		hideBuy: any,
 		show: any,
-		setMinted: any
+		setMinted: any,
+		data: any
 	) => {
 		setIsLoading(true);
 		try {
@@ -298,6 +300,10 @@ export const useMetamask = () => {
 			}
 			setMinted((prev: any) => !prev);
 			connectWalletUpdateData(dispatch, network, networkName);
+			ProfileApiService.postUser(data).then((res) => {
+				console.log(res, 'res');
+				toast.success('Your NFT has been successfully minted');
+			});
 			hideBuy();
 			setMessage('');
 			show();

@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import { Button } from 'components/common/button';
 import { Input } from 'components/common/form/input';
 import { InputEmail } from 'components/common/form/input-email';
+import { InputPhone } from 'components/common/form/input-phone/input-phone';
 import { SelectInput } from 'components/common/form/SelectInput';
 // import { SelectInput } from 'components/common/form/SelectInput';
 import * as React from 'react';
@@ -69,7 +70,7 @@ export const MintModal: React.FC<any> = ({
 				</div>
 				<form
 					className="flex xl:flex-row flex-col gap-8 justify-between items-start w-full"
-					onSubmit={handleSubmit(() => {
+					onSubmit={handleSubmit((data) => {
 						if (
 							allowance < priceusd * quantity &&
 							address ==
@@ -79,7 +80,7 @@ export const MintModal: React.FC<any> = ({
 						) {
 							approve(address);
 						} else {
-							Mint(address);
+							Mint(data, address);
 						}
 					})}
 				>
@@ -93,7 +94,7 @@ export const MintModal: React.FC<any> = ({
 								title="First Name"
 								placeholder=""
 								labelVisible
-								name="name"
+								name="first_name"
 								register={register}
 								rules={rules.required}
 								error={errors.name}
@@ -102,10 +103,59 @@ export const MintModal: React.FC<any> = ({
 								title="Last Name"
 								placeholder=""
 								labelVisible
-								name="lastName"
+								name="last_name"
 								register={register}
 								rules={rules.required}
 								error={errors.lastName}
+							/>
+							<InputEmail
+								title="Email"
+								placeholder=""
+								labelVisible
+								name="email"
+								register={register}
+								rules={rules.required}
+								error={errors.email}
+							/>
+							<InputPhone
+								title="Phone"
+								placeholder=""
+								labelVisible
+								name="phone"
+								register={register}
+								rules={rules.required}
+								error={errors.phone}
+							/>
+							<SelectInput
+								title="Gender"
+								placeholder=""
+								labelVisible
+								name="gender"
+								values={[
+									{ name: 'Female', value: 0 },
+									{ name: 'Male', value: 1 },
+								]}
+								register={register}
+								rules={rules.required}
+								error={errors.gender}
+							/>
+							<Input
+								title="Country"
+								placeholder=""
+								labelVisible
+								name="country"
+								register={register}
+								rules={rules.required}
+								error={errors.country}
+							/>
+							<Input
+								title="City"
+								placeholder=""
+								labelVisible
+								name="city"
+								register={register}
+								rules={rules.required}
+								error={errors.city}
 							/>
 							<Input
 								title="Address"
@@ -116,14 +166,14 @@ export const MintModal: React.FC<any> = ({
 								rules={rules.required}
 								error={errors.address}
 							/>
-							<InputEmail
-								title="Email"
+							<Input
+								title="Postcode"
 								placeholder=""
 								labelVisible
-								name="email"
+								name="postcode"
 								register={register}
 								rules={rules.required}
-								error={errors.email}
+								error={errors.postcode}
 							/>
 						</div>
 						{/* <div className="flex items-center justify-center">

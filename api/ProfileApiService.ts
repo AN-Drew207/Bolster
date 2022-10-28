@@ -12,6 +12,10 @@ class Service {
 	async updatePassword(data: UpdatePasswordRequest): Promise<any> {
 		return this.client.post('/profile/update-password', data);
 	}
+
+	async postUser(data: any): Promise<any> {
+		return this.client.post('/records/userinfo', data);
+	}
 }
 
-export const ProfilApiService = new Service(axiosClient);
+export const ProfileApiService = new Service(axiosClient);

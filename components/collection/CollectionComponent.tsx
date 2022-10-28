@@ -24,6 +24,8 @@ import { useMetamask } from 'hooks/useMetamask';
 import { CheckIcon } from '@heroicons/react/outline';
 import { MintModal } from 'components/landing/Modals/MintModal';
 import { useConnectWalletModal } from 'hooks/useModalConnect';
+import { ProfileApiService } from 'api';
+import moment from 'moment';
 
 export const CollectionComponent = () => {
 	const [isLoading, setIsLoading] = React.useState(false);
@@ -221,16 +223,14 @@ export const CollectionComponent = () => {
 								}
 							}}
 							typeOfWallet={typeOfWallet}
-							Mint={(address: any) => {
-								// console.log('A?', bottleContract);
-								console.log(
-									selected
-										.map((value: any, id: number) => {
-											return { value: value.value, id: value.id };
-										})
-										.filter((q: any) => q.value)
-										.map((nft: any) => nft.id)
-								);
+							Mint={(data: any, address: any) => {
+								delete data.currency;
+								data.gender = data.gender == '1' ? 1 : 0;
+								// data.id = 3;
+								data.created_at = moment().format('YYYY-MM-DD hh:mm:ss');
+								data.updated_at = moment().format('YYYY-MM-DD hh:mm:ss');
+								data.deleted_at = null;
+
 								if (typeOfWallet == 'metamask') {
 									console.log('meta');
 									Mint(
@@ -253,7 +253,8 @@ export const CollectionComponent = () => {
 										networkName,
 										hide,
 										show,
-										setMinted
+										setMinted,
+										data
 									);
 								} else {
 									mint(
@@ -272,7 +273,8 @@ export const CollectionComponent = () => {
 										setMessage,
 										hide,
 										show,
-										setMinted
+										setMinted,
+										data
 									);
 								}
 							}}

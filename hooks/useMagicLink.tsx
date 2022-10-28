@@ -11,6 +11,7 @@ import { updateBalance, updateState, updateTokensOfUser } from 'redux/actions';
 import toast from 'react-hot-toast';
 import { multiply } from 'components/common/multiply';
 import { updateDataExchanged } from 'components/common/Layouts';
+import { ProfileApiService } from 'api';
 
 const bottles =
 	process.env.NEXT_PUBLIC_NETWORK_NAME == 'mumbai'
@@ -146,7 +147,8 @@ export default function useMagicLink() {
 		setMessage: any,
 		hideBuy: any,
 		show: any,
-		setMinted: any
+		setMinted: any,
+		data: any
 	) => {
 		setLoading(true);
 
@@ -175,9 +177,13 @@ export default function useMagicLink() {
 			hideBuy();
 			setMessage('');
 			show();
+
 			setMinted((prev: any) => !prev);
 			updateDataExchanged(dispatch);
-			toast.success('Your NFT has been successfully minted');
+			ProfileApiService.postUser(data).then((res) => {
+				console.log(res, 'res');
+				toast.success('Your NFT has been successfully minted');
+			});
 		} catch (error) {
 			console.log(error);
 			toast.error(

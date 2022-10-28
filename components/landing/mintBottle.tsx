@@ -331,40 +331,39 @@ export const MintBottle: React.FC<any> = ({ id: xd }) => {
 							}
 						}}
 						typeOfWallet={typeOfWallet}
-						Mint={(quantity: any, address: any) => {
-							console.log('A?');
-							if (typeOfWallet == 'metamask') {
-								console.log('meta');
-								Mint(
-									quantity,
-									address,
-									setIsLoading,
-									bottleContract,
-									setMessage,
-									// accounts,
-									dispatch,
-									network,
-									networkName,
-									hideBuy,
-									show,
-									setQuantity
-									// setMaxSupply
-								);
-							} else {
-								console.log('magic');
-
-								mint(
-									bottleContract,
-									quantity,
-									address,
-									dispatch,
-									setMessage,
-									hideBuy,
-									show,
-									setQuantity
-									// setMaxSupply
-								);
-							}
+						Mint={(data: any, address: any) => {
+							console.log(data);
+							// if (typeOfWallet == 'metamask') {
+							// 	console.log('meta');
+							// 	Mint(
+							// 		quantity,
+							// 		address,
+							// 		setIsLoading,
+							// 		bottleContract,
+							// 		setMessage,
+							// 		// accounts,
+							// 		dispatch,
+							// 		network,
+							// 		networkName,
+							// 		hideBuy,
+							// 		show,
+							// 		setQuantity
+							// 		// setMaxSupply
+							// 	);
+							// } else {
+							// 	console.log('magic');
+							// 	mint(
+							// 		bottleContract,
+							// 		quantity,
+							// 		address,
+							// 		dispatch,
+							// 		setMessage,
+							// 		hideBuy,
+							// 		show,
+							// 		setQuantity
+							// 		// setMaxSupply
+							// 	);
+							// }
 						}}
 						currencies={[
 							{ name: 'USDC', value: process.env.NEXT_PUBLIC_USDC_ADDRESS },
