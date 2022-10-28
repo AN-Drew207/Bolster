@@ -214,9 +214,9 @@ export default function useMagicLink() {
 			const bottle = new web3.eth.Contract(BottleCollectionABI, bottleContract);
 			const balance = await bottle.methods.balanceOf(publicAddress).call();
 
-			const balanceUSDC = await bottle.methods
-				.balanceUserOfferTokens(publicAddress)
-				.call();
+			// const balanceUSDC = await bottle.methods
+			// 	.balanceUserOfferTokens(publicAddress)
+			// 	.call();
 			let index;
 			for (let i = 0; i < bottles.length; i++) {
 				if (bottles[i].address == bottleContract) {
@@ -231,7 +231,7 @@ export default function useMagicLink() {
 					allowance: '1000000000000000000000000000000000000000000000000',
 					balanceOfUser: balance,
 					index: index,
-					balanceUSDCInContract: parseInt(balanceUSDC) / 10 ** 6,
+					// balanceUSDCInContract: parseInt(balanceUSDC) / 10 ** 6,
 				})
 			);
 		} catch (e) {
@@ -245,8 +245,8 @@ export default function useMagicLink() {
 		try {
 			const publicAddress = (await web3.eth.getAccounts())[0];
 			setAccount(publicAddress);
-			const offersReceived = [];
-			const offersDone = [];
+			// const offersReceived = [];
+			// const offersDone = [];
 			let bottle: any;
 			const usdcAddress = process.env.NEXT_PUBLIC_USDC_ADDRESS
 				? process.env.NEXT_PUBLIC_USDC_ADDRESS
@@ -259,17 +259,17 @@ export default function useMagicLink() {
 				const approved = await usdc.methods
 					.allowance(publicAddress, bottles[i].address)
 					.call();
-				const balanceUSDC = await bottle.methods
-					.balanceUserOfferTokens(publicAddress)
-					.call();
-				const now = new Date().getTime();
+				// const balanceUSDC = await bottle.methods
+				// 	.balanceUserOfferTokens(publicAddress)
+				// 	.call();
+				// const now = new Date().getTime();
 
 				dispatch(
 					updateBalance({
 						allowance: approved,
 						balanceOfUser: balance,
 						index: i,
-						balanceUSDCInContract: parseInt(balanceUSDC) / 10 ** 6,
+						// balanceUSDCInContract: parseInt(balanceUSDC) / 10 ** 6,
 					})
 				);
 			}
