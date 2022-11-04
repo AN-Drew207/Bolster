@@ -79,7 +79,7 @@ export const Input: React.FC<
 								classNameInner,
 								{ 'border-transparent-color-gray-800': !error },
 								{
-									'border-alert-error focus:border-alert-error': error,
+									'border-status-error focus:border-status-error': error,
 								},
 								{ 'px-6': !leftImg && !rightImg },
 								{ 'pl-8 pr-4': leftImg },
@@ -105,7 +105,7 @@ export const Input: React.FC<
 						// 	autoComplete="off"
 						// 	className={clsx(
 						// 		{
-						// 			'border-alert-error focus:border-alert-error placeholder-alert-error focus:ring-transparent':
+						// 			'border-status-error focus:border-status-error placeholder-alert-error focus:ring-transparent':
 						// 				error || verifyValue === false,
 						// 		},
 						// 		{
@@ -158,7 +158,7 @@ export const Input: React.FC<
 							disabled={disabled}
 							className={clsx(
 								{
-									'border-alert-error focus:border-alert-error placeholder-alert-error focus:ring-transparent':
+									'border-status-error focus:border-status-error placeholder-alert-error focus:ring-transparent':
 										error || verifyValue === false,
 								},
 								{

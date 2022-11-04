@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Magic } from 'magic-sdk';
 import { ConnectExtension } from '@magic-ext/connect';
 import Web3 from 'web3';
@@ -158,29 +158,35 @@ export default function useMagicLink() {
 				BottleCollectionABI,
 				bottleContract
 			);
+			let txnid;
 			if (address == process.env.NEXT_PUBLIC_WMATIC_ADDRESS) {
 				const price = await BottleCollectionContract.methods
 					.getPrice(nfts)
 					.call();
 
-				await BottleCollectionContract.methods.buy(nfts, address).send({
-					from: publicAddress,
-					value: price,
-					gas: 8000000,
-				});
+				const tx = await BottleCollectionContract.methods
+					.buy(nfts, address)
+					.send({
+						from: publicAddress,
+						value: price,
+						gas: 8000000,
+					});
+				txnid = tx.transactionHash;
 			} else {
-				await BottleCollectionContract.methods.buy(nfts, address).send({
-					from: publicAddress,
-					gas: 8000000,
-				});
+				const tx = await BottleCollectionContract.methods
+					.buy(nfts, address)
+					.send({
+						from: publicAddress,
+						gas: 8000000,
+					});
+				txnid = tx.transactionHash;
 			}
 			hideBuy();
 			setMessage('');
 			show();
-
 			setMinted((prev: any) => !prev);
 			updateDataExchanged(dispatch);
-			ProfileApiService.postUser(data).then((res) => {
+			ProfileApiService.postUser({ data, txnid }).then((res) => {
 				console.log(res, 'res');
 				toast.success('Your NFT has been successfully minted');
 			});

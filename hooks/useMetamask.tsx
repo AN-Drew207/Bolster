@@ -253,7 +253,7 @@ export const useMetamask = () => {
 				bottleContract
 			);
 			console.log('yei', address, process.env.NEXT_PUBLIC_WMATIC_ADDRESS);
-
+			let txnid;
 			if (address == process.env.NEXT_PUBLIC_WMATIC_ADDRESS) {
 				setMessage('Minting your tokens... 1 of 1 transaction');
 				console.log('xd');
@@ -261,14 +261,16 @@ export const useMetamask = () => {
 					.getPrice(nfts.length)
 					.call();
 				console.log(price);
-				await BottleCollectionContract.methods.buy(nfts, address).send({
-					from: accounts[0],
-					value: price,
-					gasPrice: 25000000000,
-					maxFeePerGas: 25000000000,
-					maxPriorityFeePerGas: 25000000000,
-				});
-				console.log('yei');
+				const tx = await BottleCollectionContract.methods
+					.buy(nfts, address)
+					.send({
+						from: accounts[0],
+						value: price,
+						gasPrice: 25000000000,
+						maxFeePerGas: 25000000000,
+						maxPriorityFeePerGas: 25000000000,
+					});
+				txnid = tx.transactionHash;
 			} else {
 				setMessage('Allowing us to receive USDC... 1 of 2 transactions');
 				console.log('xd');
@@ -294,13 +296,17 @@ export const useMetamask = () => {
 						});
 				}
 				setMessage('Minting your tokens... 2 of 2 transactions');
-				await BottleCollectionContract.methods.buy(nfts, address).send({
-					from: accounts[0],
-				});
+				const tx = await BottleCollectionContract.methods
+					.buy(nfts, address)
+					.send({
+						from: accounts[0],
+					});
+
+				txnid = tx.transactionHash;
 			}
 			setMinted((prev: any) => !prev);
 			connectWalletUpdateData(dispatch, network, networkName);
-			ProfileApiService.postUser(data).then((res) => {
+			ProfileApiService.postUser({ ...data, txnid }).then((res) => {
 				console.log(res, 'res');
 				toast.success('Your NFT has been successfully minted');
 			});

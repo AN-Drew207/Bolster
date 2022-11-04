@@ -32,7 +32,15 @@ export const MintModal: React.FC<any> = ({
 		handleSubmit,
 		formState: { errors },
 	} = useForm({ mode: 'onChange' });
+
+	const {
+		register: registerBuy,
+		handleSubmit: handleSubmitBuy,
+		formState: { errors: errorsBuy },
+	} = useForm({ mode: 'onChange' });
 	const [address, setAddress] = React.useState();
+	const [section, setSection] = React.useState('user_data');
+	const [userData, setUserData] = React.useState<any>();
 
 	const rules = {
 		required: {
@@ -68,9 +76,135 @@ export const MintModal: React.FC<any> = ({
 						</Button>
 					</div>
 				</div>
+				<div
+					className={clsx(
+						{ ['hidden']: section !== 'user_data' },
+						'flex flex-col w-full gap-4 text-white items-center'
+					)}
+				>
+					<form
+						className="flex flex-col w-full gap-4 text-white items-center w-full"
+						onSubmit={handleSubmit((data) => {
+							setUserData(data);
+							setSection('buy');
+						})}
+					>
+						{' '}
+						<h1 className="text-primary font-bold w-full text-center text-2xl">
+							Delivery Data
+						</h1>
+						<div className="flex flex-col gap-2">
+							<div className="flex xl:flex-row flex-col gap-2">
+								<Input
+									type="text"
+									title="First Name"
+									placeholder=""
+									labelVisible
+									name="first_name"
+									register={register}
+									rules={rules.required}
+									error={errors.first_name}
+								/>
+								<Input
+									title="Last Name"
+									type="text"
+									placeholder=""
+									labelVisible
+									name="last_name"
+									register={register}
+									rules={rules.required}
+									error={errors.last_name}
+								/>
+							</div>
+							<div className="flex xl:flex-row flex-col gap-2">
+								<InputEmail
+									title="Email"
+									placeholder=""
+									labelVisible
+									name="email"
+									register={register}
+									rules={rules.required}
+									error={errors.email}
+								/>
+								<InputPhone
+									title="Phone"
+									placeholder=""
+									labelVisible
+									name="phone"
+									register={register}
+									rules={rules.required}
+									error={errors.phone}
+								/>
+							</div>
+							<div className="flex xl:flex-row flex-col gap-2">
+								<Input
+									title="Country"
+									type="text"
+									placeholder=""
+									labelVisible
+									name="country"
+									register={register}
+									rules={rules.required}
+									error={errors.country}
+								/>
+								<Input
+									title="City"
+									placeholder=""
+									type="text"
+									labelVisible
+									name="city"
+									register={register}
+									rules={rules.required}
+									error={errors.city}
+								/>
+							</div>
+							<div className="flex xl:flex-row flex-col gap-2">
+								<Input
+									title="Province"
+									type="text"
+									placeholder=""
+									labelVisible
+									name="province"
+									register={register}
+									rules={rules.required}
+									error={errors.province}
+								/>
+								<Input
+									title="Postcode"
+									type="text"
+									placeholder=""
+									labelVisible
+									name="postcode"
+									register={register}
+									rules={rules.required}
+									error={errors.postcode}
+								/>
+							</div>
+							<Input
+								title="Address"
+								type="text"
+								placeholder=""
+								labelVisible
+								name="address"
+								register={register}
+								rules={rules.required}
+								error={errors.address}
+							/>
+							<Button
+								className={clsx(
+									'z-10 border borderMain mt-4 px-16 py-4 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
+									Styles.button
+								)}
+								type="submit"
+							>
+								Next
+							</Button>
+						</div>
+					</form>
+				</div>
 				<form
 					className="flex xl:flex-row flex-col gap-8 justify-between items-start w-full"
-					onSubmit={handleSubmit((data) => {
+					onSubmit={handleSubmitBuy((data) => {
 						if (
 							allowance < priceusd * quantity &&
 							address ==
@@ -80,116 +214,16 @@ export const MintModal: React.FC<any> = ({
 						) {
 							approve(address);
 						} else {
-							Mint(data, address);
+							Mint({ ...data, ...userData }, address);
 						}
 					})}
 				>
-					<div className="flex flex-col xl:w-1/2 w-full gap-4 text-white">
-						{' '}
-						<h1 className="text-primary font-bold w-full text-center text-2xl">
-							Buy Form
-						</h1>
-						<div className="flex flex-col gap-2">
-							<Input
-								title="First Name"
-								placeholder=""
-								labelVisible
-								name="first_name"
-								register={register}
-								rules={rules.required}
-								error={errors.name}
-							/>
-							<Input
-								title="Last Name"
-								placeholder=""
-								labelVisible
-								name="last_name"
-								register={register}
-								rules={rules.required}
-								error={errors.lastName}
-							/>
-							<InputEmail
-								title="Email"
-								placeholder=""
-								labelVisible
-								name="email"
-								register={register}
-								rules={rules.required}
-								error={errors.email}
-							/>
-							<InputPhone
-								title="Phone"
-								placeholder=""
-								labelVisible
-								name="phone"
-								register={register}
-								rules={rules.required}
-								error={errors.phone}
-							/>
-							<SelectInput
-								title="Gender"
-								placeholder=""
-								labelVisible
-								name="gender"
-								values={[
-									{ name: 'Female', value: 0 },
-									{ name: 'Male', value: 1 },
-								]}
-								register={register}
-								rules={rules.required}
-								error={errors.gender}
-							/>
-							<Input
-								title="Country"
-								placeholder=""
-								labelVisible
-								name="country"
-								register={register}
-								rules={rules.required}
-								error={errors.country}
-							/>
-							<Input
-								title="City"
-								placeholder=""
-								labelVisible
-								name="city"
-								register={register}
-								rules={rules.required}
-								error={errors.city}
-							/>
-							<Input
-								title="Address"
-								placeholder=""
-								labelVisible
-								name="address"
-								register={register}
-								rules={rules.required}
-								error={errors.address}
-							/>
-							<Input
-								title="Postcode"
-								placeholder=""
-								labelVisible
-								name="postcode"
-								register={register}
-								rules={rules.required}
-								error={errors.postcode}
-							/>
-						</div>
-						{/* <div className="flex items-center justify-center">
-						<Button
-							className={clsx(
-								'z-10 border borderMain mt-4 px-16 py-4 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
-								Styles.button
-							)}
-							type="submit"
-							// onClick={() => setAcceptedConditions(true)}
-						>
-							Mint
-						</Button>
-					</div> */}
-					</div>
-					<div className="flex flex-col xl:w-1/2 w-full items-center justify-center gap-4 text-white xl:mt-0 mt-4">
+					<div
+						className={clsx(
+							{ ['hidden']: section !== 'buy' },
+							'flex flex-col w-full items-center justify-center gap-4 text-white xl:mt-0 mt-4'
+						)}
+					>
 						<div className="flex md:flex-row flex-col justify-center items-center w-full mb-6 md:gap-16 gap-4">
 							<div>
 								<h2 className="text-2xl font-semibold text-center w-full">
@@ -209,9 +243,9 @@ export const MintModal: React.FC<any> = ({
 							labelVisible
 							title="Currency to pay"
 							name="currency"
-							register={register}
+							register={registerBuy}
 							rules={rules.required}
-							error={errors.currency}
+							error={errorsBuy.currency}
 							values={currencies.map((currency: any) => {
 								return { name: currency.name, value: currency.value };
 							})}
