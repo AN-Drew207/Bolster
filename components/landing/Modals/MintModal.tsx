@@ -252,7 +252,7 @@ export const MintModal: React.FC<any> = ({
 									{ [Styles.button]: !disabled }
 								)}
 								type="submit"
-								disabled={disabled}
+								// disabled={disabled}
 							>
 								Next
 							</Button>
