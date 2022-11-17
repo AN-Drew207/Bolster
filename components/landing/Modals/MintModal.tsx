@@ -1,11 +1,14 @@
+import { ExclamationCircleIcon } from '@heroicons/react/outline';
 import clsx from 'clsx';
 import { Button } from 'components/common/button';
 import { Input } from 'components/common/form/input';
 import { InputEmail } from 'components/common/form/input-email';
 import { InputPhone } from 'components/common/form/input-phone/input-phone';
 import { SelectInput } from 'components/common/form/SelectInput';
+import { Typography } from 'components/common/typography';
 // import { SelectInput } from 'components/common/form/SelectInput';
 import * as React from 'react';
+import ReactGoogleAutocomplete from 'react-google-autocomplete';
 import { useForm } from 'react-hook-form';
 import { Loading } from '../loadingComponent';
 // import { Loading } from '../loadingComponent';
@@ -30,14 +33,18 @@ export const MintModal: React.FC<any> = ({
 	const {
 		register,
 		handleSubmit,
-		formState: { errors },
-	} = useForm({ mode: 'onChange' });
+		setValue,
+		formState: { errors, isDirty, isValid },
+	} = useForm({
+		mode: 'onChange',
+	});
 
 	const {
 		register: registerBuy,
 		handleSubmit: handleSubmitBuy,
 		formState: { errors: errorsBuy },
 	} = useForm({ mode: 'onChange' });
+
 	const [address, setAddress] = React.useState();
 	const [section, setSection] = React.useState('user_data');
 	const [userData, setUserData] = React.useState<any>();
@@ -55,6 +62,11 @@ export const MintModal: React.FC<any> = ({
 			},
 		},
 	};
+
+	const TOKEN_GOOGLE_API = 'AIzaSyDNQIlXXD79FkgsqYnSr9RRVkywb-j6RC0';
+
+	const disabled = !isDirty || !isValid;
+	console.log(errors, isValid, isDirty);
 
 	return (
 		<div
@@ -136,6 +148,59 @@ export const MintModal: React.FC<any> = ({
 									error={errors.phone}
 								/>
 							</div>
+							<div className="flex flex-col gap-1">
+								<div className="flex-auto">
+									<Typography
+										type="label"
+										className={clsx(
+											{ 'text-status-error': errors.address },
+											'ml-3 font-bold mb-2 block f-18'
+										)}
+									>
+										Address
+									</Typography>
+								</div>
+
+								<Input
+									name="address"
+									register={register}
+									className="hidden"
+								></Input>
+
+								<ReactGoogleAutocomplete
+									apiKey={TOKEN_GOOGLE_API}
+									onPlaceSelected={(place: any) => {
+										console.log(place.address_components, 'place');
+										setValue('address', place.formatted_address);
+										place.address_components.map((item: any) => {
+											console.log(item, 'address');
+											if (item.types.includes('country')) {
+												setValue('country', item.long_name);
+											}
+											if (item.types.includes('postal_code')) {
+												setValue('postcode', item.long_name);
+											}
+											if (item.types.includes('administrative_area_level_2')) {
+												setValue('city', item.long_name);
+											}
+											if (item.types.includes('locality')) {
+												setValue('province', item.long_name);
+											}
+										});
+									}}
+									options={{
+										componentRestrictions: { country: 'uk' },
+									}}
+									language={'en'}
+									className="py-3 px-4 bg-overlay rounded-md border border-white placeholder-white"
+									placeholder=""
+								/>
+								<caption className="text-sm flex gap-2">
+									<ExclamationCircleIcon className="w-4" />
+									The fields below are filled when you select a location in the
+									address dropdown, this is showed when you text.
+								</caption>
+							</div>
 							<div className="flex xl:flex-row flex-col gap-2">
 								<Input
 									title="Country"
@@ -180,22 +245,14 @@ export const MintModal: React.FC<any> = ({
 									error={errors.postcode}
 								/>
 							</div>
-							<Input
-								title="Address"
-								type="text"
-								placeholder=""
-								labelVisible
-								name="address"
-								register={register}
-								rules={rules.required}
-								error={errors.address}
-							/>
+
 							<Button
 								className={clsx(
-									'z-10 border borderMain mt-4 px-16 py-4 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
-									Styles.button
+									'z-10 border borderMain text-white mt-4 px-16 py-4 text-white transition ease-in-out delay-150 duration-300',
+									{ [Styles.button]: !disabled }
 								)}
 								type="submit"
+								disabled={disabled}
 							>
 								Next
 							</Button>
@@ -205,6 +262,7 @@ export const MintModal: React.FC<any> = ({
 				<form
 					className="flex xl:flex-row flex-col gap-8 justify-between items-start w-full"
 					onSubmit={handleSubmitBuy((data) => {
+						console.log(data, userData);
 						if (
 							allowance < priceusd * quantity &&
 							address ==

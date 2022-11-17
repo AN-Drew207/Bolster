@@ -204,7 +204,7 @@ export const CollectionComponent = () => {
 					isLoading || !bottle.address ? 'justify-center' : 'justify-start'
 				)}
 			>
-				<Modal isShow={isShow} hasBg>
+				<Modal isShow={isShow} hasBg NoClose>
 					<div
 						className={clsx(
 							'flex flex-col items-center justify-center w-full h-full sm:px-10 px-4 pb-10 relative mt-24'
@@ -225,7 +225,6 @@ export const CollectionComponent = () => {
 							typeOfWallet={typeOfWallet}
 							Mint={(data: any, address: any) => {
 								delete data.currency;
-								data.gender = data.gender == '1' ? 1 : 0;
 								// data.id = 3;
 								data.created_at = moment().format('YYYY-MM-DD hh:mm:ss');
 								data.updated_at = moment().format('YYYY-MM-DD hh:mm:ss');

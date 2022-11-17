@@ -13,7 +13,7 @@ export const useModal = () => {
 		setIsShow(true);
 	};
 
-	const Modal = useCallback(({ children, isShow, hasBg, onClose }) => {
+	const Modal = useCallback(({ children, isShow, hasBg, onClose, NoClose }) => {
 		return (
 			<Transition.Root show={isShow} as={Fragment}>
 				<Dialog
@@ -26,9 +26,11 @@ export const useModal = () => {
 					initialFocus={cancelButtonRef}
 					open={isShow}
 					onClose={() => {
-						hide();
-						if (onClose) {
-							onClose();
+						if (!NoClose) {
+							hide();
+							if (onClose) {
+								onClose();
+							}
 						}
 					}}
 				>

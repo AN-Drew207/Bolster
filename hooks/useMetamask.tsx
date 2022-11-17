@@ -281,7 +281,6 @@ export const useMetamask = () => {
 				const price = await BottleCollectionContract.methods
 					.priceTokens(address)
 					.call();
-
 				if (allowance < price) {
 					await Erc20Instance.methods
 						.increaseAllowance(
@@ -301,11 +300,12 @@ export const useMetamask = () => {
 					.send({
 						from: accounts[0],
 					});
-
 				txnid = tx.transactionHash;
 			}
 			setMinted((prev: any) => !prev);
 			connectWalletUpdateData(dispatch, network, networkName);
+			// txnid = '';
+			console.log({ ...data }, 'input');
 			ProfileApiService.postUser({ ...data, txnid }).then((res) => {
 				console.log(res, 'res');
 				toast.success('Your NFT has been successfully minted');
