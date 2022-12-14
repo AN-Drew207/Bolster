@@ -1,0 +1,29 @@
+@import '../../styles/variables.scss';
+
+$medida: 1920;
+
+.f16l {
+	$f16l: (
+		1920px: 16px,
+		1441px: 13px,
+		1440px: 16px,
+		1025px: 13px,
+		1024px: 16px,
+		769px: 13px,
+		768px: 16px,
+		415px: 12px,
+		414px: 12px,
+		376px: 12px,
+		375px: 12px,
+		240px: 12px,
+	);
+	@include poly-fluid-sizing('font-size', $f16l);
+}
+/* .paddingsYFooter {
+	padding-top: calc((42 / #{$medida}) * 100vw);
+	padding-bottom: calc((42 / #{$medida}) * 100vw);
+} */
+.paddingsXFooter {
+	padding-right: calc((250 / #{$medida}) * 100vw);
+	padding-left: calc((250 / #{$medida}) * 100vw);
+}

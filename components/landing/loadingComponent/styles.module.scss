@@ -1,0 +1,13 @@
+.font{
+	font-family: "Pilcrowrounded";
+}
+
+.TextGradient {
+	background: linear-gradient(
+		90deg,
+		rgb(255, 79, 88) -8%,
+		rgb(33, 2, 240) 112%
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}

@@ -1,0 +1,1101 @@
+[
+	{
+		"address": "0x212f79565432e34b56D72Ab8236f1a56E5e4C729",
+		"name": "Karuizawa 1972 700ml Bottle",
+		"id": 0,
+		"short_name": "Karuizawa 1972",
+		"image": "/videos/Karuizawa_1972.mp4",
+		"videoDemo": "/videos/Karuizawa_1972.mp4",
+		"litepaper": "https://santiago-rodriguez.gitbook.io/coco-b.c.-information/litepaper-project-u-1972kv-drop",
+		"artist": {
+			"name": "Karmele",
+			"paragraphs": [
+				{
+					"title": "Bio",
+					"text": [
+						"A woman entrepreneur, highly trained in arts and museum-quality restoration (in fact she has done restoration and conservation in top museums of Spain and Mexico). The CoCo Collection is her debut in the NFT world, and you can’t miss it! She enjoyed zipping a tequila Casa Dragones in her beautiful Waterford Lismore Crystal Snifter while creating the CoCo Universe."
+					]
+				},
+				{
+					"title": "Inspiration for this Project",
+					"text": [
+						"The design of this NFT collection is inspired by the subtlety of Japanese art. Through minimalist but significant designs, the essence of Japanese culture and its traditions are mixed with the delicacy of its strokes, its solid but subtle colors, and its free but bold brushstrokes. This makes for the perfect balance with the whiteness and delicacy of its Washi. Through its fibers, history, effort and tradition are intertwined.",
+						"Within the simplicity of the designs I decided to highlight only the mouth, as the organ of perception, with which you taste and enjoy this liquid full of history and tradition.",
+						"Like Karuizawa, many of the legends and characters in the stories and tales no longer exist today. However, their essence and tradition are still alive."
+					]
+				},
+				{
+					"title": "What is the Concept?",
+					"text": [
+						"The main concept of the art is inspired by the Chanoyu Ceremony or tea ceremony, which refers to one of the most significant and deeply rooted traditions in Japanese culture. The pretext of meeting and worship is the precious liquid or tea. In this case, we migrate the experience to the Karuizawa, as a concoction that causes the meeting and liturgy of this experience.",
+						"During these types of ceremonies, four fundamental principles are followed. Which served as an inspiration to create these scenes; the compendium or final work.",
+						"- Wa (harmony): The composition and colors of Japanese culture.",
+						"- Kei (respect): The interaction between subjects of mystical and earthly nature, ideologies, classes, and genders. As well as the coexistence and respect with nature.",
+						"- Sei (purity): Basic element in Japanese art, purity, simplicity, and delicacy.",
+						"- Jakul (tranquility): The final concept is properly balanced, calm, and harmonious.",
+						"This results in a work, where the Karuizawa ceremony is not only an experience but an inclusive ritual around a unique drink of its kind."
+					]
+				}
+			],
+			"photo": [
+				"/img/team_karmele.jpg",
+				"/img/karmele_2.jpg",
+				"/img/karmele_3.jpg"
+			]
+		},
+		"content": {
+			"title": "The Story Of Karuizawa Destilery",
+			"caption": "by Charles MacLean",
+			"paragraphs": [
+				"The temperate climate and rich volcanic soils at the foot of Mount Asama attracted wine-makers, including, during the 1920s, a company named Daikoku-budoshu. Although its main business was wine, Daikoku also had a small whisky distillery in Yamanashi Prefecture and began to release a blended whisky named Ocean in 1946 – one of the first Japanese whiskies to be released after the Second World War - first aimed at American G.I.s posted in Japan, but soon fashionable among the local business communities.",
+				"Ocean sold well; whisky was becoming increasingly popular in Japan at that time, and by the mid-1950s Daikoku decided to convert one of their wineries at Karuizawa into a malt whisky distillery - Japan’s smallest – in order to supply the company’s blends. It opened in 1956.",
+				"In 1962 Daikoku was absorbed by what became the Mercian Corporation, producers of the popular Chateau Mercian wine, while the distillery continued supplying malt for Japanese blends until 1976, when small amounts were released as single malt, although very little was exported.",
+				"Japan enjoyed a significant economic boom during the 1970s, but this faltered during the 1980s and collapsed during the 1990s. Japanese whisky distilleries began to close, and this was the fate of Karuizawa in 2001. Five years later the Mercian Corporation was taken over by the giant brewing company, Kirin – founded by Thomas Blake Glover - but they did not bring Karuizawa back to life, and refused to sell it. The distilling license was cancelled and in 2016 the distillery was demolished and the site sold for redevelopment.",
+				"After several years of negotiation, in 2011 the remaining stock of 364 casks was bought by Number One Drinks Company, based in Norfolk, England. Since then, they have gradually been bottled and sold – many achieving phenomenal prices at auction – until now only two casks are left."
+			],
+			"caracteristics": [
+				{ "icon": "/icons/factory.png", "caption": "Karuizawa" },
+				{ "icon": "/icons/world.png", "caption": "Japan" },
+				{ "icon": "/icons/demo.png", "caption": "Demolished 2016" },
+				{ "icon": "/icons/calendar.png", "caption": "Vintage 1972" },
+				{
+					"icon": "/icons/person.png",
+					"caption": "Aged for 39 years"
+				},
+				{ "icon": "/icons/bottled.png", "caption": "Bottled 2011" },
+				{
+					"icon": "/icons/numeral.png",
+					"caption": "1 of only 523 worldwide"
+				},
+				{
+					"icon": "/icons/ex-sherry.png",
+					"caption": "Ex-Sherry Cask"
+				},
+				{ "icon": "/icons/barcode.png", "caption": "Cask No. 7038" },
+				{ "icon": "/icons/chemistry.png", "caption": "63.3%" },
+
+				{ "icon": "/icons/length.png", "caption": "700ml" },
+				{
+					"icon": "/icons/arrow.png",
+					"caption": "Ultra-limited retail availability"
+				}
+			]
+		},
+		"metadata": [
+			{
+				"id": 1,
+				"description": "NFT No. [01]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/1.png",
+				"name": "CoCo Project U#1972KV-01",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 1
+					}
+				]
+			},
+			{
+				"id": 2,
+				"description": "NFT No. [02]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/2.png",
+				"name": "CoCo Project U#1972KV-02",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 2
+					}
+				]
+			},
+			{
+				"id": 3,
+				"description": "NFT No. [03]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/3.png",
+				"name": "CoCo Project U#1972KV-03",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 3
+					}
+				]
+			},
+			{
+				"id": 4,
+				"description": "NFT No. [04]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/4.png",
+				"name": "CoCo Project U#1972KV-04",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 4
+					}
+				]
+			},
+			{
+				"id": 5,
+				"description": "NFT No. [05]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/5.png",
+				"name": "CoCo Project U#1972KV-05",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 5
+					}
+				]
+			},
+			{
+				"id": 6,
+				"description": "NFT No. [06]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/6.png",
+				"name": "CoCo Project U#1972KV-06",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 6
+					}
+				]
+			},
+			{
+				"id": 7,
+				"description": "NFT No. [07]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/7.png",
+				"name": "CoCo Project U#1972KV-07",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 7
+					}
+				]
+			},
+			{
+				"id": 8,
+				"description": "NFT No. [08]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/8.png",
+				"name": "CoCo Project U#1972KV-08",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 8
+					}
+				]
+			},
+			{
+				"id": 9,
+				"description": "NFT No. [09]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/9.png",
+				"name": "CoCo Project U#1972KV-09",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 9
+					}
+				]
+			},
+			{
+				"id": 10,
+				"description": "NFT No. [10]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/10.png",
+				"name": "CoCo Project U#1972KV-10",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 10
+					}
+				]
+			},
+			{
+				"id": 11,
+				"description": "NFT No. [11]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/11.png",
+				"name": "CoCo Project U#1972KV-11",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 11
+					}
+				]
+			},
+			{
+				"id": 12,
+				"description": "NFT No. [12]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/12.png",
+				"name": "CoCo Project U#1972KV-12",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 12
+					}
+				]
+			},
+			{
+				"id": 13,
+				"description": "NFT No. [13]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/13.png",
+				"name": "CoCo Project U#1972KV-13",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 13
+					}
+				]
+			},
+			{
+				"id": 14,
+				"description": "NFT No. [14]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/14.png",
+				"name": "CoCo Project U#1972KV-14",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 14
+					}
+				]
+			},
+			{
+				"id": 15,
+				"description": "NFT No. [15]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/15.png",
+				"name": "CoCo Project U#1972KV-15",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 15
+					}
+				]
+			},
+			{
+				"id": 16,
+				"description": "NFT No. [16]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/16.png",
+				"name": "CoCo Project U#1972KV-16",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 16
+					}
+				]
+			},
+			{
+				"id": 17,
+				"description": "NFT No. [17]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/17.png",
+				"name": "CoCo Project U#1972KV-17",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 17
+					}
+				]
+			},
+			{
+				"id": 18,
+				"description": "NFT No. [18]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/18.png",
+				"name": "CoCo Project U#1972KV-18",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 18
+					}
+				]
+			},
+			{
+				"id": 19,
+				"description": "NFT No. [19]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/19.png",
+				"name": "CoCo Project U#1972KV-19",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 19
+					}
+				]
+			},
+			{
+				"id": 20,
+				"description": "NFT No. [20]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/20.png",
+				"name": "CoCo Project U#1972KV-20",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 20
+					}
+				]
+			},
+			{
+				"id": 21,
+				"description": "NFT No. [21]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/21.png",
+				"name": "CoCo Project U#1972KV-21",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 21
+					}
+				]
+			},
+			{
+				"id": 22,
+				"description": "NFT No. [22]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/22.png",
+				"name": "CoCo Project U#1972KV-22",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 22
+					}
+				]
+			},
+			{
+				"id": 23,
+				"description": "NFT No. [23]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/23.png",
+				"name": "CoCo Project U#1972KV-23",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 23
+					}
+				]
+			},
+			{
+				"id": 24,
+				"description": "NFT No. [24]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/24.png",
+				"name": "CoCo Project U#1972KV-24",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 24
+					}
+				]
+			},
+			{
+				"id": 25,
+				"description": "NFT No. [25]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/25.png",
+				"name": "CoCo Project U#1972KV-25",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 25
+					}
+				]
+			},
+			{
+				"id": 26,
+				"description": "NFT No. [26]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/26.png",
+				"name": "CoCo Project U#1972KV-26",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 26
+					}
+				]
+			},
+			{
+				"id": 27,
+				"description": "NFT No. [27]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/27.png",
+				"name": "CoCo Project U#1972KV-27",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 27
+					}
+				]
+			},
+			{
+				"id": 28,
+				"description": "NFT No. [28]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/28.png",
+				"name": "CoCo Project U#1972KV-28",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 28
+					}
+				]
+			},
+			{
+				"id": 29,
+				"description": "NFT No. [29]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/29.png",
+				"name": "CoCo Project U#1972KV-29",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 29
+					}
+				]
+			},
+			{
+				"id": 30,
+				"description": "NFT No. [30]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/30.png",
+				"name": "CoCo Project U#1972KV-30",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 30
+					}
+				]
+			},
+			{
+				"id": 31,
+				"description": "NFT No. [31]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/31.png",
+				"name": "CoCo Project U#1972KV-31",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 31
+					}
+				]
+			},
+			{
+				"id": 32,
+				"description": "NFT No. [32]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/32.png",
+				"name": "CoCo Project U#1972KV-32",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 32
+					}
+				]
+			},
+			{
+				"id": 33,
+				"description": "NFT No. [33]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/33.png",
+				"name": "CoCo Project U#1972KV-33",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 33
+					}
+				]
+			},
+			{
+				"id": 34,
+				"description": "NFT No. [34]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/34.png",
+				"name": "CoCo Project U#1972KV-34",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 34
+					}
+				]
+			},
+			{
+				"id": 35,
+				"description": "NFT No. [35]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/35.png",
+				"name": "CoCo Project U#1972KV-35",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 35
+					}
+				]
+			},
+			{
+				"id": 36,
+				"description": "NFT No. [36]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/36.png",
+				"name": "CoCo Project U#1972KV-36",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 36
+					}
+				]
+			},
+			{
+				"id": 37,
+				"description": "NFT No. [37]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/37.png",
+				"name": "CoCo Project U#1972KV-37",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 37
+					}
+				]
+			},
+			{
+				"id": 38,
+				"description": "NFT No. [38]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/38.png",
+				"name": "CoCo Project U#1972KV-38",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 38
+					}
+				]
+			},
+			{
+				"id": 39,
+				"description": "NFT No. [39]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/39.png",
+				"name": "CoCo Project U#1972KV-39",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 39
+					}
+				]
+			},
+			{
+				"id": 40,
+				"description": "NFT No. [40]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/40.png",
+				"name": "CoCo Project U#1972KV-40",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 40
+					}
+				]
+			},
+			{
+				"id": 41,
+				"description": "NFT No. [41]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/41.png",
+				"name": "CoCo Project U#1972KV-41",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 41
+					}
+				]
+			},
+			{
+				"id": 42,
+				"description": "NFT No. [42]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/42.png",
+				"name": "CoCo Project U#1972KV-42",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 42
+					}
+				]
+			},
+			{
+				"id": 43,
+				"description": "NFT No. [43]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/43.png",
+				"name": "CoCo Project U#1972KV-43",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 43
+					}
+				]
+			},
+			{
+				"id": 44,
+				"description": "NFT No. [44]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/44.png",
+				"name": "CoCo Project U#1972KV-44",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 44
+					}
+				]
+			},
+			{
+				"id": 45,
+				"description": "NFT No. [45]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/45.png",
+				"name": "CoCo Project U#1972KV-45",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 45
+					}
+				]
+			},
+			{
+				"id": 46,
+				"description": "NFT No. [46]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/46.png",
+				"name": "CoCo Project U#1972KV-46",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 46
+					}
+				]
+			},
+			{
+				"id": 47,
+				"description": "NFT No. [47]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/47.png",
+				"name": "CoCo Project U#1972KV-47",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 47
+					}
+				]
+			},
+			{
+				"id": 48,
+				"description": "NFT No. [48]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/48.png",
+				"name": "CoCo Project U#1972KV-48",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 48
+					}
+				]
+			},
+			{
+				"id": 49,
+				"description": "NFT No. [49]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/49.png",
+				"name": "CoCo Project U#1972KV-49",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 49
+					}
+				]
+			},
+			{
+				"id": 50,
+				"description": "NFT No. [50]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/50.png",
+				"name": "CoCo Project U#1972KV-50",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 50
+					}
+				]
+			},
+			{
+				"id": 51,
+				"description": "NFT No. [51]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/51.png",
+				"name": "CoCo Project U#1972KV-51",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 51
+					}
+				]
+			},
+			{
+				"id": 52,
+				"description": "NFT No. [52]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/52.png",
+				"name": "CoCo Project U#1972KV-52",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 52
+					}
+				]
+			},
+			{
+				"id": 53,
+				"description": "NFT No. [53]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/53.png",
+				"name": "CoCo Project U#1972KV-53",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 53
+					}
+				]
+			},
+			{
+				"id": 54,
+				"description": "NFT No. [54]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/54.png",
+				"name": "CoCo Project U#1972KV-54",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 54
+					}
+				]
+			},
+			{
+				"id": 55,
+				"description": "NFT No. [55]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/55.png",
+				"name": "CoCo Project U#1972KV-55",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 55
+					}
+				]
+			},
+			{
+				"id": 56,
+				"description": "NFT No. [56]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/56.png",
+				"name": "CoCo Project U#1972KV-56",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 56
+					}
+				]
+			},
+			{
+				"id": 57,
+				"description": "NFT No. [57]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/57.png",
+				"name": "CoCo Project U#1972KV-57",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 57
+					}
+				]
+			},
+			{
+				"id": 58,
+				"description": "NFT No. [58]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/58.png",
+				"name": "CoCo Project U#1972KV-58",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 58
+					}
+				]
+			},
+			{
+				"id": 59,
+				"description": "NFT No. [59]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/59.png",
+				"name": "CoCo Project U#1972KV-59",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 59
+					}
+				]
+			},
+			{
+				"id": 60,
+				"description": "NFT No. [60]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/60.png",
+				"name": "CoCo Project U#1972KV-60",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 60
+					}
+				]
+			},
+			{
+				"id": 61,
+				"description": "NFT No. [61]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/61.png",
+				"name": "CoCo Project U#1972KV-61",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 61
+					}
+				]
+			},
+			{
+				"id": 62,
+				"description": "NFT No. [62]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/62.png",
+				"name": "CoCo Project U#1972KV-62",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 62
+					}
+				]
+			},
+			{
+				"id": 63,
+				"description": "NFT No. [63]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/63.png",
+				"name": "CoCo Project U#1972KV-63",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 63
+					}
+				]
+			},
+			{
+				"id": 64,
+				"description": "NFT No. [64]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/64.png",
+				"name": "CoCo Project U#1972KV-64",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 64
+					}
+				]
+			},
+			{
+				"id": 65,
+				"description": "NFT No. [65]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/65.png",
+				"name": "CoCo Project U#1972KV-65",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 65
+					}
+				]
+			},
+			{
+				"id": 66,
+				"description": "NFT No. [66]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/66.png",
+				"name": "CoCo Project U#1972KV-66",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 66
+					}
+				]
+			},
+			{
+				"id": 67,
+				"description": "NFT No. [67]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/67.png",
+				"name": "CoCo Project U#1972KV-67",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 67
+					}
+				]
+			},
+			{
+				"id": 68,
+				"description": "NFT No. [68]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/68.png",
+				"name": "CoCo Project U#1972KV-68",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 68
+					}
+				]
+			},
+			{
+				"id": 69,
+				"description": "NFT No. [69]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/69.png",
+				"name": "CoCo Project U#1972KV-69",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 69
+					}
+				]
+			},
+			{
+				"id": 70,
+				"description": "NFT No. [70]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/70.png",
+				"name": "CoCo Project U#1972KV-70",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 70
+					}
+				]
+			},
+			{
+				"id": 71,
+				"description": "NFT No. [71]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/71.png",
+				"name": "CoCo Project U#1972KV-71",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 71
+					}
+				]
+			},
+			{
+				"id": 72,
+				"description": "NFT No. [72]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/72.png",
+				"name": "CoCo Project U#1972KV-72",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 72
+					}
+				]
+			},
+			{
+				"id": 73,
+				"description": "NFT No. [73]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/73.png",
+				"name": "CoCo Project U#1972KV-73",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 73
+					}
+				]
+			},
+			{
+				"id": 74,
+				"description": "NFT No. [74]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/74.png",
+				"name": "CoCo Project U#1972KV-74",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 74
+					}
+				]
+			},
+			{
+				"id": 75,
+				"description": "NFT No. [75]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/75.png",
+				"name": "CoCo Project U#1972KV-75",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 75
+					}
+				]
+			},
+			{
+				"id": 76,
+				"description": "NFT No. [76]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/76.png",
+				"name": "CoCo Project U#1972KV-76",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 76
+					}
+				]
+			},
+			{
+				"id": 77,
+				"description": "NFT No. [77]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/77.png",
+				"name": "CoCo Project U#1972KV-77",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 77
+					}
+				]
+			},
+			{
+				"id": 78,
+				"description": "NFT No. [78]\nCoCo Bottle Club U#1972KV Collection\n \nCoCo Bottle Club Project U#1972KV consists of a collection of 78 Non-Fungible Tokens (NFTs).\n \nThis NFT is 1 out of 78, which together make up the U#1972KV Collection. \n\nThe owner of the complete U#1972KV Collection has the right to redeem it for (i) a 700ml Karuizawa Vintage 1972 aged 39 years bottle, cask no. 7038, and (ii) the final piece of art by the artist Karmele Rodriguez.",
+				"external_url": "https://mintcoco.club",
+				"image": "https://ipfs.io/ipfs/QmciMF7Z8BfiSDGe7ibzEuF9wSrfhWTAK8CcVX4AM9696r/78.png",
+				"name": "CoCo Project U#1972KV-78",
+				"attributes": [
+					{
+						"trait_type": "TokenID",
+						"value": 78
+					}
+				]
+			}
+		]
+	}
+]
