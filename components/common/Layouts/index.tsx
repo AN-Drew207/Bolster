@@ -280,7 +280,7 @@ export const Message: React.FunctionComponent<{
 export const Logo = () => (
 	<a href="https://thecoco.club/">
 		<div className="mr-4 md:py-0 h-16 flex items-center justify-center text-white uppercase cursor-pointer">
-			Mezcal Shhh!
+			Bolster
 		</div>
 	</a>
 );

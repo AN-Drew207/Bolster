@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { useSelector } from 'react-redux';
 import { State } from 'redux/actions';
-import BottleCollectionABI from '../contracts/MezcalCollection.json';
+import BottleCollectionABI from '../contracts/BolsterCollection.json';
 import { Loading } from 'components/landing/loadingComponent';
 import { Zoom, Navigation } from 'swiper';
 import 'swiper/css/pagination';
