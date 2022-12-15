@@ -192,11 +192,7 @@ export const MintModal: React.FC<any> = ({
 										componentRestrictions: { country: 'uk' },
 									}}
 									language={'en'}
-<<<<<<< HEAD
-									className={clsx("py-3 px-4 bg-overlay rounded-md border border-white placeholder-white")}
-=======
 									className="py-3 px-4 bg-overlay rounded-md border border-white placeholder-white"
->>>>>>> 3637e712c65c120fcb03af8a435f1c88c1ae0fc9
 									placeholder=""
 								/>
 								<caption className="text-sm flex gap-2">
