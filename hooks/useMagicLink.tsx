@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Magic } from 'magic-sdk';
 import { ConnectExtension } from '@magic-ext/connect';
 import Web3 from 'web3';
-import BottleCollectionABI from '../contracts/BolsterCollection.json';
+import BottleCollectionABI from '../contracts/MezcalCollection.json';
 import ERC20ABI from '../contracts/ERC20.json';
 import BottleExchangeABI from '../contracts/BottleExchange.json';
 import bottlesTestnet from 'bottles_mumbai.json';

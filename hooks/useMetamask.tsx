@@ -1,6 +1,6 @@
 import getWeb3 from 'components/getWeb3';
 import { updateBalance, updateState } from 'redux/actions';
-import BottleCollectionABI from '../contracts/BolsterCollection.json';
+import BottleCollectionABI from '../contracts/MezcalCollection.json';
 import ERC20ABI from '../contracts/ERC20.json';
 import BottleExchangeABI from '../contracts/BottleExchange.json';
 import bottlesTestnet from 'bottles_mumbai.json';

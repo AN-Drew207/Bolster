@@ -7,7 +7,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { useSelector } from 'react-redux';
 import { State } from 'redux/actions';
+<<<<<<< HEAD
 import BottleCollectionABI from '../contracts/BolsterCollection.json';
+=======
+import BottleCollectionABI from '../contracts/MezcalCollection.json';
+>>>>>>> 3637e712c65c120fcb03af8a435f1c88c1ae0fc9
 import { Loading } from 'components/landing/loadingComponent';
 import { Zoom, Navigation } from 'swiper';
 import 'swiper/css/pagination';
