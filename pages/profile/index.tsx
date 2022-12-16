@@ -1,7 +1,7 @@
+import { EBarComponent } from 'components/ebar/EBarComponent';
 import * as React from 'react';
-import { LandingComponent } from '../../components/landing/landing';
 
-const Home = () => {
-	return <LandingComponent />;
+const EBar = () => {
+	return <EBarComponent />;
 };
-export default Home;
+export default EBar;

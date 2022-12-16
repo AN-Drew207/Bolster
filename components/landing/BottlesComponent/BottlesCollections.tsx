@@ -39,7 +39,7 @@ export const Bottles: React.FC<any> = ({ setView }) => {
 						Back
 					</div>
 					<h2 className="textMain font-bold mb-10 text-5xl w-full text-center">
-						Bottles
+						Our Collections
 					</h2>
 					<div className="flex flex-wrap gap-10 items-center justify-center w-full">
 						{bottlesView.map(
@@ -80,7 +80,7 @@ export const BottleItem = ({ address, name, video }: any) => {
 		handleVideo();
 	}, [video]);
 	return (
-		<Link href={`/bottle/${address}`}>
+		<Link href={`/collections/${address}`}>
 			<div className="sm:w-[400px] w-[320px] flex flex-col border border-secondary rounded-xl overflow-hidden shadow-xl cursor-pointer hover:border-white">
 				<video
 					autoPlay

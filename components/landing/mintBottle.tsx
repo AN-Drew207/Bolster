@@ -269,12 +269,7 @@ export const MintBottle: React.FC<any> = ({ id: xd }) => {
 						<h1 className="text-3xl textMain font-bold text-center mb-2">
 							Congratulations!
 						</h1>
-						<video
-							src="/videos/Karuizawa_1972.mp4"
-							className="md:w-1/3 w-full my-4 rounded-xl"
-							autoPlay
-							loop
-						></video>
+
 						<h2 className="text-xl text-white text-center font-bold mb-14">
 							<span className="text-2xl">
 								{' '}

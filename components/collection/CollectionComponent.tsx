@@ -40,6 +40,7 @@ export const CollectionComponent = () => {
 	const [balance, setBalance] = React.useState<any>(0);
 	const [priceMATIC, setPriceMATIC] = React.useState<any>(0);
 	const [message, setMessage] = React.useState('');
+	const [screen, setScreen] = React.useState('menu');
 
 	const { connectWallet, Mint } = useMetamask();
 
@@ -171,6 +172,7 @@ export const CollectionComponent = () => {
 
 	const getNFTsOneBottle = async () => {
 		// console.log(tokensMetadata, 'metadata');
+		setIsLoading(true);
 		bottles.map(async (item, index) => {
 			console.log(item, (bottleContract as string).toLowerCase(), 'compare');
 			if (
@@ -184,6 +186,7 @@ export const CollectionComponent = () => {
 				);
 			}
 		});
+		setIsLoading(false);
 	};
 
 	React.useEffect(() => {
@@ -192,7 +195,11 @@ export const CollectionComponent = () => {
 
 	const video = React.useRef<any>(null);
 
-	const { Modal, isShow, show, hide } = useModal();
+	const { Modal, isShow, hide } = useModal();
+
+	const show = () => {
+		setScreen('pay');
+	};
 
 	return (
 		<>
@@ -215,6 +222,7 @@ export const CollectionComponent = () => {
 							priceMATIC={priceMATIC}
 							allowance={bottle.allowance}
 							quantity={selected.filter((q: any) => q.value).length}
+							selected={selected}
 							bottle={bottle}
 							hide={hide}
 							approve={(address: any) => {
@@ -301,124 +309,238 @@ export const CollectionComponent = () => {
 				/> */}
 				{!isLoading && bottle && bottle.address ? (
 					<div className="flex justify-center items-start w-full">
-						<div className="min-h-screen flex flex-col gap-4 items-center py-32 xl:w-4/5 w-full xl:px-0 px-8 justify-start relative">
-							<div className="flex justify-between w-full">
-								<Link href="/eBar">
+						<div
+							className={clsx(
+								'min-h-screen flex flex-col gap-4 items-center py-32 xl:w-[90%] w-full xl:px-0 px-8 justify-start relative'
+							)}
+						>
+							{/* <div className="flex justify-between w-full">
+								<Link href="/?bottles=true">
 									<div className="font-bold md:text-xl text-md mb-4  text-white cursor-pointer">
-										Back to eBar
+										Back to Collections
 									</div>
 								</Link>
-								<Link href={'/bottle/' + bottle.address}>
-									<div className="font-bold md:text-xl text-md mb-4 text-white cursor-pointer">
-										Go to Bottle
-									</div>
-								</Link>
-							</div>
+							</div> */}
 
 							<>
-								<div className="flex rounded-xl flex-col items-center justify-center w-full bg-overlay border border-dark-800 p-8">
-									<h2 className="text-3xl textMain font-bold pb-4">
-										{bottle.name}
-									</h2>
-									<video
+								<div
+									className={clsx(
+										{
+											['!w-full !border-none']:
+												bottle && bottle.metadata.length > 0 && screen == 'pay',
+										},
+										'flex rounded-xl flex-col items-center justify-center w-full bg-overlay border border-dark-800 py-8'
+									)}
+								>
+									{screen == 'menu' && (
+										<h2 className="text-3xl textMain font-bold pb-4">
+											{bottle.name}
+										</h2>
+									)}
+									{/* <video
 										src={bottle.image}
 										autoPlay
 										loop
 										className="rounded-xl border border-white h-auto md:w-2/3 w-full"
 										ref={video}
-									></video>
+									></video> */}
 
-									{bottle && bottle.metadata.length > 0 ? (
-										<>
-											{bottle.metadata.filter((token: any) => !token.sold)
-												.length > 0 && (
-												<h2 className="text-3xl textMain font-bold pt-10">
-													Available NFTs From {bottle.short_name}
-												</h2>
-											)}
-											<div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-4 p-4 py-10">
-												{bottle.metadata
-													.filter((token: any) => !token.sold)
-													.map((token: any, i: any) => {
-														return (
-															<CollectionNFTItem
-																active={true}
-																token={token}
-																network={network}
-																networkName={networkName}
-																bottle={bottle}
-																setBottle={setBottle}
-																setIsLoading={setIsLoading}
-																typeOfWallet={typeOfWallet}
-																selected={
-																	selected.filter((item: any) => {
-																		return item.id == token.id;
-																	})[0]?.value
-																}
-																setSelected={() => {
-																	setSelected((prev: any[]) =>
-																		prev.map((status) =>
-																			token.id == status.id
-																				? {
-																						value: !status.value,
-																						id: status.id,
-																				  }
-																				: {
-																						value: status.value,
-																						id: status.id,
-																				  }
-																		)
-																	);
-																}}
-															/>
-														);
-													})}
+									{bottle && bottle.metadata.length > 0 && screen == 'menu' ? (
+										<div className="flex lg:flex-row flex-col border-t">
+											<div className="flex flex-col gap-4 items-center px-8 w-full">
+												<div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-4 p-4 py-10">
+													{bottle.metadata
+														.filter((token: any) => !token.sold)
+														.map((token: any, i: any) => {
+															return (
+																<CollectionNFTItem
+																	active={true}
+																	token={token}
+																	network={network}
+																	networkName={networkName}
+																	bottle={bottle}
+																	setBottle={setBottle}
+																	setIsLoading={setIsLoading}
+																	typeOfWallet={typeOfWallet}
+																	selected={
+																		selected.filter((item: any) => {
+																			return item.id == token.id;
+																		})[0]?.value
+																	}
+																	setSelected={() => {
+																		setSelected((prev: any[]) =>
+																			prev.map((status) =>
+																				token.id == status.id
+																					? {
+																							value: !status.value,
+																							id: status.id,
+																					  }
+																					: {
+																							value: status.value,
+																							id: status.id,
+																					  }
+																			)
+																		);
+																	}}
+																/>
+															);
+														})}
+												</div>
+
+												<div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-4 p-4 py-10">
+													{bottle.metadata
+														.filter((token: any) => token.sold)
+														.map((token: any, i: any) => {
+															return (
+																<CollectionNFTItem
+																	active={false}
+																	token={token}
+																	network={network}
+																	networkName={networkName}
+																	bottle={bottle}
+																	setBottle={setBottle}
+																	setIsLoading={setIsLoading}
+																	typeOfWallet={typeOfWallet}
+																	selected={
+																		selected.filter((item: any) => {
+																			return item.id == token.id;
+																		})[0]?.value
+																	}
+																	setSelected={() => {
+																		setSelected((prev: any[]) =>
+																			prev.map((status, id) =>
+																				token.id == status.id
+																					? {
+																							value: !status.value,
+																							id: status.id,
+																					  }
+																					: {
+																							value: status.value,
+																							id: status.id,
+																					  }
+																			)
+																		);
+																	}}
+																/>
+															);
+														})}
+												</div>
 											</div>
-											{bottle.metadata.filter((token: any) => token.sold)
-												.length > 0 && (
-												<h2 className="text-3xl textMain font-bold pt-10">
-													Sold NFTs From {bottle.short_name}
-												</h2>
-											)}
-											<div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-4 p-4 py-10">
-												{bottle.metadata
-													.filter((token: any) => token.sold)
-													.map((token: any, i: any) => {
-														return (
-															<CollectionNFTItem
-																active={false}
-																token={token}
-																network={network}
-																networkName={networkName}
-																bottle={bottle}
-																setBottle={setBottle}
-																setIsLoading={setIsLoading}
-																typeOfWallet={typeOfWallet}
-																selected={
-																	selected.filter((item: any) => {
-																		return item.id == token.id;
-																	})[0]?.value
-																}
-																setSelected={() => {
-																	setSelected((prev: any[]) =>
-																		prev.map((status, id) =>
-																			token.id == status.id
-																				? {
-																						value: !status.value,
-																						id: status.id,
-																				  }
-																				: {
-																						value: status.value,
-																						id: status.id,
-																				  }
-																		)
-																	);
-																}}
-															/>
-														);
-													})}
+											<div className="flex flex-col  pt-10 gap-4 border-l px-8">
+												<h3 className="text-white text-xl font-bold text-center">
+													Physical asset backing up the floor price for this
+													collection
+												</h3>
+												<div className="p-2 border border-white rounded-md">
+													<img
+														src="/logos/Combined_Gold.png"
+														alt=""
+														className="w-80"
+													/>
+												</div>
 											</div>
-										</>
+										</div>
+									) : bottle &&
+									  bottle.metadata.length > 0 &&
+									  screen == 'pay' ? (
+										<div
+											className={clsx(
+												'flex flex-col items-center justify-center w-full h-full relative border rounded-xl'
+											)}
+										>
+											<MintModal
+												priceusd={priceUSD}
+												priceMATIC={priceMATIC}
+												allowance={bottle.allowance}
+												quantity={selected.filter((q: any) => q.value).length}
+												bottle={bottle}
+												hide={() => setScreen('menu')}
+												approve={(address: any) => {
+													if (typeOfWallet !== 'metamask') {
+														approveBottle(dispatch, bottleContract, address);
+													}
+												}}
+												selected={selected}
+												typeOfWallet={typeOfWallet}
+												Mint={(data: any, address: any) => {
+													delete data.currency;
+													// data.id = 3;
+													data.created_at = moment().format(
+														'YYYY-MM-DD hh:mm:ss'
+													);
+													data.updated_at = moment().format(
+														'YYYY-MM-DD hh:mm:ss'
+													);
+													data.deleted_at = null;
+
+													if (typeOfWallet == 'metamask') {
+														console.log('meta');
+														Mint(
+															selected
+																.map((value: any, id: number) => {
+																	return {
+																		value: value.value,
+																		id: value.id,
+																	};
+																})
+																.filter((q: any) => q.value)
+																.map((nft: any) => nft.id),
+															address,
+															setIsLoading,
+															bottleContract,
+															setMessage,
+															// accounts,
+															dispatch,
+															network,
+															networkName,
+															hide,
+															show,
+															setMinted,
+															data
+														);
+													} else {
+														mint(
+															bottleContract,
+															selected
+																.map((value: any, id: number) => {
+																	return {
+																		value: value.value,
+																		id: value.id,
+																	};
+																})
+																.filter((q: any) => q.value)
+																.map((nft: any) => nft.id),
+															address,
+															dispatch,
+															setMessage,
+															hide,
+															show,
+															setMinted,
+															data
+														);
+													}
+												}}
+												currencies={[
+													{
+														name: 'USDC',
+														value: process.env.NEXT_PUBLIC_USDC_ADDRESS,
+														image: '/img/usd-coin-usdc-logo.png',
+													},
+													{
+														name: 'MATIC',
+														value: process.env.NEXT_PUBLIC_WMATIC_ADDRESS,
+														image: '/img/polygon-matic-logo.png',
+													},
+												]}
+												quantityMinted={quantity}
+												maxSupply={maxSupply}
+												accounts={accounts}
+												isLoading={isLoading}
+												show={show}
+												connectWallet={connectWallet}
+												message={message}
+											/>
+										</div>
 									) : (
 										<Loading />
 									)}
@@ -429,7 +551,8 @@ export const CollectionComponent = () => {
 				) : (
 					<Loading />
 				)}
-				{selected.length > 0 &&
+				{!isLoading &&
+					selected.length > 0 &&
 					selected?.reduce((item: boolean, acc: boolean) => acc || item) && (
 						<div className="sticky flex justify-end w-full pb-4 bottom-0 px-4">
 							<div

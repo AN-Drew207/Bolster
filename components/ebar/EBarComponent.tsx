@@ -142,7 +142,7 @@ export const EBarComponent: React.FC<any> = () => {
 					<Link href="/?bottles=true">{'Back'}</Link>
 				</div>
 				<h2 className="textMain font-bold mb-10 text-5xl w-full text-center">
-					eBar
+					MY NFTS
 				</h2>
 				<div className="flex flex-col gap-10 items-center justify-center w-full pb-10">
 					{!isLoading ||
@@ -226,7 +226,7 @@ export const BottleFinalNFT = ({ address, id, name, image }: any) => {
 				</div>
 
 				<div className="flex sm:flex-row flex-col items-center justify-center gap-4 w-full">
-					<Link href={`/bottle/${id}`}>
+					<Link href={`/collections/${id}`}>
 						<Button
 							className={clsx(
 								'z-10 border border-yellow-400 font-bold p-2 text-white transition ease-in-out delay-150 hover:-translate-y-1  hover:scale-110 duration-300'
@@ -420,7 +420,10 @@ any) => {
 											<SwiperSlide>
 												<Link
 													href={
-														'/bottle/' + bottle.address + '/token/' + token.id
+														'/collections/' +
+														bottle.address +
+														'/token/' +
+														token.id
 													}
 												>
 													<div
@@ -451,7 +454,7 @@ any) => {
 							</div>
 
 							<div className="flex sm:flex-row flex-col items-center justify-center gap-4 w-full">
-								<Link href={`/bottle/${address}`}>
+								<Link href={`/collections/${address}`}>
 									<Button
 										className={clsx(
 											'z-10 border borderMain p-2 text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:shadow-button hover:scale-110 duration-300',

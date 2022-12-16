@@ -32,7 +32,7 @@ export const Footer = () => {
 			)}
 		>
 			<p className="text-white text-base">
-				© 2022 CoCo Club. All rights reserved
+				© 2023 Bolster. All rights reserved
 			</p>
 			<div className="flex items-center gap-4 text-xl text-white justify-center">
 				{OficialPages.map((page) => {

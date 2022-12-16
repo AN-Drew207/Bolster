@@ -57,7 +57,7 @@ export const useConnectWalletModal = () => {
 								onClick={() => login(dispatch)}
 							>
 								<div className="flex items-center justify-center gap-2 whitespace-nowrap text-xl">
-									<MailOutlined className="text-lg" /> Connect with mail
+									<MailOutlined className="text-lg" /> Connect with Email
 								</div>
 							</Button>
 						</div>

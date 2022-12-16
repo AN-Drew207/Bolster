@@ -125,7 +125,7 @@ export const BottleEBarComponent = () => {
 										Back to eBar
 									</div>
 								</Link>
-								<Link href={'/bottle/' + bottle.address}>
+								<Link href={'/collections/' + bottle.address}>
 									<div className="font-bold md:text-xl text-md mb-4 text-white cursor-pointer">
 										Go to Bottle
 									</div>
@@ -288,7 +288,7 @@ export const BottleNFTItem = ({
 					</div>
 				</div>
 			</Modal>
-			<Link href={'/bottle/' + bottle.address + '/token/' + token.id}>
+			<Link href={'/collections/' + bottle.address + '/token/' + token.id}>
 				<div
 					className={clsx(
 						{ ['opacity-50']: !active },

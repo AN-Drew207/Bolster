@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/dist/client/router';
 import clsx from 'clsx';
 // import { AreaChartOutlined, GoldenFilled } from '@ant-design/icons';
-import { MenuIcon } from '@heroicons/react/outline';
+import { MenuIcon, XIcon } from '@heroicons/react/outline';
 // import { DropdownMenu } from '../dropdownMenu';
 import { useDispatch, useSelector } from 'react-redux';
 import Styles from '../../landing/styles.module.scss';
@@ -18,6 +18,7 @@ import { Dropdown } from '../dropdown/dropdown';
 import useMagicLink from 'hooks/useMagicLink';
 import { useMetamask } from 'hooks/useMetamask';
 import { useConnectWalletModal } from 'hooks/useModalConnect';
+import { SearchOutlined } from '@ant-design/icons';
 
 const bottles =
 	process.env.NEXT_PUBLIC_NETWORK_NAME == 'mumbai'
@@ -73,6 +74,8 @@ export default function AppLayout() {
 	const { connectWalletUpdateData } = useMetamask();
 	const { modal, show } = useConnectWalletModal();
 
+	const [search, setSearch] = React.useState('');
+
 	const { magicReload } = useRouter().query;
 
 	const chainChangedHandler = () => {
@@ -119,14 +122,46 @@ export default function AppLayout() {
 				className={clsx(
 					'fixed top-0 z-50',
 					'bg-gray-900',
-					'w-[100%] xl:px-56 lg:px-36 px-8 py-4 flex flex-row items-center justify-between shadow-md'
+					'w-[100%] xl:px-56 lg:px-36 px-8 py-4 flex flex-row items-center justify-between gap-10 shadow-md'
 				)}
 			>
 				{modal}
-				<div className="flex items-center">
+				<div className="flex items-center shrink-0">
 					<Logo />
+				</div>{' '}
+				<div className="border md:flex hidden items-center text-md justify-center border-white bg-primary-disabled rounded-xl w-1/2">
+					<div className="text-white flex items-center w-full py-1 px-4 rounded-xl bg-overlay border-r border-white">
+						<input
+							type="text"
+							className="text-white w-full bg-transparent outline outline-transparent ring border-none !ring-transparent"
+							placeholder="Search"
+							value={search}
+							onChange={(e) => {
+								setSearch(e.target.value);
+							}}
+						/>
+						<div
+							className="text-white cursor-pointer flex items-center"
+							onClick={() => setSearch('')}
+						>
+							<XIcon color="#fff" width={'14px'} />
+						</div>
+					</div>
+					<div
+						className="text-xl flex items-center justify-center px-2 cursor-pointer text-white"
+						onClick={() => {
+							if (search) {
+								if (router.asPath == '/collections?search=' + search) {
+									router.push('/collections');
+								}
+								router.push('/collections?search=' + search);
+							}
+						}}
+					>
+						<SearchOutlined />
+					</div>
 				</div>
-				<div className="md:flex hidden items-center">
+				<div className="md:flex hidden items-center shrink-0">
 					{navItems.map((item, index) => {
 						return (
 							<div key={item.name + index}>
@@ -143,84 +178,44 @@ export default function AppLayout() {
 
 					{address ? (
 						<>
-							<div>
-								<NavbarItem
-									name={'MY NFTS'}
-									icon={''}
-									link={'/eBar'}
-									route={router.asPath}
-								/>
-							</div>
-							{/* <DropdownMenu
-								title="YOUR OFFERS"
-								received={offersActiveReceived}
-								made={offersActiveMade}
-							></DropdownMenu> */}
-							{typeOfWallet == 'magic' && (
-								<Dropdown title="ACCOUNT">
-									<div className="flex flex-col gap-4 p-4 w-72">
-										<Button
-											className={clsx(
-												'z-10 border borderMain px-2 py-2 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
-												Styles.button
-											)}
-											onClick={() => showWallet()}
-										>
-											Show Wallet
-										</Button>
-										<Button
-											className={clsx(
-												'z-10 border borderMain px-2 py-2 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
-												Styles.button
-											)}
-											onClick={() => disconnect(dispatch)}
-										>
-											Disconnect
-										</Button>
-									</div>
-								</Dropdown>
-							)}
+							<Dropdown title="ACCOUNT">
+								<div className="flex flex-col gap-4 p-4 w-72">
+									<Button
+										className={clsx(
+											'z-10 border borderMain px-2 py-2 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
+											Styles.button
+										)}
+										onClick={() => router.push('/profile')}
+									>
+										Profile
+									</Button>
+									{typeOfWallet == 'magic' && (
+										<>
+											{' '}
+											<Button
+												className={clsx(
+													'z-10 border borderMain px-2 py-2 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
+													Styles.button
+												)}
+												onClick={() => showWallet()}
+											>
+												Show Wallet
+											</Button>
+											<Button
+												className={clsx(
+													'z-10 border borderMain px-2 py-2 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
+													Styles.button
+												)}
+												onClick={() => disconnect(dispatch)}
+											>
+												Disconnect
+											</Button>
+										</>
+									)}
+								</div>
+							</Dropdown>
 						</>
 					) : (
-						// <Dropdown title="CONNECT WALLET">
-						// 	{loading ? (
-						// 		<div className="flex flex-col gap-4 p-4 h-24 items-center justify-center w-72">
-						// 			<Loading small />
-						// 		</div>
-						// 	) : (
-						// 		<div className="flex flex-col gap-4 p-4 w-72">
-						// 			<Button
-						// 				className={clsx(
-						// 					'z-10 border borderMain px-2 py-2 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
-						// 					Styles.button
-						// 				)}
-						// 				onClick={() =>
-						// 					connectWalletUpdateData(dispatch, network, networkName)
-						// 				}
-						// 			>
-						// 				<div className="flex items-center justify-center">
-						// 					<img
-						// 						src="/icons/metamask_logo.png"
-						// 						className="w-10"
-						// 						alt=""
-						// 					/>{' '}
-						// 					Connect with Metamask
-						// 				</div>
-						// 			</Button>
-						// 			<Button
-						// 				className={clsx(
-						// 					'z-10 border borderMain px-2 py-2 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
-						// 					Styles.button
-						// 				)}
-						// 				onClick={() => login(dispatch)}
-						// 			>
-						// 				<div className="flex items-center justify-center gap-2">
-						// 					<MailOutlined className="text-lg" /> Connect with Email
-						// 				</div>
-						// 			</Button>
-						// 		</div>
-						// 	)}
-						// </Dropdown>
 						<Button
 							className={clsx(
 								'z-10 border borderMain px-2 py-2 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
@@ -278,11 +273,11 @@ export const Message: React.FunctionComponent<{
 };
 
 export const Logo = () => (
-	<a href="https://thecoco.club/">
-		<div className="mr-4 md:py-0 h-16 flex items-center justify-center text-white uppercase cursor-pointer">
-			Bolster
-		</div>
-	</a>
+	// <a href="https://thecoco.club/">
+	<div className="mr-4 md:py-0 h-16 flex items-center justify-center text-white uppercase cursor-pointer">
+		Bolster
+	</div>
+	// </a>
 );
 
 export const NavbarItem: React.FC<any> = ({ name, link, route }) => {

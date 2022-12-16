@@ -109,7 +109,7 @@ export const BottleFinalNFT = ({ address, id, name, image }: any) => {
 				</div>
 
 				<div className="flex sm:flex-row flex-col items-center justify-center gap-4 w-full">
-					<Link href={`/bottle/${id}`}>
+					<Link href={`/collections/${id}`}>
 						<Button
 							className={clsx(
 								'z-10 border border-yellow-400 font-bold p-2 text-white transition ease-in-out delay-150 hover:-translate-y-1  hover:scale-110 duration-300'
@@ -195,7 +195,7 @@ export const BottleNFTs = ({ address, name, video, tokensOfUser }: any) => {
 				</div>
 
 				<div className="flex sm:flex-row flex-col items-center justify-center gap-4 w-full">
-					<Link href={`/bottle/${address}`}>
+					<Link href={`/collections/${address}`}>
 						<Button
 							className={clsx(
 								'z-10 border borderMain p-2 text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:shadow-button hover:scale-110 duration-300',
