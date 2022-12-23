@@ -128,7 +128,7 @@ export const EBarComponent: React.FC<any> = () => {
 	}, [address]);
 
 	return (
-		<div className="flex flex-col sm:px-16 px-4 pt-36 w-full min-h-screen relative">
+		<div className="flex flex-col bg-overlay sm:px-16 px-4 pt-36 w-full min-h-screen relative">
 			{/* <img
 				src="/img/bg_membership.jpg"
 				className="fixed h-full w-full top-0 left-0"
@@ -361,8 +361,8 @@ any) => {
 								/>
 								<Button
 									className={clsx(
-										'z-10 borderborderMain md:text-lg text-sm  py-2 px-6 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
-										Styles.button
+										'z-10 border border-secondary bg-secondary Raleway font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+										'hover:text-secondary'
 									)}
 									type="submit"
 								>
@@ -377,7 +377,7 @@ any) => {
 				<div
 					className={clsx(
 						{ ['items-center justify-center']: isLoading },
-						'flex flex-col rounded-xl bg-overlay border border-white text-xl text-center font-bold text-secondary md:p-10 sm:p-8 p-4'
+						'flex flex-col rounded-xl bg-white border border-secondary text-xl text-center font-bold text-secondary md:p-10 sm:p-8 p-4'
 					)}
 				>
 					{isLoading ? (
@@ -389,7 +389,7 @@ any) => {
 							<h3 className="text-2xl text-left font-bold text-secondary pb-4 w-full">
 								{name}
 							</h3>
-							<div className="sm:px-6">
+							<div className="sm:px-6 pb-10">
 								<Swiper
 									style={styleArrows}
 									slidesPerView={5}
@@ -427,7 +427,7 @@ any) => {
 													}
 												>
 													<div
-														className="h-60 sm:w-40 w-[50%] flex flex-col items-center lg:ml-[20%] sm:ml-[20%] ml-[25%] 2xl:ml-[25%] xl:ml-[30%] cursor-pointer"
+														className="h-52 relative w-52 w-[50%] flex flex-col rounded-md overflow-hidden items-center lg:ml-[20%] sm:ml-[20%] ml-[25%] 2xl:ml-[25%] xl:ml-[30%] cursor-pointer rounded-md "
 														onClick={() => {
 															// setToken({
 															// 	id: token.id,
@@ -439,12 +439,13 @@ any) => {
 													>
 														<img
 															src={token.image}
-															className="w-40 h-40"
+															className="w-52 h-52"
 															alt=""
 														/>
-														<div className="p-4 flex flex-col items-center justify-center">
+														<div className="p-4 absolute bottom-0 flex flex-col text-white items-center justify-center z-10">
 															{token.name}
 														</div>
+														<div className="absolute w-full h-full bg-secondary opacity-75 z-0"></div>
 													</div>
 												</Link>
 											</SwiperSlide>
@@ -457,8 +458,8 @@ any) => {
 								<Link href={`/collections/${address}`}>
 									<Button
 										className={clsx(
-											'z-10 border borderMain p-2 text-secondary transition ease-in-out delay-150 hover:-translate-y-1 hover:shadow-button hover:scale-110 duration-300',
-											Styles.button
+											'z-10 border border-secondary bg-secondary Raleway font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+											'hover:text-secondary'
 										)}
 									>
 										View Bottle Info
@@ -467,8 +468,8 @@ any) => {
 								<Link href={`/profile/collection/${address}`}>
 									<Button
 										className={clsx(
-											'z-10 border borderMain p-2 text-secondary transition ease-in-out delay-150 hover:-translate-y-1 hover:shadow-button hover:scale-110 duration-300',
-											Styles.button
+											'z-10 border border-secondary bg-secondary Raleway font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+											'hover:text-secondary'
 										)}
 									>
 										View All NFTs

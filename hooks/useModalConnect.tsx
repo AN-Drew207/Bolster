@@ -21,10 +21,13 @@ export const useConnectWalletModal = () => {
 	);
 	const modal = (
 		<Modal isShow={isShow && !address} hasBg>
-			<div className="h-screen flex items-center justify-center">
+			<div className="h-screen flex items-center justify-center Raleway">
 				<div className="flex flex-col p-4 gap-4 items-center justify-center bg-overlay rounded-xl">
 					<div className="w-full flex">
-						<button onClick={() => hide()} className="font-bold text-secondary">
+						<button
+							onClick={() => hide()}
+							className="font-bold text-secondary Raleway"
+						>
 							Back
 						</button>
 					</div>
@@ -43,7 +46,7 @@ export const useConnectWalletModal = () => {
 									connectWalletUpdateData(dispatch, network, networkName)
 								}
 							>
-								<div className="flex items-center justify-center text-xl">
+								<div className="flex items-center justify-center text-xl Raleway">
 									<img src="/icons/metamask_logo.png" className="w-10" alt="" />{' '}
 									Connect with Metamask
 								</div>
@@ -55,7 +58,7 @@ export const useConnectWalletModal = () => {
 								)}
 								onClick={() => login(dispatch)}
 							>
-								<div className="flex items-center justify-center gap-2 whitespace-nowrap text-xl">
+								<div className="flex items-center justify-center gap-2 whitespace-nowrap text-xl Raleway">
 									<MailOutlined className="text-lg" /> Connect with Email
 								</div>
 							</Button>

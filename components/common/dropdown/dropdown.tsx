@@ -16,7 +16,7 @@ export const Dropdown: React.FC<any> = ({ classTitle, title, children }) => {
 								<Menu.Button className="inline-flex justify-center w-full font-medium bg-transparent focus:outline-none">
 									<div
 										className={clsx(
-											'flex justify-center items-center cursor-pointer rounded-md',
+											'flex justify-center items-center cursor-pointer rounded-md sm:px-4 px-2 py-2 relative',
 											classTitle
 										)}
 									>

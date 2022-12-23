@@ -6,7 +6,6 @@ import clsx from 'clsx';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 // import { DropdownMenu } from '../dropdownMenu';
 import { useDispatch, useSelector } from 'react-redux';
-import Styles from '../../landing/styles.module.scss';
 import { Button } from '../button';
 import { State, updateBottleState } from 'redux/actions';
 import BottleCollectionABI from '../../../contracts/BottleCollection.json';
@@ -176,14 +175,14 @@ export default function AppLayout() {
 						);
 					})}
 
-					{address ? (
+					{address && typeOfWallet == 'magic' ? (
 						<>
 							<Dropdown title="ACCOUNT">
 								<div className="flex flex-col gap-4 p-4 w-72">
 									<Button
 										className={clsx(
-											'z-10 border borderMain px-2 py-2 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
-											Styles.button
+											'z-10 border border-secondary bg-secondary Raleway font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+											'!rounded-full hover:text-secondary'
 										)}
 										onClick={() => router.push('/profile')}
 									>
@@ -194,8 +193,8 @@ export default function AppLayout() {
 											{' '}
 											<Button
 												className={clsx(
-													'z-10 border borderMain px-2 py-2 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
-													Styles.button
+													'z-10 border border-secondary bg-secondary Raleway font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+													'!rounded-full hover:text-secondary'
 												)}
 												onClick={() => showWallet()}
 											>
@@ -203,8 +202,8 @@ export default function AppLayout() {
 											</Button>
 											<Button
 												className={clsx(
-													'z-10 border borderMain px-2 py-2 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
-													Styles.button
+													'z-10 border border-secondary bg-secondary Raleway font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+													'!rounded-full hover:text-secondary'
 												)}
 												onClick={() => disconnect(dispatch)}
 											>
@@ -215,6 +214,13 @@ export default function AppLayout() {
 								</div>
 							</Dropdown>
 						</>
+					) : address ? (
+						<NavbarItem
+							name={'ACCOUNT'}
+							icon={''}
+							link={'/profile'}
+							route={router.asPath}
+						/>
 					) : (
 						<Button
 							className={clsx(
