@@ -30,24 +30,18 @@ function MyApp({
 	return (
 		<>
 			<Head>
-				<title>CoCo</title>
-				<meta
-					name="description"
-					content="Become a collector with CoCo, buy NFTs backed up by physical assets."
-				/>
+				<title>Bolster</title>
+				<meta name="description" content="" />
 				<meta name="msapplication-TileColor" content="#e68fa7" />
 				<meta name="theme-color" content="#e68fa7" />
 
 				<link rel="icon" type="image/x-icon" href="Isotype_Gold.png" />
-				<meta property="og:title" content="CoCo" />
-				<meta
-					property="og:description"
-					content="Become a collector with CoCo, buy NFTs backed up by physical assets."
-				/>
+				<meta property="og:title" content="Bolster" />
+				<meta property="og:description" content="" />
 				<meta property="og:image:width" content="300" />
 				<meta property="og:image:height" content="200" />
-				<meta property="og:title" content="CoCo" />
-				<meta property="og:site_name" content="CoCo" />
+				<meta property="og:title" content="Bolster" />
+				<meta property="og:site_name" content="Bolster" />
 				<meta name="viewport" content="initial-scale=1, width=device-width" />
 			</Head>
 			<QueryClientProvider client={queryClientRef.current}>
