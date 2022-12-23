@@ -1,10 +1,10 @@
 import * as React from 'react';
 import bottlesTestnet from 'bottles_mumbai.json';
 import bottlesMainnet from 'bottles_polygon.json';
-import { MintBottle } from 'components/landing/mintBottle';
+import { BottleToken } from 'components/landing/BottleToken';
 
 const Bottle = () => {
-	return <MintBottle />;
+	return <BottleToken />;
 };
 
 export async function getStaticPaths() {

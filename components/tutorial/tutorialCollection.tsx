@@ -87,7 +87,7 @@ export const TutorialCollection = () => {
 				)}
 			>
 				<div className="flex flex-col items-center gap-4">
-					<h2 className="text-center text-white w-full my-4 font-bold text-md">
+					<h2 className="text-center text-secondary w-full my-4 font-bold text-md">
 						If you have any questions, you can ask us via:{' '}
 					</h2>
 					<div className="flex gap-4">
@@ -115,13 +115,13 @@ export const TutorialCollection = () => {
 							<img src="/img/Telegram.png" className="w-12 m-0" alt="" />
 						</a>
 					</div>
-					<h2 className="text-center text-white w-full my-4 font-bold text-md">
+					<h2 className="text-center text-secondary w-full my-4 font-bold text-md">
 						How to buy a CoCo B.C. membership:
 					</h2>
-					<h2 className="text-2xl font-bold  text-left text-white">
+					<h2 className="text-2xl font-bold  text-left text-secondary">
 						1. Getting your Decentralized Wallet
 					</h2>
-					<p className="text-md font-bold text-center text-white">
+					<p className="text-md font-bold text-center text-secondary">
 						Click in 'Download Metamask'. A default account with an associated
 						public Ethereum address will be created on the Main Network. Your
 						Metamask Ethereum address can be found on the main screen and it
@@ -129,7 +129,7 @@ export const TutorialCollection = () => {
 					</p>
 					<Button
 						className={clsx(
-							'p-4 rounded-xl bg-orange-500 text-white font-bold hover:bg-transparent hover:text-orange-500 border-orange-500 border',
+							'p-4 rounded-xl bg-orange-500 text-secondary font-bold hover:bg-transparent hover:text-orange-500 border-orange-500 border',
 							Styles.button
 						)}
 					>
@@ -137,7 +137,7 @@ export const TutorialCollection = () => {
 							Download Metamask
 						</a>
 					</Button>
-					<h2 className="text-2xl font-bold text-center text-white">
+					<h2 className="text-2xl font-bold text-center text-secondary">
 						Follow this official Metamask video-tutorial or
 					</h2>
 					<div className="flex">
@@ -162,12 +162,12 @@ export const TutorialCollection = () => {
 							// allowfullscreen
 						></iframe>
 					</div>
-					<h2 className="text-2xl font-bold text-center text-white">
+					<h2 className="text-2xl font-bold text-center text-secondary">
 						Follow this image tutorial
 					</h2>
 					<div className="flex flex-col gap-4">
 						<div className="flex flex-col justify-center items-center">
-							<p className="text-md font-bold  text-center text-white mb-2">
+							<p className="text-md font-bold  text-center text-secondary mb-2">
 								Click on 'Download Metamask'. A default account with an
 								associated public Ethereum address will be created on the Main
 								Network, which can be found on the main screen.
@@ -177,12 +177,12 @@ export const TutorialCollection = () => {
 								className={clsx(Styles.tutoImage)}
 								alt=""
 							/>
-							<p className="text-sm font-bold  text-left mt-1 text-white">
+							<p className="text-sm font-bold  text-left mt-1 text-secondary">
 								Image Credit: MetaMask
 							</p>
 						</div>
 						<div className="flex flex-col justify-center items-center">
-							<p className="text-md font-bold  text-center text-white mb-2">
+							<p className="text-md font-bold  text-center text-secondary mb-2">
 								Click on “Download Now” and “Install MetaMask for Chrome”
 							</p>
 							<img
@@ -190,12 +190,12 @@ export const TutorialCollection = () => {
 								className={clsx(Styles.tutoImage)}
 								alt=""
 							/>
-							<p className="text-sm font-bold text-left mt-1 text-white">
+							<p className="text-sm font-bold text-left mt-1 text-secondary">
 								Image Credit: MetaMask
 							</p>
 						</div>
 						<div className="flex flex-col justify-center items-center">
-							<p className="text-md font-bold  text-center text-white mb-2">
+							<p className="text-md font-bold  text-center text-secondary mb-2">
 								Click on 'Create A Wallet' to create your MetaMask wallet.{' '}
 							</p>
 							<img
@@ -203,13 +203,13 @@ export const TutorialCollection = () => {
 								className={clsx(Styles.tutoImage)}
 								alt=""
 							/>
-							<p className="text-sm font-bold  text-left mt-1 text-white">
+							<p className="text-sm font-bold  text-left mt-1 text-secondary">
 								Image Credit: MetaMask
 							</p>
 						</div>
 
 						<div className="flex flex-col justify-center items-center">
-							<p className="text-md font-bold  text-center text-white mb-2">
+							<p className="text-md font-bold  text-center text-secondary mb-2">
 								You will type down the password you want for your MetaMask
 								wallet.{' '}
 							</p>
@@ -219,12 +219,12 @@ export const TutorialCollection = () => {
 								className={clsx(Styles.tutoImage)}
 								alt=""
 							/>
-							<p className="text-sm font-bold  text-left mt-1 text-white">
+							<p className="text-sm font-bold  text-left mt-1 text-secondary">
 								Image Credit: MetaMask
 							</p>
 						</div>
 						<div className="flex flex-col justify-center items-center">
-							<p className="text-md font-bold  text-center text-white mb-2">
+							<p className="text-md font-bold  text-center text-secondary mb-2">
 								You will be given a seed phrase. Please write down this seed
 								phrase on a piece of paper and store it in a secure location,
 								never reveal this seed phrase to anyone.
@@ -235,12 +235,12 @@ export const TutorialCollection = () => {
 								className={clsx(Styles.tutoImage)}
 								alt=""
 							/>
-							<p className="text-sm font-bold  text-left mt-1 text-white">
+							<p className="text-sm font-bold  text-left mt-1 text-secondary">
 								Image Credit: MetaMask
 							</p>
 						</div>
 						<div className="flex flex-col justify-center items-center">
-							<p className="text-md font-bold  text-center text-white mb-2">
+							<p className="text-md font-bold  text-center text-secondary mb-2">
 								Next, click on each word of your seed phrase in the correct
 								order. Once you confirm it, your MetaMask account will be
 								created.
@@ -250,12 +250,12 @@ export const TutorialCollection = () => {
 								className={clsx(Styles.tutoImage)}
 								alt=""
 							/>
-							<p className="text-sm font-bold  text-left mt-1 text-white">
+							<p className="text-sm font-bold  text-left mt-1 text-secondary">
 								Image Credit: MetaMask
 							</p>
 						</div>
 						<div className="flex flex-col justify-center items-center">
-							<p className="text-md font-bold  text-center text-white mb-2">
+							<p className="text-md font-bold  text-center text-secondary mb-2">
 								When you click on the MetaMask logo on your browser’s extension,
 								you will be able to see your wallet´s details. As you can see
 								below, you have 0ETH and US$0 in your wallet, that takes us to
@@ -266,10 +266,10 @@ export const TutorialCollection = () => {
 								className={clsx(Styles.tutoImage)}
 								alt=""
 							/>
-							<p className="text-sm font-bold  text-left mt-1 text-white">
+							<p className="text-sm font-bold  text-left mt-1 text-secondary">
 								Image Credit: MetaMask
 							</p>
-							<p className="text-md font-bold text-center text-white mt-2">
+							<p className="text-md font-bold text-center text-secondary mt-2">
 								Tip: On the right top corner of your chrome browser, you will
 								find a small puzzle piece, click on it and you will see your
 								extensions, find the Metamask logo and click on the pin next to
@@ -279,30 +279,30 @@ export const TutorialCollection = () => {
 					</div>
 				</div>
 				<div className="flex flex-col items-center gap-2">
-					<h2 className="text-2xl font-bold  text-center text-white">
+					<h2 className="text-2xl font-bold  text-center text-secondary">
 						2. Funding your wallet with ETH
 					</h2>
-					<p className="text-md font-bold  text-center text-white ">
+					<p className="text-md font-bold  text-center text-secondary ">
 						To fund your wallet with cryptocurrency (ETH), it is necessary to
 						use a third-party exchange. There are several exchanges, and each
 						has different options to buy, such as Credit Card, Debit Card, or
 						Bank Transfer.
 					</p>
-					<p className="text-md font-bold  text-center text-white ">
+					<p className="text-md font-bold  text-center text-secondary ">
 						Here are some examples of exchanges in different regions:{' '}
 					</p>
-					<h2 className="text-2xl font-bold mt-2 text-center text-white">
+					<h2 className="text-2xl font-bold mt-2 text-center text-secondary">
 						Top 5 Exchanges
 					</h2>
-					<table className="min-w-full divide-y divide-gray-200 mb-4 bg-overlay rounded-md text-white">
-						<thead className="text-white text-xl">
+					<table className="min-w-full divide-y divide-gray-200 mb-4 bg-overlay rounded-md text-secondary">
+						<thead className="text-secondary text-xl">
 							<tr>
 								<th className="py-4 ">Global</th>
 								<th className="py-4  border-x border-white">USA</th>
 								<th className="py-4">Europe</th>
 							</tr>
 						</thead>
-						<tbody className="text-white">
+						<tbody className="text-secondary">
 							{exchanges.map((exchange: any, index: number) => {
 								return (
 									<React.Fragment key={index}>
@@ -346,7 +346,7 @@ export const TutorialCollection = () => {
 							})}
 						</tbody>
 					</table>
-					<p className="text-md font-bold text-center text-white">
+					<p className="text-md font-bold text-center text-secondary">
 						Here are some tutorials to do it: <br />
 						<a
 							href="https://www.binance.com/en/support/faq/400c38f5e0cd4b46a1d0805c296b5582"
@@ -367,25 +367,25 @@ export const TutorialCollection = () => {
 						</a>
 						<br />
 					</p>
-					<p className="text-md font-bold text-center w-full text-white">
+					<p className="text-md font-bold text-center w-full text-secondary">
 						Note 1: Remember Metamask is a decentralized wallet, it only works
 						with cryptocurrencies.
 					</p>
-					<p className="text-md font-bold text-center w-full text-white">
+					<p className="text-md font-bold text-center w-full text-secondary">
 						Note 2: Please take into account that some exchanges may not operate
 						worldwide.
 					</p>
-					<p className="text-md font-bold text-center w-full text-white">
+					<p className="text-md font-bold text-center w-full text-secondary">
 						Note 3: We are not related to these exchanges in any way.
 					</p>
 
 					{/* <img className="h-80 w-full" src="/img/mainPageImage" alt="" /> */}
 				</div>
 				<div className="flex flex-col items-center gap-2">
-					<h2 className="text-2xl font-bold  text-center text-white">
+					<h2 className="text-2xl font-bold  text-center text-secondary">
 						3. Minting your CoCo B.C. NFT membership
 					</h2>
-					<p className="text-md font-bold text-center w-full text-white">
+					<p className="text-md font-bold text-center w-full text-secondary">
 						After fund your wallet, you have to go to the{' '}
 						<Link href="/">
 							<span className="text-primary cursor-pointer">
@@ -395,22 +395,22 @@ export const TutorialCollection = () => {
 						and click 'Membership Mint'.
 					</p>
 					<img className="h-80" src="/img/menu.png" alt="" />
-					<p className="text-md font-bold text-center w-full text-white">
+					<p className="text-md font-bold text-center w-full text-secondary">
 						Then click 'Connect Wallet'.
 					</p>
 					<img className="h-80" src="/img/connectWallet.png" alt="" />
-					<p className="text-md font-bold text-white">
+					<p className="text-md font-bold text-secondary">
 						A pop-up with your wallets will appear, select the one you want to
 						connect and click 'Next'.
 					</p>
 					<img className="h-80" src="/img/connectingWallet.png" alt="" />
-					<p className="text-md font-bold text-white">
+					<p className="text-md font-bold text-secondary">
 						Click 'Connect' and wait.
 					</p>
 					<img className="h-80" src="/img/connectingWallet2.png" alt="" />
 				</div>
 				<div className="flex flex-col items-center gap-2">
-					<p className="text-md font-bold text-center text-white">
+					<p className="text-md font-bold text-center text-secondary">
 						If you are on our whitelist, you will see the screen below. Put the
 						number of memberships you want to mint and then click on the 'Mint
 						Now' button.
@@ -418,29 +418,29 @@ export const TutorialCollection = () => {
 					<img className="h-80" src="/img/mainPageImage.png" alt="" />
 				</div>
 				<div className="flex flex-col items-center gap-2">
-					<p className="text-md font-bold text-white">
+					<p className="text-md font-bold text-secondary">
 						Metamask pop-up will appear and you have to click on 'Confirm'
 						{'. '}
 					</p>
 					<div className="flex xl:flex-row flex-col items-center justify-center gap-4 ">
 						<img className="w-80" src="/img/txAccept.png" alt="" />
-						<p className="text-md font-bold text-center w-full text-white mt-2 xl:w-1/3">
+						<p className="text-md font-bold text-center w-full text-secondary mt-2 xl:w-1/3">
 							Note: Always review the link and transaction you are interacting
 							with before you 'Confirm' any operation.
 						</p>
 					</div>
 				</div>
 				<div className="flex flex-col items-center gap-2">
-					<p className="text-md font-bold text-white">
+					<p className="text-md font-bold text-secondary">
 						When the transaction is done you will see a congratulations message{' '}
 					</p>
 					<img className="h-80" src="/img/congrats.png" alt="" />
 				</div>
 				<div className="flex flex-col items-center gap-2">
-					<h2 className="text-2xl font-bold  text-center text-white">
+					<h2 className="text-2xl font-bold  text-center text-secondary">
 						How look at your membership? <br />
 					</h2>
-					<p className="text-md font-bold text-center text-white">
+					<p className="text-md font-bold text-center text-secondary">
 						You can see them in any marketplace that you like. Some of the most
 						popular are{' '}
 						<a
@@ -463,12 +463,12 @@ export const TutorialCollection = () => {
 						(Connect) with your wallet (MetaMask) and then go to your profile,
 						to see all your assets.
 					</p>
-					<p className="text-md font-bold text-center w-full text-white mt-2">
+					<p className="text-md font-bold text-center w-full text-secondary mt-2">
 						Tip: We recommend buying a hardware wallet to store your digital
 						assets. There are a few options on the market but we suggest Ledger
 						or Trezor, since they are the ones with more experience.
 					</p>{' '}
-					<p className="text-md font-bold text-center w-full text-white mt-2">
+					<p className="text-md font-bold text-center w-full text-secondary mt-2">
 						Here are some tutorials on how to set up your hardware wallet.
 					</p>{' '}
 					<a
@@ -485,7 +485,7 @@ export const TutorialCollection = () => {
 					>
 						Trezor and Ledger Tutorial for Metamask by Metamask
 					</a>
-					<p className="text-md font-bold text-center w-full text-white mt-2">
+					<p className="text-md font-bold text-center w-full text-secondary mt-2">
 						Note:{' '}
 						<span className="font-black">
 							{' '}
@@ -493,7 +493,7 @@ export const TutorialCollection = () => {
 							itself.
 						</span>
 					</p>
-					<h2 className="text-center text-white w-full my-4 font-bold text-md">
+					<h2 className="text-center text-secondary w-full my-4 font-bold text-md">
 						If you have any questions you can always contact us via:{' '}
 					</h2>
 					<div className="flex gap-4">

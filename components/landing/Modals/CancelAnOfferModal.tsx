@@ -23,7 +23,7 @@ export const CancelAnOfferModal: React.FC<any> = ({
 			{acceptedConditions ? (
 				<>
 					<div className="flex w-full items-center justify-center">
-						<div className="flex w-full mb-10 text-xl text-white">
+						<div className="flex w-full mb-10 text-xl text-secondary">
 							<Button
 								onClick={() => {
 									setOptions('menu');
@@ -35,7 +35,7 @@ export const CancelAnOfferModal: React.FC<any> = ({
 						</div>
 					</div>
 					<form
-						className="flex flex-col items-center justify-center gap-4 text-white"
+						className="flex flex-col items-center justify-center gap-4 text-secondary"
 						onSubmit={handleSubmit(() => cancelAnOffer())}
 					>
 						<div className="flex md:flex-row flex-col justify-center items-center w-full md:gap-16 gap-4">
@@ -48,12 +48,14 @@ export const CancelAnOfferModal: React.FC<any> = ({
 						{isLoading ? (
 							<>
 								<Loading small />
-								<h2 className="text-sm text-center textMain">{message}</h2>
+								<h2 className="text-sm text-center text-secondary">
+									{message}
+								</h2>
 							</>
 						) : (
 							<Button
 								className={clsx(
-									'z-10 border border-red-500 mt-4 px-16 py-4 text-white transition ease-in-out delay-150 hover:-translate-y-1  font-bold hover:bg-red-500 hover:scale-110 duration-300  '
+									'z-10 border border-red-500 mt-4 px-16 py-4 text-secondary transition ease-in-out delay-150 hover:-translate-y-1  font-bold hover:bg-red-500 hover:scale-110 duration-300  '
 								)}
 								type="submit"
 							>
@@ -66,7 +68,7 @@ export const CancelAnOfferModal: React.FC<any> = ({
 				<>
 					{' '}
 					<div className="flex w-full items-center justify-center">
-						<div className="flex w-full mb-2 text-xl text-white">
+						<div className="flex w-full mb-2 text-xl text-secondary">
 							<Button
 								onClick={() => {
 									setOptions('menu');
@@ -77,8 +79,8 @@ export const CancelAnOfferModal: React.FC<any> = ({
 							</Button>
 						</div>
 					</div>
-					<div className="flex flex-col w-full gap-4 text-white">
-						<h2 className="text-2xl textMain mb-2 font-bold text-center">
+					<div className="flex flex-col w-full gap-4 text-secondary">
+						<h2 className="text-2xl text-secondary mb-2 font-bold text-center">
 							Game Rules
 						</h2>
 						{new Array(3).fill(false).map((xd, i) => {
@@ -98,7 +100,7 @@ export const CancelAnOfferModal: React.FC<any> = ({
 					<div className="flex items-center justify-center">
 						<Button
 							className={clsx(
-								'z-10 border borderMain mt-4 px-16 py-4 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
+								'z-10 border borderMain mt-4 px-16 py-4 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
 								Styles.button
 							)}
 							onClick={() => setAcceptedConditions(true)}

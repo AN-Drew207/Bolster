@@ -10,11 +10,6 @@ export const Footer = () => {
 		},
 		{
 			id: 2,
-			href: 'https://discord.gg/jx79rnJX8t',
-			icon: '/icons/discord.svg',
-		},
-		{
-			id: 3,
 			href: 'https://santiago-rodriguez.gitbook.io/coco-b.c.-information/',
 			component: <BookOutlined />,
 		},
@@ -31,10 +26,10 @@ export const Footer = () => {
 				'flex md:flex-row flex-col text-center items-center md:justify-between justify-center py-8 bg-overlay w-full relative md:px-16 px-4'
 			)}
 		>
-			<p className="text-white text-base">
+			<p className="text-secondary text-base">
 				© 2023 Bolster. All rights reserved
 			</p>
-			<div className="flex items-center gap-4 text-xl text-white justify-center">
+			<div className="flex items-center gap-4 text-xl text-secondary justify-center">
 				{OficialPages.map((page) => {
 					return (
 						<a
@@ -44,7 +39,6 @@ export const Footer = () => {
 							className="flex items-center"
 							rel="noopener noreferrer"
 						>
-							{page.icon && <img src={page.icon} className="w-6 h-6" alt="" />}
 							{page.component && page.component}
 						</a>
 					);

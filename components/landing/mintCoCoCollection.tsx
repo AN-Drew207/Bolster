@@ -182,7 +182,7 @@ export const MintCoCoCollection = () => {
 					)}
 				>
 					<div className="flex w-full items-center justify-center">
-						<div className="flex sm:w-2/3 w-full md:mb-0 mb-10 text-xl text-white">
+						<div className="flex sm:w-2/3 w-full md:mb-0 mb-10 text-xl text-secondary">
 							<Button
 								onClick={() => {
 									hide();
@@ -204,7 +204,7 @@ export const MintCoCoCollection = () => {
 						className="sm:w-2/3 w-full mb-14"
 						alt=""
 					/>
-					<h2 className="text-xl text-white text-center font-bold mb-14">
+					<h2 className="text-xl text-secondary text-center font-bold mb-14">
 						Keep yourself up to date by following us on{' '}
 						<a
 							className="text-primary"

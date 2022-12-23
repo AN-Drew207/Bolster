@@ -66,7 +66,7 @@ export const MintModal: React.FC<any> = ({
 			<>
 				{' '}
 				<div className="flex w-full gap-4 items-center justify-center px-10">
-					<div className="flex w-full gap-2 text-lg text-white items-center">
+					<div className="flex w-full gap-2 text-lg text-secondary items-center">
 						<Button
 							onClick={() => {
 								hide();
@@ -99,7 +99,7 @@ export const MintModal: React.FC<any> = ({
 				>
 					<div
 						className={clsx(
-							'flex flex-col w-full items-center justify-center gap-4 text-white xl:mt-0 mt-4'
+							'flex flex-col w-full items-center justify-center gap-4 text-secondary xl:mt-0 mt-4'
 						)}
 					>
 						<div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-4 p-4">
@@ -108,12 +108,12 @@ export const MintModal: React.FC<any> = ({
 									item.value && (
 										<div className={clsx('w-40 h-60 relative')}>
 											<img
-												src={bottle?.metadata[item?.id]?.image}
+												src={bottle?.metadata[item?.id - 1]?.image}
 												className="rounded-xl border border-white overflow-hidden h-40 w-40"
 												alt=""
 											/>{' '}
-											<h2 className="p-4 text-center text-white font-bold">
-												{bottle?.metadata[item?.id]?.name}
+											<h2 className="p-4 text-center text-secondary font-bold">
+												{bottle?.metadata[item?.id - 1]?.name}
 											</h2>
 										</div>
 									)
@@ -143,30 +143,32 @@ export const MintModal: React.FC<any> = ({
 								{address ==
 									currencies.filter((item: any) => item.name == 'USDC')[0]
 										.value && (
-									<h2 className="text-white text-left text-md">
+									<h2 className="text-secondary text-left text-md">
 										Transaction Info: {quantity} NFTs for{' '}
 										{priceusd * quantity + ' '}
-										<span className="font-semibold textMain">USDC</span>
+										<span className="font-semibold text-secondary">USDC</span>
 									</h2>
 								)}
 
 								{address ==
 									currencies.filter((item: any) => item.name == 'MATIC')[0]
 										.value && (
-									<h2 className="text-white text-left text-md">
+									<h2 className="text-secondary text-left text-md">
 										Transaction Info: {quantity} NFTs for{' '}
 										{(priceMATIC * quantity).toFixed(4) + ' '}
-										<span className="font-semibold textMain">MATIC</span>
+										<span className="font-semibold text-secondary">MATIC</span>
 									</h2>
 								)}
 								{isLoading ? (
 									<>
 										<Loading small />
-										<h2 className="text-sm text-center textMain">{message}</h2>
+										<h2 className="text-sm text-center text-secondary">
+											{message}
+										</h2>
 									</>
 								) : (
 									<Button
-										className={clsx('text-white border-white border p-2')}
+										className={clsx('text-secondary border-white border p-2')}
 										type="submit"
 									>
 										{allowance < priceusd * quantity &&

@@ -121,34 +121,34 @@ export default function AppLayout() {
 			<nav
 				className={clsx(
 					'fixed top-0 z-50',
-					'bg-gray-900',
-					'w-[100%] xl:px-56 lg:px-36 px-8 py-4 flex flex-row items-center justify-between gap-10 shadow-md'
+					'bg-primary',
+					'w-[100%] xl:px-56 lg:px-36 px-8 py-2 flex flex-row items-center justify-between gap-10 shadow-md Raleway'
 				)}
 			>
 				{modal}
 				<div className="flex items-center shrink-0">
 					<Logo />
 				</div>{' '}
-				<div className="border md:flex hidden items-center text-md justify-center border-white bg-primary-disabled rounded-xl w-1/2">
-					<div className="text-white flex items-center w-full py-1 px-4 rounded-xl bg-overlay border-r border-white">
+				<div className="border md:flex hidden items-center text-md justify-center border-overlay bg-primary-disabled rounded-xl w-1/2">
+					<div className="text-secondary flex items-center w-full px-4 rounded-xl bg-overlay border-r border-white">
 						<input
 							type="text"
-							className="text-white w-full bg-transparent outline outline-transparent ring border-none !ring-transparent"
-							placeholder="Search"
+							className="text-secondary text-md w-full bg-transparent outline outline-transparent ring border-none !ring-transparent"
+							placeholder="Search Collections"
 							value={search}
 							onChange={(e) => {
 								setSearch(e.target.value);
 							}}
 						/>
 						<div
-							className="text-white cursor-pointer flex items-center"
+							className="text-secondary cursor-pointer flex items-center"
 							onClick={() => setSearch('')}
 						>
-							<XIcon color="#fff" width={'14px'} />
+							<XIcon color="#000" width={'14px'} />
 						</div>
 					</div>
 					<div
-						className="text-xl flex items-center justify-center px-2 cursor-pointer text-white"
+						className="text-xl h-full flex items-center justify-center px-2 cursor-pointer text-secondary"
 						onClick={() => {
 							if (search) {
 								if (router.asPath == '/collections?search=' + search) {
@@ -182,7 +182,7 @@ export default function AppLayout() {
 								<div className="flex flex-col gap-4 p-4 w-72">
 									<Button
 										className={clsx(
-											'z-10 border borderMain px-2 py-2 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
+											'z-10 border borderMain px-2 py-2 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
 											Styles.button
 										)}
 										onClick={() => router.push('/profile')}
@@ -194,7 +194,7 @@ export default function AppLayout() {
 											{' '}
 											<Button
 												className={clsx(
-													'z-10 border borderMain px-2 py-2 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
+													'z-10 border borderMain px-2 py-2 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
 													Styles.button
 												)}
 												onClick={() => showWallet()}
@@ -203,7 +203,7 @@ export default function AppLayout() {
 											</Button>
 											<Button
 												className={clsx(
-													'z-10 border borderMain px-2 py-2 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
+													'z-10 border borderMain px-2 py-2 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
 													Styles.button
 												)}
 												onClick={() => disconnect(dispatch)}
@@ -218,8 +218,8 @@ export default function AppLayout() {
 					) : (
 						<Button
 							className={clsx(
-								'z-10 border borderMain px-2 py-2 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
-								Styles.button
+								'z-10 border border-secondary bg-secondary Raleway font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+								'!rounded-full hover:text-secondary'
 							)}
 							onClick={() => show()}
 						>
@@ -234,7 +234,7 @@ export default function AppLayout() {
 					}}
 				>
 					<MenuIcon
-						className="h-6 w-6 text-white cursor-pointer"
+						className="h-6 w-6 text-secondary cursor-pointer"
 						aria-hidden="true"
 					/>
 				</div>
@@ -274,25 +274,21 @@ export const Message: React.FunctionComponent<{
 
 export const Logo = () => (
 	// <a href="https://thecoco.club/">
-	<div className="mr-4 md:py-0 h-16 flex items-center justify-center text-white uppercase cursor-pointer">
+	<div className="mr-4 md:py-0 h-16 flex items-center justify-center text-secondary uppercase cursor-pointer ">
 		Bolster
 	</div>
 	// </a>
 );
 
-export const NavbarItem: React.FC<any> = ({ name, link, route }) => {
+export const NavbarItem: React.FC<any> = ({ name, link }) => {
 	return (
 		<Link href={link}>
 			<div className={clsx('sm:px-4 px-2 py-2 relative cursor-pointer')}>
-				<div
-					className={clsx(
-						{ 'text-white': link !== route },
-						{ 'text-primary': link === route },
-						'gap-2 flex items-center'
-					)}
-				>
+				<div className={clsx('gap-2 flex items-center text-secondary')}>
 					{/* <div className="flex items-center w-4">{icon}</div> */}
-					<h3 className={clsx('text-md font-bold text-center')}>{name}</h3>
+					<h3 className={clsx('text-md font-bold text-center Raleway')}>
+						{name}
+					</h3>
 				</div>
 			</div>
 		</Link>

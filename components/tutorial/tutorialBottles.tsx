@@ -94,7 +94,7 @@ export const TutorialBottles = () => {
 				)}
 			>
 				<div className="flex flex-col items-center gap-4">
-					<h2 className="text-center text-white w-full my-4 font-bold text-md">
+					<h2 className="text-center text-secondary w-full my-4 font-bold text-md">
 						If you have any questions, you can ask us via:{' '}
 					</h2>
 					<div className="flex gap-4">
@@ -122,13 +122,13 @@ export const TutorialBottles = () => {
 							<img src="/img/Telegram.png" className="w-12 m-0" alt="" />
 						</a>
 					</div>
-					<h2 className="text-center text-white w-full my-4 font-bold text-md">
+					<h2 className="text-center text-secondary w-full my-4 font-bold text-md">
 						How to buy a CoCo B.C. Bottle Fraction:
 					</h2>
-					<h2 className="text-2xl font-bold  text-left text-white">
+					<h2 className="text-2xl font-bold  text-left text-secondary">
 						1. Getting your Decentralized Wallet
 					</h2>
-					<p className="text-md font-bold text-center text-white">
+					<p className="text-md font-bold text-center text-secondary">
 						Click in 'Download Metamask'. A default account with an associated
 						public Ethereum address will be created on the Main Network. Your
 						Metamask Ethereum address can be found on the main screen and it
@@ -136,7 +136,7 @@ export const TutorialBottles = () => {
 					</p>
 					<Button
 						className={clsx(
-							'p-4 rounded-xl bg-orange-500 text-white font-bold hover:bg-transparent hover:text-orange-500 border-orange-500 border',
+							'p-4 rounded-xl bg-orange-500 text-secondary font-bold hover:bg-transparent hover:text-orange-500 border-orange-500 border',
 							Styles.button
 						)}
 					>
@@ -144,7 +144,7 @@ export const TutorialBottles = () => {
 							Download Metamask
 						</a>
 					</Button>
-					<h2 className="text-2xl font-bold text-center text-white">
+					<h2 className="text-2xl font-bold text-center text-secondary">
 						Follow this official Metamask video-tutorial or
 					</h2>
 					<div className="flex">
@@ -169,12 +169,12 @@ export const TutorialBottles = () => {
 							// allowfullscreen
 						></iframe>
 					</div>
-					<h2 className="text-2xl font-bold text-center text-white">
+					<h2 className="text-2xl font-bold text-center text-secondary">
 						Follow this image tutorial
 					</h2>
 					<div className="flex flex-col gap-4">
 						<div className="flex flex-col justify-center items-center">
-							<p className="text-md font-bold  text-center text-white mb-2">
+							<p className="text-md font-bold  text-center text-secondary mb-2">
 								Click on 'Download Metamask'. A default account with an
 								associated public Ethereum address will be created on the Main
 								Network, which can be found on the main screen.
@@ -184,12 +184,12 @@ export const TutorialBottles = () => {
 								className={clsx(Styles.tutoImage)}
 								alt=""
 							/>
-							<p className="text-sm font-bold  text-left mt-1 text-white">
+							<p className="text-sm font-bold  text-left mt-1 text-secondary">
 								Image Credit: MetaMask
 							</p>
 						</div>
 						<div className="flex flex-col justify-center items-center">
-							<p className="text-md font-bold  text-center text-white mb-2">
+							<p className="text-md font-bold  text-center text-secondary mb-2">
 								Click on “Download Now” and “Install MetaMask for Chrome”
 							</p>
 							<img
@@ -197,12 +197,12 @@ export const TutorialBottles = () => {
 								className={clsx(Styles.tutoImage)}
 								alt=""
 							/>
-							<p className="text-sm font-bold text-left mt-1 text-white">
+							<p className="text-sm font-bold text-left mt-1 text-secondary">
 								Image Credit: MetaMask
 							</p>
 						</div>
 						<div className="flex flex-col justify-center items-center">
-							<p className="text-md font-bold  text-center text-white mb-2">
+							<p className="text-md font-bold  text-center text-secondary mb-2">
 								Click on 'Create A Wallet' to create your MetaMask wallet.{' '}
 							</p>
 							<img
@@ -210,13 +210,13 @@ export const TutorialBottles = () => {
 								className={clsx(Styles.tutoImage)}
 								alt=""
 							/>
-							<p className="text-sm font-bold  text-left mt-1 text-white">
+							<p className="text-sm font-bold  text-left mt-1 text-secondary">
 								Image Credit: MetaMask
 							</p>
 						</div>
 
 						<div className="flex flex-col justify-center items-center">
-							<p className="text-md font-bold  text-center text-white mb-2">
+							<p className="text-md font-bold  text-center text-secondary mb-2">
 								You will type down the password you want for your MetaMask
 								wallet.{' '}
 							</p>
@@ -226,12 +226,12 @@ export const TutorialBottles = () => {
 								className={clsx(Styles.tutoImage)}
 								alt=""
 							/>
-							<p className="text-sm font-bold  text-left mt-1 text-white">
+							<p className="text-sm font-bold  text-left mt-1 text-secondary">
 								Image Credit: MetaMask
 							</p>
 						</div>
 						<div className="flex flex-col justify-center items-center">
-							<p className="text-md font-bold  text-center text-white mb-2">
+							<p className="text-md font-bold  text-center text-secondary mb-2">
 								You will be given a seed phrase. Please write down this seed
 								phrase on a piece of paper and store it in a secure location,
 								never reveal this seed phrase to anyone.
@@ -242,12 +242,12 @@ export const TutorialBottles = () => {
 								className={clsx(Styles.tutoImage)}
 								alt=""
 							/>
-							<p className="text-sm font-bold  text-left mt-1 text-white">
+							<p className="text-sm font-bold  text-left mt-1 text-secondary">
 								Image Credit: MetaMask
 							</p>
 						</div>
 						<div className="flex flex-col justify-center items-center">
-							<p className="text-md font-bold  text-center text-white mb-2">
+							<p className="text-md font-bold  text-center text-secondary mb-2">
 								Next, click on each word of your seed phrase in the correct
 								order. Once you confirm it, your MetaMask account will be
 								created.
@@ -257,12 +257,12 @@ export const TutorialBottles = () => {
 								className={clsx(Styles.tutoImage)}
 								alt=""
 							/>
-							<p className="text-sm font-bold  text-left mt-1 text-white">
+							<p className="text-sm font-bold  text-left mt-1 text-secondary">
 								Image Credit: MetaMask
 							</p>
 						</div>
 						<div className="flex flex-col justify-center items-center">
-							<p className="text-md font-bold  text-center text-white mb-2">
+							<p className="text-md font-bold  text-center text-secondary mb-2">
 								When you click on the MetaMask logo on your browser’s extension,
 								you will be able to see your wallet´s details. As you can see
 								below, you have 0ETH and US$0 in your wallet and you are in the
@@ -275,10 +275,10 @@ export const TutorialBottles = () => {
 								className={clsx(Styles.tutoImage)}
 								alt=""
 							/>
-							<p className="text-sm font-bold  text-left mt-1 text-white">
+							<p className="text-sm font-bold  text-left mt-1 text-secondary">
 								Image Credit: MetaMask
 							</p>
-							<p className="text-md font-bold text-center text-white mt-2">
+							<p className="text-md font-bold text-center text-secondary mt-2">
 								Tip: On the right top corner of your chrome browser, you will
 								find a small puzzle piece, click on it and you will see your
 								extensions, find the Metamask logo and click on the pin next to
@@ -286,12 +286,12 @@ export const TutorialBottles = () => {
 							</p>
 						</div>
 						<div className="flex flex-col justify-center items-center">
-							<p className="text-md font-bold  text-center text-white mb-2">
+							<p className="text-md font-bold  text-center text-secondary mb-2">
 								Add Polygon Network to your wallet by clicking here.
 							</p>{' '}
 							<Button
 								className={clsx(
-									'p-4 rounded-xl bg-orange-500 text-white font-bold hover:bg-transparent hover:text-orange-500 border-orange-500 border',
+									'p-4 rounded-xl bg-orange-500 text-secondary font-bold hover:bg-transparent hover:text-orange-500 border-orange-500 border',
 									Styles.button
 								)}
 								onClick={() => addMumbaiEthereumChain()}
@@ -300,13 +300,13 @@ export const TutorialBottles = () => {
 							</Button>
 						</div>
 						<div className="flex flex-col justify-center items-center">
-							<p className="text-md font-bold  text-center text-white mb-2">
+							<p className="text-md font-bold  text-center text-secondary mb-2">
 								After adding Polygon to your wallet, click here to change your
 								network to it.
 							</p>{' '}
 							<Button
 								className={clsx(
-									'p-4 rounded-xl bg-orange-500 text-white font-bold hover:bg-transparent hover:text-orange-500 border-orange-500 border',
+									'p-4 rounded-xl bg-orange-500 text-secondary font-bold hover:bg-transparent hover:text-orange-500 border-orange-500 border',
 									Styles.button
 								)}
 								onClick={() =>
@@ -323,14 +323,14 @@ export const TutorialBottles = () => {
 					</div>
 				</div>
 				<div className="flex flex-col items-center gap-4">
-					<h2 className="text-center text-white w-full font-bold text-lg">
+					<h2 className="text-center text-secondary w-full font-bold text-lg">
 						Choose the currency you want to use:{' '}
 					</h2>
 					<div className="flex w-full items-center justify-center">
 						<div
 							className={clsx(
 								{ ['bg-white text-orange-500']: !usdc },
-								{ ['bg-transparent text-white']: usdc },
+								{ ['bg-transparent text-secondary']: usdc },
 								'px-4 py-2 font-bold text-md border border-white cursor-pointer'
 							)}
 							onClick={() => setUSDC(false)}
@@ -339,7 +339,7 @@ export const TutorialBottles = () => {
 						</div>
 						<div
 							className={clsx(
-								{ ['bg-transparent text-white']: !usdc },
+								{ ['bg-transparent text-secondary']: !usdc },
 								{ ['bg-white text-orange-500']: usdc },
 								'px-4 py-2 font-bold text-md border border-white cursor-pointer'
 							)}
@@ -352,30 +352,30 @@ export const TutorialBottles = () => {
 				{usdc ? (
 					<>
 						<div className="flex flex-col items-center gap-2">
-							<h2 className="text-2xl font-bold  text-center text-white">
+							<h2 className="text-2xl font-bold  text-center text-secondary">
 								2. Funding your wallet with USDC
 							</h2>
-							<p className="text-md font-bold  text-center text-white ">
+							<p className="text-md font-bold  text-center text-secondary ">
 								To fund your wallet with cryptotokens (USDC), it is necessary to
 								use a third-party exchange. There are several exchanges, and
 								each has different options to buy, such as Credit Card, Debit
 								Card, or Bank Transfer.
 							</p>
-							<p className="text-md font-bold  text-center text-white ">
+							<p className="text-md font-bold  text-center text-secondary ">
 								Here are some examples of exchanges in different regions:{' '}
 							</p>
-							<h2 className="text-2xl font-bold mt-2 text-center text-white">
+							<h2 className="text-2xl font-bold mt-2 text-center text-secondary">
 								Top 5 Exchanges
 							</h2>
-							<table className="min-w-full divide-y divide-gray-200 mb-4 bg-overlay rounded-md text-white">
-								<thead className="text-white text-xl">
+							<table className="min-w-full divide-y divide-gray-200 mb-4 bg-overlay rounded-md text-secondary">
+								<thead className="text-secondary text-xl">
 									<tr>
 										<th className="py-4 ">Global</th>
 										<th className="py-4  border-x border-white">USA</th>
 										<th className="py-4">Europe</th>
 									</tr>
 								</thead>
-								<tbody className="text-white">
+								<tbody className="text-secondary">
 									{exchanges.map((exchange: any, index: number) => {
 										return (
 											<React.Fragment key={index}>
@@ -422,7 +422,7 @@ export const TutorialBottles = () => {
 									})}
 								</tbody>
 							</table>
-							<p className="text-md font-bold text-center text-white">
+							<p className="text-md font-bold text-center text-secondary">
 								Here are some tutorials to do it: <br />
 								<a
 									href="https://www.binance.com/en/how-to-buy/usd-coin"
@@ -443,27 +443,27 @@ export const TutorialBottles = () => {
 								</a>
 								<br />
 							</p>
-							<p className="text-md font-bold text-left w-full text-white">
+							<p className="text-md font-bold text-left w-full text-secondary">
 								Note 1: Remember Metamask is a decentralized wallet, it only
 								works with cryptocurrencies.
 							</p>
-							<p className="text-md font-bold text-left w-full text-white">
+							<p className="text-md font-bold text-left w-full text-secondary">
 								Note 2: Please take into account that some exchanges may not
 								operate worldwide.
 							</p>
-							<p className="text-md font-bold text-left w-full text-white">
+							<p className="text-md font-bold text-left w-full text-secondary">
 								Note 3: We are not related to these exchanges in any way.
 							</p>
-							<p className="text-md font-bold text-left w-full text-white ">
+							<p className="text-md font-bold text-left w-full text-secondary ">
 								Note 4: At the moment to transfer these USDC make sure you are
 								transfering them to the MATIC network.
 							</p>
 						</div>
 						<div className="flex flex-col items-center gap-2">
-							<h2 className="text-2xl font-bold  text-center text-white">
+							<h2 className="text-2xl font-bold  text-center text-secondary">
 								3. Minting your CoCo B.C. NFT Bottle Fraction
 							</h2>
-							<p className="text-md font-bold text-center w-full text-white">
+							<p className="text-md font-bold text-center w-full text-secondary">
 								After fund your wallet, you have to go to the{' '}
 								<Link href="/">
 									<span className="text-primary cursor-pointer">
@@ -482,7 +482,7 @@ export const TutorialBottles = () => {
 								src="/img/menu_mobile.png"
 								alt=""
 							/>
-							<p className="text-md font-bold text-center w-full text-white">
+							<p className="text-md font-bold text-center w-full text-secondary">
 								Choose the Bottle you want to mint and click weather 'Mint Now'
 								if you want to go through the minting process or 'View Info' if
 								you want to look at the details of the bottle. In this tutorial
@@ -498,7 +498,7 @@ export const TutorialBottles = () => {
 								src="/img/menu2_mobile.png"
 								alt=""
 							/>
-							<p className="text-md font-bold text-center w-full text-white">
+							<p className="text-md font-bold text-center w-full text-secondary">
 								In order to mint, you have to fill the 'Quantity of NFTs' field
 								with the quantity of NFTs you want to mint, then select the
 								payment method, in this tutorial we are going to select 'USDC'
@@ -517,20 +517,20 @@ export const TutorialBottles = () => {
 							/>
 						</div>
 						<div className="flex flex-col items-center gap-2">
-							<p className="text-md font-bold text-white">
+							<p className="text-md font-bold text-secondary">
 								Metamask pop-up will appear and you have to click on 'Confirm'
 								{'. '}
 							</p>
 							<div className="flex xl:flex-row flex-col items-center justify-center gap-4 ">
 								<img className="w-80" src="/img/txAccept.png" alt="" />
-								<p className="text-md font-bold text-center w-full text-white mt-2 xl:w-1/3">
+								<p className="text-md font-bold text-center w-full text-secondary mt-2 xl:w-1/3">
 									Note: Always review the link and transaction you are
 									interacting with before you 'Confirm' any operation.
 								</p>
 							</div>
 						</div>
 						<div className="flex flex-col items-center gap-2">
-							<p className="text-md font-bold text-white">
+							<p className="text-md font-bold text-secondary">
 								When the transaction is done you will see a congratulations
 								message{' '}
 							</p>
@@ -546,10 +546,10 @@ export const TutorialBottles = () => {
 							/>
 						</div>
 						<div className="flex flex-col items-center gap-2">
-							<h2 className="text-2xl font-bold  text-center text-white">
+							<h2 className="text-2xl font-bold  text-center text-secondary">
 								How look at your Bottle Fraction? <br />
 							</h2>
-							<p className="text-md font-bold text-center text-white">
+							<p className="text-md font-bold text-center text-secondary">
 								You can see them in any marketplace that you like. The most
 								popular in Polygon is{' '}
 								<a
@@ -564,12 +564,12 @@ export const TutorialBottles = () => {
 								in' (Connect) with your wallet (MetaMask) and then go to your
 								profile, to see all your assets.
 							</p>
-							<p className="text-md font-bold text-center w-full text-white mt-2">
+							<p className="text-md font-bold text-center w-full text-secondary mt-2">
 								Tip: We recommend buying a hardware wallet to store your digital
 								assets. There are a few options on the market but we suggest
 								Ledger or Trezor, since they are the ones with more experience.
 							</p>{' '}
-							<p className="text-md font-bold text-center w-full text-white mt-2">
+							<p className="text-md font-bold text-center w-full text-secondary mt-2">
 								Here are some tutorials on how to set up your hardware wallet.
 							</p>{' '}
 							<a
@@ -586,7 +586,7 @@ export const TutorialBottles = () => {
 							>
 								Trezor and Ledger Tutorial for Metamask by Metamask
 							</a>
-							<p className="text-md font-bold text-center w-full text-white mt-2">
+							<p className="text-md font-bold text-center w-full text-secondary mt-2">
 								Note:{' '}
 								<span className="font-black">
 									{' '}
@@ -594,7 +594,7 @@ export const TutorialBottles = () => {
 									itself.
 								</span>
 							</p>
-							<h2 className="text-center text-white w-full my-4 font-bold text-md">
+							<h2 className="text-center text-secondary w-full my-4 font-bold text-md">
 								If you have any questions you can always contact us via:{' '}
 							</h2>
 							<div className="flex gap-4">
@@ -627,30 +627,30 @@ export const TutorialBottles = () => {
 				) : (
 					<>
 						<div className="flex flex-col items-center gap-2">
-							<h2 className="text-2xl font-bold  text-center text-white">
+							<h2 className="text-2xl font-bold  text-center text-secondary">
 								2. Funding your wallet with MATIC
 							</h2>
-							<p className="text-md font-bold  text-center text-white ">
+							<p className="text-md font-bold  text-center text-secondary ">
 								To fund your wallet with cryptocurrency (MATIC), it is necessary
 								to use a third-party exchange. There are several exchanges, and
 								each has different options to buy, such as Credit Card, Debit
 								Card, or Bank Transfer.
 							</p>
-							<p className="text-md font-bold  text-center text-white ">
+							<p className="text-md font-bold  text-center text-secondary ">
 								Here are some examples of exchanges in different regions:{' '}
 							</p>
-							<h2 className="text-2xl font-bold mt-2 text-center text-white">
+							<h2 className="text-2xl font-bold mt-2 text-center text-secondary">
 								Top 5 Exchanges
 							</h2>
-							<table className="min-w-full divide-y divide-gray-200 mb-4 bg-overlay rounded-md text-white">
-								<thead className="text-white text-xl">
+							<table className="min-w-full divide-y divide-gray-200 mb-4 bg-overlay rounded-md text-secondary">
+								<thead className="text-secondary text-xl">
 									<tr>
 										<th className="py-4 ">Global</th>
 										<th className="py-4  border-x border-white">USA</th>
 										<th className="py-4">Europe</th>
 									</tr>
 								</thead>
-								<tbody className="text-white">
+								<tbody className="text-secondary">
 									{exchanges.map((exchange: any, index: number) => {
 										return (
 											<React.Fragment key={index}>
@@ -697,7 +697,7 @@ export const TutorialBottles = () => {
 									})}
 								</tbody>
 							</table>
-							<p className="text-md font-bold text-center text-white">
+							<p className="text-md font-bold text-center text-secondary">
 								Here are some tutorials to do it: <br />
 								<a
 									href="https://www.binance.com/en/support/faq/400c38f5e0cd4b46a1d0805c296b5582"
@@ -718,25 +718,25 @@ export const TutorialBottles = () => {
 								</a>
 								<br />
 							</p>
-							<p className="text-md font-bold text-center w-full text-white">
+							<p className="text-md font-bold text-center w-full text-secondary">
 								Note 1: Remember Metamask is a decentralized wallet, it only
 								works with cryptocurrencies.
 							</p>
-							<p className="text-md font-bold text-center w-full text-white">
+							<p className="text-md font-bold text-center w-full text-secondary">
 								Note 2: Please take into account that some exchanges may not
 								operate worldwide.
 							</p>
-							<p className="text-md font-bold text-center w-full text-white">
+							<p className="text-md font-bold text-center w-full text-secondary">
 								Note 3: We are not related to these exchanges in any way.
 							</p>
 
 							{/* <img className="h-80 w-full" src="/img/mainPageImage" alt="" /> */}
 						</div>
 						<div className="flex flex-col items-center gap-2">
-							<h2 className="text-2xl font-bold  text-center text-white">
+							<h2 className="text-2xl font-bold  text-center text-secondary">
 								3. Minting your CoCo B.C. NFT Bottle Fraction
 							</h2>
-							<p className="text-md font-bold text-center w-full text-white">
+							<p className="text-md font-bold text-center w-full text-secondary">
 								After fund your wallet, you have to go to the{' '}
 								<Link href="/">
 									<span className="text-primary cursor-pointer">
@@ -755,7 +755,7 @@ export const TutorialBottles = () => {
 								src="/img/menu_mobile.png"
 								alt=""
 							/>
-							<p className="text-md font-bold text-center w-full text-white">
+							<p className="text-md font-bold text-center w-full text-secondary">
 								Choose the Bottle you want to mint and click weather 'Mint Now'
 								if you want to go through the minting process or 'View Info' if
 								you want to look at the details of the bottle. In this tutorial
@@ -771,7 +771,7 @@ export const TutorialBottles = () => {
 								src="/img/menu2_mobile.png"
 								alt=""
 							/>
-							<p className="text-md font-bold text-center w-full text-white">
+							<p className="text-md font-bold text-center w-full text-secondary">
 								In order to mint, you have to fill the 'Quantity of NFTs' field
 								with the quantity of NFTs you want to mint, then select the
 								payment method, in this tutorial we are going to select 'MATIC'
@@ -790,20 +790,20 @@ export const TutorialBottles = () => {
 							/>
 						</div>
 						<div className="flex flex-col items-center gap-2">
-							<p className="text-md font-bold text-white">
+							<p className="text-md font-bold text-secondary">
 								Metamask pop-up will appear and you have to click on 'Confirm'
 								{'. '}
 							</p>
 							<div className="flex xl:flex-row flex-col items-center justify-center gap-4 ">
 								<img className="w-80" src="/img/txAccept.png" alt="" />
-								<p className="text-md font-bold text-center w-full text-white mt-2 xl:w-1/3">
+								<p className="text-md font-bold text-center w-full text-secondary mt-2 xl:w-1/3">
 									Note: Always review the link and transaction you are
 									interacting with before you 'Confirm' any operation.
 								</p>
 							</div>
 						</div>
 						<div className="flex flex-col items-center gap-2">
-							<p className="text-md font-bold text-white">
+							<p className="text-md font-bold text-secondary">
 								When the transaction is done you will see a congratulations
 								message{' '}
 							</p>{' '}
@@ -819,10 +819,10 @@ export const TutorialBottles = () => {
 							/>
 						</div>
 						<div className="flex flex-col items-center gap-2">
-							<h2 className="text-2xl font-bold  text-center text-white">
+							<h2 className="text-2xl font-bold  text-center text-secondary">
 								How look at your Bottle Fraction? <br />
 							</h2>
-							<p className="text-md font-bold text-center text-white">
+							<p className="text-md font-bold text-center text-secondary">
 								You can see them in any marketplace that you like. The most
 								popular in Polygon is{' '}
 								<a
@@ -837,12 +837,12 @@ export const TutorialBottles = () => {
 								in' (Connect) with your wallet (MetaMask) and then go to your
 								profile, to see all your assets.
 							</p>
-							<p className="text-md font-bold text-center w-full text-white mt-2">
+							<p className="text-md font-bold text-center w-full text-secondary mt-2">
 								Tip: We recommend buying a hardware wallet to store your digital
 								assets. There are a few options on the market but we suggest
 								Ledger or Trezor, since they are the ones with more experience.
 							</p>{' '}
-							<p className="text-md font-bold text-center w-full text-white mt-2">
+							<p className="text-md font-bold text-center w-full text-secondary mt-2">
 								Here are some tutorials on how to set up your hardware wallet.
 							</p>{' '}
 							<a
@@ -859,7 +859,7 @@ export const TutorialBottles = () => {
 							>
 								Trezor and Ledger Tutorial for Metamask by Metamask
 							</a>
-							<p className="text-md font-bold text-center w-full text-white mt-2">
+							<p className="text-md font-bold text-center w-full text-secondary mt-2">
 								Note:{' '}
 								<span className="font-black">
 									{' '}
@@ -867,7 +867,7 @@ export const TutorialBottles = () => {
 									itself.
 								</span>
 							</p>
-							<h2 className="text-center text-white w-full my-4 font-bold text-md">
+							<h2 className="text-center text-secondary w-full my-4 font-bold text-md">
 								If you have any questions you can always contact us via:{' '}
 							</h2>
 							<div className="flex gap-4">

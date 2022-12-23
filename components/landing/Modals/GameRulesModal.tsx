@@ -12,7 +12,7 @@ export const GameRulesModal: React.FC<any> = ({ hide }) => {
 			<>
 				{' '}
 				<div className="flex w-full items-center justify-center">
-					<div className="flex w-full mb-2 text-xl text-white">
+					<div className="flex w-full mb-2 text-xl text-secondary">
 						<Button
 							onClick={() => {
 								hide();
@@ -23,8 +23,8 @@ export const GameRulesModal: React.FC<any> = ({ hide }) => {
 						</Button>
 					</div>
 				</div>
-				<div className="flex flex-col w-full gap-4 text-white">
-					<h2 className="text-2xl mb-2 font-bold text-center textMain">
+				<div className="flex flex-col w-full gap-4 text-secondary">
+					<h2 className="text-2xl mb-2 font-bold text-center text-secondary">
 						The Rules of the game
 					</h2>
 					<div className="flex w-full gap-2">
@@ -35,7 +35,7 @@ export const GameRulesModal: React.FC<any> = ({ hide }) => {
 							which are coded into our Smart Contract for Unicorn Bottles
 						</p>
 					</div>
-					<h2 className="text-xl mb-2 font-bold text-center textMain">
+					<h2 className="text-xl mb-2 font-bold text-center text-secondary">
 						Objective
 					</h2>
 					<div className="flex flex-col w-full gap-2">
@@ -45,7 +45,7 @@ export const GameRulesModal: React.FC<any> = ({ hide }) => {
 							also includes the NFT art piece.
 						</p>
 					</div>
-					<h2 className="text-xl mb-2 font-bold text-center textMain">
+					<h2 className="text-xl mb-2 font-bold text-center text-secondary">
 						Buying Options
 					</h2>
 					<div className="flex flex-col w-full gap-2">
@@ -61,7 +61,7 @@ export const GameRulesModal: React.FC<any> = ({ hide }) => {
 							marketplace.
 						</p>
 					</div>
-					<h2 className="text-xl mb-2 font-bold text-center textMain">
+					<h2 className="text-xl mb-2 font-bold text-center text-secondary">
 						Active No Rule
 					</h2>
 					<div className="flex flex-col w-full gap-2">
@@ -133,7 +133,7 @@ export const GameRulesModal: React.FC<any> = ({ hide }) => {
 							process is restarted for all.
 						</p>
 					</div>
-					<h2 className="text-xl mb-2 font-bold text-center textMain">
+					<h2 className="text-xl mb-2 font-bold text-center text-secondary">
 						Outcome
 					</h2>
 					<div className="flex flex-col w-full gap-2">
@@ -147,12 +147,12 @@ export const GameRulesModal: React.FC<any> = ({ hide }) => {
 							<span>&#9679;</span> If someone holds more than 85% of the
 							collection, he/she will be able to make an offer for the rest of
 							the collection with the help of the{' '}
-							<span className="textMain">“Active No rule”</span>.
+							<span className="text-secondary">“Active No rule”</span>.
 						</p>
 					</div>
 
 					<div className="flex flex-col w-full gap-1 my-4 ">
-						<p className="md:text-xl text-lg font-medium w-full text-center textMain">
+						<p className="md:text-xl text-lg font-medium w-full text-center text-secondary">
 							¡Enjoy collecting!
 						</p>
 					</div>

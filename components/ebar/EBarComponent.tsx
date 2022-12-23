@@ -135,13 +135,13 @@ export const EBarComponent: React.FC<any> = () => {
 				alt=""
 			/>{' '} */}
 			<div className="relative flex flex-col w-full">
-				<div className="md:absolute hidden left-0 top-0 font-bold text-xl text-white cursor-pointer">
+				<div className="md:absolute hidden left-0 top-0 font-bold text-xl text-secondary cursor-pointer">
 					<Link href="/?bottles=true">Go To Bottles</Link>
 				</div>
-				<div className="absolute md:hidden left-0 top-0 font-bold text-xl text-white cursor-pointer">
+				<div className="absolute md:hidden left-0 top-0 font-bold text-xl text-secondary cursor-pointer">
 					<Link href="/?bottles=true">{'Back'}</Link>
 				</div>
-				<h2 className="textMain font-bold mb-10 text-5xl w-full text-center">
+				<h2 className="text-secondary font-bold mb-10 text-5xl w-full text-center">
 					MY NFTS
 				</h2>
 				<div className="flex flex-col gap-10 items-center justify-center w-full pb-10">
@@ -152,7 +152,7 @@ export const EBarComponent: React.FC<any> = () => {
 						<>
 							{haveNFTs ? (
 								<>
-									<h2 className="text-4xl text-white font-bold w-full text-left">
+									<h2 className="text-4xl text-secondary font-bold w-full text-left">
 										Bottle NFT Fractions
 									</h2>
 									{bottles?.map((bottle) => {
@@ -175,14 +175,14 @@ export const EBarComponent: React.FC<any> = () => {
 									})}
 								</>
 							) : (
-								<div className="flex items-center justify-center h-[60vh] text-3xl font-bold text-white">
+								<div className="flex items-center justify-center h-[60vh] text-3xl font-bold text-secondary">
 									<h2 className="	p-8 rounded-xl bg-overlay">
 										You Don't Have NFTs in your eBar
 									</h2>
 								</div>
 							)}
 							{exchangedBottles.length > 0 && (
-								<h2 className="text-4xl text-white font-bold w-full text-left ">
+								<h2 className="text-4xl text-secondary font-bold w-full text-left ">
 									Bottles Redeemed NFTs
 								</h2>
 							)}
@@ -198,7 +198,7 @@ export const EBarComponent: React.FC<any> = () => {
 							})}
 						</>
 					) : !address ? (
-						<div className="text-center text-2xl text-white font-bold h-[60vh] flex items-center justify-center">
+						<div className="text-center text-2xl text-secondary font-bold h-[60vh] flex items-center justify-center">
 							<div className="bg-overlay rounded-xl p-6">
 								Please Connect Your Wallet To See this Section
 							</div>
@@ -217,7 +217,7 @@ export const EBarComponent: React.FC<any> = () => {
 export const BottleFinalNFT = ({ address, id, name, image }: any) => {
 	return (
 		<div className="flex flex-col w-full shadow-xl">
-			<div className="flex flex-col rounded-xl bg-overlay border-2 border-yellow-400 text-xl text-center font-bold text-white md:p-10 sm:p-8 p-4">
+			<div className="flex flex-col rounded-xl bg-overlay border-2 border-yellow-400 text-xl text-center font-bold text-secondary md:p-10 sm:p-8 p-4">
 				<h3 className="text-2xl text-center font-bold text-yellow-400 pb-4 w-full">
 					{name} Final Art
 				</h3>
@@ -229,17 +229,17 @@ export const BottleFinalNFT = ({ address, id, name, image }: any) => {
 					<Link href={`/collections/${id}`}>
 						<Button
 							className={clsx(
-								'z-10 border border-yellow-400 font-bold p-2 text-white transition ease-in-out delay-150 hover:-translate-y-1  hover:scale-110 duration-300'
+								'z-10 border border-yellow-400 font-bold p-2 text-secondary transition ease-in-out delay-150 hover:-translate-y-1  hover:scale-110 duration-300'
 								// Styles.button
 							)}
 						>
 							View Bottle Info
 						</Button>
 					</Link>
-					<Link href={`/eBar/collection/${address}`}>
+					<Link href={`/profile/collection/${address}`}>
 						<Button
 							className={clsx(
-								'z-10 border border-yellow-400 font-bold p-2 text-white transition ease-in-out delay-150 hover:-translate-y-1  hover:scale-110 duration-300'
+								'z-10 border border-yellow-400 font-bold p-2 text-secondary transition ease-in-out delay-150 hover:-translate-y-1  hover:scale-110 duration-300'
 								// Styles.button
 							)}
 						>
@@ -298,7 +298,7 @@ any) => {
 					<div className="min-h-[50vh] bg-overlay rounded-md p-6 2xl:min-w-[50vw] min-w-full">
 						<div className="flex justify-between mb-4">
 							<div
-								className="text-white font-bold cursor-pointer"
+								className="text-secondary font-bold cursor-pointer"
 								onClick={hide}
 							>
 								Back
@@ -310,7 +310,7 @@ any) => {
 									token.id
 								}`}
 								target="_blank"
-								className="text-white font-bold flex items-center gap-2 p-2"
+								className="text-secondary font-bold flex items-center gap-2 p-2"
 							>
 								View in{' '}
 								<img src="/icons/opensea.svg" className="h-4 w-4" alt="" />
@@ -347,7 +347,7 @@ any) => {
 								})}
 								className="w-full flex flex-col items-center justify-center gap-4"
 							>
-								<h2 className="textMain font-bold text-lg">
+								<h2 className="text-secondary font-bold text-lg">
 									Transfer NFT {token.name}
 								</h2>
 
@@ -361,7 +361,7 @@ any) => {
 								/>
 								<Button
 									className={clsx(
-										'z-10 borderborderMain md:text-lg text-sm  py-2 px-6 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
+										'z-10 borderborderMain md:text-lg text-sm  py-2 px-6 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
 										Styles.button
 									)}
 									type="submit"
@@ -377,16 +377,16 @@ any) => {
 				<div
 					className={clsx(
 						{ ['items-center justify-center']: isLoading },
-						'flex flex-col rounded-xl bg-overlay border border-white text-xl text-center font-bold text-white md:p-10 sm:p-8 p-4'
+						'flex flex-col rounded-xl bg-overlay border border-white text-xl text-center font-bold text-secondary md:p-10 sm:p-8 p-4'
 					)}
 				>
 					{isLoading ? (
-						<div className="p-4 flex items-center justify-center text-white text-5xl">
+						<div className="p-4 flex items-center justify-center text-secondary text-5xl">
 							<LoadingOutlined></LoadingOutlined>
 						</div>
 					) : (
 						<>
-							<h3 className="text-2xl text-left font-bold textMain pb-4 w-full">
+							<h3 className="text-2xl text-left font-bold text-secondary pb-4 w-full">
 								{name}
 							</h3>
 							<div className="sm:px-6">
@@ -457,17 +457,17 @@ any) => {
 								<Link href={`/collections/${address}`}>
 									<Button
 										className={clsx(
-											'z-10 border borderMain p-2 text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:shadow-button hover:scale-110 duration-300',
+											'z-10 border borderMain p-2 text-secondary transition ease-in-out delay-150 hover:-translate-y-1 hover:shadow-button hover:scale-110 duration-300',
 											Styles.button
 										)}
 									>
 										View Bottle Info
 									</Button>
 								</Link>
-								<Link href={`/eBar/collection/${address}`}>
+								<Link href={`/profile/collection/${address}`}>
 									<Button
 										className={clsx(
-											'z-10 border borderMain p-2 text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:shadow-button hover:scale-110 duration-300',
+											'z-10 border borderMain p-2 text-secondary transition ease-in-out delay-150 hover:-translate-y-1 hover:shadow-button hover:scale-110 duration-300',
 											Styles.button
 										)}
 									>

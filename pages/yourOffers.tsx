@@ -20,7 +20,7 @@ export default function YourOffers() {
 			/> */}
 			<div className="w-full flex flex-col  gap-4 p-6  right-0 mt-2 relative min-h-[70vh] rounded-md bg-overlay">
 				<div>
-					<h2 className="w-full text-2xl font-bold text-center text-white textMain">
+					<h2 className="w-full text-2xl font-bold text-center text-secondary text-secondary">
 						Active Offers Made By You
 					</h2>
 				</div>
@@ -36,13 +36,13 @@ export default function YourOffers() {
 												'flex cursor-pointer items-center justify-center gap-x-2 px-4 py-4 f-14 text-normal text-dark-1 rounded-md'
 											)}
 										>
-											<div className="p-1 rounded-md md:flex hidden text-white text-2xl">
+											<div className="p-1 rounded-md md:flex hidden text-secondary text-2xl">
 												{item.icon}
 											</div>
 											<div className="flex flex-col items-center justify-center">
 												<Typography
 													type="subTitle"
-													className="text-white font-bold text-xl md:text-left text-center"
+													className="text-secondary font-bold text-xl md:text-left text-center"
 												>
 													{item.title}
 												</Typography>
@@ -54,12 +54,12 @@ export default function YourOffers() {
 						})}
 					</div>
 				) : (
-					<div className="text-white text-center font-bold text-xl p-4 flex justify-center items-center min-h-[30vh]">
+					<div className="text-secondary text-center font-bold text-xl p-4 flex justify-center items-center min-h-[30vh]">
 						You don't have active offers made by you
 					</div>
 				)}
 				<div>
-					<h2 className="w-full text-2xl font-bold text-center text-white textMain">
+					<h2 className="w-full text-2xl font-bold text-center text-secondary text-secondary">
 						Active Offers Received
 					</h2>
 				</div>
@@ -75,13 +75,13 @@ export default function YourOffers() {
 												'flex cursor-pointer items-center justify-center gap-x-2 px-4 py-4 f-14 text-normal text-dark-1 rounded-md'
 											)}
 										>
-											<div className="p-1 rounded-md md:flex hidden text-white text-2xl">
+											<div className="p-1 rounded-md md:flex hidden text-secondary text-2xl">
 												{item.icon}
 											</div>
 											<div className="flex flex-col items-center justify-center">
 												<Typography
 													type="subTitle"
-													className="text-white font-bold md:text-left text-center"
+													className="text-secondary font-bold md:text-left text-center"
 												>
 													{item.title}
 												</Typography>
@@ -93,7 +93,7 @@ export default function YourOffers() {
 						})}
 					</div>
 				) : (
-					<div className="text-white text-center font-bold text-xl p-4 flex justify-center items-center min-h-[30vh]">
+					<div className="text-secondary text-center font-bold text-xl p-4 flex justify-center items-center min-h-[30vh]">
 						You don't have active offers received
 					</div>
 				)}

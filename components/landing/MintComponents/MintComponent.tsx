@@ -63,7 +63,7 @@ export const ButtonMint: React.FC<PropsButton> = ({
 						></Input>
 						<Button
 							className={clsx(
-								'z-10 border borderMain px-16 py-4 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
+								'z-10 border borderMain px-16 py-4 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
 								Styles.button
 							)}
 							type="submit"
@@ -83,16 +83,16 @@ export const MintComponent: React.FC<Props> = ({
 	maxSupply,
 }) => {
 	return (
-		<div className="bg-dark text-white flex flex-col justify-center w-full items-center relative">
-			<h1 className="textMain text-center font-black text-5xl mb-6">
+		<div className="bg-dark text-secondary flex flex-col justify-center w-full items-center relative">
+			<h1 className="text-secondary text-center font-black text-5xl mb-6">
 				CoCo Bottle Club <br /> Global Membership
 			</h1>
 			<img src="/logos/Isotype_Gold.png" className="w-64" alt="" />
 			<h2 className="mt-6 text-md font-semibold">
-				<span className="textMain ">1st Wave</span> Mints
+				<span className="text-secondary ">1st Wave</span> Mints
 			</h2>
 			<h2 className="mb-6 text-md font-semibold">
-				<span className="textMain">{quantity}</span> / {maxSupply}
+				<span className="text-secondary">{quantity}</span> / {maxSupply}
 			</h2>
 			{(accounts == null || accounts.length === 0) && !isLoading && (
 				<h2 className="text-md text-center font-semibold">
@@ -108,7 +108,7 @@ export const MintComponent: React.FC<Props> = ({
 			)}
 			{accounts !== null && accounts.length !== 0 && !isLoading && (
 				<div className="flex flex-col w-full gap-4">
-					<h2 className="text-md textMain font-semibold text-center w-full break-words">
+					<h2 className="text-md text-secondary font-semibold text-center w-full break-words">
 						{accounts[0]}
 					</h2>
 					<h2 className="text-md font-semibold text-center w-full">

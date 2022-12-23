@@ -1,7 +1,15 @@
+import {
+	CollectionsLandingComponent,
+	MainSectionComponent,
+} from 'components/landing/mainSection';
 import * as React from 'react';
-import { LandingComponent } from './../components/landing/landing';
 
 const Home = () => {
-	return <LandingComponent />;
+	return (
+		<>
+			<MainSectionComponent />
+			<CollectionsLandingComponent />
+		</>
+	);
 };
 export default Home;

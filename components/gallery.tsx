@@ -61,13 +61,13 @@ export const GalleryComponent: React.FC<any> = () => {
 				alt=""
 			/>{' '} */}
 			<div className="relative flex flex-col w-full">
-				<div className="md:absolute hidden left-0 top-0 font-bold text-xl text-white cursor-pointer">
+				<div className="md:absolute hidden left-0 top-0 font-bold text-xl text-secondary cursor-pointer">
 					<Link href="/?bottles=true">Go To Bottles</Link>
 				</div>
-				<div className="absolute md:hidden left-0 top-0 font-bold text-xl text-white cursor-pointer">
+				<div className="absolute md:hidden left-0 top-0 font-bold text-xl text-secondary cursor-pointer">
 					<Link href="/?bottles=true">{'Back'}</Link>
 				</div>
-				<h2 className="textMain font-bold mb-10 text-5xl w-full text-center">
+				<h2 className="text-secondary font-bold mb-10 text-5xl w-full text-center">
 					Gallery
 				</h2>
 				<div className="flex flex-col gap-10 items-center justify-center w-full pb-10">
@@ -100,7 +100,7 @@ export const GalleryComponent: React.FC<any> = () => {
 export const BottleFinalNFT = ({ address, id, name, image }: any) => {
 	return (
 		<div className="flex flex-col w-full shadow-xl">
-			<div className="flex flex-col rounded-xl bg-overlay border-2 border-yellow-400 text-xl text-center font-bold text-white md:p-10 sm:p-8 p-4">
+			<div className="flex flex-col rounded-xl bg-overlay border-2 border-yellow-400 text-xl text-center font-bold text-secondary md:p-10 sm:p-8 p-4">
 				<h3 className="text-2xl text-center font-bold text-yellow-400 pb-4 w-full">
 					{name} Final Art
 				</h3>
@@ -112,17 +112,17 @@ export const BottleFinalNFT = ({ address, id, name, image }: any) => {
 					<Link href={`/collections/${id}`}>
 						<Button
 							className={clsx(
-								'z-10 border border-yellow-400 font-bold p-2 text-white transition ease-in-out delay-150 hover:-translate-y-1  hover:scale-110 duration-300'
+								'z-10 border border-yellow-400 font-bold p-2 text-secondary transition ease-in-out delay-150 hover:-translate-y-1  hover:scale-110 duration-300'
 								// Styles.button
 							)}
 						>
 							View Bottle Info
 						</Button>
 					</Link>
-					<Link href={`/eBar/collection/${address}`}>
+					<Link href={`/profile/collection/${address}`}>
 						<Button
 							className={clsx(
-								'z-10 border border-yellow-400 font-bold p-2 text-white transition ease-in-out delay-150 hover:-translate-y-1  hover:scale-110 duration-300'
+								'z-10 border border-yellow-400 font-bold p-2 text-secondary transition ease-in-out delay-150 hover:-translate-y-1  hover:scale-110 duration-300'
 								// Styles.button
 							)}
 						>
@@ -152,8 +152,8 @@ export const BottleNFTs = ({ address, name, video, tokensOfUser }: any) => {
 	}, [video]);
 	return (
 		<div className="flex flex-col w-full shadow-xl">
-			<div className="flex flex-col rounded-xl bg-overlay border border-white text-xl text-center font-bold text-white md:p-10 sm:p-8 p-4">
-				<h3 className="text-3xl text-center font-bold textMain pb-4 w-full">
+			<div className="flex flex-col rounded-xl bg-overlay border border-white text-xl text-center font-bold text-secondary md:p-10 sm:p-8 p-4">
+				<h3 className="text-3xl text-center font-bold text-secondary pb-4 w-full">
 					{name} NFTs
 				</h3>
 				<div className="sm:px-6">
@@ -198,17 +198,17 @@ export const BottleNFTs = ({ address, name, video, tokensOfUser }: any) => {
 					<Link href={`/collections/${address}`}>
 						<Button
 							className={clsx(
-								'z-10 border borderMain p-2 text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:shadow-button hover:scale-110 duration-300',
+								'z-10 border borderMain p-2 text-secondary transition ease-in-out delay-150 hover:-translate-y-1 hover:shadow-button hover:scale-110 duration-300',
 								Styles.button
 							)}
 						>
 							View Bottle Info
 						</Button>
 					</Link>
-					<Link href={`/eBar/collection/${address}`}>
+					<Link href={`/profile/collection/${address}`}>
 						<Button
 							className={clsx(
-								'z-10 border borderMain p-2 text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:shadow-button hover:scale-110 duration-300',
+								'z-10 border borderMain p-2 text-secondary transition ease-in-out delay-150 hover:-translate-y-1 hover:shadow-button hover:scale-110 duration-300',
 								Styles.button
 							)}
 						>

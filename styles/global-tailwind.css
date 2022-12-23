@@ -5,10 +5,10 @@
     border: 1px solid #5b4df1;
     box-shadow: 0px 0px 70px 20px rgb(91 77 241 / 50%); */
 :root {
-	--color-primary: #43ada0;
-	--color-primary-opacity: #aea5fd;
-	--color-secondary: #15141a;
-	--color-overlay: rgba(0, 0, 0, 0.8);
+	--color-primary: #ffffff;
+	--color-primary-opacity: #8b8b8b;
+	--color-secondary: #000000;
+	--color-overlay: rgb(230, 230, 230);
 	--color-white: white;
 	--color-alert-success: #37a211;
 	--color-alert-error: #b52423;
@@ -26,10 +26,10 @@
 }
 
 .light {
-	--color-primary: #43ada0;
-	--color-primary-opacity: #aea5fd;
-	--color-secondary: #15141a;
-	--color-overlay: rgba(0, 0, 0, 0.8);
+	--color-primary: #ffffff;
+	--color-primary-opacity: #8b8b8b;
+	--color-secondary: #000000;
+	--color-overlay: rgb(230, 230, 230);
 	--color-white: white;
 	--color-alert-success: #37a211;
 	--color-alert-error: #b52423;
@@ -47,10 +47,10 @@
 }
 
 .dark {
-	--color-primary: #43ada0;
-	--color-primary-opacity: #5b4df11a;
-	--color-secondary: #15141a;
-	--color-overlay: rgba(0, 0, 0, 0.5);
+	--color-primary: #ffffff;
+	--color-primary-opacity: #8b8b8b;
+	--color-secondary: #000000;
+	--color-overlay: rgb(230, 230, 230);
 	--color-white: white;
 	--color-alert-success: #37a211;
 	--color-alert-error: #b52423;

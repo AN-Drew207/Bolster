@@ -20,7 +20,7 @@ export const Dropdown: React.FC<any> = ({ classTitle, title, children }) => {
 											classTitle
 										)}
 									>
-										<p className={clsx('!text-md font-bold text-white')}>
+										<p className={clsx('!text-md text-secondary Raleway')}>
 											{title}
 										</p>
 									</div>

@@ -2,7 +2,6 @@ import { MailOutlined } from '@ant-design/icons';
 import clsx from 'clsx';
 import { Button } from 'components/common/button';
 import { Loading } from 'components/landing/loadingComponent';
-import Styles from 'components/landing/styles.module.scss';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { State } from 'redux/actions';
@@ -25,7 +24,7 @@ export const useConnectWalletModal = () => {
 			<div className="h-screen flex items-center justify-center">
 				<div className="flex flex-col p-4 gap-4 items-center justify-center bg-overlay rounded-xl">
 					<div className="w-full flex">
-						<button onClick={() => hide()} className="font-bold text-white">
+						<button onClick={() => hide()} className="font-bold text-secondary">
 							Back
 						</button>
 					</div>
@@ -37,8 +36,8 @@ export const useConnectWalletModal = () => {
 						<div className="flex flex-col gap-4 p-4 w-96">
 							<Button
 								className={clsx(
-									'z-10 border borderMain px-2 py-2 bg-overlay text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
-									Styles.button
+									'z-10 border border-secondary bg-secondary Raleway font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+									'hover:text-secondary'
 								)}
 								onClick={() =>
 									connectWalletUpdateData(dispatch, network, networkName)
@@ -51,8 +50,8 @@ export const useConnectWalletModal = () => {
 							</Button>
 							<Button
 								className={clsx(
-									'z-10 border borderMain px-2 py-2  bg-overlay text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
-									Styles.button
+									'z-10 border border-secondary bg-secondary Raleway font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+									'hover:text-secondary'
 								)}
 								onClick={() => login(dispatch)}
 							>

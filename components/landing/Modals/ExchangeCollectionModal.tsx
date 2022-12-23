@@ -50,7 +50,7 @@ export const ExchangeCollection: React.FC<any> = ({
 			{acceptedConditions && formSent ? (
 				<>
 					<div className="flex w-full items-center justify-center">
-						<div className="flex w-full mb-10 text-xl text-white">
+						<div className="flex w-full mb-10 text-xl text-secondary">
 							<Button
 								onClick={() => {
 									setOptions('menu');
@@ -62,7 +62,7 @@ export const ExchangeCollection: React.FC<any> = ({
 						</div>
 					</div>
 					<form
-						className="flex flex-col items-center justify-center gap-4 text-white"
+						className="flex flex-col items-center justify-center gap-4 text-secondary"
 						onSubmit={handleSubmit(() => exchangeCollection())}
 					>
 						<div className="flex md:flex-row flex-col justify-center items-center w-full md:gap-16 gap-4">
@@ -75,12 +75,14 @@ export const ExchangeCollection: React.FC<any> = ({
 						{isLoading ? (
 							<>
 								<Loading small />
-								<h2 className="text-sm text-center textMain">{message}</h2>
+								<h2 className="text-sm text-center text-secondary">
+									{message}
+								</h2>
 							</>
 						) : (
 							<Button
 								className={clsx(
-									'z-10 border borderMain mt-4 px-16 py-4 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
+									'z-10 border borderMain mt-4 px-16 py-4 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
 									Styles.button
 								)}
 								type="submit"
@@ -96,10 +98,10 @@ export const ExchangeCollection: React.FC<any> = ({
 						className="flex flex-col items-center gap-4"
 						onSubmit={sendEmail}
 					>
-						<h2 className="text-2xl font-semibold text-center text-white">
+						<h2 className="text-2xl font-semibold text-center text-secondary">
 							Contact Form
 						</h2>
-						<p className="text-md text-center text-white">
+						<p className="text-md text-center text-secondary">
 							Please submit your data to allow us to contact you and give you
 							the bottle when you make the redeem.
 						</p>
@@ -135,11 +137,11 @@ export const ExchangeCollection: React.FC<any> = ({
 							placeholder="Email"
 							className="rounded-xl w-full"
 						/>{' '}
-						<p className="text-md text-white">
+						<p className="text-md text-secondary">
 							<span className="font-bold">Note:</span> We will contact you asap
 							by the email you are sending, also we will use{' '}
 							<a
-								className="textMain"
+								className="text-secondary"
 								href="https://ethermail.io/"
 								target="_blank"
 							>
@@ -149,7 +151,7 @@ export const ExchangeCollection: React.FC<any> = ({
 						</p>
 						<Button
 							className={clsx(
-								'z-10 border borderMain mt-4 px-16 py-4 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
+								'z-10 border borderMain mt-4 px-16 py-4 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
 								Styles.button
 							)}
 							type="submit"
@@ -162,7 +164,7 @@ export const ExchangeCollection: React.FC<any> = ({
 				<>
 					{' '}
 					<div className="flex w-full items-center justify-center">
-						<div className="flex w-full mb-2 text-xl text-white">
+						<div className="flex w-full mb-2 text-xl text-secondary">
 							<Button
 								onClick={() => {
 									setOptions('menu');
@@ -173,25 +175,26 @@ export const ExchangeCollection: React.FC<any> = ({
 							</Button>
 						</div>
 					</div>
-					<div className="flex flex-col w-full gap-4 text-white">
-						<h2 className="text-2xl textMain mb-2 font-bold text-center">
+					<div className="flex flex-col w-full gap-4 text-secondary">
+						<h2 className="text-2xl text-secondary mb-2 font-bold text-center">
 							Exchange Collection
 						</h2>
 						<div className="flex w-full gap-2">
 							<p className="text-lg text-center font-bold">
 								You are about to exchange the{' '}
-								<span className="textMain">{name}</span> Bottle Collection, this
-								exchange means burning all the tokens of the collections and
-								receiving a Non-transferible token representing you have
-								exchanged the bottle, a NFT Art that we will be sent to you and
-								we will be in touch with you to reach the delivery of the bottle
+								<span className="text-secondary">{name}</span> Bottle
+								Collection, this exchange means burning all the tokens of the
+								collections and receiving a Non-transferible token representing
+								you have exchanged the bottle, a NFT Art that we will be sent to
+								you and we will be in touch with you to reach the delivery of
+								the bottle
 							</p>
 						</div>
 					</div>
 					<div className="flex items-center justify-center">
 						<Button
 							className={clsx(
-								'z-10 border borderMain mt-4 px-16 py-4 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
+								'z-10 border borderMain mt-4 px-16 py-4 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
 								Styles.button
 							)}
 							onClick={() => setAcceptedConditions(true)}

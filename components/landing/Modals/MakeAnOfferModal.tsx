@@ -47,7 +47,7 @@ export const MakeAnOfferModal: React.FC<any> = ({
 			{acceptedConditions ? (
 				<>
 					<div className="flex w-full items-center justify-center">
-						<div className="flex w-full mb-10 text-xl text-white">
+						<div className="flex w-full mb-10 text-xl text-secondary">
 							<Button
 								onClick={() => {
 									setOptions('menu');
@@ -59,7 +59,7 @@ export const MakeAnOfferModal: React.FC<any> = ({
 						</div>
 					</div>
 					<form
-						className="flex flex-col items-center justify-center gap-4 text-white"
+						className="flex flex-col items-center justify-center gap-4 text-secondary"
 						onSubmit={handleSubmit((data) => makeAnOffer(data.price))}
 					>
 						<div className="flex md:flex-row flex-col justify-center items-center w-full mb-6 md:gap-16 gap-4">
@@ -68,8 +68,10 @@ export const MakeAnOfferModal: React.FC<any> = ({
 									Your Tokens{' '}
 								</h2>
 								<p className="text-xl font-semibold text-center">
-									<span className="textMain text-center">{quantityLeft}</span> /{' '}
-									{quantityMinted}
+									<span className="text-secondary text-center">
+										{quantityLeft}
+									</span>{' '}
+									/ {quantityMinted}
 								</p>
 							</div>
 							<div>
@@ -77,7 +79,10 @@ export const MakeAnOfferModal: React.FC<any> = ({
 									Max Supply{' '}
 								</h2>
 								<p className="text-xl font-semibold text-center">
-									<span className="textMain text-center">{maxSupply} </span>NFTs
+									<span className="text-secondary text-center">
+										{maxSupply}{' '}
+									</span>
+									NFTs
 								</p>
 							</div>
 						</div>
@@ -94,21 +99,23 @@ export const MakeAnOfferModal: React.FC<any> = ({
 								setPrice(e.target.value);
 							}}
 						/>
-						<h2 className="text-white text-left text-md w-full">
+						<h2 className="text-secondary text-left text-md w-full">
 							{'Total Price in USDC: ' +
 								((maxSupply - quantityLeft) * price).toFixed(2) +
 								' '}
-							<span className="font-bold textMain">USDC</span>
+							<span className="font-bold text-secondary">USDC</span>
 						</h2>
 						{isLoading ? (
 							<>
 								<Loading small />
-								<h2 className="text-sm text-center textMain">{message}</h2>
+								<h2 className="text-sm text-center text-secondary">
+									{message}
+								</h2>
 							</>
 						) : (
 							<Button
 								className={clsx(
-									'z-10 border borderMain mt-4 px-16 py-4 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
+									'z-10 border borderMain mt-4 px-16 py-4 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
 									Styles.button
 								)}
 								type="submit"
@@ -122,7 +129,7 @@ export const MakeAnOfferModal: React.FC<any> = ({
 				<>
 					{' '}
 					<div className="flex w-full items-center justify-center">
-						<div className="flex w-full mb-2 text-xl text-white">
+						<div className="flex w-full mb-2 text-xl text-secondary">
 							<Button
 								onClick={() => {
 									setOptions('menu');
@@ -133,8 +140,8 @@ export const MakeAnOfferModal: React.FC<any> = ({
 							</Button>
 						</div>
 					</div>
-					<div className="flex flex-col w-full gap-4 text-white">
-						<h2 className="text-2xl mb-2 font-bold textMain text-center">
+					<div className="flex flex-col w-full gap-4 text-secondary">
+						<h2 className="text-2xl mb-2 font-bold text-secondary text-center">
 							Make An Offer For All the NFTs
 						</h2>
 						<div className="flex flex-col w-full gap-1">
@@ -144,8 +151,8 @@ export const MakeAnOfferModal: React.FC<any> = ({
 								trying to buy).
 							</p>
 							<p className="md:text-lg text-md font-semibold">
-								<span className="textMain">Note:</span> These funds will be
-								looked for the entire time the offer is live.
+								<span className="text-secondary">Note:</span> These funds will
+								be looked for the entire time the offer is live.
 							</p>
 						</div>
 						<div className="flex flex-col w-full gap-1">
@@ -183,7 +190,7 @@ export const MakeAnOfferModal: React.FC<any> = ({
 					<div className="flex items-center justify-center">
 						<Button
 							className={clsx(
-								'z-10 border borderMain mt-4 px-16 py-4 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
+								'z-10 border borderMain mt-4 px-16 py-4 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
 								Styles.button
 							)}
 							onClick={() => setAcceptedConditions(true)}

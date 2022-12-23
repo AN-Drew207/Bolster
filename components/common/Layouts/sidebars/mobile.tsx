@@ -86,7 +86,7 @@ export const SidebarMobile: React.FC<LayoutDashboardProps & any> = ({
 									>
 										<span className="sr-only">Close sidebar</span>
 										<XIcon
-											className="w-full p-1 text-white bg-secondary rounded-full"
+											className="w-full p-1 text-secondary bg-secondary rounded-full"
 											aria-hidden="true"
 										/>
 									</button>
@@ -102,7 +102,7 @@ export const SidebarMobile: React.FC<LayoutDashboardProps & any> = ({
 														className={clsx(
 															'group flex items-center px-3 py-4 font-bold hover:opacity-90 text-md rounded-md  relative ',
 															{
-																'text-white': item.link !== router.asPath,
+																'text-secondary': item.link !== router.asPath,
 															},
 															{ 'text-primary': item.link === router.asPath }
 														)}
@@ -118,14 +118,14 @@ export const SidebarMobile: React.FC<LayoutDashboardProps & any> = ({
 									{address ? (
 										<>
 											<div>
-												<Link href={'/eBar'}>
+												<Link href={'/profile'}>
 													<p
 														className={clsx(
 															'group flex items-center px-3 py-4 font-bold hover:opacity-90 text-md rounded-md  relative ',
 															{
-																'text-white': '/eBar' !== router.asPath,
+																'text-secondary': '/profile' !== router.asPath,
 															},
-															{ 'text-primary': '/eBar' === router.asPath }
+															{ 'text-primary': '/profile' === router.asPath }
 														)}
 														onClick={() => setSidebarOpen(false)}
 													>
@@ -140,7 +140,7 @@ export const SidebarMobile: React.FC<LayoutDashboardProps & any> = ({
 														className={clsx(
 															'group flex items-center px-3 py-4 font-bold hover:opacity-90 text-md rounded-md  relative ',
 															{
-																'text-white': '/yourOffers' !== router.asPath,
+																'text-secondary': '/yourOffers' !== router.asPath,
 															},
 															{
 																'text-primary': '/yourOffers' === router.asPath,
@@ -157,7 +157,7 @@ export const SidebarMobile: React.FC<LayoutDashboardProps & any> = ({
 												<>
 													<Button
 														className={clsx(
-															'z-10 border borderMain px-2 py-2 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
+															'z-10 border borderMain px-2 py-2 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
 															Styles.button
 														)}
 														onClick={() => showWallet()}
@@ -167,7 +167,7 @@ export const SidebarMobile: React.FC<LayoutDashboardProps & any> = ({
 													<div className="divider mx-3 mt-4 mb-4"></div>
 													<Button
 														className={clsx(
-															'z-10 border borderMain px-2 py-2 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
+															'z-10 border borderMain px-2 py-2 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
 															Styles.button
 														)}
 														onClick={() => disconnect(dispatch)}
@@ -180,7 +180,7 @@ export const SidebarMobile: React.FC<LayoutDashboardProps & any> = ({
 									) : (
 										<Button
 											className={clsx(
-												'z-10 border borderMain mt-4 px-2 py-2 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
+												'z-10 border borderMain mt-4 px-2 py-2 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
 												Styles.button
 											)}
 											onClick={() => {

@@ -172,7 +172,7 @@ export const Input: React.FC<
 								{ 'bg-transparent border-primary': primary && !error },
 								{ 'bg-transparent': !isFill },
 								!!isFill && styles.inputDateWithValue,
-								'placeholder-white pb-2 pt-2 w-full text-white border text-xl rounded-md',
+								'placeholder-white pb-2 pt-2 w-full text-secondary border text-xl rounded-md',
 								{
 									'border-white': !error && !isFill,
 								},

@@ -316,7 +316,6 @@ export const useMetamask = () => {
 		} catch (error) {
 			console.log(error);
 		}
-
 		setIsLoading(false);
 	};
 

@@ -255,7 +255,7 @@ export const MintBottle: React.FC<any> = ({ id: xd }) => {
 						'flex flex-col items-center justify-center w-full h-screen sm:px-10 px-4 pb-10 relative md:pt-24'
 					)}
 				>
-					<div className="flex w-full md:mb-0 mb-10 text-xl text-white absolute top-32 left-16">
+					<div className="flex w-full md:mb-0 mb-10 text-xl text-secondary absolute top-32 left-16">
 						<Button
 							onClick={() => {
 								hide();
@@ -270,7 +270,7 @@ export const MintBottle: React.FC<any> = ({ id: xd }) => {
 							Congratulations!
 						</h1>
 
-						<h2 className="text-xl text-white text-center font-bold mb-14">
+						<h2 className="text-xl text-secondary text-center font-bold mb-14">
 							<span className="text-2xl">
 								{' '}
 								Now you own a fraction(s) of {bottle.short_name}!
@@ -391,7 +391,7 @@ export const MintBottle: React.FC<any> = ({ id: xd }) => {
 								'flex flex-col w-full h-full px-16 py-10 relative mt-24 bg-gray-900 rounded-xl border border-white relative'
 							)}
 						>
-							<div className="flex w-full mb-4 text-xl text-white">
+							<div className="flex w-full mb-4 text-xl text-secondary">
 								<Button
 									onClick={() => {
 										hideOptions();
@@ -407,7 +407,7 @@ export const MintBottle: React.FC<any> = ({ id: xd }) => {
 							{maxSupply == balance && (
 								<Button
 									className={clsx(
-										'z-10 border borderMain mt-4 px-16 py-4 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
+										'z-10 border borderMain mt-4 px-16 py-4 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
 										Styles.button
 									)}
 									onClick={() => {
@@ -424,7 +424,7 @@ export const MintBottle: React.FC<any> = ({ id: xd }) => {
 								balance !== maxSupply && (
 									<Button
 										className={clsx(
-											'z-10 border borderMain mt-4 px-16 py-4 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
+											'z-10 border borderMain mt-4 px-16 py-4 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
 											Styles.button
 										)}
 										onClick={() => {
@@ -440,7 +440,7 @@ export const MintBottle: React.FC<any> = ({ id: xd }) => {
 							).length > 0 && (
 								<Button
 									className={clsx(
-										'z-10 border borderMain mt-4 px-16 py-4 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
+										'z-10 border borderMain mt-4 px-16 py-4 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
 										Styles.button
 									)}
 									onClick={() => {
@@ -455,7 +455,7 @@ export const MintBottle: React.FC<any> = ({ id: xd }) => {
 							).length > 0 && (
 								<Button
 									className={clsx(
-										'z-10 border borderMain mt-4 px-16 py-4 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
+										'z-10 border borderMain mt-4 px-16 py-4 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
 										Styles.button
 									)}
 									onClick={() => {
@@ -468,7 +468,7 @@ export const MintBottle: React.FC<any> = ({ id: xd }) => {
 
 							<Button
 								className={clsx(
-									'z-10 border borderMain mt-4 px-16 py-4 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
+									'z-10 border borderMain mt-4 px-16 py-4 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
 									Styles.button
 								)}
 								onClick={() => {
@@ -676,7 +676,7 @@ export const MintBottle: React.FC<any> = ({ id: xd }) => {
 						<div className="flex justify-center items-start w-full">
 							<div className="min-h-screen flex flex-col items-center py-32 xl:w-4/5 w-full mr-10 xl:px-0 px-8 justify-start relative">
 								<Link href="/?bottles=true">
-									<div className="font-bold md:text-xl text-md w-full mb-4 text-white cursor-pointer">
+									<div className="font-bold md:text-xl text-md w-full mb-4 text-secondary cursor-pointer">
 										Back to Bottles
 									</div>
 								</Link>
@@ -744,7 +744,7 @@ export const MintBottle: React.FC<any> = ({ id: xd }) => {
 							</div>
 							<Button
 								className={clsx(
-									'py-2 px-8 transition border border-primary rounded-xl bg-overlay uppercase font-bold hover:shadow-button hover:scale-110 duration-300 rotate-[270deg] fixed right-[-58px] top-[50%] text-white'
+									'py-2 px-8 transition border border-primary rounded-xl bg-overlay uppercase font-bold hover:shadow-button hover:scale-110 duration-300 rotate-[270deg] fixed right-[-58px] top-[50%] text-secondary'
 								)}
 								onClick={() => showRules()}
 							>

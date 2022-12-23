@@ -161,7 +161,7 @@ export const BottleToken: React.FC<any> = ({ id: xd }) => {
 					isLoading || !bottle.short_name ? 'justify-center' : 'justify-start'
 				)}
 			>
-				<div className={clsx({ ['hidden']: !haveNFT }, 'text-white')}>
+				<div className={clsx({ ['hidden']: !haveNFT }, 'text-secondary')}>
 					Has NFT!
 				</div>
 			</div>

@@ -30,8 +30,8 @@ export default function Upload() {
 	} = useMagicLink();
 
 	return (
-		<div className="app h-screen flex flex-col gap-4 items-center w-full relative py-40 text-white">
-			<h2 className="text-white text-center">Magic Connect</h2>
+		<div className="app h-screen flex flex-col gap-4 items-center w-full relative py-40 text-secondary">
+			<h2 className="text-secondary text-center">Magic Connect</h2>
 			{!account && (
 				<button onClick={login} className="button-row">
 					Sign In

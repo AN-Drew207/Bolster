@@ -120,13 +120,13 @@ export const BottleEBarComponent = () => {
 					<div className="flex justify-center items-start w-full">
 						<div className="min-h-screen flex flex-col gap-4 items-center py-32 xl:w-4/5 w-full xl:px-0 px-8 justify-start relative">
 							<div className="flex justify-between w-full">
-								<Link href="/eBar">
-									<div className="font-bold md:text-xl text-md mb-4  text-white cursor-pointer">
-										Back to eBar
+								<Link href="/profile">
+									<div className="font-bold md:text-xl text-md mb-4  text-secondary cursor-pointer">
+										Back to NFTs
 									</div>
 								</Link>
 								<Link href={'/collections/' + bottle.address}>
-									<div className="font-bold md:text-xl text-md mb-4 text-white cursor-pointer">
+									<div className="font-bold md:text-xl text-md mb-4 text-secondary cursor-pointer">
 										Go to Bottle
 									</div>
 								</Link>
@@ -134,7 +134,7 @@ export const BottleEBarComponent = () => {
 
 							<>
 								<div className="flex rounded-xl flex-col items-center justify-center w-full bg-overlay border border-dark-800 p-8">
-									<h2 className="text-3xl textMain font-bold pb-4">
+									<h2 className="text-3xl text-secondary font-bold pb-4">
 										{bottle.name}
 									</h2>
 									<video
@@ -145,7 +145,7 @@ export const BottleEBarComponent = () => {
 										ref={video}
 									></video>
 
-									<h2 className="text-3xl textMain font-bold pt-10">
+									<h2 className="text-3xl text-secondary font-bold pt-10">
 										NFTs From {bottle.short_name}
 									</h2>
 									{bottle && bottle.NFTs ? (
@@ -179,7 +179,7 @@ export const BottleEBarComponent = () => {
 						</div>
 					</div>
 				) : !address && !account ? (
-					<div className="text-center relative text-2xl text-white font-bold h-[60vh] flex items-center justify-center px-6">
+					<div className="text-center relative text-2xl text-secondary font-bold h-[60vh] flex items-center justify-center px-6">
 						<div className="bg-overlay rounded-xl p-6">
 							Please Connect Your Wallet To See this Section
 						</div>
@@ -215,7 +215,7 @@ export const BottleNFTItem = ({
 					<div className="min-h-[50vh] bg-overlay rounded-md p-6 2xl:min-w-[50vw] min-w-full">
 						<div className="flex justify-between mb-4">
 							<div
-								className="text-white font-bold cursor-pointer"
+								className="text-secondary font-bold cursor-pointer"
 								onClick={hide}
 							>
 								Back
@@ -227,7 +227,7 @@ export const BottleNFTItem = ({
 									token.id
 								}`}
 								target="_blank"
-								className="text-white font-bold flex items-center gap-2"
+								className="text-secondary font-bold flex items-center gap-2"
 							>
 								View in{' '}
 								<img src="/icons/opensea.svg" className="h-4 w-4" alt="" />
@@ -262,7 +262,7 @@ export const BottleNFTItem = ({
 								})}
 								className="w-full flex flex-col items-center justify-center gap-4"
 							>
-								<h2 className="textMain font-bold text-lg">
+								<h2 className="text-secondary font-bold text-lg">
 									Transfer NFT {token.name}
 								</h2>
 
@@ -276,7 +276,7 @@ export const BottleNFTItem = ({
 								/>
 								<Button
 									className={clsx(
-										'z-10 borderborderMain md:text-lg text-sm  py-2 px-6 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
+										'z-10 borderborderMain md:text-lg text-sm  py-2 px-6 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
 										Styles.button
 									)}
 									type="submit"
@@ -302,7 +302,9 @@ export const BottleNFTItem = ({
 						className="rounded-xl border border-white overflow-hidden h-40 w-40"
 						alt=""
 					/>{' '}
-					<h2 className="p-4 text-center text-white font-bold">{token.name}</h2>
+					<h2 className="p-4 text-center text-secondary font-bold">
+						{token.name}
+					</h2>
 				</div>
 			</Link>
 		</>

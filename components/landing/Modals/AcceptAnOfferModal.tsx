@@ -24,7 +24,7 @@ export const AcceptAnOfferModal: React.FC<any> = ({
 			{acceptedConditions ? (
 				<>
 					<div className="flex w-full items-center justify-center">
-						<div className="flex w-full mb-10 text-xl text-white">
+						<div className="flex w-full mb-10 text-xl text-secondary">
 							<Button
 								onClick={() => {
 									setOptions('menu');
@@ -35,7 +35,7 @@ export const AcceptAnOfferModal: React.FC<any> = ({
 							</Button>
 						</div>
 					</div>
-					<form className="flex flex-col items-center justify-center gap-4 text-white">
+					<form className="flex flex-col items-center justify-center gap-4 text-secondary">
 						<div className="flex md:flex-row flex-col justify-center items-center w-full mb-2 md:gap-16 gap-4">
 							<div>
 								<h2 className="text-2xl font-semibold text-left">
@@ -55,7 +55,7 @@ export const AcceptAnOfferModal: React.FC<any> = ({
 								<h2 className="text-xl font-semibold text-center whitespace-nowrap">
 									Bidder
 								</h2>
-								<h2 className="text-lg font-semibold text-center textMain">
+								<h2 className="text-lg font-semibold text-center text-secondary">
 									{offer?.offer?.bidder.substring(0, 20)}...
 								</h2>
 							</div>
@@ -65,7 +65,7 @@ export const AcceptAnOfferModal: React.FC<any> = ({
 								<h2 className="text-xl font-semibold text-center whitespace-nowrap">
 									Price Per Token
 								</h2>
-								<h2 className="text-lg font-semibold text-center textMain">
+								<h2 className="text-lg font-semibold text-center text-secondary">
 									{offer?.offer?.refundAmountPerToken / 10 ** decimalsUSD} USDC
 								</h2>
 							</div>
@@ -73,7 +73,7 @@ export const AcceptAnOfferModal: React.FC<any> = ({
 								<h2 className="text-xl font-semibold text-center">
 									My Balance of NFTs
 								</h2>
-								<h2 className="text-lg font-semibold text-center textMain">
+								<h2 className="text-lg font-semibold text-center text-secondary">
 									{balance} NFTs
 								</h2>
 							</div>
@@ -83,7 +83,7 @@ export const AcceptAnOfferModal: React.FC<any> = ({
 								<h2 className="text-xl font-semibold text-center whitespace-nowrap">
 									Total to Receive
 								</h2>
-								<h2 className="text-lg font-semibold text-center textMain">
+								<h2 className="text-lg font-semibold text-center text-secondary">
 									{(offer?.offer?.refundAmountPerToken / 10 ** decimalsUSD) *
 										balance}{' '}
 									USDC
@@ -94,14 +94,16 @@ export const AcceptAnOfferModal: React.FC<any> = ({
 						{isLoading ? (
 							<>
 								<Loading small />
-								<h2 className="text-sm text-center textMain">{message}</h2>
+								<h2 className="text-sm text-center text-secondary">
+									{message}
+								</h2>
 							</>
 						) : (
 							<div className="flex justify-between w-full gap-8">
 								<>
 									<Button
 										className={clsx(
-											'z-10 border !border-green-600 font-bold mt-4 w-1/2 py-4 text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300  hover:bg-green-600'
+											'z-10 border !border-green-600 font-bold mt-4 w-1/2 py-4 text-secondary transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300  hover:bg-green-600'
 										)}
 										onClick={() => {
 											acceptAnOffer(true);
@@ -111,7 +113,7 @@ export const AcceptAnOfferModal: React.FC<any> = ({
 									</Button>
 									<Button
 										className={clsx(
-											'z-10 border !border-red-600 font-bold mt-4 w-1/2 py-4 text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300  hover:bg-red-600'
+											'z-10 border !border-red-600 font-bold mt-4 w-1/2 py-4 text-secondary transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300  hover:bg-red-600'
 										)}
 										onClick={() => {
 											acceptAnOffer(false);
@@ -128,7 +130,7 @@ export const AcceptAnOfferModal: React.FC<any> = ({
 				<>
 					{' '}
 					<div className="flex w-full items-center justify-center">
-						<div className="flex w-full mb-2 text-xl text-white">
+						<div className="flex w-full mb-2 text-xl text-secondary">
 							<Button
 								onClick={() => {
 									setOptions('menu');
@@ -139,8 +141,8 @@ export const AcceptAnOfferModal: React.FC<any> = ({
 							</Button>
 						</div>
 					</div>
-					<div className="flex flex-col w-full gap-4 text-white">
-						<h2 className="text-2xl mb-2 textMain font-bold text-center">
+					<div className="flex flex-col w-full gap-4 text-secondary">
+						<h2 className="text-2xl mb-2 text-secondary font-bold text-center">
 							Accept / Deny an Offer
 						</h2>
 						<div className="flex text-center flex-col w-full gap-1">
@@ -162,7 +164,7 @@ export const AcceptAnOfferModal: React.FC<any> = ({
 					<div className="flex items-center justify-center">
 						<Button
 							className={clsx(
-								'z-10 border borderMain mt-4 px-16 py-4 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
+								'z-10 border borderMain mt-4 px-16 py-4 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
 								Styles.button
 							)}
 							onClick={() => setAcceptedConditions(true)}

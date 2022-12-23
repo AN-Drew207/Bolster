@@ -146,7 +146,7 @@ export const DesktopView: React.FC<any> = ({
 	// };
 
 	return (
-		<div className="bg-dark md:flex hidden text-white flex flex-col justify-between w-full items-start relative gap-10">
+		<div className="bg-dark md:flex hidden text-secondary flex flex-col justify-between w-full items-start relative gap-10">
 			<div className="flex rounded-xl xl:flex-row flex-col items-center justify-center w-full bg-overlay border border-dark-800 p-2 relative">
 				<video
 					src={videoDemo}
@@ -162,7 +162,7 @@ export const DesktopView: React.FC<any> = ({
 				</div>
 				{content.caracteristics && (
 					<div className="flex flex-wrap items-center justify-center gap-y-8 gap-x-2 p-6">
-						<h1 className="textMain text-center font-black md:text-4xl text-3xl w-full">
+						<h1 className="text-secondary text-center font-black md:text-4xl text-3xl w-full">
 							{bottleName}
 						</h1>
 						<div className="w-full flex flex-col gap-2 items-center">
@@ -171,7 +171,7 @@ export const DesktopView: React.FC<any> = ({
 								href={`https://polygonscan.com/address/${address}`}
 								target="_blank"
 								rel="noreferrer"
-								className="textMain font-bold"
+								className="text-secondary font-bold"
 							>
 								{address}
 							</a>
@@ -189,7 +189,7 @@ export const DesktopView: React.FC<any> = ({
 											alt=""
 										/>
 									</div>
-									<p className="text-sm text-white text-center font-bold">
+									<p className="text-sm text-secondary text-center font-bold">
 										{item.caption}
 									</p>
 								</div>
@@ -225,7 +225,7 @@ export const DesktopView: React.FC<any> = ({
 									</Button>
 								)}
 								{maxSupply != -1 && (
-									<Link href={'/eBar/collection/' + address}>
+									<Link href={'/profile/collection/' + address}>
 										<div
 											className={clsx(
 												'py-2 px-8 transition text-center rounded-md cursor-pointer bg-overlay ease-in-out delay-150 hover:-translate-y-1 uppercase font-bold hover:shadow-button hover:scale-110 duration-300',
@@ -248,10 +248,10 @@ export const DesktopView: React.FC<any> = ({
 			</div>
 			{/* <div className="flex rounded-xl 2xl:flex-row flex-col items-center justify-center w-full bg-overlay border border-dark-800 py-10 xl:px-16 px-8 gap-4">
 				<div className="2xl:w-3/5 flex flex-col w-full">
-					<h2 className="text-left font-bold text-2xl textMain">
+					<h2 className="text-left font-bold text-2xl text-secondary">
 						{artist.name}
 					</h2>
-					<caption className="text-left text-sm text-white">
+					<caption className="text-left text-sm text-secondary">
 						Bottle Artist
 					</caption>
 					<div className="flex flex-col w-full items-center justify-center gap-2 mt-2">
@@ -292,7 +292,7 @@ export const DesktopView: React.FC<any> = ({
 				<div className="flex md:flex-row flex-col justify-between items-center w-full mb-6 ">
 					<h2 className="text-md font-semibold text-left">
 						Tokens Minted <br />
-						<span className="textMain">{quantity}</span> / {maxSupply}
+						<span className="text-secondary">{quantity}</span> / {maxSupply}
 					</h2>
 					<ButtonMint
 						isWhitelisted={isWhitelisted}
@@ -305,12 +305,12 @@ export const DesktopView: React.FC<any> = ({
 				<div className="flex flex-col w-full gap-8">
 					<div className="flex flex-col">
 						{content.title && (
-							<h2 className="md:text-2xl text-xl textMain font-bold text-left">
+							<h2 className="md:text-2xl text-xl text-secondary font-bold text-left">
 								{content.title}
 							</h2>
 						)}
 						{content.caption && (
-							<caption className="text-sm text-white w-full text-left">
+							<caption className="text-sm text-secondary w-full text-left">
 								{content.caption}
 							</caption>
 						)}
@@ -366,9 +366,9 @@ export const MobileView: React.FC<any> = ({
 	// 	'--swiper-pagination-color': '#000',
 	// };
 	return (
-		<div className="bg-dark flex md:hidden text-white flex lg:flex-row flex-col justify-between w-full items-start relative gap-10">
+		<div className="bg-dark flex md:hidden text-secondary flex lg:flex-row flex-col justify-between w-full items-start relative gap-10">
 			<div className="flex flex-col w-full md:p-10 p-4 bg-overlay border border-dark-800 rounded-xl gap-6 relative">
-				<h1 className="textMain text-center font-black md:text-5xl text-3xl mt-2">
+				<h1 className="text-secondary text-center font-black md:text-5xl text-3xl mt-2">
 					{bottleName}
 				</h1>
 				<div className="absolute top-0 right-0 sm:pr-8 pr-4 pt-7">
@@ -383,13 +383,13 @@ export const MobileView: React.FC<any> = ({
 					className="rounded-xl"
 					ref={video}
 				></video>
-				<div className="w-full truncate textMain">
+				<div className="w-full truncate text-secondary">
 					<p className="font-bold text-lg text-center">Bottle Address</p>
 					<a
 						href={`https://polygonscan.com/address/${address}`}
 						target="_blank"
 						rel="noreferrer"
-						className="textMain font-bold truncate"
+						className="text-secondary font-bold truncate"
 					>
 						{address}
 					</a>
@@ -424,7 +424,7 @@ export const MobileView: React.FC<any> = ({
 							</Button>
 						)}
 						{maxSupply != -1 && (
-							<Link href={'/eBar/collection/' + address}>
+							<Link href={'/profile/collection/' + address}>
 								<div
 									className={clsx(
 										'py-2 px-8 transition text-center rounded-md cursor-pointer bg-overlay ease-in-out delay-150 hover:-translate-y-1 uppercase font-bold hover:shadow-button hover:scale-110 duration-300',
@@ -445,12 +445,12 @@ export const MobileView: React.FC<any> = ({
 				<div className="flex flex-col w-full gap-8">
 					<div className="flex flex-col">
 						{content.title && (
-							<h2 className="md:text-2xl text-xl textMain font-bold text-left">
+							<h2 className="md:text-2xl text-xl text-secondary font-bold text-left">
 								{content.title}
 							</h2>
 						)}
 						{content.caption && (
-							<caption className="text-sm text-white w-full text-left">
+							<caption className="text-sm text-secondary w-full text-left">
 								{content.caption}
 							</caption>
 						)}
@@ -482,7 +482,7 @@ export const MobileView: React.FC<any> = ({
 													alt=""
 												/>
 											</div>
-											<p className="text-md text-white text-center font-bold">
+											<p className="text-md text-secondary text-center font-bold">
 												{item.caption}
 											</p>
 										</div>
@@ -503,7 +503,7 @@ export const MobileView: React.FC<any> = ({
 													alt=""
 												/>
 											</div>
-											<p className="text-md text-white font-bold text-center">
+											<p className="text-md text-secondary font-bold text-center">
 												{item.caption}
 											</p>
 										</div>
@@ -539,7 +539,7 @@ export const MobileView: React.FC<any> = ({
 									</Button>
 								)}
 								{maxSupply != -1 && (
-									<Link href={'/eBar/collection/' + address}>
+									<Link href={'/profile/collection/' + address}>
 										<div
 											className={clsx(
 												'py-2 px-8 transition text-center rounded-md cursor-pointer bg-overlay ease-in-out delay-150 hover:-translate-y-1 uppercase font-bold hover:shadow-button hover:scale-110 duration-300',
@@ -557,10 +557,10 @@ export const MobileView: React.FC<any> = ({
 			</div>
 			{/* <div className="flex rounded-xl flex-col xl:items-start items-center justify-center w-full bg-overlay border border-dark-800 py-10 xl:px-16 md:px-8 px-4 gap-4">
 				<div className="flex flex-col w-full">
-					<h2 className="text-left font-bold text-2xl textMain">
+					<h2 className="text-left font-bold text-2xl text-secondary">
 						{artist.name}
 					</h2>
-					<caption className="text-left text-sm text-white">
+					<caption className="text-left text-sm text-secondary">
 						Bottle Artist
 					</caption>
 					<div className="flex flex-col w-full items-center justify-center gap-4 mt-4">
@@ -633,7 +633,7 @@ export const ButtonMint: React.FC<PropsButton> = ({
 					>
 						<Button
 							className={clsx(
-								'z-10 border borderMain px-16 py-4 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
+								'z-10 border borderMain px-16 py-4 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
 								Styles.button
 							)}
 							type="submit"
@@ -651,7 +651,7 @@ export const ParagraphArtist: React.FC<any> = ({ title, text }) => {
 	return (
 		<>
 			{title && (
-				<p className="textMain font-bold text-left text-lg my-2 w-full">
+				<p className="text-secondary font-bold text-left text-lg my-2 w-full">
 					{title}
 				</p>
 			)}
@@ -661,7 +661,7 @@ export const ParagraphArtist: React.FC<any> = ({ title, text }) => {
 						<p
 							className={clsx(
 								{ ['hidden']: index > 0 && !viewMore },
-								'text-white font-bold text-justify text-md w-full'
+								'text-secondary font-bold text-justify text-md w-full'
 							)}
 						>
 							{text}
@@ -670,7 +670,7 @@ export const ParagraphArtist: React.FC<any> = ({ title, text }) => {
 					{text.length > 1 && (
 						<p
 							className={clsx(
-								'textMain cursor-pointer font-bold text-left flex items-center justify-start gap-1 text-sm w-full'
+								'text-secondary cursor-pointer font-bold text-left flex items-center justify-start gap-1 text-sm w-full'
 							)}
 							onClick={() => {
 								setViewMore((prev) => !prev);

@@ -23,7 +23,7 @@ export const Bottles: React.FC<any> = ({ setView }) => {
 			{bottlesView ? (
 				<div className="relative flex flex-col w-full">
 					<div
-						className="sm:block hidden absolute left-0 top-0 font-bold text-xl text-white cursor-pointer"
+						className="sm:block hidden absolute left-0 top-0 font-bold text-xl text-secondary cursor-pointer"
 						onClick={() => {
 							setView('menu');
 						}}
@@ -31,14 +31,14 @@ export const Bottles: React.FC<any> = ({ setView }) => {
 						Back To Menu
 					</div>
 					<div
-						className="block sm:hidden absolute left-0 top-0 font-bold text-xl text-white cursor-pointer"
+						className="block sm:hidden absolute left-0 top-0 font-bold text-xl text-secondary cursor-pointer"
 						onClick={() => {
 							setView('menu');
 						}}
 					>
 						Back
 					</div>
-					<h2 className="textMain font-bold mb-10 text-5xl w-full text-center">
+					<h2 className="text-secondary font-bold mb-10 text-5xl w-full text-center">
 						Our Collections
 					</h2>
 					<div className="flex flex-wrap gap-10 items-center justify-center w-full">
@@ -81,7 +81,7 @@ export const BottleItem = ({ address, name, video }: any) => {
 	}, [video]);
 	return (
 		<Link href={`/collections/${address}`}>
-			<div className="sm:w-[400px] w-[320px] flex flex-col border border-secondary rounded-xl overflow-hidden shadow-xl cursor-pointer hover:border-white">
+			<div className="sm:w-[400px] w-[320px] flex flex-col border rounded-xl overflow-hidden shadow-xl cursor-pointer border-gray-800 hover:scale-105 transition-all duration-500">
 				<video
 					autoPlay
 					loop
@@ -89,8 +89,8 @@ export const BottleItem = ({ address, name, video }: any) => {
 					className="sm:w-[400px] w-[320px]"
 					ref={videoRef}
 				/>
-				<div className="flex flex-col items-center bg-overlay justify-center  text-xl text-center font-bold text-white h-20 p-4">
-					<h3 className="flex items-center justify-center text-xl text-center font-bold text-white">
+				<div className="flex flex-col items-center bg-primary justify-center text-xl text-center font-bold text-secondary h-20 p-4">
+					<h3 className="flex items-center justify-center text-xl text-center font-bold">
 						{name}
 					</h3>{' '}
 				</div>

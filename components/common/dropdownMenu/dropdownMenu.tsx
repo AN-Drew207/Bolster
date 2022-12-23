@@ -28,7 +28,7 @@ export const DropdownMenu: React.FC<
 							>
 								<div
 									className={clsx(
-										{ 'text-white': !open },
+										{ 'text-secondary': !open },
 										'flex items-center relative'
 									)}
 								>
@@ -54,7 +54,7 @@ export const DropdownMenu: React.FC<
 						{/* <> */}
 						<Menu.Items className="w-max max-w-[80vw] grid xl:grid-cols-3 md:grid-cols-2  gap-4 p-6 origin-top-right absolute z-[10000] right-0 mt-2  bg-gray-900 rounded-md shadow-button  focus:outline-none">
 							<Menu.Item>
-								<h2 className="w-full text-lg font-bold text-white textMain">
+								<h2 className="w-full text-lg font-bold text-secondary text-secondary">
 									Active Offers Made By You
 								</h2>
 							</Menu.Item>
@@ -69,13 +69,13 @@ export const DropdownMenu: React.FC<
 														'flex cursor-pointer items-center justify-center gap-x-2 px-4 py-4 f-14 text-normal text-dark-1 rounded-md'
 													)}
 												>
-													<div className="p-1 rounded-md md:flex hidden text-white text-2xl">
+													<div className="p-1 rounded-md md:flex hidden text-secondary text-2xl">
 														{item.icon}
 													</div>
 													<div className="flex flex-col items-center justify-center">
 														<Typography
 															type="subTitle"
-															className="text-white font-bold text-md md:text-left text-center"
+															className="text-secondary font-bold text-md md:text-left text-center"
 														>
 															{item.title}
 														</Typography>
@@ -86,12 +86,12 @@ export const DropdownMenu: React.FC<
 									);
 								})
 							) : (
-								<div className="text-white font-bold text-md p-4 flex justify-center items-center">
+								<div className="text-secondary font-bold text-md p-4 flex justify-center items-center">
 									You don't have active offers made by you
 								</div>
 							)}
 							<Menu.Item>
-								<h2 className="w-full text-lg font-bold text-white textMain">
+								<h2 className="w-full text-lg font-bold text-secondary text-secondary">
 									Active Offers Received
 								</h2>
 							</Menu.Item>
@@ -106,13 +106,13 @@ export const DropdownMenu: React.FC<
 														'flex cursor-pointer items-center justify-center gap-x-2 px-4 py-4 f-14 text-normal text-dark-1 rounded-md'
 													)}
 												>
-													<div className="p-1 rounded-md md:flex hidden text-white text-2xl">
+													<div className="p-1 rounded-md md:flex hidden text-secondary text-2xl">
 														{item.icon}
 													</div>
 													<div className="flex flex-col items-center justify-center">
 														<Typography
 															type="subTitle"
-															className="text-white font-bold md:text-left text-center"
+															className="text-secondary font-bold md:text-left text-center"
 														>
 															{item.title}
 														</Typography>
@@ -123,7 +123,7 @@ export const DropdownMenu: React.FC<
 									);
 								})
 							) : (
-								<div className="text-white font-bold text-md p-4 flex justify-center items-center">
+								<div className="text-secondary font-bold text-md p-4 flex justify-center items-center">
 									You don't have active offers received
 								</div>
 							)}

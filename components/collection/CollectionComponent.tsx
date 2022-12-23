@@ -195,10 +195,14 @@ export const CollectionComponent = () => {
 
 	const video = React.useRef<any>(null);
 
-	const { Modal, isShow, hide } = useModal();
+	const { Modal, isShow, show: showCongratsModal, hide } = useModal();
 
 	const show = () => {
 		setScreen('pay');
+	};
+
+	const showCongrats = () => {
+		showCongratsModal();
 	};
 
 	return (
@@ -211,95 +215,17 @@ export const CollectionComponent = () => {
 					isLoading || !bottle.address ? 'justify-center' : 'justify-start'
 				)}
 			>
-				<Modal isShow={isShow} hasBg NoClose>
+				<Modal isShow={isShow} hasBg>
 					<div
 						className={clsx(
-							'flex flex-col items-center justify-center w-full h-full sm:px-10 px-4 pb-10 relative mt-24'
+							'flex flex-col items-center justify-center w-full  h-full sm:px-10 px-4 pb-10 relative mt-24 bg-overlay'
 						)}
 					>
-						<MintModal
-							priceusd={priceUSD}
-							priceMATIC={priceMATIC}
-							allowance={bottle.allowance}
-							quantity={selected.filter((q: any) => q.value).length}
-							selected={selected}
-							bottle={bottle}
-							hide={hide}
-							approve={(address: any) => {
-								if (typeOfWallet !== 'metamask') {
-									approveBottle(dispatch, bottleContract, address);
-								}
-							}}
-							typeOfWallet={typeOfWallet}
-							Mint={(data: any, address: any) => {
-								delete data.currency;
-								// data.id = 3;
-								data.created_at = moment().format('YYYY-MM-DD hh:mm:ss');
-								data.updated_at = moment().format('YYYY-MM-DD hh:mm:ss');
-								data.deleted_at = null;
-
-								if (typeOfWallet == 'metamask') {
-									console.log('meta');
-									Mint(
-										selected
-											.map((value: any, id: number) => {
-												return {
-													value: value.value,
-													id: value.id,
-												};
-											})
-											.filter((q: any) => q.value)
-											.map((nft: any) => nft.id),
-										address,
-										setIsLoading,
-										bottleContract,
-										setMessage,
-										// accounts,
-										dispatch,
-										network,
-										networkName,
-										hide,
-										show,
-										setMinted,
-										data
-									);
-								} else {
-									mint(
-										bottleContract,
-										selected
-											.map((value: any, id: number) => {
-												return {
-													value: value.value,
-													id: value.id,
-												};
-											})
-											.filter((q: any) => q.value)
-											.map((nft: any) => nft.id),
-										address,
-										dispatch,
-										setMessage,
-										hide,
-										show,
-										setMinted,
-										data
-									);
-								}
-							}}
-							currencies={[
-								{ name: 'USDC', value: process.env.NEXT_PUBLIC_USDC_ADDRESS },
-								{
-									name: 'MATIC',
-									value: process.env.NEXT_PUBLIC_WMATIC_ADDRESS,
-								},
-							]}
-							quantityMinted={quantity}
-							maxSupply={maxSupply}
-							accounts={accounts}
-							isLoading={isLoading}
-							show={show}
-							connectWallet={connectWallet}
-							message={message}
-						/>
+						<div className="flex justify-end" onClick={() => hide()}>
+							{' '}
+							<Button>X</Button>
+						</div>
+						<div className="py-24 w-full text-secondary">Congratulations</div>
 					</div>
 				</Modal>
 				{/* <img
@@ -316,7 +242,7 @@ export const CollectionComponent = () => {
 						>
 							{/* <div className="flex justify-between w-full">
 								<Link href="/?bottles=true">
-									<div className="font-bold md:text-xl text-md mb-4  text-white cursor-pointer">
+									<div className="font-bold md:text-xl text-md mb-4  text-secondary cursor-pointer">
 										Back to Collections
 									</div>
 								</Link>
@@ -333,7 +259,7 @@ export const CollectionComponent = () => {
 									)}
 								>
 									{screen == 'menu' && (
-										<h2 className="text-3xl textMain font-bold pb-4">
+										<h2 className="text-3xl text-secondary font-bold pb-4">
 											{bottle.name}
 										</h2>
 									)}
@@ -427,7 +353,7 @@ export const CollectionComponent = () => {
 												</div>
 											</div>
 											<div className="flex flex-col  pt-10 gap-4 border-l px-8">
-												<h3 className="text-white text-xl font-bold text-center">
+												<h3 className="text-secondary text-xl font-bold text-center">
 													Physical asset backing up the floor price for this
 													collection
 												</h3>
@@ -473,52 +399,54 @@ export const CollectionComponent = () => {
 													);
 													data.deleted_at = null;
 
-													if (typeOfWallet == 'metamask') {
-														console.log('meta');
-														Mint(
-															selected
-																.map((value: any, id: number) => {
-																	return {
-																		value: value.value,
-																		id: value.id,
-																	};
-																})
-																.filter((q: any) => q.value)
-																.map((nft: any) => nft.id),
-															address,
-															setIsLoading,
-															bottleContract,
-															setMessage,
-															// accounts,
-															dispatch,
-															network,
-															networkName,
-															hide,
-															show,
-															setMinted,
-															data
-														);
-													} else {
-														mint(
-															bottleContract,
-															selected
-																.map((value: any, id: number) => {
-																	return {
-																		value: value.value,
-																		id: value.id,
-																	};
-																})
-																.filter((q: any) => q.value)
-																.map((nft: any) => nft.id),
-															address,
-															dispatch,
-															setMessage,
-															hide,
-															show,
-															setMinted,
-															data
-														);
-													}
+													showCongrats();
+
+													// if (typeOfWallet == 'metamask') {
+													// 	console.log('meta');
+													// 	Mint(
+													// 		selected
+													// 			.map((value: any, id: number) => {
+													// 				return {
+													// 					value: value.value,
+													// 					id: value.id,
+													// 				};
+													// 			})
+													// 			.filter((q: any) => q.value)
+													// 			.map((nft: any) => nft.id),
+													// 		address,
+													// 		setIsLoading,
+													// 		bottleContract,
+													// 		setMessage,
+													// 		// accounts,
+													// 		dispatch,
+													// 		network,
+													// 		networkName,
+													// 		hide,
+													// 		showCongrats,
+													// 		setMinted,
+													// 		data
+													// 	);
+													// } else {
+													// 	mint(
+													// 		bottleContract,
+													// 		selected
+													// 			.map((value: any, id: number) => {
+													// 				return {
+													// 					value: value.value,
+													// 					id: value.id,
+													// 				};
+													// 			})
+													// 			.filter((q: any) => q.value)
+													// 			.map((nft: any) => nft.id),
+													// 		address,
+													// 		dispatch,
+													// 		setMessage,
+													// 		hide,
+													// 		showCongrats,
+													// 		setMinted,
+													// 		data
+													// 	);
+													// }
 												}}
 												currencies={[
 													{
@@ -556,7 +484,7 @@ export const CollectionComponent = () => {
 					selected?.reduce((item: boolean, acc: boolean) => acc || item) && (
 						<div className="sticky flex justify-end w-full pb-4 bottom-0 px-4">
 							<div
-								className="bottom-4 right-2 py-2 px-4 font-bold rounded-md border border-white bg-overlay cursor-pointer text-white hover:text-overlay hover:bg-white transition-all duration-500"
+								className="bottom-4 right-2 py-2 px-4 font-bold rounded-md border border-white bg-overlay cursor-pointer text-secondary hover:text-overlay hover:bg-white transition-all duration-500"
 								onClick={() => {
 									if (address) {
 										show();
@@ -600,7 +528,7 @@ export const CollectionNFTItem = ({
 					<div className="min-h-[50vh] bg-overlay rounded-md p-6 2xl:min-w-[50vw] min-w-full">
 						<div className="flex justify-between mb-4">
 							<div
-								className="text-white font-bold cursor-pointer"
+								className="text-secondary font-bold cursor-pointer"
 								onClick={hide}
 							>
 								Back
@@ -612,7 +540,7 @@ export const CollectionNFTItem = ({
 									token.id
 								}`}
 								target="_blank"
-								className="text-white font-bold flex items-center gap-2"
+								className="text-secondary font-bold flex items-center gap-2"
 							>
 								View in{' '}
 								<img src="/icons/opensea.svg" className="h-4 w-4" alt="" />
@@ -647,7 +575,7 @@ export const CollectionNFTItem = ({
 								})}
 								className="w-full flex flex-col items-center justify-center gap-4"
 							>
-								<h2 className="textMain font-bold text-lg">
+								<h2 className="text-secondary font-bold text-lg">
 									Transfer NFT {token.name}
 								</h2>
 
@@ -661,7 +589,7 @@ export const CollectionNFTItem = ({
 								/>
 								<Button
 									className={clsx(
-										'z-10 borderborderMain md:text-lg text-sm  py-2 px-6 text-white transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
+										'z-10 borderborderMain md:text-lg text-sm  py-2 px-6 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
 										Styles.button
 									)}
 									type="submit"
@@ -682,7 +610,7 @@ export const CollectionNFTItem = ({
 				onClick={active ? () => setSelected() : undefined}
 			>
 				{selected && active && (
-					<div className="top-2 right-2 p-1 rounded-full bg-green-600 absolute w-8 text-white ">
+					<div className="top-2 right-2 p-1 rounded-full bg-green-600 absolute w-8 text-secondary ">
 						<CheckIcon />
 					</div>
 				)}
@@ -691,7 +619,9 @@ export const CollectionNFTItem = ({
 					className="rounded-xl border border-white overflow-hidden h-40 w-40"
 					alt=""
 				/>{' '}
-				<h2 className="p-4 text-center text-white font-bold">{token.name}</h2>
+				<h2 className="p-4 text-center text-secondary font-bold">
+					{token.name}
+				</h2>
 			</div>
 			{/* </Link> */}
 		</>
