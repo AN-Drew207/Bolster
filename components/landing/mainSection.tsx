@@ -9,7 +9,11 @@ export const MainSectionComponent = () => {
 		<div className="min-h-[100vh] pt-28 bg-overlay relative text-secondary flex items-center justify-center w-full">
 			<div className="flex gap-10 items-center w-full">
 				<div className="w-1/2 flex justify-center items-center">
-					<img src="" className="w-80 h-80 rounded-md" alt="" />
+					<img
+						src="/icons/bolster_logotype.svg"
+						className="w-[80%] rounded-md"
+						alt=""
+					/>
 				</div>
 				<div className="w-1/2 flex flex-col justify-center items-center gap-4">
 					<h2 className="text-center w-full text-6xl w-[700px]">

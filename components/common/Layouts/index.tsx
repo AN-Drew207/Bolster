@@ -273,11 +273,11 @@ export const Message: React.FunctionComponent<{
 };
 
 export const Logo = () => (
-	// <a href="https://thecoco.club/">
-	<div className="mr-4 md:py-0 h-16 flex items-center justify-center text-secondary uppercase cursor-pointer ">
-		Bolster
-	</div>
-	// </a>
+	<Link href="/">
+		<div className="mr-4 md:py-0 h-16 w-20 flex items-center justify-center text-secondary uppercase cursor-pointer ">
+			<img src="/icons/bolster_logo.svg" className="w-full" alt="" />
+		</div>
+	</Link>
 );
 
 export const NavbarItem: React.FC<any> = ({ name, link }) => {
