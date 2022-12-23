@@ -2,7 +2,6 @@ import clsx from 'clsx';
 import { Button } from 'components/common/button';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import Styles from '../landing/styles.module.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { useDispatch, useSelector } from 'react-redux';
