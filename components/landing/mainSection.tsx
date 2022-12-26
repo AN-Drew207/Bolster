@@ -3,6 +3,9 @@ import React from 'react';
 
 import { BottleItem, Bottles } from './BottlesComponent/BottlesCollections';
 import { useSelector } from 'react-redux';
+import clsx from 'clsx';
+import { Button } from 'components/common/button';
+import router from 'next/router';
 
 export const MainSectionComponent = () => {
 	return (
@@ -121,6 +124,29 @@ export const HowWeDoItComponent = () => {
 					option, we hope to add an extra layer of value and stability to our
 					NFTs.
 				</p>
+			</div>
+		</div>
+	);
+};
+
+export const CTAComponent = () => {
+	return (
+		<div className="py-10 bg-secondary relative text-white  w-full flex flex-col items-center justify-center">
+			<div className="flex flex-col gap-4 items-center justify-center w-1/2">
+				<p className="text-center Raleway text-[17px]">
+					Buy an NFT with us and get a Global Membership that gives you 24-hour
+					early access to our exclusive drops. <br /> Limited to the first 100
+					members.
+				</p>
+				<Button
+					className={clsx(
+						'z-10 border border-white bg-white Raleway font-bold px-4 py-3 text-secondary	 transition ease-in-out delay-150 hover:bg-secondary hover:border-white duration-300',
+						'hover:text-white'
+					)}
+					onClick={() => router.push('/profile')}
+				>
+					Get yours here!
+				</Button>
 			</div>
 		</div>
 	);
