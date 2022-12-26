@@ -210,7 +210,7 @@ export const CollectionComponent = () => {
 			{modal}
 			<div
 				className={clsx(
-					'min-h-screen flex flex-col items-center pt-0 w-full bg-gray-900',
+					'min-h-screen flex flex-col items-center pt-0 w-full bg-overlay',
 					'relative',
 					isLoading || !bottle.address ? 'justify-center' : 'justify-start'
 				)}
@@ -237,7 +237,7 @@ export const CollectionComponent = () => {
 					<div className="flex justify-center items-start w-full">
 						<div
 							className={clsx(
-								'min-h-screen flex flex-col gap-4 items-center py-32 xl:w-[90%] w-full xl:px-0 px-8 justify-start relative'
+								'min-h-screen flex flex-col gap-4 items-center pt-32 pb-10 xl:w-[90%] w-full xl:px-0 px-8 justify-start relative'
 							)}
 						>
 							{/* <div className="flex justify-between w-full">
@@ -255,7 +255,7 @@ export const CollectionComponent = () => {
 											['!w-full !border-none']:
 												bottle && bottle.metadata.length > 0 && screen == 'pay',
 										},
-										'flex rounded-xl flex-col items-center justify-center w-full bg-overlay border border-dark-800 py-8'
+										'flex rounded-xl flex-col items-center justify-center w-full bg-white border border-dark-800 py-8'
 									)}
 								>
 									{screen == 'menu' && (
@@ -274,7 +274,7 @@ export const CollectionComponent = () => {
 									{bottle && bottle.metadata.length > 0 && screen == 'menu' ? (
 										<div className="flex lg:flex-row flex-col border-t">
 											<div className="flex flex-col gap-4 items-center px-8 w-full">
-												<div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-4 p-4 py-10">
+												<div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-4 p-4 py-10">
 													{bottle.metadata
 														.filter((token: any) => !token.sold)
 														.map((token: any, i: any) => {
@@ -313,7 +313,7 @@ export const CollectionComponent = () => {
 														})}
 												</div>
 
-												<div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-4 p-4 py-10">
+												<div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-4 p-4 py-10">
 													{bottle.metadata
 														.filter((token: any) => token.sold)
 														.map((token: any, i: any) => {
@@ -353,13 +353,13 @@ export const CollectionComponent = () => {
 												</div>
 											</div>
 											<div className="flex flex-col  pt-10 gap-4 border-l px-8">
-												<h3 className="text-secondary text-xl font-bold text-center">
+												<h3 className="text-secondary text-xl font-bold text-center Raleway">
 													Physical asset backing up the floor price for this
 													collection
 												</h3>
-												<div className="p-2 border border-white rounded-md">
+												<div className="p-2 border border-secondary bg-secondary rounded-md flex items-center justify-center">
 													<img
-														src="/logos/Combined_Gold.png"
+														src="/img/usd-coin-usdc-logo.png"
 														alt=""
 														className="w-80"
 													/>
@@ -484,7 +484,7 @@ export const CollectionComponent = () => {
 					selected?.reduce((item: boolean, acc: boolean) => acc || item) && (
 						<div className="sticky flex justify-end w-full pb-4 bottom-0 px-4">
 							<div
-								className="bottom-4 right-2 py-2 px-4 font-bold rounded-md border border-white bg-overlay cursor-pointer text-secondary hover:text-overlay hover:bg-white transition-all duration-500"
+								className="bottom-4 right-2 py-2 px-4 font-bold rounded-md border border-white bg-secondary cursor-pointer text-white hover:text-secondary hover:bg-white transition-all duration-500"
 								onClick={() => {
 									if (address) {
 										show();
@@ -603,10 +603,14 @@ export const CollectionNFTItem = ({
 			</Modal>
 			{/* <Link href={'/bottle/' + bottle.address + '/token/' + token.id}> */}
 			<div
-				className={clsx('w-40 h-60 relative', {
-					['opacity-50']: !active,
-					['cursor-pointer']: active,
-				})}
+				className={clsx(
+					'relative border-secondary border rounded-md p-4 flex flex-col items-center justify-center',
+					{
+						['opacity-50']: !active,
+						['cursor-pointer hover:scale-105 duration-300 transition-all']:
+							active,
+					}
+				)}
 				onClick={active ? () => setSelected() : undefined}
 			>
 				{selected && active && (

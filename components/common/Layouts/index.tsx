@@ -26,6 +26,7 @@ const bottles =
 
 const navItems = [
 	{ name: 'HOME', link: '/', icon: <MenuIcon /> },
+	{ name: 'COLLECTIONS', link: '/collections', icon: <MenuIcon /> },
 	// { name: 'HOW TO MINT', link: '/tutorial', icon: <MenuIcon /> },
 	// { name: 'GALLERY', link: '/gallery', icon: <MenuIcon /> },
 	// { name: 'E-BAR', link: '/eBar', icon: <MenuIcon /> },

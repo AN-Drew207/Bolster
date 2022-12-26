@@ -135,10 +135,10 @@ export const EBarComponent: React.FC<any> = () => {
 			/>{' '} */}
 			<div className="relative flex flex-col w-full">
 				<div className="md:absolute hidden left-0 top-0 font-bold text-xl text-secondary cursor-pointer">
-					<Link href="/?bottles=true">Go To Bottles</Link>
+					<Link href="/collections">Go To Bottles</Link>
 				</div>
 				<div className="absolute md:hidden left-0 top-0 font-bold text-xl text-secondary cursor-pointer">
-					<Link href="/?bottles=true">{'Back'}</Link>
+					<Link href="/collections">{'Back'}</Link>
 				</div>
 				<h2 className="text-secondary font-bold mb-10 text-5xl w-full text-center">
 					MY NFTS
