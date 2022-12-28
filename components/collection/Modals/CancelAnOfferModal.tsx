@@ -2,23 +2,22 @@ import clsx from 'clsx';
 import { Button } from 'components/common/button';
 import * as React from 'react';
 import { useForm } from 'react-hook-form';
-import { Loading } from '../loadingComponent';
+import { Loading } from '../../landing/loadingComponent';
 import Styles from '../styles.module.scss';
 
-export const GetAmountBackModal: React.FC<any> = ({
+export const CancelAnOfferModal: React.FC<any> = ({
 	setOptions,
-	getAmountBack,
-	balance,
+	cancelAnOffer,
 	isLoading,
 	message,
 }) => {
 	const { handleSubmit } = useForm({ mode: 'onChange' });
 	const [acceptedConditions, setAcceptedConditions] = React.useState(true);
-	console.log(balance, 'balance');
+
 	return (
 		<div
 			className={clsx(
-				'flex flex-col items-center justify-center w-full h-full px-16 py-10 relative md:mt-20 bg-gray-900 rounded-xl border border-white max-w-[1000px]'
+				'flex flex-col items-center justify-center w-full h-full px-16 py-10 relative md:mt-20 bg-gray-900 rounded-xl border border-white'
 			)}
 		>
 			{acceptedConditions ? (
@@ -37,26 +36,14 @@ export const GetAmountBackModal: React.FC<any> = ({
 					</div>
 					<form
 						className="flex flex-col items-center justify-center gap-4 text-secondary"
-						onSubmit={handleSubmit(() => getAmountBack())}
+						onSubmit={handleSubmit(() => cancelAnOffer())}
 					>
 						<div className="flex md:flex-row flex-col justify-center items-center w-full md:gap-16 gap-4">
 							<div>
-								<h2 className="text-2xl text-secondary font-semibold text-left">
-									Get Back USDC From Offers Made By You
+								<h2 className="text-2xl font-semibold text-left">
+									Cancel Offer
 								</h2>
 							</div>
-						</div>
-						<div>
-							<h2 className="text-md font-semibold text-center">
-								You'll receive the amount that you have transfer to the smart{' '}
-								<br />
-								contract because of a cancelled / expired offer
-							</h2>
-						</div>
-						<div>
-							<h2 className="text-2xl font-semibold text-left">
-								Balance: {balance} USDC
-							</h2>
 						</div>
 						{isLoading ? (
 							<>
@@ -68,12 +55,11 @@ export const GetAmountBackModal: React.FC<any> = ({
 						) : (
 							<Button
 								className={clsx(
-									'z-10 border borderMain mt-4 px-16 py-4 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
-									Styles.button
+									'z-10 border border-red-500 mt-4 px-16 py-4 text-secondary transition ease-in-out delay-150 hover:-translate-y-1  font-bold hover:bg-red-500 hover:scale-110 duration-300  '
 								)}
 								type="submit"
 							>
-								Get Amount
+								CANCEL
 							</Button>
 						)}
 					</form>
@@ -94,7 +80,9 @@ export const GetAmountBackModal: React.FC<any> = ({
 						</div>
 					</div>
 					<div className="flex flex-col w-full gap-4 text-secondary">
-						<h2 className="text-2xl mb-2 font-bold text-center">Game Rules</h2>
+						<h2 className="text-2xl text-secondary mb-2 font-bold text-center">
+							Game Rules
+						</h2>
 						{new Array(3).fill(false).map((xd, i) => {
 							return (
 								<div className="flex w-full gap-2">

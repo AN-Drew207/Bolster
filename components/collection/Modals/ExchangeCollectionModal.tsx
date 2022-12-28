@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { Button } from 'components/common/button';
 import * as React from 'react';
 import { useForm } from 'react-hook-form';
-import { Loading } from '../loadingComponent';
+import { Loading } from '../../landing/loadingComponent';
 import Styles from '../styles.module.scss';
 import { sendForm } from '@emailjs/browser';
 import toast from 'react-hot-toast';

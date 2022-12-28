@@ -1,7 +1,7 @@
 import * as React from 'react';
 import bottlesTestnet from 'bottles_mumbai.json';
 import bottlesMainnet from 'bottles_polygon.json';
-import { BottleToken } from 'components/landing/BottleToken';
+import { BottleToken } from 'components/collection/BottleToken';
 
 const Bottle = () => {
 	return <BottleToken />;

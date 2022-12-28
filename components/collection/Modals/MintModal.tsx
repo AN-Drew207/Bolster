@@ -11,7 +11,7 @@ import { Button } from 'components/common/button';
 import * as React from 'react';
 // import ReactGoogleAutocomplete from 'react-google-autocomplete';
 import { useForm } from 'react-hook-form';
-import { Loading } from '../loadingComponent';
+import { Loading } from '../../landing/loadingComponent';
 // import { Loading } from '../loadingComponent';
 
 export const MintModal: React.FC<any> = ({

@@ -6,7 +6,7 @@ import BottleExchangeABI from '../../contracts/BottleExchange.json';
 import ERC20ABI from '../../contracts/ERC20.json';
 import getWeb3 from '../getWeb3';
 import { ButtonMint, MintComponent } from './MintComponents';
-import { Loading } from './loadingComponent';
+import { Loading } from '../landing/loadingComponent';
 import { useModal } from 'hooks/modal';
 import { Button } from 'components/common/button/button';
 import Web3 from 'web3';

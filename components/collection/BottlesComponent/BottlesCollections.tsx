@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 // import bottles from 'bottles.json';
 import { useSelector } from 'react-redux';
-import { Loading } from '../loadingComponent';
+import { Loading } from '../../landing/loadingComponent';
 
 export const Bottles: React.FC<any> = ({ setView }) => {
 	const { bottles: bottlesView } = useSelector((state: any) => state.state);

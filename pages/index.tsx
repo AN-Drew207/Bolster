@@ -15,9 +15,9 @@ const Home = () => {
 			<MainSectionComponent />
 			<OfferComponent />
 			<HowWeDoItComponent />
-			<TestimonialsComponent />
 			<CTAComponent />
 			<WhyShouldComponent />
+			<TestimonialsComponent />
 			<CollectionsLandingComponent />
 		</>
 	);

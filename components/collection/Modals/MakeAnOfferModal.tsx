@@ -3,7 +3,7 @@ import { Button } from 'components/common/button';
 import { Input } from 'components/common/form/input';
 import * as React from 'react';
 import { useForm } from 'react-hook-form';
-import { Loading } from '../loadingComponent';
+import { Loading } from '../../landing/loadingComponent';
 import Styles from '../styles.module.scss';
 
 export const MakeAnOfferModal: React.FC<any> = ({

@@ -1,7 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 
-import { BottleItem, Bottles } from './BottlesComponent/BottlesCollections';
+import {
+	BottleItem,
+	Bottles,
+} from '../collection/BottlesComponent/BottlesCollections';
 import { useSelector } from 'react-redux';
 import clsx from 'clsx';
 import { Button } from 'components/common/button';
@@ -52,7 +55,7 @@ export const OfferComponent = () => {
 	];
 	return (
 		<div className="py-28 bg-white relative text-secondary flex flex-col gap-16 items-center justify-center w-full">
-			<h2 className="text-2xl">What we Offer</h2>
+			<h2 className="text-3xl">What we Offer</h2>
 			<div className="flex flex-wrap gap-10 justify-center w-full">
 				{items.map((item) => {
 					return (
@@ -105,8 +108,8 @@ export const TestimonialsComponent = () => {
 export const HowWeDoItComponent = () => {
 	return (
 		<div className="py-28 bg-overlay relative text-secondary  w-full flex flex-col items-center justify-center">
-			<div className="flex flex-col gap-16 items-center justify-center w-1/2">
-				<h2 className="text-2xl">How we do it?</h2>
+			<div className="flex flex-col gap-10 items-center justify-center w-1/2">
+				<h2 className="text-3xl">How we do it?</h2>
 				<p className="text-center Raleway text-[17px]">
 					At Bolster, we believe that NFTs are a valuable tool for promoting
 					culture and art. However, we also recognize that the prices of NFTs
@@ -175,7 +178,7 @@ export const WhyShouldComponent = () => {
 	];
 
 	return (
-		<div className="py-10 bg-white relative text-secondary  w-full flex flex-col gap-10 items-center justify-center">
+		<div className="py-28 bg-overlay relative text-secondary  w-full flex flex-col gap-10 items-center justify-center">
 			<h2 className="text-3xl">Why you should come with us?</h2>
 
 			<div className="flex flex-col gap-4 items-center justify-center w-1/2 Raleway">

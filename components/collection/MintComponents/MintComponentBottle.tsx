@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Loading } from '../loadingComponent';
+import { Loading } from '../../landing/loadingComponent';
 import Link from 'next/link';
 // import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';

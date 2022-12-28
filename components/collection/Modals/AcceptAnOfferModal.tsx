@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { Button } from 'components/common/button';
 import * as React from 'react';
-import { Loading } from '../loadingComponent';
+import { Loading } from '../../landing/loadingComponent';
 import Styles from '../styles.module.scss';
 
 export const AcceptAnOfferModal: React.FC<any> = ({
