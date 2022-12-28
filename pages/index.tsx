@@ -5,6 +5,7 @@ import {
 	HowWeDoItComponent,
 	TestimonialsComponent,
 	CTAComponent,
+	WhyShouldComponent,
 } from 'components/landing/mainSection';
 import * as React from 'react';
 
@@ -16,6 +17,7 @@ const Home = () => {
 			<HowWeDoItComponent />
 			<TestimonialsComponent />
 			<CTAComponent />
+			<WhyShouldComponent />
 			<CollectionsLandingComponent />
 		</>
 	);

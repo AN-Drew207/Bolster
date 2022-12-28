@@ -152,6 +152,46 @@ export const CTAComponent = () => {
 	);
 };
 
+export const WhyShouldComponent = () => {
+	const items = [
+		{
+			text: 'The world is full of incredible artists just waiting to be discovered. Let us help you find them.',
+		},
+		{
+			text: 'We partner with hand-selected, talented artists to bring you unique, high-quality pieces',
+			subTexts:
+				'Our experienced art curator, Yvonne, has over 20 years of experience in the field. Not only has she worked with galleries and exhibitions, but she has also built a network of artists who are eager to collaborate with us. Her expertise ensures that our collections and exhibitions are of the highest caliber.',
+		},
+		{
+			text: 'Authenticity Guarantee on all our Backstop physical products',
+			subTexts:
+				'We are confident in the authenticity of our physical assets because we either purchase them directly from the brands or through our team of industry experts who carefully curate our selection. Our thorough procurement process ensures that we can provide an authenticity guarantee on all of our physical assets.',
+		},
+		{
+			text: 'The legal rights that the NFT(s) have to be redeemed to the physical assets are backed by UK law',
+			subTexts:
+				'The NFT(s) are legally backed by UK law and can be redeemed for the physical assets they represent.',
+		},
+	];
+
+	return (
+		<div className="py-10 bg-white relative text-secondary  w-full flex flex-col gap-10 items-center justify-center">
+			<h2 className="text-3xl">Why you should come with us?</h2>
+
+			<div className="flex flex-col gap-4 items-center justify-center w-1/2 Raleway">
+				{items.map((item) => {
+					return (
+						<div className="flex flex-col gap-2 w-full">
+							<h2 className="text-lg Raleway">{item.text}</h2>
+							<p className="text-[14px] text-gray-800 Raleway">{item.text}</p>
+						</div>
+					);
+				})}
+			</div>
+		</div>
+	);
+};
+
 export const CollectionsLandingComponent = () => {
 	const { bottles: bottlesView } = useSelector((state: any) => state.state);
 	console.log(bottlesView, 'botellas');
