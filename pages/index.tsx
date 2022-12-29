@@ -1,6 +1,5 @@
 import {
 	OfferComponent,
-	CollectionsLandingComponent,
 	MainSectionComponent,
 	HowWeDoItComponent,
 	TestimonialsComponent,
@@ -20,7 +19,6 @@ const Home = () => {
 			<WhyShouldComponent />
 			<LegalComponent />
 			<TestimonialsComponent />
-			{/* <CollectionsLandingComponent /> */}
 		</>
 	);
 };

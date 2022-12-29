@@ -19,16 +19,9 @@ export const ArtistComponent = () => {
 					from our wide selection of physical products and assets and give your
 					fans an additional peace of mind that comes with proper ownership.
 					Bolster makes it easy to legally add value to your work.
-					<p className="text-justify Raleway text-[17px]">
-						<br />
-						<br />
-						Rare Whiskies
-						<br /> Collectible Watches
-						<br /> Gold
-						<br />
-						<br />
-						More to come…
-					</p>
+				</p>
+				<p className="text-justify Raleway text-[17px] w-full">
+					Rare Whiskies, Collectible Watches, Gold and More to come…
 				</p>
 			</div>
 		</div>
