@@ -13,16 +13,6 @@ export const ArtistComponent = () => {
 					offering. Protect and reassure your fans and customers with the
 					confidence and security of a reliable backstop.
 				</p>
-				<p className="text-justify Raleway text-[17px]">
-					Enhance your collectibles with Bolster! Our hassle-free service
-					handles all the legalities, storage, and insurance for you. Choose
-					from our wide selection of physical products and assets and give your
-					fans an additional peace of mind that comes with proper ownership.
-					Bolster makes it easy to legally add value to your work.
-				</p>
-				<p className="text-justify Raleway text-[17px] w-full">
-					Rare Whiskies, Collectible Watches, Gold and More to come…
-				</p>
 			</div>
 		</div>
 	);

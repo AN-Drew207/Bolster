@@ -6,6 +6,7 @@ import {
 	CTAComponent,
 	WhyShouldComponent,
 	LegalComponent,
+	TypeOfBolsterComponent,
 } from 'components/landing/mainSection';
 import * as React from 'react';
 
@@ -16,6 +17,7 @@ const Home = () => {
 			<OfferComponent />
 			<HowWeDoItComponent />
 			<CTAComponent />
+			<TypeOfBolsterComponent />
 			<WhyShouldComponent />
 			<LegalComponent />
 			<TestimonialsComponent />

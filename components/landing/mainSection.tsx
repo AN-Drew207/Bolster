@@ -108,7 +108,7 @@ export const TestimonialsComponent = () => {
 export const HowWeDoItComponent = () => {
 	return (
 		<div className="py-28 bg-overlay relative text-secondary  w-full flex flex-col items-center justify-center">
-			<div className="flex flex-col gap-10 items-center justify-center w-1/2">
+			<div className="flex flex-col gap-10 items-center justify-center w-2/3">
 				<h2 className="text-3xl">How we do it?</h2>
 				<p className="text-center Raleway text-[17px]">
 					At Bolster, we believe that NFTs are a valuable tool for promoting
@@ -135,7 +135,7 @@ export const HowWeDoItComponent = () => {
 export const CTAComponent = () => {
 	return (
 		<div className="py-10 bg-secondary relative text-white  w-full flex flex-col items-center justify-center">
-			<div className="flex flex-col gap-4 items-center justify-center w-1/2">
+			<div className="flex flex-col gap-4 items-center justify-center w-2/3">
 				<p className="text-center Raleway text-[17px]">
 					Buy an NFT with us and get a Global Membership that gives you 24-hour
 					early access to our exclusive drops. <br /> Limited to the first 100
@@ -181,7 +181,7 @@ export const WhyShouldComponent = () => {
 		<div className="py-28 bg-overlay relative text-secondary  w-full flex flex-col gap-10 items-center justify-center">
 			<h2 className="text-3xl">Why you should come with us?</h2>
 
-			<div className="flex flex-col gap-4 items-center justify-center w-1/2 Raleway">
+			<div className="flex flex-col gap-4 items-center justify-center w-2/3 Raleway">
 				{items.map((item) => {
 					return (
 						<div className="flex flex-col gap-2 w-full">
@@ -228,7 +228,7 @@ export const CollectionsLandingComponent = () => {
 export const LegalComponent = () => {
 	return (
 		<div className="py-10 bg-white relative text-secondary  w-full flex flex-col items-center justify-center">
-			<div className="flex flex-col gap-4 items-center justify-center w-2/3">
+			<div className="flex flex-col gap-2 items-center justify-center w-2/3">
 				<h2 className="text-lg">DISCLAIMER</h2>
 				<p className="text-center Raleway text-[14px]">
 					The information and materials provided on our website are for general
@@ -241,6 +241,26 @@ export const LegalComponent = () => {
 					offer investment services or products. You should carefully consider
 					your investment objectives and risk tolerance before making any
 					investment decisions.
+				</p>
+			</div>
+		</div>
+	);
+};
+
+export const TypeOfBolsterComponent = () => {
+	return (
+		<div className="py-28 bg-white relative text-secondary  w-full flex flex-col items-center justify-center">
+			<div className="flex flex-col gap-4 items-center justify-center w-2/3">
+				<h2 className="text-3xl">Type of Bolster</h2>
+				<p className="text-justify Raleway text-[17px]">
+					Enhance your collectibles with Bolster! Our hassle-free service
+					handles all the legalities, storage, and insurance for you. Choose
+					from our wide selection of physical products and assets and give your
+					fans an additional peace of mind that comes with proper ownership.
+					Bolster makes it easy to legally add value to your work.
+				</p>
+				<p className="text-justify Raleway text-[17px] w-full">
+					Rare Whiskies, Collectible Watches, Gold and More to come…
 				</p>
 			</div>
 		</div>
