@@ -89,7 +89,7 @@ export const TestimonialsComponent = () => {
 		},
 	];
 	return (
-		<div className="py-28 bg-white relative text-secondary w-full flex flex-col items-center justify-center">
+		<div className="py-28 bg-overlay relative text-secondary w-full flex flex-col items-center justify-center">
 			<div className="flex flex-wrap gap-10 justify-center w-full">
 				{items.map((item) => {
 					return (
@@ -220,6 +220,28 @@ export const CollectionsLandingComponent = () => {
 						);
 					}
 				)}
+			</div>
+		</div>
+	);
+};
+
+export const LegalComponent = () => {
+	return (
+		<div className="py-10 bg-white relative text-secondary  w-full flex flex-col items-center justify-center">
+			<div className="flex flex-col gap-4 items-center justify-center w-2/3">
+				<h2 className="text-lg">DISCLAIMER</h2>
+				<p className="text-center Raleway text-[14px]">
+					The information and materials provided on our website are for general
+					informational purposes only and do not constitute investment advice.
+					We do not guarantee the accuracy, completeness, reliability,
+					suitability, or timeliness of the information or materials provided,
+					and we are not responsible for any errors or omissions. The market
+					value of our backstop physical products may fluctuate and we cannot
+					predict its behavior. We are not an investment platform and do not
+					offer investment services or products. You should carefully consider
+					your investment objectives and risk tolerance before making any
+					investment decisions.
+				</p>
 			</div>
 		</div>
 	);
