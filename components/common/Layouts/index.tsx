@@ -129,8 +129,8 @@ export default function AppLayout() {
 				<div className="flex items-center shrink-0">
 					<Logo />
 				</div>{' '}
-				<div className="border md:flex hidden items-center text-md justify-center border-overlay bg-primary-disabled rounded-xl w-1/2">
-					<div className="text-secondary flex items-center w-full px-4 rounded-xl bg-overlay border-r border-white">
+				<div className="border md:flex hidden items-center text-md justify-center border-overlay  bg-primary rounded-xl w-[35%]">
+					<div className="text-secondary flex items-center w-full px-4 rounded-xl bg-primary border-r border-white">
 						<input
 							type="text"
 							className="text-secondary text-md w-full bg-transparent outline outline-transparent ring border-none !ring-transparent"
@@ -281,8 +281,8 @@ export const Message: React.FunctionComponent<{
 
 export const Logo = () => (
 	<Link href="/">
-		<div className="mr-4 md:py-0 h-16 w-20 flex items-center justify-center text-secondary uppercase cursor-pointer ">
-			<img src="/icons/bolster_logo.svg" className="w-full" alt="" />
+		<div className="mr-4 md:py-0 w-28 flex items-center justify-center text-secondary uppercase cursor-pointer ">
+			<img src="/icons/logo.png" className="w-full" alt="" />
 		</div>
 	</Link>
 );

@@ -12,22 +12,32 @@ import router from 'next/router';
 
 export const MainSectionComponent = () => {
 	return (
-		<div className="min-h-[100vh] pt-28 bg-overlay relative text-secondary flex items-center justify-center w-full">
-			<div className="flex gap-10 items-center w-full">
-				<div className="w-1/2 flex justify-center items-center">
-					<img
-						src="/icons/bolster_logotype.svg"
-						className="w-[80%] rounded-md"
-						alt=""
-					/>
-				</div>
-				<div className="w-1/2 flex flex-col justify-center items-center gap-4">
+		<div className="min-h-[100vh] pt-28 bg-overlay relative text-secondary flex items-center justify-center w-full relative">
+			<div className="w-full flex justify-center items-center absolute h-full">
+				<img src="/img/bg1.jpg" className="w-full rounded-md" alt="" />
+			</div>
+			<div className="bg-gray-900 opacity-[0.4] absolute h-full w-full"></div>
+			<div className="bg-gradient-to-b from-transparent to-gray-900 absolute bottom-0 h-28 w-full"></div>
+			<div className="flex gap-10 items-center justify-center w-full  h-full relative text-white">
+				<div className="w-2/3 flex flex-col justify-center items-center gap-4 relative">
 					<h2 className="text-center w-full text-6xl w-[700px]">
-						Building the future of NFTs
+						Amazing NFT Projects with Backstop Value.
 					</h2>
-					<h2 className="text-gray-800 Raleway w-full text-center text-md w-[700px]">
-						Amazing NFT Projects with Backstop Value. NFTs with peace of mind
+					<h2 className="Raleway w-full text-center text-md font-thin w-[700px]">
+						NFTs with peace of mind
 					</h2>
+					<div className="flex justify-center gap-10"> {}</div>
+					<div className="flex justify-center gap-10">
+						{' '}
+						<Button
+							className={clsx(
+								'z-10 border border-white bg-secondary Raleway font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:scale-[120%] duration-300',
+								'ml-4'
+							)}
+						>
+							Explore NFTs
+						</Button>
+					</div>
 				</div>
 			</div>
 		</div>
