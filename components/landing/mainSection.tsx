@@ -20,7 +20,7 @@ export const MainSectionComponent = () => {
 			<div className="bg-gradient-to-b from-transparent to-gray-900 absolute bottom-0 h-28 w-full"></div>
 			<div className="flex gap-10 items-center justify-center w-full  h-full relative text-white">
 				<div className="w-2/3 flex flex-col justify-center items-center gap-4 relative">
-					<h2 className="text-center w-full text-7xl w-full">
+					<h2 className="text-center w-full text-7xl w-full RalewayBold">
 						Amazing NFT Projects with Backstop Value.
 					</h2>
 					<h2 className="Raleway w-full text-center text-md font-thin w-[700px]">
@@ -146,7 +146,7 @@ export const OfferComponent = () => {
 	];
 	return (
 		<div className="py-28 bg-gray-900 relative text-secondary flex flex-col gap-24 items-center justify-center w-full">
-			<h2 className="text-3xl">Offer</h2>
+			<h2 className="text-4xl text-white RalewayBold">Offer</h2>
 			<div className="flex flex-wrap gap-10 justify-center w-full">
 				{items.map((item) => {
 					return (
@@ -190,7 +190,7 @@ export const TestimonialsComponent = () => {
 				{items.map((item) => {
 					return (
 						<div className="flex flex-col gap-2 w-[525px] items-center ">
-							<h3 className="text-lg Raleway text-center text-gray-200 italic">
+							<h3 className="text-lg Montserrat text-center text-gray-200 italic">
 								{item.text}
 							</h3>
 							<img src={item.icon} className="w-20" alt="" />
@@ -213,7 +213,7 @@ export const HowWeDoItComponent = () => {
 					<img src="icons/opensea.svg" className="w-2/3" alt="" />
 				</div>
 				<div className="w-1/2 flex flex-col items-center justify-center">
-					<p className="text-justify Raleway text-[17px] w-2/3">
+					<p className="text-justify Montserrat text-[17px] w-2/3">
 						At Bolster, we believe that NFTs are a valuable tool for promoting
 						culture and art. However, we also recognize that the prices of NFTs
 						can be extremely volatile and have suffered significant losses
@@ -285,17 +285,19 @@ export const WhyShouldComponent = () => {
 
 	return (
 		<div className="py-28 bg-gray-900 relative text-secondary  w-full flex flex-col gap-10 items-center justify-center">
-			<h2 className="text-3xl">Why you should come with us?</h2>
+			<h2 className="text-4xl text-white RalewayBold">
+				Why you should come with us?
+			</h2>
 			<div className="flex gap-16 justify-center items-center">
 				<div className="w-1/2 flex items-center justify-center pl-36">
-					<img src="icons/opensea.svg" className="w-1/2" alt="" />
+					<img src="icons/bolster.png" className="w-80" alt="" />
 				</div>
 				<div className="flex flex-col gap-4 items-center justify-center w-1/2 Raleway pr-36	">
 					{items.map((item) => {
 						return (
 							<div className="flex flex-col gap-2 w-full">
 								<h2 className="text-[17px] RalewayBold">&#8226; {item.text}</h2>
-								<p className="text-[15px] text-gray-500 Raleway pl-4">
+								<p className="text-[15px] text-gray-500 Montserrat pl-4">
 									{item.subTexts}
 								</p>
 							</div>
@@ -340,9 +342,12 @@ export const CollectionsLandingComponent = () => {
 export const LegalComponent = () => {
 	return (
 		<div className="py-24 bg-gray-900 relative text-white  w-full flex flex-col items-center justify-center">
-			<div className="flex flex-col gap-6 items-center justify-center w-full px-40">
-				<h2 className="text-6xl RalewayBold">Disclaimer</h2>
-				<p className="text-center Raleway text-lg text-gray-500">
+			<div className="flex flex-col gap-6 items-center justify-center w-full px-56">
+				<h2 className="text-4xl RalewayBold">Disclaimer</h2>
+				<p
+					className="text-center Montserrat text-[15px] text-gray-500"
+					style={{ lineHeight: '35px' }}
+				>
 					The information and materials provided on our website are for general
 					informational purposes only and do not constitute investment advice.
 					We do not guarantee the accuracy, completeness, reliability,
@@ -363,7 +368,7 @@ export const TypeOfBolsterComponent = () => {
 	return (
 		<div className="py-28 bg-gray-900 relative text-secondary  w-full flex flex-col items-center justify-center">
 			<div className="flex flex-col gap-4 items-center justify-center w-2/3">
-				<h2 className="text-3xl">Type of Bolster</h2>
+				<h2 className="text-4xl text-white RalewayBold">Type of Bolster</h2>
 				<p className="text-justify Raleway text-[17px]">
 					Enhance your collectibles with Bolster! Our hassle-free service
 					handles all the legalities, storage, and insurance for you. Choose

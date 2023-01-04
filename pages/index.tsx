@@ -16,11 +16,12 @@ const Home = () => {
 			<MainSectionComponent />
 			<OfferComponent />
 			<HowWeDoItComponent />
+			<TestimonialsComponent />
+
 			<CTAComponent />
 			<TypeOfBolsterComponent />
 			<WhyShouldComponent />
 			<LegalComponent />
-			<TestimonialsComponent />
 		</>
 	);
 };
