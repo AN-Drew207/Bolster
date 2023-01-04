@@ -27,7 +27,7 @@ const bottles =
 const navItems = [
 	{ name: 'HOME', link: '/', icon: <MenuIcon /> },
 	{ name: 'COLLECTIONS', link: '/collections', icon: <MenuIcon /> },
-	{ name: 'FOR ARTISTS', link: '/artists', icon: <MenuIcon /> },
+	// { name: 'FOR ARTISTS', link: '/artists', icon: <MenuIcon /> },
 	// { name: 'GALLERY', link: '/gallery', icon: <MenuIcon /> },
 	// { name: 'E-BAR', link: '/eBar', icon: <MenuIcon /> },
 ];
@@ -182,7 +182,7 @@ export default function AppLayout() {
 								<div className="flex flex-col gap-4 p-4 w-72">
 									<Button
 										className={clsx(
-											'z-10 border border-secondary bg-secondary Raleway font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+											'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
 											'!rounded-full hover:text-secondary'
 										)}
 										onClick={() => router.push('/profile')}
@@ -194,7 +194,7 @@ export default function AppLayout() {
 											{' '}
 											<Button
 												className={clsx(
-													'z-10 border border-secondary bg-secondary Raleway font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+													'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
 													'!rounded-full hover:text-secondary'
 												)}
 												onClick={() => showWallet()}
@@ -203,7 +203,7 @@ export default function AppLayout() {
 											</Button>
 											<Button
 												className={clsx(
-													'z-10 border border-secondary bg-secondary Raleway font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+													'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
 													'!rounded-full hover:text-secondary'
 												)}
 												onClick={() => disconnect(dispatch)}
@@ -225,7 +225,7 @@ export default function AppLayout() {
 					) : (
 						<Button
 							className={clsx(
-								'z-10 border border-secondary bg-secondary Raleway font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+								'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
 								'!rounded-full hover:text-secondary ml-4'
 							)}
 							onClick={() => show()}
@@ -293,7 +293,7 @@ export const NavbarItem: React.FC<any> = ({ name, link }) => {
 			<div className={clsx('sm:px-4 px-2 py-2 relative cursor-pointer')}>
 				<div className={clsx('gap-2 flex items-center text-secondary')}>
 					{/* <div className="flex items-center w-4">{icon}</div> */}
-					<h3 className={clsx('text-md font-bold text-center Raleway')}>
+					<h3 className={clsx('text-md font-bold text-center RalewayBold')}>
 						{name}
 					</h3>
 				</div>

@@ -136,7 +136,9 @@ export const ButtonContent: React.FC<
 					labelProps={labelProps}
 					href={href}
 					{...props}
-				/>
+				>
+					{children}
+				</Button>
 			) : (
 				<Button
 					icon={icon}

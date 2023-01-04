@@ -4,7 +4,7 @@ import { CollectionsLandingComponent } from 'components/landing/mainSection';
 
 const Bottle = () => {
 	return (
-		<div className="flex flex-col pt-20">
+		<div className="flex flex-col pt-16 bg-overlay">
 			{' '}
 			<CollectionsLandingComponent />
 		</div>
