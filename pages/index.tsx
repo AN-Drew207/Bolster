@@ -17,7 +17,6 @@ const Home = () => {
 			<OfferComponent />
 			<HowWeDoItComponent />
 			<TestimonialsComponent />
-
 			<CTAComponent />
 			<TypeOfBolsterComponent />
 			<WhyShouldComponent />

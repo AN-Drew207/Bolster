@@ -13,8 +13,12 @@ import router from 'next/router';
 export const MainSectionComponent = () => {
 	return (
 		<div className="min-h-[100vh] pt-28 bg-overlay relative text-secondary flex items-center justify-center w-full relative">
-			<div className="w-full flex justify-center items-center absolute h-full">
-				<img src="/img/bg1.jpg" className="w-full rounded-md" alt="" />
+			<div className="w-full flex justify-center items-center absolute h-full overflow-hidden">
+				<img
+					src="/img/bg1.jpg"
+					className="w-full rounded-md min-w-[1200px]"
+					alt=""
+				/>
 			</div>
 			<div className="bg-gray-900 opacity-[0.4] absolute h-full w-full"></div>
 			<div className="bg-gradient-to-b from-transparent to-gray-900 absolute bottom-0 h-28 w-full"></div>
@@ -200,7 +204,11 @@ export const TestimonialsComponent = () => {
 	];
 	return (
 		<div className="py-28 bg-overlay relative text-secondary w-full flex flex-col items-center justify-center overflow-hidden">
-			<img src="/img/bg2.jpg" className="absolute top-0 w-full" alt="" />
+			<img
+				src="/img/bg2.jpg"
+				className="absolute top-0 w-full min-w-[1500px] opacity-[0.6]"
+				alt=""
+			/>
 			<div className="flex flex-wrap gap-10 justify-center w-full relative items-center">
 				{items.map((item) => {
 					return (
@@ -359,10 +367,10 @@ export const CollectionsLandingComponent = () => {
 export const LegalComponent = () => {
 	return (
 		<div className="py-24 bg-gray-900 relative text-white  w-full flex flex-col items-center justify-center">
-			<div className="flex flex-col gap-6 items-center justify-center w-full px-56">
+			<div className="flex flex-col gap-6 items-center justify-center w-full lg:px-56 px-10">
 				<h2 className="text-4xl RalewayBold">Disclaimer</h2>
 				<p
-					className="text-center Montserrat text-[15px] text-gray-500"
+					className="text-center Montserrat lg:text-[15px] text-[14px] text-gray-500"
 					style={{ lineHeight: '35px' }}
 				>
 					The information and materials provided on our website are for general
@@ -384,8 +392,8 @@ export const LegalComponent = () => {
 export const TypeOfBolsterComponent = () => {
 	return (
 		<div className="py-28 bg-gray-900 relative w-full flex justify-center">
-			<div className="w-[75%] flex justify-center">
-				<div className="flex flex-col gap-4 items-center justify-center w-1/2  h-full">
+			<div className="xl:w-[75%] w-full xl:px-0 px-10 flex justify-center">
+				<div className="flex flex-col gap-4 items-center justify-center xl:w-1/2 w-full  h-full">
 					<h2 className="text-4xl text-white RalewayBold">Type of Bolster</h2>
 					<p className="text-center Raleway text-gray-500 text-[17px]">
 						Enhance your collectibles with Bolster! Our hassle-free service
@@ -394,8 +402,8 @@ export const TypeOfBolsterComponent = () => {
 						your fans an additional peace of mind that comes with proper
 						ownership. Bolster makes it easy to legally add value to your work.
 					</p>
-					<div className="flex gap-6 lg:flex-nowrap flex-wrap text-white text-3xl">
-						<div className="xl:w-1/3 flex flex-col relative text-center items-center justify-center py-10 overflow-hidden">
+					<div className="flex gap-6 text-white text-3xl">
+						<div className="w-1/3 flex flex-col relative text-center items-center justify-center py-10 overflow-hidden">
 							<img
 								src="img/bg2.jpg"
 								className="absolute min-w-[500px] top-0"
@@ -407,7 +415,7 @@ export const TypeOfBolsterComponent = () => {
 								Rare Whiskies
 							</h1>
 						</div>
-						<div className="xl:w-1/3 flex flex-col relative text-center items-center justify-center py-10 overflow-hidden">
+						<div className="w-1/3 flex flex-col relative text-center items-center justify-center py-10 overflow-hidden">
 							<img
 								src="img/bg2.jpg"
 								className="absolute min-w-[500px] top-0"
@@ -419,7 +427,7 @@ export const TypeOfBolsterComponent = () => {
 								Collective Watches
 							</h1>
 						</div>
-						<div className="xl:w-1/3 flex flex-col relative text-center items-center justify-center py-10 overflow-hidden">
+						<div className="w-1/3 flex flex-col relative text-center items-center justify-center py-10 overflow-hidden">
 							<img
 								src="img/bg2.jpg"
 								className="absolute min-w-[500px] top-0"
@@ -433,7 +441,7 @@ export const TypeOfBolsterComponent = () => {
 						</div>
 					</div>
 				</div>
-				<div className="w-1/2 flex items-center justify-center pl-16">
+				<div className="w-1/2 xl:flex hidden items-center justify-center pl-16">
 					<img src="/img/bg_crypto.jpg" className="w-full" alt="" />
 				</div>
 			</div>
