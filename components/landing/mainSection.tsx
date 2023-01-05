@@ -264,28 +264,6 @@ export const HowWeDoItComponent = () => {
 	);
 };
 
-export const ArtistsAndProjectsComponent = () => {
-	return (
-		<div className="py-28 bg-gray-900 relative text-white  w-full flex flex-col items-center justify-center">
-			<div className="flex gap-24 items-center justify-center w-full px-16">
-				<div className="lg:w-1/2 w-full flex flex-col items-center justify-center">
-					<p className="text-justify Montserrat text-[17px] w-2/3">
-						Are you an artist or are you developing an NFT project and looking
-						to bolster the value of your work? Contact us today to see how we
-						can help! <br />
-						<br /> Bolster your customer loyalty with our backstop value
-						offering. Protect and reassure your fans and customers with the
-						confidence and security of a reliable backstop.
-					</p>
-				</div>
-				<div className="lg:w-1/2 lg:flex hidden items-center justify-center">
-					<img src="icons/opensea.svg" className="w-1/2" alt="" />
-				</div>
-			</div>
-		</div>
-	);
-};
-
 export const CTAComponent = () => {
 	return (
 		<div className="py-28 bg-gray-900 relative text-white  w-full flex flex-col items-center justify-center">
@@ -416,7 +394,10 @@ export const LegalComponent = () => {
 
 export const TypeOfBolsterComponent = () => {
 	return (
-		<div className="py-28 bg-gray-900 relative w-full flex justify-center">
+		<div
+			className="py-28 bg-gray-900 relative w-full flex justify-center"
+			id="for_artists"
+		>
 			<div className="w-full 2xl:px-10 px-36 flex justify-center">
 				<div className="flex flex-col gap-4 items-center justify-center 2xl:w-1/2 w-full  h-full">
 					<h2 className="text-4xl text-white RalewayBold text-center">

@@ -140,7 +140,6 @@ export const CollectionComponent = () => {
 						...item,
 						metadata: item.metadata.map((item: any, i: any) => {
 							if (!item.id) {
-								console.log(item, 'hieju');
 								return {
 									...item,
 									sold: false,

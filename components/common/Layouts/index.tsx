@@ -28,11 +28,11 @@ const navItems = [
 	// { name: 'BENEFITS', link: '/#benefits', icon: <MenuIcon /> },
 	{
 		name: 'FOR ARTISTS AND NFT PROJECTS',
-		link: '/#projects',
+		link: '/#for_artists',
 		icon: <MenuIcon />,
 	},
 	{ name: 'COLLECTIONS', link: '/collections', icon: <MenuIcon /> },
-	{ name: 'CONTACT US', link: '/#footer', icon: <MenuIcon /> },
+	{ name: 'CONTACT US', link: '/#contactus', icon: <MenuIcon /> },
 	// { name: 'FOR ARTISTS', link: '/artists', icon: <MenuIcon /> },
 	// { name: 'GALLERY', link: '/gallery', icon: <MenuIcon /> },
 	// { name: 'E-BAR', link: '/eBar', icon: <MenuIcon /> },

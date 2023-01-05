@@ -35,7 +35,7 @@ function MyApp({
 				<meta name="msapplication-TileColor" content="#e68fa7" />
 				<meta name="theme-color" content="#e68fa7" />
 
-				<link rel="icon" type="image/x-icon" href="Isotype_Gold.png" />
+				<link rel="icon" type="image/x-icon" href="bolster.png" />
 				<meta property="og:title" content="Bolster" />
 				<meta property="og:description" content="" />
 				<meta property="og:image:width" content="300" />
