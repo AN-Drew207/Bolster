@@ -135,12 +135,9 @@ export const EBarComponent: React.FC<any> = () => {
 			/>{' '} */}
 			<div className="relative flex flex-col w-full">
 				<div className="md:absolute hidden left-0 top-0 font-bold text-xl text-secondary cursor-pointer">
-					<Link href="/collections">Go To Bottles</Link>
+					<Link href="/collections">Go To Collections</Link>
 				</div>
-				<div className="absolute md:hidden left-0 top-0 font-bold text-xl text-secondary cursor-pointer">
-					<Link href="/collections">{'Back'}</Link>
-				</div>
-				<h2 className="text-secondary font-bold mb-10 text-5xl w-full text-center">
+				<h2 className="text-white font-bold mb-10 text-5xl w-full text-center">
 					MY NFTS
 				</h2>
 				<div className="flex flex-col gap-10 items-center justify-center w-full pb-10">
@@ -151,7 +148,7 @@ export const EBarComponent: React.FC<any> = () => {
 						<>
 							{haveNFTs ? (
 								<>
-									<h2 className="text-4xl text-secondary font-bold w-full text-left">
+									<h2 className="text-4xl text-white font-bold w-full text-left">
 										Bottle NFT Fractions
 									</h2>
 									{bottles?.map((bottle) => {
@@ -294,10 +291,10 @@ any) => {
 		<>
 			<Modal isShow={isShow} hasBg>
 				<div className="min-h-[100vh] flex flex-col items-center justify-center w-full">
-					<div className="min-h-[50vh] bg-overlay rounded-md p-6 2xl:min-w-[50vw] min-w-full">
+					<div className="min-h-[50vh] bg-primary rounded-md p-6 2xl:min-w-[50vw] min-w-full">
 						<div className="flex justify-between mb-4">
 							<div
-								className="text-secondary font-bold cursor-pointer"
+								className="text-white font-bold cursor-pointer"
 								onClick={hide}
 							>
 								Back
@@ -376,16 +373,16 @@ any) => {
 				<div
 					className={clsx(
 						{ ['items-center justify-center']: isLoading },
-						'flex flex-col rounded-xl bg-white border border-secondary text-xl text-center font-bold text-secondary md:p-10 sm:p-8 p-4'
+						'flex flex-col rounded-xl bg-overlay border border-secondary text-xl text-center font-bold text-white md:p-10 sm:p-8 p-4'
 					)}
 				>
 					{isLoading ? (
-						<div className="p-4 flex items-center justify-center text-secondary text-5xl">
+						<div className="p-4 flex items-center justify-center text-white text-5xl">
 							<LoadingOutlined></LoadingOutlined>
 						</div>
 					) : (
 						<>
-							<h3 className="text-2xl text-left font-bold text-secondary pb-4 w-full">
+							<h3 className="text-2xl text-left font-bold text-white pb-4 w-full">
 								{name}
 							</h3>
 							<div className="sm:px-6 pb-10">
@@ -444,7 +441,7 @@ any) => {
 														<div className="p-4 absolute bottom-0 flex flex-col text-white items-center justify-center z-10">
 															{token.name}
 														</div>
-														<div className="absolute w-full h-full bg-secondary opacity-75 z-0"></div>
+														<div className="absolute w-full h-full bg-primary opacity-[0.6] z-0"></div>
 													</div>
 												</Link>
 											</SwiperSlide>

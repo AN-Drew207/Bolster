@@ -129,7 +129,7 @@ export default function AppLayout() {
 				<div className="flex items-center shrink-0">
 					<Logo />
 				</div>{' '}
-				<div className="border md:flex hidden items-center text-md justify-center border-overlay  bg-primary rounded-xl w-[35%]">
+				<div className="border md:flex hidden items-center text-md justify-center border-white  bg-primary rounded-xl w-[35%]">
 					<div className="text-secondary flex items-center w-full px-4 rounded-xl bg-primary border-r border-white">
 						<input
 							type="text"

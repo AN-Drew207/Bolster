@@ -139,10 +139,18 @@ export const CollectionComponent = () => {
 					setBottle({
 						...item,
 						metadata: item.metadata.map((item: any, i: any) => {
-							return {
-								...item,
-								sold: !tokensInSell.includes(item.id.toString()),
-							};
+							if (!item.id) {
+								console.log(item, 'hieju');
+								return {
+									...item,
+									sold: false,
+								};
+							} else {
+								return {
+									...item,
+									sold: !tokensInSell.includes(item.id.toString()),
+								};
+							}
 						}),
 					});
 				}
@@ -240,13 +248,13 @@ export const CollectionComponent = () => {
 								'min-h-screen flex flex-col gap-4 items-center pt-32 pb-10 xl:w-[90%] w-full xl:px-0 px-8 justify-start relative'
 							)}
 						>
-							{/* <div className="flex justify-between w-full">
-								<Link href="/?bottles=true">
-									<div className="font-bold md:text-xl text-md mb-4  text-secondary cursor-pointer">
+							<div className="flex justify-between w-full">
+								<Link href="/collections">
+									<div className="font-bold md:text-xl text-md mb-4  text-white cursor-pointer">
 										Back to Collections
 									</div>
 								</Link>
-							</div> */}
+							</div>
 
 							<>
 								<div
@@ -255,11 +263,11 @@ export const CollectionComponent = () => {
 											['!w-full !border-none']:
 												bottle && bottle.metadata.length > 0 && screen == 'pay',
 										},
-										'flex rounded-xl flex-col items-center justify-center w-full bg-white border border-dark-800 py-8'
+										'flex rounded-xl flex-col items-center justify-center w-full bg-overlay border-secondary py-8'
 									)}
 								>
 									{screen == 'menu' && (
-										<h2 className="text-3xl text-secondary font-bold pb-4">
+										<h2 className="text-3xl text-white font-bold pb-4">
 											{bottle.name}
 										</h2>
 									)}
@@ -267,12 +275,12 @@ export const CollectionComponent = () => {
 										src={bottle.image}
 										autoPlay
 										loop
-										className="rounded-xl border border-white h-auto md:w-2/3 w-full"
+										className="rounded-xl border-white h-auto md:w-2/3 w-full"
 										ref={video}
 									></video> */}
 
 									{bottle && bottle.metadata.length > 0 && screen == 'menu' ? (
-										<div className="flex lg:flex-row flex-col border-t">
+										<div className="flex lg:flex-row flex-col  border-secondary">
 											<div className="flex flex-col gap-4 items-center px-8 w-full">
 												<div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-4 p-4 py-10">
 													{bottle.metadata
@@ -352,17 +360,13 @@ export const CollectionComponent = () => {
 														})}
 												</div>
 											</div>
-											<div className="flex flex-col  pt-10 gap-4 border-l px-8">
-												<h3 className="text-secondary text-xl font-bold text-center Raleway">
+											<div className="flex flex-col  pt-10 gap-4 border-secondary px-8">
+												<h3 className="text-white text-xl font-bold text-center Raleway">
 													Physical asset backing up the floor price for this
 													collection
 												</h3>
-												<div className="p-2 border border-secondary bg-secondary rounded-md flex items-center justify-center">
-													<img
-														src="/img/usd-coin-usdc-logo.png"
-														alt=""
-														className="w-80"
-													/>
+												<div className="p-2 border-white bg-primary rounded-md flex items-center justify-center">
+													<img src={bottle.image} alt="" className="w-80" />
 												</div>
 											</div>
 										</div>
@@ -371,7 +375,7 @@ export const CollectionComponent = () => {
 									  screen == 'pay' ? (
 										<div
 											className={clsx(
-												'flex flex-col items-center justify-center w-full h-full relative border rounded-xl'
+												'flex flex-col items-center justify-center w-full h-full relative border-secondary rounded-xl'
 											)}
 										>
 											<MintModal
@@ -484,7 +488,7 @@ export const CollectionComponent = () => {
 					selected?.reduce((item: boolean, acc: boolean) => acc || item) && (
 						<div className="sticky flex justify-end w-full pb-4 bottom-0 px-4">
 							<div
-								className="bottom-4 right-2 py-2 px-4 font-bold rounded-md border border-white bg-secondary cursor-pointer text-white hover:text-secondary hover:bg-white transition-all duration-500"
+								className="bottom-4 right-2 py-2 px-4 font-bold rounded-md border-secondary bg-secondary cursor-pointer text-white hover:text-secondary hover:bg-white transition-all duration-500"
 								onClick={() => {
 									if (address) {
 										show();
@@ -549,7 +553,7 @@ export const CollectionNFTItem = ({
 						<div className="flex gap-8 h-full items-center justify-center">
 							<img
 								src={token.image}
-								className="w-96 shrink-0 rounded-xl border border-white"
+								className="w-96 shrink-0 rounded-xl border-white"
 								alt=""
 							/>
 							<form
@@ -604,7 +608,7 @@ export const CollectionNFTItem = ({
 			{/* <Link href={'/bottle/' + bottle.address + '/token/' + token.id}> */}
 			<div
 				className={clsx(
-					'relative border-secondary border rounded-md p-4 flex flex-col items-center justify-center',
+					'relative border-secondary rounded-md p-4 flex flex-col items-center justify-center',
 					{
 						['opacity-50']: !active,
 						['cursor-pointer hover:scale-105 duration-300 transition-all']:
@@ -618,11 +622,21 @@ export const CollectionNFTItem = ({
 						<CheckIcon />
 					</div>
 				)}
-				<img
-					src={token.image}
-					className="rounded-xl border border-white overflow-hidden h-40 w-40"
-					alt=""
-				/>{' '}
+				{token.image && (
+					<img
+						src={token.image}
+						className="w-40 h-40 rounded-md border border-secondary"
+						alt=""
+					/>
+				)}
+				{token.animation_url && (
+					<video
+						src={token.animation_url}
+						className="h-40 rounded-md border border-secondary"
+						autoPlay
+						loop
+					/>
+				)}
 				<h2 className="p-4 text-center text-secondary font-bold">
 					{token.name}
 				</h2>

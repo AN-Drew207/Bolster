@@ -42,24 +42,22 @@ export const Bottles: React.FC<any> = ({ setView }) => {
 						Our Collections
 					</h2>
 					<div className="flex flex-wrap gap-10 items-center justify-center w-full">
-						{bottlesView.map(
-							(
-								{ address, name, image, exchanged, supply, maxSupply }: any,
-								index: number
-							) => {
-								return (
-									<BottleItem
-										address={address}
-										name={name}
-										video={image}
-										exchanged={exchanged}
-										supply={supply}
-										maxSupply={maxSupply}
-										index={index}
-									/>
-								);
-							}
-						)}
+						{bottlesView.map((bottle: any, index: number) => {
+							const { address, name, image, exchanged, supply, maxSupply } =
+								bottle;
+							console.log(bottle, 'a?');
+							return (
+								<BottleItem
+									address={address}
+									name={name}
+									image={image}
+									exchanged={exchanged}
+									supply={supply}
+									maxSupply={maxSupply}
+									index={index}
+								/>
+							);
+						})}
 					</div>
 				</div>
 			) : (
@@ -69,12 +67,14 @@ export const Bottles: React.FC<any> = ({ setView }) => {
 	);
 };
 +3;
-export const BottleItem = ({ address, name, video }: any) => {
+export const BottleItem = ({ address, name, video, image }: any) => {
 	const videoRef = React.useRef<any>(null);
 
 	const handleVideo = () => {
 		videoRef?.current?.play();
 	};
+
+	console.log(image);
 
 	React.useEffect(() => {
 		handleVideo();
@@ -82,13 +82,17 @@ export const BottleItem = ({ address, name, video }: any) => {
 	return (
 		<Link href={`/collections/${address}`}>
 			<div className="sm:w-[400px] w-[320px] flex flex-col border rounded-xl overflow-hidden shadow-xl cursor-pointer border-gray-800 hover:scale-105 transition-all duration-500">
-				<video
-					autoPlay
-					loop
-					src={video}
-					className="sm:w-[400px] w-[320px]"
-					ref={videoRef}
-				/>
+				<div className="rounded-xl bg-overlay relative border border-secondary z-10 cursor-pointer">
+					<div className="w-full flex justify-center p-4 rounded-xl">
+						<img
+							// autoPlay
+							// loop
+							src={image}
+							className="h-[350px]"
+							// ref={videoRef}
+						/>
+					</div>
+				</div>
 				<div className="flex flex-col items-center bg-primary justify-center text-xl text-center font-bold text-secondary h-20 p-4">
 					<h3 className="flex items-center justify-center text-xl text-center font-bold">
 						{name}

@@ -185,17 +185,17 @@ export const TestimonialsComponent = () => {
 		{
 			text: "“I was burned in the past by the fluctuating value of NFTs, but this product's solution to NFT loss of value and volatility has restored my confidence in the market.”",
 			name: 'Joe, UK',
-			icon: '/icons/opensea.svg',
+			icon: '/img/joe.jpg',
 		},
 		{
 			name: 'Santiago, Spain',
-			icon: '/icons/opensea.svg',
+			icon: '/img/santiago.jpg',
 			text: '“As a collector, I want to be sure that my NFTs retain their value over time. Bolster’s backstop supported by physical assets provides the stability and security that I need for my collection."',
 		},
 		{
 			name: 'Lucia, Mexico',
 			text: `"I was hesitant to invest in NFTs due to their volatility, but this product's backstop supported by physical assets gives me peace of mind knowing that my investment is protected."`,
-			icon: '/icons/opensea.svg',
+			icon: '/img/lucia.jpg',
 		},
 	];
 	return (
@@ -208,7 +208,7 @@ export const TestimonialsComponent = () => {
 							<h3 className="text-lg Montserrat text-center text-gray-200 italic">
 								{item.text}
 							</h3>
-							<img src={item.icon} className="w-20" alt="" />
+							<img src={item.icon} className="w-20 rounded-full" alt="" />
 							<h3 className="text-xl Raleway text-center text-white">
 								{item.name}
 							</h3>
@@ -224,10 +224,10 @@ export const HowWeDoItComponent = () => {
 	return (
 		<div className="py-28 bg-black-1 relative text-white  w-full flex flex-col items-center justify-center">
 			<div className="flex gap-24 items-center justify-center w-full px-16">
-				<div className="w-1/2 flex items-center justify-center">
+				<div className="lg:w-1/2 lg:flex hidden items-center justify-center">
 					<img src="icons/opensea.svg" className="w-2/3" alt="" />
 				</div>
-				<div className="w-1/2 flex flex-col items-center justify-center">
+				<div className="lg:w-1/2 w-full flex flex-col items-center justify-center">
 					<p className="text-justify Montserrat text-[17px] w-2/3">
 						At Bolster, we believe that NFTs are a valuable tool for promoting
 						culture and art. However, we also recognize that the prices of NFTs
@@ -255,19 +255,19 @@ export const HowWeDoItComponent = () => {
 
 export const CTAComponent = () => {
 	return (
-		<div className="py-10 bg-secondary relative text-white  w-full flex flex-col items-center justify-center">
+		<div className="py-28 bg-gray-900 relative text-white  w-full flex flex-col items-center justify-center">
 			<div className="flex flex-col gap-4 items-center justify-center w-2/3">
-				<p className="text-center Raleway text-[17px]">
+				<p className="text-center RalewayBold text-[17px]">
 					Buy an NFT with us and get a Global Membership that gives you 24-hour
 					early access to our exclusive drops. <br /> Limited to the first 100
 					members.
 				</p>
 				<Button
 					className={clsx(
-						'z-10 border border-white bg-white RalewayBold font-bold px-4 py-3 text-secondary	 transition ease-in-out delay-150 hover:bg-secondary hover:border-white duration-300',
-						'hover:text-white'
+						'z-10 border border-white bg-secondary RalewayBold font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:scale-[120%] duration-300',
+						'ml-4'
 					)}
-					onClick={() => router.push('/profile')}
+					href={'/collections'}
 				>
 					Get yours here!
 				</Button>
@@ -304,14 +304,16 @@ export const WhyShouldComponent = () => {
 				Why you should come with us?
 			</h2>
 			<div className="flex gap-16 justify-center items-center">
-				<div className="w-1/2 flex items-center justify-center pl-36">
+				<div className="xl:w-1/2 xl:flex hidden items-center justify-center xl:pl-36">
 					<img src="icons/bolster.png" className="w-80" alt="" />
 				</div>
-				<div className="flex flex-col gap-4 items-center justify-center w-1/2 Raleway pr-36	">
+				<div className="flex flex-col gap-4 items-center justify-center xl:w-1/2 w-full lg:px-0 px-16 Raleway xl:pr-36	">
 					{items.map((item) => {
 						return (
-							<div className="flex flex-col gap-2 w-full">
-								<h2 className="text-[17px] RalewayBold">&#8226; {item.text}</h2>
+							<div className="flex flex-col gap-2 w-full xl:text-justify text-center">
+								<h2 className="text-[17px] RalewayBold">
+									<span className="xl:inline hidden">&#8226;</span> {item.text}
+								</h2>
 								<p className="text-[15px] text-gray-500 Montserrat pl-4">
 									{item.subTexts}
 								</p>
@@ -340,7 +342,7 @@ export const CollectionsLandingComponent = () => {
 							<BottleItem
 								address={address}
 								name={name}
-								video={image}
+								image={image}
 								exchanged={exchanged}
 								supply={supply}
 								maxSupply={maxSupply}
@@ -381,19 +383,59 @@ export const LegalComponent = () => {
 
 export const TypeOfBolsterComponent = () => {
 	return (
-		<div className="py-28 bg-gray-900 relative text-secondary  w-full flex flex-col items-center justify-center">
-			<div className="flex flex-col gap-4 items-center justify-center w-2/3">
-				<h2 className="text-4xl text-white RalewayBold">Type of Bolster</h2>
-				<p className="text-justify Raleway text-[17px]">
-					Enhance your collectibles with Bolster! Our hassle-free service
-					handles all the legalities, storage, and insurance for you. Choose
-					from our wide selection of physical products and assets and give your
-					fans an additional peace of mind that comes with proper ownership.
-					Bolster makes it easy to legally add value to your work.
-				</p>
-				<p className="text-justify Raleway text-[17px] w-full">
-					Rare Whiskies, Collectible Watches, Gold and More to come…
-				</p>
+		<div className="py-28 bg-gray-900 relative w-full flex justify-center">
+			<div className="w-[75%] flex justify-center">
+				<div className="flex flex-col gap-4 items-center justify-center w-1/2  h-full">
+					<h2 className="text-4xl text-white RalewayBold">Type of Bolster</h2>
+					<p className="text-center Raleway text-gray-500 text-[17px]">
+						Enhance your collectibles with Bolster! Our hassle-free service
+						handles all the legalities, storage, and insurance for you. Choose
+						from our wide selection of physical products and assets and give
+						your fans an additional peace of mind that comes with proper
+						ownership. Bolster makes it easy to legally add value to your work.
+					</p>
+					<div className="flex gap-6 lg:flex-nowrap flex-wrap text-white text-3xl">
+						<div className="xl:w-1/3 flex flex-col relative text-center items-center justify-center py-10 overflow-hidden">
+							<img
+								src="img/bg2.jpg"
+								className="absolute min-w-[500px] top-0"
+								alt=""
+							/>
+							<h1 className="relative">
+								1. <br />
+								<br />
+								Rare Whiskies
+							</h1>
+						</div>
+						<div className="xl:w-1/3 flex flex-col relative text-center items-center justify-center py-10 overflow-hidden">
+							<img
+								src="img/bg2.jpg"
+								className="absolute min-w-[500px] top-0"
+								alt=""
+							/>
+							<h1 className="relative">
+								2. <br />
+								<br />
+								Collective Watches
+							</h1>
+						</div>
+						<div className="xl:w-1/3 flex flex-col relative text-center items-center justify-center py-10 overflow-hidden">
+							<img
+								src="img/bg2.jpg"
+								className="absolute min-w-[500px] top-0"
+								alt=""
+							/>
+							<h1 className="relative">
+								3. <br />
+								<br />
+								Gold
+							</h1>
+						</div>
+					</div>
+				</div>
+				<div className="w-1/2 flex items-center justify-center pl-16">
+					<img src="/img/bg_crypto.jpg" className="w-full" alt="" />
+				</div>
 			</div>
 		</div>
 	);
