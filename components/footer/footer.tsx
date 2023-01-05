@@ -1,6 +1,6 @@
 import * as React from 'react';
 import clsx from 'clsx';
-import { TwitterOutlined } from '@ant-design/icons';
+// import { TwitterOutlined } from '@ant-design/icons';
 export const Footer = () => {
 	// const OficialPages = [
 	// 	{
