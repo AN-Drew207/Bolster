@@ -198,17 +198,20 @@ export const TestimonialsComponent = () => {
 		},
 		{
 			name: 'Lucia, Mexico',
-			text: `"I was hesitant to invest in NFTs due to their volatility, but this product's backstop supported by physical assets gives me peace of mind knowing that my investment is protected."`,
+			text: `"I was hesitant to invest in NFTs due to their volatility, but this product's backstop supported by physical assets gives me peace of mind knowing that my collection is protected."`,
 			icon: '/img/lucia.jpg',
 		},
 	];
 	return (
-		<div className="py-28 bg-overlay relative text-secondary w-full flex flex-col items-center justify-center overflow-hidden">
+		<div className="py-28 bg-overlay relative text-secondary w-full flex flex-col gap-10 items-center justify-center overflow-hidden">
 			<img
 				src="/img/bg2.jpg"
 				className="absolute top-0 w-full min-w-[1500px] opacity-[0.6]"
 				alt=""
 			/>
+			<h2 className="relative text-center w-full text-4xl text-white RalewayBold">
+				What some of our early customers are saying
+			</h2>
 			<div className="flex flex-wrap gap-10 justify-center w-full relative items-center">
 				{items.map((item) => {
 					return (
@@ -255,6 +258,28 @@ export const HowWeDoItComponent = () => {
 						can be redeemed at any time. By offering this redemption option, we
 						hope to add an extra layer of value and stability to our NFTs.
 					</p>
+				</div>
+			</div>
+		</div>
+	);
+};
+
+export const ArtistsAndProjectsComponent = () => {
+	return (
+		<div className="py-28 bg-gray-900 relative text-white  w-full flex flex-col items-center justify-center">
+			<div className="flex gap-24 items-center justify-center w-full px-16">
+				<div className="lg:w-1/2 w-full flex flex-col items-center justify-center">
+					<p className="text-justify Montserrat text-[17px] w-2/3">
+						Are you an artist or are you developing an NFT project and looking
+						to bolster the value of your work? Contact us today to see how we
+						can help! <br />
+						<br /> Bolster your customer loyalty with our backstop value
+						offering. Protect and reassure your fans and customers with the
+						confidence and security of a reliable backstop.
+					</p>
+				</div>
+				<div className="lg:w-1/2 lg:flex hidden items-center justify-center">
+					<img src="icons/opensea.svg" className="w-1/2" alt="" />
 				</div>
 			</div>
 		</div>
@@ -392,9 +417,11 @@ export const LegalComponent = () => {
 export const TypeOfBolsterComponent = () => {
 	return (
 		<div className="py-28 bg-gray-900 relative w-full flex justify-center">
-			<div className="xl:w-[75%] w-full xl:px-0 px-10 flex justify-center">
-				<div className="flex flex-col gap-4 items-center justify-center xl:w-1/2 w-full  h-full">
-					<h2 className="text-4xl text-white RalewayBold">Type of Bolster</h2>
+			<div className="w-full 2xl:px-10 px-36 flex justify-center">
+				<div className="flex flex-col gap-4 items-center justify-center 2xl:w-1/2 w-full  h-full">
+					<h2 className="text-4xl text-white RalewayBold text-center">
+						Are you an artist or someone developing an NFT project?
+					</h2>
 					<p className="text-center Raleway text-gray-500 text-[17px]">
 						Enhance your collectibles with Bolster! Our hassle-free service
 						handles all the legalities, storage, and insurance for you. Choose
@@ -402,8 +429,8 @@ export const TypeOfBolsterComponent = () => {
 						your fans an additional peace of mind that comes with proper
 						ownership. Bolster makes it easy to legally add value to your work.
 					</p>
-					<div className="flex gap-6 text-white text-3xl">
-						<div className="w-1/3 flex flex-col relative text-center items-center justify-center py-10 overflow-hidden">
+					<div className="flex justify-center gap-6 text-white text-2xl">
+						<div className="w-1/4 flex flex-col relative text-center items-center justify-center gap-2 py-10 px-6 overflow-hidden">
 							<img
 								src="img/bg2.jpg"
 								className="absolute min-w-[500px] top-0"
@@ -415,7 +442,7 @@ export const TypeOfBolsterComponent = () => {
 								Rare Whiskies
 							</h1>
 						</div>
-						<div className="w-1/3 flex flex-col relative text-center items-center justify-center py-10 overflow-hidden">
+						<div className="w-1/4 flex flex-col relative text-center items-center gap-2 justify-center py-10 px-6 overflow-hidden">
 							<img
 								src="img/bg2.jpg"
 								className="absolute min-w-[500px] top-0"
@@ -424,10 +451,16 @@ export const TypeOfBolsterComponent = () => {
 							<h1 className="relative">
 								2. <br />
 								<br />
-								Collective Watches
+								Physical Paintings
 							</h1>
+							<p
+								className="text-[12px] text-gray-200 relative"
+								style={{ lineHeight: '16px' }}
+							>
+								(Reach out to us if you are interested)
+							</p>
 						</div>
-						<div className="w-1/3 flex flex-col relative text-center items-center justify-center py-10 overflow-hidden">
+						<div className="w-1/4 flex flex-col relative text-center items-center gap-2 justify-center py-10 px-6 overflow-hidden">
 							<img
 								src="img/bg2.jpg"
 								className="absolute min-w-[500px] top-0"
@@ -436,12 +469,48 @@ export const TypeOfBolsterComponent = () => {
 							<h1 className="relative">
 								3. <br />
 								<br />
+								Collective Watches
+							</h1>
+							<p
+								className="text-[12px] text-gray-200 relative"
+								style={{ lineHeight: '16px' }}
+							>
+								(Coming soon - reach out to us if you are interested)
+							</p>
+						</div>
+						<div className="w-1/4 flex flex-col relative text-center items-center gap-2 justify-center py-10 px-6 overflow-hidden">
+							<img
+								src="img/bg2.jpg"
+								className="absolute min-w-[500px] top-0"
+								alt=""
+							/>
+							<h1 className="relative">
+								4. <br />
+								<br />
 								Gold
 							</h1>
+							<p
+								className="text-[12px] text-gray-200 relative"
+								style={{ lineHeight: '16px' }}
+							>
+								(Coming soon - reach out to us if you are interested)
+							</p>
 						</div>
 					</div>
+					<p className="text-center w-full Raleway text-gray-500">
+						And more to come…
+					</p>
+					<Button
+						className={clsx(
+							'z-10 border border-white bg-secondary RalewayBold font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:scale-[120%] duration-300',
+							'ml-4'
+						)}
+						href={'/#contactus'}
+					>
+						Contact Us
+					</Button>
 				</div>
-				<div className="w-1/2 xl:flex hidden items-center justify-center pl-16">
+				<div className="w-1/2 2xl:flex hidden items-center justify-center pl-16">
 					<img src="/img/bg_crypto.jpg" className="w-full" alt="" />
 				</div>
 			</div>

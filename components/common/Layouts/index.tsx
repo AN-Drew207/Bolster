@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/dist/client/router';
 import clsx from 'clsx';
 // import { AreaChartOutlined, GoldenFilled } from '@ant-design/icons';
-import { MenuIcon, XIcon } from '@heroicons/react/outline';
+import { MenuIcon } from '@heroicons/react/outline';
 // import { DropdownMenu } from '../dropdownMenu';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button } from '../button';
@@ -17,7 +17,6 @@ import { Dropdown } from '../dropdown/dropdown';
 import useMagicLink from 'hooks/useMagicLink';
 import { useMetamask } from 'hooks/useMetamask';
 import { useConnectWalletModal } from 'hooks/useModalConnect';
-import { SearchOutlined } from '@ant-design/icons';
 
 const bottles =
 	process.env.NEXT_PUBLIC_NETWORK_NAME == 'mumbai'
@@ -25,8 +24,15 @@ const bottles =
 		: bottlesMainnet;
 
 const navItems = [
-	{ name: 'HOME', link: '/', icon: <MenuIcon /> },
+	// { name: 'WHAT IS BOLSTER', link: '/', icon: <MenuIcon /> },
+	// { name: 'BENEFITS', link: '/#benefits', icon: <MenuIcon /> },
+	{
+		name: 'FOR ARTISTS AND NFT PROJECTS',
+		link: '/#projects',
+		icon: <MenuIcon />,
+	},
 	{ name: 'COLLECTIONS', link: '/collections', icon: <MenuIcon /> },
+	{ name: 'CONTACT US', link: '/#footer', icon: <MenuIcon /> },
 	// { name: 'FOR ARTISTS', link: '/artists', icon: <MenuIcon /> },
 	// { name: 'GALLERY', link: '/gallery', icon: <MenuIcon /> },
 	// { name: 'E-BAR', link: '/eBar', icon: <MenuIcon /> },
@@ -74,8 +80,6 @@ export default function AppLayout() {
 	const { connectWalletUpdateData } = useMetamask();
 	const { modal, show } = useConnectWalletModal();
 
-	const [search, setSearch] = React.useState('');
-
 	const { magicReload } = useRouter().query;
 
 	const chainChangedHandler = () => {
@@ -122,14 +126,14 @@ export default function AppLayout() {
 				className={clsx(
 					'fixed top-0 z-50',
 					'bg-primary',
-					'w-[100%] xl:px-56 lg:px-36 px-8 py-2 flex flex-row items-center justify-between gap-10 shadow-md Raleway'
+					'w-[100%] xl:px-56 lg:px-36 px-8 py-3 flex flex-row items-center justify-between gap-10 shadow-md Raleway'
 				)}
 			>
 				{modal}
 				<div className="flex items-center shrink-0">
 					<Logo />
 				</div>{' '}
-				<div className="border md:flex hidden items-center text-md justify-center border-white  bg-primary rounded-xl w-[35%]">
+				{/* <div className="border md:flex hidden items-center text-md justify-center border-white  bg-primary rounded-xl w-[35%]">
 					<div className="text-secondary flex items-center w-full px-4 rounded-xl bg-primary border-r border-white">
 						<input
 							type="text"
@@ -160,7 +164,7 @@ export default function AppLayout() {
 					>
 						<SearchOutlined />
 					</div>
-				</div>
+				</div> */}
 				<div className="md:flex hidden items-center shrink-0">
 					{navItems.map((item, index) => {
 						return (
@@ -225,7 +229,7 @@ export default function AppLayout() {
 					) : (
 						<Button
 							className={clsx(
-								'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+								'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-2 text-[14px] text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
 								'!rounded-full hover:text-secondary ml-4'
 							)}
 							onClick={() => show()}
@@ -293,7 +297,7 @@ export const NavbarItem: React.FC<any> = ({ name, link }) => {
 			<div className={clsx('sm:px-4 px-2 py-2 relative cursor-pointer')}>
 				<div className={clsx('gap-2 flex items-center text-secondary')}>
 					{/* <div className="flex items-center w-4">{icon}</div> */}
-					<h3 className={clsx('text-md font-bold text-center RalewayBold')}>
+					<h3 className={clsx('text-[14px] font-bold text-center RalewayBold')}>
 						{name}
 					</h3>
 				</div>
