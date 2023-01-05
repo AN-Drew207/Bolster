@@ -45,6 +45,11 @@
 				"internalType": "address",
 				"name": "_exchange",
 				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_maxSupply",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "nonpayable",
@@ -617,6 +622,19 @@
 		"type": "function"
 	},
 	{
+		"inputs": [],
+		"name": "getTokensMinted",
+		"outputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "bytes32",
@@ -1061,9 +1079,9 @@
 	{
 		"inputs": [
 			{
-				"internalType": "uint256",
-				"name": "quantity",
-				"type": "uint256"
+				"internalType": "uint256[]",
+				"name": "NFTs",
+				"type": "uint256[]"
 			},
 			{
 				"internalType": "address",
@@ -1372,6 +1390,25 @@
 				"internalType": "address",
 				"name": "",
 				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "tokensMinted",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",

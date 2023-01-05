@@ -174,7 +174,7 @@ export default function useMagicLink() {
 				txnid = tx.transactionHash;
 			} else {
 				const tx = await BottleCollectionContract.methods
-					.buy(nfts, address)
+					.safeMint(nfts, address)
 					.send({
 						from: publicAddress,
 						gas: 8000000,

@@ -262,7 +262,7 @@ export const useMetamask = () => {
 					.call();
 				console.log(price);
 				const tx = await BottleCollectionContract.methods
-					.buy(nfts, address)
+					.safeMint(nfts, address)
 					.send({
 						from: accounts[0],
 						value: price,
@@ -296,7 +296,7 @@ export const useMetamask = () => {
 				}
 				setMessage('Minting your tokens... 2 of 2 transactions');
 				const tx = await BottleCollectionContract.methods
-					.buy(nfts, address)
+					.safeMint(nfts, address)
 					.send({
 						from: accounts[0],
 					});

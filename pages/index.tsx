@@ -7,7 +7,6 @@ import {
 	WhyShouldComponent,
 	LegalComponent,
 	TypeOfBolsterComponent,
-	// ArtistsAndProjectsComponent,
 } from 'components/landing/mainSection';
 import * as React from 'react';
 

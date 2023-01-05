@@ -1,11 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 
-import {
-	BottleItem,
-	Bottles,
-} from '../collection/BottlesComponent/BottlesCollections';
-import { useSelector } from 'react-redux';
 import clsx from 'clsx';
 import { Button } from 'components/common/button';
 import router from 'next/router';
@@ -273,6 +268,9 @@ export const CTAComponent = () => {
 					early access to our exclusive drops. <br /> Limited to the first 100
 					members.
 				</p>
+				<span className="text-gray-500 Montserrat font-[400]">
+					Airdrop date: TBD
+				</span>
 				<Button
 					className={clsx(
 						'z-10 border border-white bg-secondary RalewayBold font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:scale-[120%] duration-300',
@@ -332,36 +330,6 @@ export const WhyShouldComponent = () => {
 						);
 					})}
 				</div>
-			</div>
-		</div>
-	);
-};
-
-export const CollectionsLandingComponent = () => {
-	const { bottles: bottlesView } = useSelector((state: any) => state.state);
-	console.log(bottlesView, 'botellas');
-	return (
-		<div className="flex flex-col bg-overlay px-32 pb-48 pt-16 gap-12">
-			<h2 className="RalewayBold text-xl text-secondary">Backed Collections</h2>
-			<div className="flex flex-wrap gap-10 items-center justify-center w-full">
-				{bottlesView.map(
-					(
-						{ address, name, image, exchanged, supply, maxSupply }: any,
-						index: number
-					) => {
-						return (
-							<BottleItem
-								address={address}
-								name={name}
-								image={image}
-								exchanged={exchanged}
-								supply={supply}
-								maxSupply={maxSupply}
-								index={index}
-							/>
-						);
-					}
-				)}
 			</div>
 		</div>
 	);

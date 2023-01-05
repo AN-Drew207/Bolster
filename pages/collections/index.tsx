@@ -1,7 +1,6 @@
 // import { useRouter } from 'next/router';
+import { CollectionsLandingComponent } from 'components/collection/BottlesComponent/BottlesCollections';
 import * as React from 'react';
-import { CollectionsLandingComponent } from 'components/landing/mainSection';
-
 const Bottle = () => {
 	return (
 		<div className="flex flex-col pt-16 bg-overlay">

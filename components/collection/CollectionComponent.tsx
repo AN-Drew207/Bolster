@@ -132,10 +132,10 @@ export const CollectionComponent = () => {
 					);
 
 					const tokensInSell = await contractInstance.methods
-						.getOwnerTokens(bottleContract)
+						.getTokensMinted()
 						.call();
 
-					console.log(bottleContract, tokensInSell);
+					console.log(bottleContract, tokensInSell, 'wtf');
 					setBottle({
 						...item,
 						metadata: item.metadata.map((item: any, i: any) => {
@@ -147,7 +147,7 @@ export const CollectionComponent = () => {
 							} else {
 								return {
 									...item,
-									sold: !tokensInSell.includes(item.id.toString()),
+									sold: tokensInSell.includes(item.id.toString()),
 								};
 							}
 						}),
@@ -404,52 +404,52 @@ export const CollectionComponent = () => {
 
 													showCongrats();
 
-													// if (typeOfWallet == 'metamask') {
-													// 	console.log('meta');
-													// 	Mint(
-													// 		selected
-													// 			.map((value: any, id: number) => {
-													// 				return {
-													// 					value: value.value,
-													// 					id: value.id,
-													// 				};
-													// 			})
-													// 			.filter((q: any) => q.value)
-													// 			.map((nft: any) => nft.id),
-													// 		address,
-													// 		setIsLoading,
-													// 		bottleContract,
-													// 		setMessage,
-													// 		// accounts,
-													// 		dispatch,
-													// 		network,
-													// 		networkName,
-													// 		hide,
-													// 		showCongrats,
-													// 		setMinted,
-													// 		data
-													// 	);
-													// } else {
-													// 	mint(
-													// 		bottleContract,
-													// 		selected
-													// 			.map((value: any, id: number) => {
-													// 				return {
-													// 					value: value.value,
-													// 					id: value.id,
-													// 				};
-													// 			})
-													// 			.filter((q: any) => q.value)
-													// 			.map((nft: any) => nft.id),
-													// 		address,
-													// 		dispatch,
-													// 		setMessage,
-													// 		hide,
-													// 		showCongrats,
-													// 		setMinted,
-													// 		data
-													// 	);
-													// }
+													if (typeOfWallet == 'metamask') {
+														console.log('meta');
+														Mint(
+															selected
+																.map((value: any, id: number) => {
+																	return {
+																		value: value.value,
+																		id: value.id,
+																	};
+																})
+																.filter((q: any) => q.value)
+																.map((nft: any) => nft.id),
+															address,
+															setIsLoading,
+															bottleContract,
+															setMessage,
+															// accounts,
+															dispatch,
+															network,
+															networkName,
+															hide,
+															showCongrats,
+															setMinted,
+															data
+														);
+													} else {
+														mint(
+															bottleContract,
+															selected
+																.map((value: any, id: number) => {
+																	return {
+																		value: value.value,
+																		id: value.id,
+																	};
+																})
+																.filter((q: any) => q.value)
+																.map((nft: any) => nft.id),
+															address,
+															dispatch,
+															setMessage,
+															hide,
+															showCongrats,
+															setMinted,
+															data
+														);
+													}
 												}}
 												currencies={[
 													{
