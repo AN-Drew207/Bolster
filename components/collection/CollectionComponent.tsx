@@ -225,14 +225,28 @@ export const CollectionComponent = () => {
 				<Modal isShow={isShow} hasBg>
 					<div
 						className={clsx(
-							'flex flex-col items-center justify-center w-full  h-full sm:px-10 px-4 pb-10 relative mt-24 bg-overlay'
+							'flex flex-col items-center w-full h-full sm:px-10 px-4 pb-10 relative mt-24 bg-overlay min-h-[100vh]'
 						)}
 					>
-						<div className="flex justify-end" onClick={() => hide()}>
+						<div
+							className="flex justify-start text-white w-full"
+							onClick={() => hide()}
+						>
 							{' '}
-							<Button>X</Button>
+							<Button>Back</Button>
 						</div>
-						<div className="py-24 w-full text-secondary">Congratulations</div>
+						<div className="py-24 flex flex-col items-center gap-16 w-full">
+							<div className="flex flex-col gap-6 w-1/2">
+								<h2 className="text-white RalewayBold text-4xl text-center">
+									Congratulations!
+								</h2>
+								<p className="text-white Montserrat text-xl text-center">
+									You have bought a Bolster NFT, now you are part of Bolster and
+									you can participate in our events, airdrops and much more!
+								</p>
+							</div>
+							<img src="/icons/logo.png" className="w-1/2" alt="" />
+						</div>
 					</div>
 				</Modal>
 				{/* <img
@@ -400,7 +414,7 @@ export const CollectionComponent = () => {
 												}}
 												selected={selected}
 												typeOfWallet={typeOfWallet}
-												Mint={(data: any, address: any) => {
+												Mint={async (data: any, address: any) => {
 													delete data.currency;
 													// data.id = 3;
 													data.created_at = moment().format(
@@ -413,7 +427,7 @@ export const CollectionComponent = () => {
 
 													if (typeOfWallet == 'metamask') {
 														console.log('meta');
-														Mint(
+														await Mint(
 															selected
 																.map((value: any, id: number) => {
 																	return {
@@ -437,7 +451,7 @@ export const CollectionComponent = () => {
 															data
 														);
 													} else {
-														mint(
+														await mint(
 															bottleContract,
 															selected
 																.map((value: any, id: number) => {
@@ -457,6 +471,8 @@ export const CollectionComponent = () => {
 															data
 														);
 													}
+													window.location.reload();
+													setScreen('menu');
 												}}
 												currencies={[
 													{
@@ -490,6 +506,7 @@ export const CollectionComponent = () => {
 					<Loading />
 				)}
 				{!isLoading &&
+					screen !== 'pay' &&
 					selected.length > 0 &&
 					selected?.reduce((item: boolean, acc: boolean) => acc || item) && (
 						<div className="sticky flex justify-end w-full pb-4 bottom-0 px-4">

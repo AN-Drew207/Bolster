@@ -99,20 +99,24 @@ export const MintModal: React.FC<any> = ({
 				>
 					<div
 						className={clsx(
-							'flex flex-col w-full items-center justify-center gap-4 text-secondary xl:mt-0 mt-4'
+							'flex flex-col w-full items-center justify-center gap-4 text-secondary xl:mt-0 mt-4 pb-16'
 						)}
 					>
-						<div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-4 p-4">
+						<div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-4 p-4 w-full">
 							{selected?.map((item: any) => {
 								return (
 									item.value && (
-										<div className={clsx('w-40 h-60 relative')}>
+										<div
+											className={clsx(
+												'w-52 h-60 relative flex flex-col items-center justify-center'
+											)}
+										>
 											<img
 												src={bottle?.metadata[item?.id - 1]?.image}
-												className="rounded-xl border border-white overflow-hidden h-40 w-40"
+												className="rounded-xl border border-white overflow-hidden h-40 w-40 shrink-0"
 												alt=""
 											/>{' '}
-											<h2 className="p-4 text-center text-secondary font-bold">
+											<h2 className="p-4 text-center text-white font-bold w-full">
 												{bottle?.metadata[item?.id - 1]?.name}
 											</h2>
 										</div>
@@ -145,7 +149,7 @@ export const MintModal: React.FC<any> = ({
 										.value && (
 									<h2 className="text-secondary text-left text-md">
 										Transaction Info: {quantity} NFTs for{' '}
-										{priceusd * quantity + ' '}
+										{(priceusd * quantity).toFixed(3) + ' '}
 										<span className="font-semibold text-secondary">USDC</span>
 									</h2>
 								)}
@@ -155,7 +159,7 @@ export const MintModal: React.FC<any> = ({
 										.value && (
 									<h2 className="text-secondary text-left text-md">
 										Transaction Info: {quantity} NFTs for{' '}
-										{(priceMATIC * quantity).toFixed(4) + ' '}
+										{(priceMATIC * quantity).toFixed(3) + ' '}
 										<span className="font-semibold text-secondary">MATIC</span>
 									</h2>
 								)}
