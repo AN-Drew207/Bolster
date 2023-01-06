@@ -443,7 +443,18 @@ export const HowWeDoItComponent = () => {
 						setHover(false);
 					}}
 				>
-					{bottles[active].component}
+					{bottles.map((item) => {
+						return (
+							<div
+								className={clsx(
+									{ ['hidden']: item.id !== active + 1 },
+									'w-full flex items-center justify-center'
+								)}
+							>
+								{item.component}
+							</div>
+						);
+					})}
 				</div>
 				<div className="xl:w-1/2 w-full flex flex-col items-center justify-center">
 					<p
