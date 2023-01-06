@@ -227,14 +227,229 @@ export const TestimonialsComponent = () => {
 };
 
 export const HowWeDoItComponent = () => {
+	const [hover, setHover] = React.useState(false);
+	const [active, setActive] = React.useState(0);
+	const bottles = [
+		{
+			id: 1,
+			component: (
+				<div className="relative xl:w-1/2 w-full flex flex-col gap-2">
+					<img
+						src="/img/Rosebank_1991 cask_2112.png"
+						className={clsx(
+							{ ['scale-110']: hover },
+							'absolute top-0 bottom-0 left-0 right-0 m-auto w-80 z-10 transition-all duration-1000'
+						)}
+						alt=""
+					/>
+					<div className="w-full flex px-5 items-center gap-4 justify-center">
+						<img
+							src="https://bafybeig4l3mp2rh2v6xchi7kuoamvxfsgcmvozcaidhhokxkk5nyeqimhu.ipfs.nftstorage.link/1.png"
+							alt=""
+							className={clsx(
+								{
+									['rotate-6neg top-[-40px] left-[-40px]']: hover,
+								},
+								'w-1/2 rounded-md top-0 left-0 relative transition-all duration-1000'
+							)}
+						/>
+						<img
+							src="https://bafybeig4l3mp2rh2v6xchi7kuoamvxfsgcmvozcaidhhokxkk5nyeqimhu.ipfs.nftstorage.link/5.png"
+							alt=""
+							className={clsx(
+								{
+									['rotate-6 top-[-40px] left-[40px]']: hover,
+								},
+								'w-1/2 rounded-md top-0 left-0 relative transition-all duration-1000'
+							)}
+						/>
+					</div>{' '}
+					<div className="w-full flex gap-12 items-center justify-center">
+						<img
+							src="https://bafybeig4l3mp2rh2v6xchi7kuoamvxfsgcmvozcaidhhokxkk5nyeqimhu.ipfs.nftstorage.link/4.png"
+							alt=""
+							className={clsx(
+								{
+									[' top-[0px] left-[-40px]']: hover,
+								},
+								'w-1/2 rounded-md top-0 left-0 relative transition-all duration-1000'
+							)}
+						/>
+						<img
+							src="https://bafybeig4l3mp2rh2v6xchi7kuoamvxfsgcmvozcaidhhokxkk5nyeqimhu.ipfs.nftstorage.link/8.png"
+							alt=""
+							className={clsx(
+								{
+									['rotate-3 top-[0px] left-[40px]']: hover,
+								},
+								'w-1/2 rounded-md top-0 left-0 relative transition-all duration-1000'
+							)}
+						/>
+					</div>{' '}
+					<div className="w-full flex px-5 gap-4 items-center justify-center">
+						<img
+							src="https://bafybeig4l3mp2rh2v6xchi7kuoamvxfsgcmvozcaidhhokxkk5nyeqimhu.ipfs.nftstorage.link/10.png"
+							alt=""
+							className={clsx(
+								{
+									['rotate-4neg top-[40px] left-[-40px]']: hover,
+								},
+								'w-1/2 rounded-md top-0 left-0 relative transition-all duration-1000'
+							)}
+						/>
+						<img
+							src="https://bafybeig4l3mp2rh2v6xchi7kuoamvxfsgcmvozcaidhhokxkk5nyeqimhu.ipfs.nftstorage.link/50.png"
+							alt=""
+							className={clsx(
+								{
+									['rotate-3 top-[40px] left-[40px]']: hover,
+								},
+								'w-1/2 rounded-md top-0 left-0 relative transition-all duration-1000'
+							)}
+						/>
+					</div>
+				</div>
+			),
+		},
+		{
+			id: 2,
+			component: (
+				<div className="relative xl:w-1/2 w-full flex flex-col gap-2">
+					<img
+						src="/img/Karuizawa_1972.png"
+						className={clsx(
+							{ ['scale-110']: hover },
+							'absolute top-0 bottom-0 left-0 right-0 m-auto w-80 z-10 transition-all duration-1000'
+						)}
+						alt=""
+					/>
+					<div className="w-full flex px-5 items-center gap-4 justify-center">
+						<img
+							src="https://bafybeih76ssazli4lxp7vvwx4mxshohaurenc2phv6jhcsvchxv4yvcsbu.ipfs.nftstorage.link/3.png"
+							alt=""
+							className={clsx(
+								{
+									['rotate-6neg top-[-40px] left-[-40px]']: hover,
+								},
+								'w-1/2 rounded-md top-0 left-0 relative transition-all duration-1000'
+							)}
+						/>
+						<img
+							src="https://bafybeih76ssazli4lxp7vvwx4mxshohaurenc2phv6jhcsvchxv4yvcsbu.ipfs.nftstorage.link/7.png"
+							alt=""
+							className={clsx(
+								{
+									['rotate-6 top-[-40px] left-[40px]']: hover,
+								},
+								'w-1/2 rounded-md top-0 left-0 relative transition-all duration-1000'
+							)}
+						/>
+					</div>{' '}
+					<div className="w-full flex gap-12 items-center justify-center">
+						<img
+							src="https://bafybeih76ssazli4lxp7vvwx4mxshohaurenc2phv6jhcsvchxv4yvcsbu.ipfs.nftstorage.link/8.png"
+							alt=""
+							className={clsx(
+								{
+									[' top-[0px] left-[-40px]']: hover,
+								},
+								'w-1/2 rounded-md top-0 left-0 relative transition-all duration-1000'
+							)}
+						/>
+						<img
+							src="https://bafybeih76ssazli4lxp7vvwx4mxshohaurenc2phv6jhcsvchxv4yvcsbu.ipfs.nftstorage.link/15.png"
+							alt=""
+							className={clsx(
+								{
+									['rotate-3 top-[0px] left-[40px]']: hover,
+								},
+								'w-1/2 rounded-md top-0 left-0 relative transition-all duration-1000'
+							)}
+						/>
+					</div>{' '}
+					<div className="w-full flex px-5 gap-4 items-center justify-center">
+						<img
+							src="https://bafybeih76ssazli4lxp7vvwx4mxshohaurenc2phv6jhcsvchxv4yvcsbu.ipfs.nftstorage.link/12.png"
+							alt=""
+							className={clsx(
+								{
+									['rotate-4neg top-[40px] left-[-40px]']: hover,
+								},
+								'w-1/2 rounded-md top-0 left-0 relative transition-all duration-1000'
+							)}
+						/>
+						<img
+							src="https://bafybeih76ssazli4lxp7vvwx4mxshohaurenc2phv6jhcsvchxv4yvcsbu.ipfs.nftstorage.link/35.png"
+							alt=""
+							className={clsx(
+								{
+									['rotate-3 top-[40px] left-[40px]']: hover,
+								},
+								'w-1/2 rounded-md top-0 left-0 relative transition-all duration-1000'
+							)}
+						/>
+					</div>
+				</div>
+			),
+		},
+		{
+			id: 3,
+			component: (
+				<div className="relative flex items-center justify-center w-full flex gap-2">
+					<div className="w-1/2 flex items-center justify-center relative">
+						<video
+							src="https://bafybeiezbjlf7jwelm2lwmtnh2oozbh2zxdxc46y7gjx7ykozyvfwqhi6i.ipfs.nftstorage.link/"
+							className={clsx(
+								{
+									['scale-110']: hover,
+								},
+								'w-full rounded-md top-0 left-0 relative transition-all duration-1000'
+							)}
+							autoPlay
+							loop
+						/>
+						<img
+							src="/img/Rosebank_16 Cask_1511.png"
+							className={clsx(
+								{ ['scale-110']: hover },
+								'w-96 absolute right-[-35%] bottom-[-20%] z-10 transition-all duration-1000'
+							)}
+							alt=""
+						/>{' '}
+					</div>
+				</div>
+			),
+		},
+	];
+
+	React.useEffect(() => {
+		setInterval(() => {
+			console.log(active);
+			setActive((prev) => {
+				return prev === 2 ? 0 : prev + 1;
+			});
+		}, 10000);
+	}, []);
+
 	return (
 		<div className="py-28 bg-black-1 relative text-white  w-full flex flex-col items-center justify-center">
-			<div className="flex gap-24 items-center justify-center w-full px-16">
-				<div className="lg:w-1/2 lg:flex hidden items-center justify-center">
-					<img src="icons/opensea.svg" className="w-2/3" alt="" />
+			<div className="flex xl:flex-row flex-col-reverse gap-24 items-center justify-center w-full px-16">
+				<div
+					className="xl:w-1/2 w-1/3 flex items-center justify-center relative"
+					onMouseOver={() => {
+						setHover(true);
+					}}
+					onMouseLeave={() => {
+						setHover(false);
+					}}
+				>
+					{bottles[active].component}
 				</div>
-				<div className="lg:w-1/2 w-full flex flex-col items-center justify-center">
-					<p className="text-justify Montserrat text-[17px] w-2/3">
+				<div className="xl:w-1/2 w-full flex flex-col items-center justify-center">
+					<p
+						className="xl:text-justify text-center Montserrat text-[18px] w-2/3"
+						style={{ lineHeight: '30px' }}
+					>
 						At Bolster, we believe that NFTs are a valuable tool for promoting
 						culture and art. However, we also recognize that the prices of NFTs
 						can be extremely volatile and have suffered significant losses

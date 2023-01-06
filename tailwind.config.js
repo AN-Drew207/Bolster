@@ -60,6 +60,10 @@ module.exports = {
 				generic: '0px 4px 14px #A1B1C4',
 				button: '0px 0px 70px 20px rgb(91 77 241 / 50%);',
 			},
+			rotate: {
+				['4neg']: '-4deg',
+				['6neg']: '-6deg',
+			},
 		},
 	},
 
