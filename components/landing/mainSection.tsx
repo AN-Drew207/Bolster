@@ -432,10 +432,10 @@ export const HowWeDoItComponent = () => {
 	}, []);
 
 	return (
-		<div className="py-28 bg-black-1 relative text-white  w-full flex flex-col items-center justify-center">
-			<div className="flex xl:flex-row flex-col-reverse gap-24 items-center justify-center w-full px-16">
+		<div className="py-28 bg-black-1 relative text-white  w-full flex flex-col items-center justify-center transition-all duration-1000 min-h-[100vh]">
+			<div className="flex xl:flex-row flex-col-reverse gap-24 items-center justify-center w-full px-16 transition-all duration-1000">
 				<div
-					className="xl:w-1/2 w-1/3 flex items-center justify-center relative"
+					className="xl:w-1/2 w-1/3 flex items-center justify-center relative transition-all duration-1000"
 					onMouseOver={() => {
 						setHover(true);
 					}}
