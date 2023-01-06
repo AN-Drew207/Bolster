@@ -244,7 +244,7 @@ export const CollectionComponent = () => {
 					<div className="flex justify-center items-start w-full">
 						<div
 							className={clsx(
-								'min-h-screen flex flex-col gap-4 items-center pt-32 pb-10 xl:w-[90%] w-full xl:px-0 px-8 justify-start relative'
+								'min-h-screen flex flex-col gap-4 items-center pt-32 pb-10 xl:w-[95%] w-full xl:px-0 px-8 justify-start relative'
 							)}
 						>
 							<div className="flex justify-between w-full">
@@ -279,7 +279,7 @@ export const CollectionComponent = () => {
 									></video> */}
 
 									{bottle && bottle.metadata.length > 0 && screen == 'menu' ? (
-										<div className="flex lg:flex-row flex-col  border-secondary">
+										<div className="flex xl:flex-row flex-col-reverse xl:items-start items-center  border-secondary w-full">
 											<div className="flex flex-col gap-4 items-center px-8 w-full">
 												<div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-4 p-4 py-10">
 													{bottle.metadata
@@ -287,6 +287,11 @@ export const CollectionComponent = () => {
 														.map((token: any, i: any) => {
 															return (
 																<CollectionNFTItem
+																	big={
+																		bottle.metadata.filter(
+																			(token: any) => !token.sold
+																		).length == 1
+																	}
 																	active={true}
 																	token={token}
 																	network={network}
@@ -359,13 +364,17 @@ export const CollectionComponent = () => {
 														})}
 												</div>
 											</div>
-											<div className="flex flex-col  pt-10 gap-4 border-secondary px-8">
+											<div className="flex flex-col  pt-10 gap-4 border-secondary px-8 shrink-0 max-w-[450px]">
 												<h3 className="text-white text-xl font-bold text-center Raleway">
 													Physical asset backing up the floor price for this
 													collection
 												</h3>
-												<div className="p-2 border-white bg-primary rounded-md flex items-center justify-center">
-													<img src={bottle.image} alt="" className="w-80" />
+												<div className="p-2 border-white bg-gray-900 border-4 border-primary rounded-md flex items-center justify-center">
+													<img
+														src={bottle.image}
+														alt=""
+														className="h-[400px]"
+													/>
 												</div>
 											</div>
 										</div>
@@ -401,8 +410,6 @@ export const CollectionComponent = () => {
 														'YYYY-MM-DD hh:mm:ss'
 													);
 													data.deleted_at = null;
-
-													showCongrats();
 
 													if (typeOfWallet == 'metamask') {
 														console.log('meta');
@@ -518,6 +525,7 @@ export const CollectionNFTItem = ({
 	setIsLoading,
 	setSelected,
 	selected,
+	big,
 }: any) => {
 	const { Modal, isShow, show, hide } = useModal();
 	const { transfer } = useMagicLink();
@@ -607,38 +615,43 @@ export const CollectionNFTItem = ({
 			{/* <Link href={'/bottle/' + bottle.address + '/token/' + token.id}> */}
 			<div
 				className={clsx(
-					'relative border-secondary rounded-md p-4 flex flex-col items-center justify-center',
+					'relative border-secondary rounded-md p-4 flex flex-col items-center justify-center w-52',
 					{
 						['opacity-50']: !active,
 						['cursor-pointer hover:scale-105 duration-300 transition-all']:
 							active,
+						['!w-96']: big,
 					}
 				)}
 				onClick={active ? () => setSelected() : undefined}
 			>
 				{selected && active && (
-					<div className="top-2 right-2 p-1 rounded-full bg-green-600 absolute w-8 text-secondary ">
+					<div className="top-6 right-8 p-1 rounded-full bg-green-600 absolute w-6 text-white ">
 						<CheckIcon />
 					</div>
 				)}
 				{token.image && (
 					<img
 						src={token.image}
-						className="w-40 h-40 rounded-md border border-secondary"
+						className={clsx(
+							{ ['!h-96 !w-96']: big },
+							'w-40 h-40 rounded-md border border-white'
+						)}
 						alt=""
 					/>
 				)}
 				{token.animation_url && (
 					<video
 						src={token.animation_url}
-						className="h-40 rounded-md border border-secondary"
+						className={clsx(
+							{ ['!w-96 !h-auto']: big },
+							'h-40 rounded-md border border-white'
+						)}
 						autoPlay
 						loop
 					/>
 				)}
-				<h2 className="p-4 text-center text-secondary font-bold">
-					{token.name}
-				</h2>
+				<h2 className="p-4 text-center text-white font-bold">{token.name}</h2>
 			</div>
 			{/* </Link> */}
 		</>

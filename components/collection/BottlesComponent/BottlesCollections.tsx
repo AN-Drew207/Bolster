@@ -60,9 +60,9 @@ export const BottleItem = ({ address, name, video, nfts }: any) => {
 	}, [video]);
 	return (
 		<Link href={`/collections/${address}`}>
-			<div className="sm:w-[400px] w-[320px] flex flex-col border rounded-xl overflow-hidden shadow-xl cursor-pointer border-gray-800 hover:scale-105 transition-all duration-500">
-				<div className="rounded-xl bg-overlay relative border border-secondary z-10 cursor-pointer">
-					<div className="w-full flex justify-center p-4 rounded-xl overflow-hidden">
+			<div className="sm:w-[400px] w-[320px] flex flex-col border rounded-xl overflow-hidden shadow-xl bg-primary cursor-pointer border-gray-800 hover:border-white hover:scale-105 transition-all duration-500">
+				<div className="rounded-xl bg-overlay relative z-10 cursor-pointer">
+					<div className="w-full flex justify-center rounded-xl overflow-hidden">
 						<div className="w-full">
 							<Swiper
 								loop={true}
@@ -101,7 +101,7 @@ export const BottleItem = ({ address, name, video, nfts }: any) => {
 						</div>
 					</div>
 				</div>
-				<div className="flex flex-col items-center bg-primary justify-center text-xl text-center font-bold text-secondary h-20 p-4">
+				<div className="flex flex-col items-center justify-center text-xl text-center font-bold text-white h-20 p-4">
 					<h3 className="flex items-center justify-center text-xl text-center font-bold">
 						{name}
 					</h3>{' '}
