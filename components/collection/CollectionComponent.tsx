@@ -449,7 +449,9 @@ export const CollectionComponent = () => {
 															);
 														})}
 												</div>
-
+												<h2 className="w-full text-center py-4 text-2xl text-white RalewayBold">
+													NFTs Bought
+												</h2>
 												<div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-4 p-4 py-10">
 													{bottle.metadata
 														.filter((token: any) => token.sold)
