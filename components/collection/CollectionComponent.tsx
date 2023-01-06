@@ -289,60 +289,108 @@ export const CollectionComponent = () => {
 											<h2 className="text-3xl text-white font-bold pb-4">
 												{bottle.name}
 											</h2>
-											<div className="flex rounded-xl 2xl:flex-row flex-col items-center justify-center w-1/2 border-4 border-primary py-10 xl:px-16 px-8 gap-4 transition-all duration-1000">
-												<div className="2xl:w-3/5 flex flex-col w-full transition-all duration-1000">
-													<h2 className="text-center font-bold text-2xl text-white">
-														{bottle.artist.name}
-													</h2>
-													<caption className="text-center text-sm text-white">
-														Collection Artist
-													</caption>
-													<div className="flex flex-col w-full items-center justify-center gap-2 mt-2 transition-all duration-1000">
-														{bottle.artist.paragraphs.map((paragraph: any) => {
-															return (
-																<ParagraphArtist
-																	title={paragraph.title}
-																	text={paragraph.text}
-																/>
-															);
-														})}
+											<div className="flex rounded-xl 2xl:flex-row flex-col-reverse items-center 2xl:justify-between w-full border-4 border-primary py-10 xl:px-16 px-8 gap-4 transition-all duration-1000">
+												<div className="xl:w-2/5 w-4/5 gap-4 flex flex-col items-center justify-center">
+													{' '}
+													<div className="flex flex-col w-full transition-all duration-1000">
+														<h2 className="text-center font-bold text-2xl text-white">
+															{bottle.artist.name}
+														</h2>
+														<caption className="text-center text-sm text-white">
+															Collection Artist
+														</caption>
+														<div className="flex flex-col w-full items-center justify-center gap-2 mt-2 transition-all duration-1000">
+															{bottle.artist.paragraphs.map(
+																(paragraph: any) => {
+																	return (
+																		<ParagraphArtist
+																			title={paragraph.title}
+																			text={paragraph.text}
+																		/>
+																	);
+																}
+															)}
+														</div>
+													</div>
+													<div className="2xl:w-[400px] w-[300px] gap-6 flex flex-col items-center justify-center rounded-xl overflow-hidden bg-gray-900">
+														<div className="2xl:w-2/3 w-full flex items-center justify-center rounded-xl overflow-hidden bg-gray-900">
+															<Swiper
+																slidesPerView={1}
+																autoplay={{
+																	delay: 2500,
+																	disableOnInteraction: false,
+																}}
+																spaceBetween={10}
+																modules={[Zoom, Autoplay]}
+															>
+																{bottle.artist.photo.map((photo: any) => (
+																	<SwiperSlide>
+																		<img
+																			className="border w-full borderMain rounded-xl bg-gray-900"
+																			src={photo}
+																			alt=""
+																		/>
+																	</SwiperSlide>
+																))}
+															</Swiper>
+														</div>
+														{bottle.artist.social_media && (
+															<div className="flex items-center gap-6 justify-center p-4">
+																{bottle.artist?.social_media?.map(
+																	(item: any) => (
+																		<a
+																			target="_blank"
+																			href={item.link}
+																			className="h-8"
+																		>
+																			<img
+																				className="h-8"
+																				src={item.icon}
+																				alt=""
+																			/>
+																		</a>
+																	)
+																)}
+															</div>
+														)}
 													</div>
 												</div>
-												<div className="2xl:w-[400px] w-[300px] w-full gap-6 flex flex-col items-center justify-center rounded-xl overflow-hidden bg-gray-900">
-													<div className="2xl:w-2/3 w-[50%] flex items-center justify-center rounded-xl overflow-hidden bg-gray-900">
-														<Swiper
-															slidesPerView={1}
-															autoplay={{
-																delay: 2500,
-																disableOnInteraction: false,
-															}}
-															spaceBetween={10}
-															modules={[Zoom, Autoplay]}
-														>
-															{bottle.artist.photo.map((photo: any) => (
-																<SwiperSlide>
-																	<img
-																		className="border w-full borderMain rounded-xl bg-gray-900"
-																		src={photo}
-																		alt=""
-																	/>
-																</SwiperSlide>
-															))}
-														</Swiper>
+												<div className="flex flex-col  pt-10 gap-4 border-secondary px-8 shrink-0 xl:w-1/2 w-4/5">
+													<h3 className="text-white text-2xl font-bold text-center Raleway">
+														Physical asset backing up the floor price for this
+														collection
+													</h3>
+													<div className="p-2 border-white bg-gray-900 border-4 border-primary rounded-md flex items-center justify-center">
+														<img
+															src={bottle.image}
+															alt=""
+															className="h-[400px]"
+														/>
 													</div>
-													{bottle.artist.social_media && (
-														<div className="flex items-center gap-6 justify-center p-4">
-															{bottle.artist?.social_media?.map((item: any) => (
-																<a
-																	target="_blank"
-																	href={item.link}
-																	className="h-8"
-																>
-																	<img className="h-8" src={item.icon} alt="" />
-																</a>
-															))}
-														</div>
-													)}
+													<div className="flex gap-10 items-center justify-center">
+														<a
+															href={bottle.litepaper}
+															target="_blank"
+															className="flex items-center justify-center"
+														>
+															<Button
+																className={clsx(
+																	'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+																	'!rounded-full hover:text-secondary w-64'
+																)}
+															>
+																Asset Especifications
+															</Button>
+														</a>
+														<Button
+															className={clsx(
+																'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+																'!rounded-full hover:text-secondary w-64'
+															)}
+														>
+															Collection Options
+														</Button>
+													</div>
 												</div>
 											</div>
 										</>
@@ -440,33 +488,6 @@ export const CollectionComponent = () => {
 															);
 														})}
 												</div>
-											</div>
-											<div className="flex flex-col  pt-10 gap-4 border-secondary px-8 shrink-0 max-w-[450px]">
-												<h3 className="text-white text-xl font-bold text-center Raleway">
-													Physical asset backing up the floor price for this
-													collection
-												</h3>
-												<div className="p-2 border-white bg-gray-900 border-4 border-primary rounded-md flex items-center justify-center">
-													<img
-														src={bottle.image}
-														alt=""
-														className="h-[400px]"
-													/>
-												</div>
-												<a
-													href={bottle.litepaper}
-													target="_blank"
-													className="flex items-center justify-center"
-												>
-													<Button
-														className={clsx(
-															'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
-															'!rounded-full hover:text-secondary'
-														)}
-													>
-														Asset Especifications
-													</Button>
-												</a>
 											</div>
 										</div>
 									) : bottle &&
