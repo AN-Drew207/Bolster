@@ -17,7 +17,6 @@ import Styles from '../landing/styles.module.scss';
 import { State, updateState, updateTokensOfUser } from 'redux/actions';
 import { multiply } from 'components/common/multiply';
 import { Loading } from 'components/landing/loadingComponent';
-import { ParagraphArtist } from 'components/collection/MintComponents/MintComponentBottle';
 import useMagicLink from 'hooks/useMagicLink';
 import { useForm } from 'react-hook-form';
 import { useMetamask } from 'hooks/useMetamask';
@@ -26,6 +25,12 @@ import { MintModal } from 'components/collection/Modals/MintModal';
 import { useConnectWalletModal } from 'hooks/useModalConnect';
 import { ProfileApiService } from 'api';
 import moment from 'moment';
+import { Autoplay, Navigation, Zoom } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { DoubleLeftOutlined, DoubleRightOutlined } from '@ant-design/icons';
 
 export const CollectionComponent = () => {
 	const [isLoading, setIsLoading] = React.useState(false);
@@ -217,7 +222,7 @@ export const CollectionComponent = () => {
 			{modal}
 			<div
 				className={clsx(
-					'min-h-screen flex flex-col items-center pt-0 w-full bg-overlay',
+					'min-h-screen bg-gradient-to-b from-gray-900 via-gray-900 to-primary flex flex-col items-center pt-0 w-full',
 					'relative',
 					isLoading || !bottle.address ? 'justify-center' : 'justify-start'
 				)}
@@ -225,7 +230,7 @@ export const CollectionComponent = () => {
 				<Modal isShow={isShow} hasBg>
 					<div
 						className={clsx(
-							'flex flex-col items-center w-full h-full sm:px-10 px-4 pb-10 relative mt-24 bg-overlay min-h-[100vh]'
+							'flex flex-col items-center w-full h-full sm:px-10 px-4 pb-10 relative mt-24 min-h-[100vh]'
 						)}
 					>
 						<div
@@ -255,10 +260,10 @@ export const CollectionComponent = () => {
 					alt=""
 				/> */}
 				{!isLoading && bottle && bottle.address ? (
-					<div className="flex justify-center items-start w-full">
+					<div className="flex justify-center items-start w-full ">
 						<div
 							className={clsx(
-								'min-h-screen flex flex-col gap-4 items-center pt-32 pb-10 xl:w-[95%] w-full xl:px-0 px-8 justify-start relative'
+								'min-h-screen  flex flex-col gap-4 items-center pt-32 pb-10 xl:w-[95%] w-full xl:px-0 px-8 justify-start relative'
 							)}
 						>
 							<div className="flex justify-between w-full">
@@ -276,13 +281,71 @@ export const CollectionComponent = () => {
 											['!w-full !border-none']:
 												bottle && bottle.metadata.length > 0 && screen == 'pay',
 										},
-										'flex rounded-xl flex-col items-center justify-center w-full bg-overlay border-secondary py-8'
+										'flex rounded-xl flex-col items-center justify-center w-full border-secondary py-8'
 									)}
 								>
 									{screen == 'menu' && (
-										<h2 className="text-3xl text-white font-bold pb-4">
-											{bottle.name}
-										</h2>
+										<>
+											<h2 className="text-3xl text-white font-bold pb-4">
+												{bottle.name}
+											</h2>
+											<div className="flex rounded-xl 2xl:flex-row flex-col items-center justify-center w-1/2 border-4 border-primary py-10 xl:px-16 px-8 gap-4 transition-all duration-1000">
+												<div className="2xl:w-3/5 flex flex-col w-full transition-all duration-1000">
+													<h2 className="text-center font-bold text-2xl text-white">
+														{bottle.artist.name}
+													</h2>
+													<caption className="text-center text-sm text-white">
+														Collection Artist
+													</caption>
+													<div className="flex flex-col w-full items-center justify-center gap-2 mt-2 transition-all duration-1000">
+														{bottle.artist.paragraphs.map((paragraph: any) => {
+															return (
+																<ParagraphArtist
+																	title={paragraph.title}
+																	text={paragraph.text}
+																/>
+															);
+														})}
+													</div>
+												</div>
+												<div className="2xl:w-[400px] w-[300px] w-full gap-6 flex flex-col items-center justify-center rounded-xl overflow-hidden bg-gray-900">
+													<div className="2xl:w-2/3 w-[50%] flex items-center justify-center rounded-xl overflow-hidden bg-gray-900">
+														<Swiper
+															slidesPerView={1}
+															autoplay={{
+																delay: 2500,
+																disableOnInteraction: false,
+															}}
+															spaceBetween={10}
+															modules={[Zoom, Autoplay]}
+														>
+															{bottle.artist.photo.map((photo: any) => (
+																<SwiperSlide>
+																	<img
+																		className="border w-full borderMain rounded-xl bg-gray-900"
+																		src={photo}
+																		alt=""
+																	/>
+																</SwiperSlide>
+															))}
+														</Swiper>
+													</div>
+													{bottle.artist.social_media && (
+														<div className="flex items-center gap-6 justify-center p-4">
+															{bottle.artist?.social_media?.map((item: any) => (
+																<a
+																	target="_blank"
+																	href={item.link}
+																	className="h-8"
+																>
+																	<img className="h-8" src={item.icon} alt="" />
+																</a>
+															))}
+														</div>
+													)}
+												</div>
+											</div>
+										</>
 									)}
 									{/* <video
 										src={bottle.image}
@@ -390,6 +453,20 @@ export const CollectionComponent = () => {
 														className="h-[400px]"
 													/>
 												</div>
+												<a
+													href={bottle.litepaper}
+													target="_blank"
+													className="flex items-center justify-center"
+												>
+													<Button
+														className={clsx(
+															'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+															'!rounded-full hover:text-secondary'
+														)}
+													>
+														Asset Especifications
+													</Button>
+												</a>
 											</div>
 										</div>
 									) : bottle &&
@@ -553,7 +630,7 @@ export const CollectionNFTItem = ({
 		<>
 			<Modal isShow={isShow} hasBg>
 				<div className="min-h-[100vh] flex flex-col items-center justify-center w-full">
-					<div className="min-h-[50vh] bg-overlay rounded-md p-6 2xl:min-w-[50vw] min-w-full">
+					<div className="min-h-[50vh] rounded-md p-6 2xl:min-w-[50vw] min-w-full">
 						<div className="flex justify-between mb-4">
 							<div
 								className="text-secondary font-bold cursor-pointer"
@@ -671,6 +748,55 @@ export const CollectionNFTItem = ({
 				<h2 className="p-4 text-center text-white font-bold">{token.name}</h2>
 			</div>
 			{/* </Link> */}
+		</>
+	);
+};
+
+export const ParagraphArtist: React.FC<any> = ({ title, text }) => {
+	const [viewMore, setViewMore] = React.useState(false);
+	return (
+		<>
+			{title && (
+				<p className="text-white font-bold text-left text-lg my-2 w-full">
+					{title}
+				</p>
+			)}
+			{text && (
+				<>
+					{text.map((text: string, index: number) => (
+						<p
+							className={clsx(
+								{ ['hidden']: index > 0 && !viewMore },
+								'text-white text-justify text-md w-full'
+							)}
+						>
+							{text}
+						</p>
+					))}
+					{text.length > 1 && (
+						<p
+							className={clsx(
+								'text-secondary cursor-pointer text-left flex items-center justify-start gap-1 text-sm w-full'
+							)}
+							onClick={() => {
+								setViewMore((prev) => !prev);
+							}}
+						>
+							{!viewMore ? (
+								<>
+									Read More{' '}
+									<DoubleRightOutlined className="!text-primaryOpacity" />
+								</>
+							) : (
+								<>
+									Read Less{' '}
+									<DoubleLeftOutlined className="!text-primaryOpacity" />
+								</>
+							)}
+						</p>
+					)}
+				</>
+			)}
 		</>
 	);
 };

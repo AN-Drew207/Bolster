@@ -534,7 +534,7 @@ export const WhyShouldComponent = () => {
 	];
 
 	return (
-		<div className="py-28 bg-gray-900 relative text-secondary  w-full flex flex-col gap-10 items-center justify-center">
+		<div className="py-28 bg-gray-900 relative w-full flex flex-col gap-10 items-center justify-center">
 			<h2 className="text-4xl text-white RalewayBold">
 				Why you should come with us?
 			</h2>
@@ -547,7 +547,8 @@ export const WhyShouldComponent = () => {
 						return (
 							<div className="flex flex-col gap-2 w-full xl:text-justify text-center">
 								<h2 className="text-[17px] RalewayBold">
-									<span className="xl:inline hidden">&#8226;</span> {item.text}
+									<span className="xl:inline hidden text-white">&#8226;</span>{' '}
+									{item.text}
 								</h2>
 								<p className="text-[15px] text-gray-500 Montserrat pl-4">
 									{item.subTexts}

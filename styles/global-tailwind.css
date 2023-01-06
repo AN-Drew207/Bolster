@@ -5,7 +5,7 @@
     border: 1px solid #5b4df1;
     box-shadow: 0px 0px 70px 20px rgb(91 77 241 / 50%); */
 :root {
-	--color-primary: rgb(20, 0, 0);
+	--color-primary: #110306;
 	--color-primary-opacity: #8b8b8b;
 	--color-secondary: #f2295b;
 	--color-overlay: rgb(0, 0, 0);
@@ -26,7 +26,7 @@
 }
 
 .light {
-	--color-primary: rgb(20, 0, 0);
+	--color-primary: #110306;
 	--color-primary-opacity: #8b8b8b;
 	--color-secondary: #f2295b;
 	--color-overlay: rgb(0, 0, 0);

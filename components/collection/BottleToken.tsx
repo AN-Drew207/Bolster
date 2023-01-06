@@ -10,7 +10,6 @@ import { Loading } from '../landing/loadingComponent';
 import { useModal } from 'hooks/modal';
 import { Button } from 'components/common/button/button';
 import Web3 from 'web3';
-import { MintComponentBottle } from './MintComponents/MintComponentBottle';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import toast, { Toaster } from 'react-hot-toast';
