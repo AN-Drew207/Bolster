@@ -44,7 +44,7 @@ export const SidebarMobile: React.FC<LayoutDashboardProps & any> = ({
 				<Dialog
 					as="div"
 					static
-					className="fixed h-screen top-0 right-0 pt-24 flex z-40 md:hidden bg-overlay"
+					className="fixed h-screen top-0 right-0 pt-[52px] flex z-40 lg:hidden bg-overlay"
 					open={sidebarOpen}
 					onClose={setSidebarOpen}
 					initialFocus={initialFocus}
@@ -86,7 +86,7 @@ export const SidebarMobile: React.FC<LayoutDashboardProps & any> = ({
 									>
 										<span className="sr-only">Close sidebar</span>
 										<XIcon
-											className="w-full p-1 text-secondary bg-secondary rounded-full"
+											className="w-full p-1 text-white bg-secondary rounded-full"
 											aria-hidden="true"
 										/>
 									</button>
@@ -100,11 +100,7 @@ export const SidebarMobile: React.FC<LayoutDashboardProps & any> = ({
 												<Link href={item.link} key={'nav-desktop-' + index}>
 													<p
 														className={clsx(
-															'group flex items-center px-3 py-4 font-bold hover:opacity-90 text-md rounded-md  relative ',
-															{
-																'text-secondary': item.link !== router.asPath,
-															},
-															{ 'text-primary': item.link === router.asPath }
+															'group flex items-center px-3 py-4 font-bold hover:opacity-90 text-md rounded-md  relative text-secondary'
 														)}
 														onClick={() => setSidebarOpen(false)}
 													>
@@ -121,15 +117,11 @@ export const SidebarMobile: React.FC<LayoutDashboardProps & any> = ({
 												<Link href={'/profile'}>
 													<p
 														className={clsx(
-															'group flex items-center px-3 py-4 font-bold hover:opacity-90 text-md rounded-md  relative ',
-															{
-																'text-secondary': '/profile' !== router.asPath,
-															},
-															{ 'text-primary': '/profile' === router.asPath }
+															'group flex items-center px-3 py-4 font-bold hover:opacity-90 text-md rounded-md  relative text-secondary'
 														)}
 														onClick={() => setSidebarOpen(false)}
 													>
-														MY NFTS
+														ACCOUNT
 													</p>
 												</Link>
 											</div>
@@ -157,8 +149,8 @@ export const SidebarMobile: React.FC<LayoutDashboardProps & any> = ({
 												<>
 													<Button
 														className={clsx(
-															'z-10 border borderMain px-2 py-2 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
-															Styles.button
+															'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-2 text-[14px] text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+															'!rounded-full hover:text-secondary ml-4'
 														)}
 														onClick={() => showWallet()}
 													>
@@ -167,8 +159,8 @@ export const SidebarMobile: React.FC<LayoutDashboardProps & any> = ({
 													<div className="divider mx-3 mt-4 mb-4"></div>
 													<Button
 														className={clsx(
-															'z-10 border borderMain px-2 py-2 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
-															Styles.button
+															'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-2 text-[14px] text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+															'!rounded-full hover:text-secondary ml-4'
 														)}
 														onClick={() => disconnect(dispatch)}
 													>
@@ -180,8 +172,8 @@ export const SidebarMobile: React.FC<LayoutDashboardProps & any> = ({
 									) : (
 										<Button
 											className={clsx(
-												'z-10 border borderMain mt-4 px-2 py-2 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
-												Styles.button
+												'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-2 text-[14px] text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+												'!rounded-full hover:text-secondary ml-4 mt-6'
 											)}
 											onClick={() => {
 												setSidebarOpen(false);

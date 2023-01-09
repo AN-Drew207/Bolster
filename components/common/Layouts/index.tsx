@@ -126,7 +126,7 @@ export default function AppLayout() {
 				className={clsx(
 					'fixed top-0 z-50',
 					'bg-primary',
-					'w-[100%] xl:px-56 lg:px-36 px-8 py-3 flex flex-row items-center justify-between gap-10 shadow-md Raleway'
+					'w-[100%] xl:px-36 lg:px-10 px-8 py-3 flex flex-row items-center justify-between gap-10 shadow-md Raleway'
 				)}
 			>
 				{modal}
@@ -165,7 +165,7 @@ export default function AppLayout() {
 						<SearchOutlined />
 					</div>
 				</div> */}
-				<div className="md:flex hidden items-center shrink-0">
+				<div className="lg:flex hidden items-center shrink-0">
 					{navItems.map((item, index) => {
 						return (
 							<div key={item.name + index}>
@@ -239,7 +239,7 @@ export default function AppLayout() {
 					)}
 				</div>
 				<div
-					className="md:hidden flex"
+					className="lg:hidden flex"
 					onClick={() => {
 						setSidebarOpen(true);
 					}}
