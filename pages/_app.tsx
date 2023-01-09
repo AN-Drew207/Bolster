@@ -16,6 +16,7 @@ import AppLayout from 'components/common/Layouts';
 import { store } from '../redux/store';
 import { Provider } from 'react-redux';
 import { Footer } from 'components/footer';
+import { Toaster } from 'react-hot-toast';
 function MyApp({
 	Component,
 	pageProps,
@@ -58,6 +59,7 @@ function MyApp({
 
 							<Component {...pageProps} />
 							<Footer />
+							<Toaster containerClassName="z-[1000]" />
 						</div>
 					</ThemeContext.Provider>
 				</Provider>

@@ -697,11 +697,12 @@ export const TypeOfBolsterComponent = () => {
 };
 
 export const ContactUs: React.FC<any> = () => {
-	const { handleSubmit } = useForm({ mode: 'onChange' });
 	const [formSent, setFormSent] = React.useState(false);
+	const [loading, setLoading] = React.useState(false);
 
 	const sendEmail = (e: any) => {
 		e.preventDefault();
+		setLoading(true);
 		sendForm(
 			'service_i7w64sf',
 			'template_2zwghz2',
@@ -711,13 +712,15 @@ export const ContactUs: React.FC<any> = () => {
 			(result) => {
 				console.log(result.text);
 				toast.success(
-					'The form has been successfully sent, please proceed with your redeem',
+					'The form has been successfully sent, we will reach you asap!',
 					{ duration: 5000 }
 				);
 				setFormSent(true);
+				setLoading(false);
 			},
 			(error) => {
 				console.log(error.text);
+				setLoading(false);
 			}
 		);
 	};
@@ -752,6 +755,7 @@ export const ContactUs: React.FC<any> = () => {
 						name="message"
 						placeholder="Message"
 						className="outline-none ring-none border-none rounded-md resize-none h-96 w-full"
+						disabled={loading}
 						required
 					/>{' '}
 					<div className="w-full flex justify-end">
