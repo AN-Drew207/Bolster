@@ -3,9 +3,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import clsx from 'clsx';
 import { XIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { Button } from 'components/common/button';
-import Styles from '../../../landing/styles.module.scss';
 import useMagicLink from 'hooks/useMagicLink';
 import { State } from 'redux/actions';
 import { useSelector } from 'react-redux';
@@ -29,7 +27,6 @@ export const SidebarMobile: React.FC<LayoutDashboardProps & any> = ({
 	navItems = [],
 	dispatch,
 }) => {
-	const router = useRouter();
 	const { show } = useConnectWalletModal();
 	const { showWallet, disconnect } = useMagicLink();
 	const { address, typeOfWallet } = useSelector((state: { state: State }) => {

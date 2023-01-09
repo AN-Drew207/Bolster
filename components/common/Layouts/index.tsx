@@ -126,7 +126,7 @@ export default function AppLayout() {
 				className={clsx(
 					'fixed top-0 z-50',
 					'bg-primary',
-					'w-[100%] xl:px-36 lg:px-10 px-8 py-3 flex flex-row items-center justify-between gap-10 shadow-md Raleway'
+					'w-full xl:px-36 lg:px-10 px-8 py-3 flex flex-row items-center justify-between gap-10 shadow-md Raleway'
 				)}
 			>
 				{modal}

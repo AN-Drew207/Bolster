@@ -25,7 +25,7 @@ export const MainSectionComponent = () => {
 					<h2 className="text-center w-full lg:text-7xl text-3xl w-full RalewayBold">
 						Amazing NFT Projects with Backstop Value.
 					</h2>
-					<h2 className="Raleway w-full text-center text-md font-thin w-[700px]">
+					<h2 className="Raleway w-full text-center text-md font-thin max-w-[700px]">
 						NFTs with peace of mind
 					</h2>
 					<div className="flex justify-center gap-10">{}</div>
