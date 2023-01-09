@@ -11,8 +11,10 @@ export const CollectionsLandingComponent = () => {
 	const { bottles: bottlesView } = useSelector((state: any) => state.state);
 	console.log(bottlesView, 'botellas');
 	return (
-		<div className="flex flex-col bg-overlay px-32 pb-48 pt-16 gap-12 min-h-[100vh]">
-			<h2 className="RalewayBold text-xl text-secondary">Backed Collections</h2>
+		<div className="flex flex-col bg-overlay md:px-32 px-4 pb-48 pt-16 gap-12 min-h-[100vh]">
+			<h2 className="RalewayBold md:text-xl text-lg text-secondary">
+				Backed Collections
+			</h2>
 			<div className="flex flex-wrap gap-10 items-center justify-center w-full">
 				{bottlesView.map(
 					(

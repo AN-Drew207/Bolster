@@ -294,7 +294,7 @@ export const CollectionComponent = () => {
 					<div className="flex justify-center items-start w-full ">
 						<div
 							className={clsx(
-								'min-h-screen  flex flex-col gap-4 items-center pt-32 pb-10 xl:w-[95%] w-full xl:px-0 px-8 justify-start relative'
+								'min-h-screen  flex flex-col gap-4 items-center pt-32 pb-10 xl:w-[95%] w-full xl:px-0 md:px-8 px-2 justify-start relative'
 							)}
 						>
 							<div className="flex justify-between w-full">
@@ -392,11 +392,11 @@ export const CollectionComponent = () => {
 															Physical asset backing up the floor price for this
 															collection
 														</h3>
-														<div className="p-2 h-[400px] relative border-white bg-gray-900 border-4 border-primary rounded-md flex items-center justify-center">
+														<div className="p-2 relative border-white bg-gray-900 border-4 border-primary rounded-md flex items-center justify-center">
 															<img
 																src={bottle.image}
 																alt=""
-																className={clsx('h-[400px]', {
+																className={clsx('md:h-[400px] h-[300px]', {
 																	['absolute top-0 opacity-[0.15]']: specs,
 																})}
 															/>
@@ -411,7 +411,7 @@ export const CollectionComponent = () => {
 																</h2>
 																<div
 																	className={clsx(
-																		'w-full h-full lg:hidden flex relative overflow-hidden'
+																		'w-full h-full lg:hidden sm:flex hidden relative overflow-hidden'
 																	)}
 																>
 																	<div className="w-full bg-transparent">
@@ -455,6 +455,63 @@ export const CollectionComponent = () => {
 																												/>
 																											</div>
 																											<p className="xl:text-[14px] text-[18px] text-white text-center font-bold w-full">
+																												{item.caption}
+																											</p>
+																										</div>
+																									)
+																								)}
+																						</div>
+																					</SwiperSlide>
+																				))}
+																		</Swiper>
+																	</div>
+																</div>
+																<div
+																	className={clsx(
+																		'w-full h-full sm:hidden flex relative overflow-hidden'
+																	)}
+																>
+																	<div className="w-full bg-transparent">
+																		{' '}
+																		<Swiper
+																			slidesPerView={1}
+																			autoplay={{
+																				delay: 2500,
+																				disableOnInteraction: false,
+																			}}
+																			loop={true}
+																			modules={[Zoom, Autoplay]}
+																			className="bg-transparent"
+																		>
+																			{new Array(
+																				bottle.content.caracteristics.length / 4
+																			)
+																				.fill(false)
+																				.map((i, index: any) => (
+																					<SwiperSlide>
+																						<div className="bg-transparent flex flex-wrap gap-4 w-full h-full items-center justify-center">
+																							{bottle.content.caracteristics
+																								.filter(
+																									(i: any, ix: any) =>
+																										ix <= (index + 1) * 4 &&
+																										ix > index * 4
+																								)
+																								.map(
+																									(item: any, index: any) => (
+																										<div
+																											key={
+																												'caracteristic-' + index
+																											}
+																											className="flex xl:flex-row flex-col items-center justify-start w-32 gap-4"
+																										>
+																											<div className="flex items-center justify-center w-[20px]">
+																												<img
+																													className="max-w-[12px] max-h-8"
+																													src={item.icon}
+																													alt=""
+																												/>
+																											</div>
+																											<p className="xl:text-[14px] text-[12px] text-white text-center font-bold w-full">
 																												{item.caption}
 																											</p>
 																										</div>
@@ -557,8 +614,8 @@ export const CollectionComponent = () => {
 									</h2>
 									{bottle && bottle.metadata.length > 0 && screen == 'menu' ? (
 										<div className="flex xl:flex-row flex-col-reverse xl:items-start items-center  border-secondary w-full">
-											<div className="flex flex-col gap-4 items-center px-8 w-full">
-												<div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-4 p-4 py-10">
+											<div className="flex flex-col gap-4 items-center md:px-8 w-full">
+												<div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-4 md:p-4 py-10">
 													{bottle.metadata
 														.filter((token: any) => !token.sold)
 														.map((token: any, i: any) => {
@@ -884,12 +941,12 @@ export const CollectionNFTItem = ({
 			{/* <Link href={'/bottle/' + bottle.address + '/token/' + token.id}> */}
 			<div
 				className={clsx(
-					'relative border-secondary rounded-md p-4 flex flex-col items-center justify-center w-52',
+					'relative border-secondary rounded-md p-4 flex flex-col items-center justify-center md:w-52 w-36',
 					{
 						['opacity-50']: !active,
 						['cursor-pointer hover:scale-105 duration-300 transition-all']:
 							active,
-						['!w-96']: big,
+						['!md:w-96 w-52']: big,
 					}
 				)}
 				onClick={active ? () => setSelected() : undefined}
@@ -903,8 +960,8 @@ export const CollectionNFTItem = ({
 					<img
 						src={token.image}
 						className={clsx(
-							{ ['!h-96 !w-96']: big },
-							'w-40 h-40 rounded-md border border-white'
+							{ ['md:!h-96 md:!w-96 !w-52 !h-52']: big },
+							'w-32 h-32 rounded-md border border-white'
 						)}
 						alt=""
 					/>
@@ -913,14 +970,16 @@ export const CollectionNFTItem = ({
 					<video
 						src={token.animation_url}
 						className={clsx(
-							{ ['!w-96 !h-auto']: big },
-							'h-40 rounded-md border border-white'
+							{ ['!md:w-96 !md:h-auto']: big },
+							'md:h-40 h-32 rounded-md border border-white'
 						)}
 						autoPlay
 						loop
 					/>
 				)}
-				<h2 className="p-4 text-center text-white font-bold">{token.name}</h2>
+				<h2 className="p-4 text-center text-white font-bold md:text-[15px] text-[13px]">
+					{token.name}
+				</h2>
 			</div>
 			{/* </Link> */}
 		</>
