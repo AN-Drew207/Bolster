@@ -549,9 +549,8 @@ export const WhyShouldComponent = () => {
 					{items.map((item) => {
 						return (
 							<div className="flex flex-col gap-2 w-full xl:text-justify text-center">
-								<h2 className="text-[17px] RalewayBold">
-									<span className="xl:inline hidden text-white">&#8226;</span>{' '}
-									{item.text}
+								<h2 className="text-[17px] RalewayBold text-white">
+									<span className="xl:inline hidden ">&#8226;</span> {item.text}
 								</h2>
 								<p className="text-[15px] text-gray-500 Montserrat pl-4">
 									{item.subTexts}
