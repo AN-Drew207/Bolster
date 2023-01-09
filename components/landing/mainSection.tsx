@@ -22,7 +22,7 @@ export const MainSectionComponent = () => {
 			<div className="bg-gradient-to-b from-transparent to-gray-900 absolute bottom-0 h-28 w-full"></div>
 			<div className="flex gap-10 items-center justify-center w-full  h-full relative text-white">
 				<div className="w-2/3 flex flex-col justify-center items-center gap-4 relative">
-					<h2 className="text-center w-full text-7xl w-full RalewayBold">
+					<h2 className="text-center w-full lg:text-7xl text-3xl w-full RalewayBold">
 						Amazing NFT Projects with Backstop Value.
 					</h2>
 					<h2 className="Raleway w-full text-center text-md font-thin w-[700px]">
@@ -59,7 +59,7 @@ export const OfferComponent = () => {
 					viewBox="0 0 24 24"
 					strokeWidth={1.5}
 					stroke="currentColor"
-					className="w-12 h-12"
+					className="md:w-12 w-8 md:h-12 h-8"
 				>
 					<path
 						strokeLinecap="round"
@@ -77,7 +77,7 @@ export const OfferComponent = () => {
 					viewBox="0 0 24 24"
 					strokeWidth={1.5}
 					stroke="currentColor"
-					className="w-12 h-12"
+					className="md:w-12 w-8 md:h-12 h-8"
 				>
 					<path
 						strokeLinecap="round"
@@ -98,7 +98,7 @@ export const OfferComponent = () => {
 					viewBox="0 0 24 24"
 					strokeWidth={1.5}
 					stroke="currentColor"
-					className="w-12 h-12"
+					className="md:w-12 w-8 md:h-12 h-8"
 				>
 					<path
 						strokeLinecap="round"
@@ -121,7 +121,7 @@ export const OfferComponent = () => {
 					viewBox="0 0 24 24"
 					strokeWidth={1.5}
 					stroke="currentColor"
-					className="w-12 h-12"
+					className="md:w-12 w-8 md:h-12 h-8"
 				>
 					<path
 						strokeLinecap="round"
@@ -143,7 +143,7 @@ export const OfferComponent = () => {
 					viewBox="0 0 24 24"
 					strokeWidth={1.5}
 					stroke="currentColor"
-					className="w-12 h-12"
+					className="md:w-12 w-8 md:h-12 h-8"
 				>
 					<path
 						strokeLinecap="round"
@@ -160,16 +160,16 @@ export const OfferComponent = () => {
 			<div className="flex flex-wrap gap-10 justify-center w-full">
 				{items.map((item) => {
 					return (
-						<div className="flex flex-col gap-6 w-[450px] p-10 border-2 border-secondary rounded-md items-center ">
-							<div className="p-4 rounded-md bg-secondary text-white text-xl">
+						<div className="flex flex-col gap-6 md:w-[450px] w-[250px] p-10 border-2 border-secondary rounded-md items-center ">
+							<div className="md:p-4 p-2 rounded-md bg-secondary text-white text-xl">
 								{item.iconSVG}
 							</div>
 							<div className="flex flex-col gap-2">
-								<h3 className="text-xl Raleway text-center text-white h-full flex items-center justify-center">
+								<h3 className="lg:text-xl text-lg Raleway text-center text-white h-full flex items-center justify-center">
 									{item.text}
 								</h3>
 								{item?.subTexts?.map((item) => (
-									<p className="text-lg Raleway text-center text-gray-500 h-full flex items-center justify-center">
+									<p className="lg:text-lg text-md Raleway text-center text-gray-500 h-full flex items-center justify-center">
 										{item}
 									</p>
 								))}
@@ -436,9 +436,9 @@ export const HowWeDoItComponent = () => {
 
 	return (
 		<div className="py-28 bg-black-1 relative text-white  w-full flex flex-col items-center justify-center transition-all duration-1000 min-h-[100vh]">
-			<div className="flex xl:flex-row flex-col-reverse gap-24 items-center justify-center w-full px-16 transition-all duration-1000">
+			<div className="flex xl:flex-row flex-col-reverse gap-24 items-center justify-center w-full md:px-16 transition-all duration-1000">
 				<div
-					className="xl:w-1/2 w-1/3 flex items-center justify-center relative transition-all duration-1000"
+					className="xl:w-1/2 w-3/5 flex items-center justify-center relative transition-all duration-1000"
 					onMouseOver={() => {
 						setHover(true);
 					}}
@@ -460,10 +460,7 @@ export const HowWeDoItComponent = () => {
 					})}
 				</div>
 				<div className="xl:w-1/2 w-full flex flex-col items-center justify-center">
-					<p
-						className="xl:text-justify text-center Montserrat text-[18px] w-2/3"
-						style={{ lineHeight: '30px' }}
-					>
+					<p className="xl:text-justify text-center Montserrat md:text-[18px] text-[13px] md:w-2/3 w-full md:px-0 px-4">
 						At Bolster, we believe that NFTs are a valuable tool for promoting
 						culture and art. However, we also recognize that the prices of NFTs
 						can be extremely volatile and have suffered significant losses
@@ -490,8 +487,8 @@ export const HowWeDoItComponent = () => {
 
 export const CTAComponent = () => {
 	return (
-		<div className="py-28 bg-gray-900 relative text-white  w-full flex flex-col items-center justify-center">
-			<div className="flex flex-col gap-4 items-center justify-center w-2/3">
+		<div className="md:py-28 py-10 bg-gray-900 relative text-white  w-full flex flex-col items-center justify-center">
+			<div className="flex flex-col gap-4 items-center justify-center md:w-2/3 md:px-0 px-4">
 				<p className="text-center RalewayBold text-[17px]">
 					Buy an NFT with us and get a Global Membership that gives you 24-hour
 					early access to our exclusive drops. <br /> Limited to the first 100
@@ -537,15 +534,15 @@ export const WhyShouldComponent = () => {
 	];
 
 	return (
-		<div className="py-28 bg-gray-900 relative w-full flex flex-col gap-10 items-center justify-center">
-			<h2 className="text-4xl text-white RalewayBold">
+		<div className="md:py-28 py-10 px-4 bg-gray-900 relative w-full flex flex-col gap-10 items-center justify-center">
+			<h2 className="text-4xl text-white RalewayBold text-center">
 				Why you should come with us?
 			</h2>
 			<div className="flex gap-16 justify-center items-center">
 				<div className="xl:w-1/2 xl:flex hidden items-center justify-center xl:pl-36">
 					<img src="icons/bolster.png" className="w-80" alt="" />
 				</div>
-				<div className="flex flex-col gap-4 items-center justify-center xl:w-1/2 w-full lg:px-0 px-16 Raleway xl:pr-36	">
+				<div className="flex flex-col gap-4 items-center justify-center xl:w-1/2 w-full lg:px-0 md:px-16  Raleway xl:pr-36">
 					{items.map((item) => {
 						return (
 							<div className="flex flex-col gap-2 w-full xl:text-justify text-center">
@@ -592,10 +589,10 @@ export const LegalComponent = () => {
 export const TypeOfBolsterComponent = () => {
 	return (
 		<div
-			className="py-28 bg-gray-900 relative w-full flex justify-center"
+			className="md:py-28 py-10 bg-gray-900 relative w-full flex justify-center"
 			id="for_artists"
 		>
-			<div className="w-full 2xl:px-10 px-36 flex justify-center">
+			<div className="w-full 2xl:px-10 md:px-36 px-4 flex justify-center">
 				<div className="flex flex-col gap-4 items-center justify-center 2xl:w-1/2 w-full  h-full">
 					<h2 className="text-4xl text-white RalewayBold text-center">
 						Are you an artist or someone developing an NFT project?
@@ -607,8 +604,8 @@ export const TypeOfBolsterComponent = () => {
 						your fans an additional peace of mind that comes with proper
 						ownership. Bolster makes it easy to legally add value to your work.
 					</p>
-					<div className="flex justify-center gap-6 text-white text-2xl">
-						<div className="w-1/4 flex flex-col relative text-center items-center justify-center gap-2 py-10 px-6 overflow-hidden">
+					<div className="flex md:flex-nowrap flex-wrap justify-center gap-6 text-white text-2xl">
+						<div className="md:w-1/4 w-[160px]  flex flex-col relative text-center items-center justify-center gap-2 py-10 px-6 overflow-hidden">
 							<img
 								src="img/bg2.jpg"
 								className="absolute min-w-[500px] top-0"
@@ -620,7 +617,7 @@ export const TypeOfBolsterComponent = () => {
 								Rare Whiskies
 							</h1>
 						</div>
-						<div className="w-1/4 flex flex-col relative text-center items-center gap-2 justify-center py-10 px-6 overflow-hidden">
+						<div className="md:w-1/4 w-[160px]  flex flex-col relative text-center items-center gap-2 justify-center py-10 px-6 overflow-hidden">
 							<img
 								src="img/bg2.jpg"
 								className="absolute min-w-[500px] top-0"
@@ -638,7 +635,7 @@ export const TypeOfBolsterComponent = () => {
 								(Reach out to us if you are interested)
 							</p>
 						</div>
-						<div className="w-1/4 flex flex-col relative text-center items-center gap-2 justify-center py-10 px-6 overflow-hidden">
+						<div className="md:w-1/4 w-[160px]  flex flex-col relative text-center items-center gap-2 justify-center py-10 px-6 overflow-hidden">
 							<img
 								src="img/bg2.jpg"
 								className="absolute min-w-[500px] top-0"
@@ -656,7 +653,7 @@ export const TypeOfBolsterComponent = () => {
 								(Coming soon - reach out to us if you are interested)
 							</p>
 						</div>
-						<div className="w-1/4 flex flex-col relative text-center items-center gap-2 justify-center py-10 px-6 overflow-hidden">
+						<div className="md:w-1/4 w-[160px] flex flex-col relative text-center items-center gap-2 justify-center py-10 px-6 overflow-hidden">
 							<img
 								src="img/bg2.jpg"
 								className="absolute min-w-[500px] top-0"
@@ -728,14 +725,14 @@ export const ContactUs: React.FC<any> = () => {
 	return (
 		<div
 			className={clsx(
-				'flex items-center justify-center w-full h-full px-16 py-10 gap-16 relative bg-gray-900'
+				'flex xl:flex-row flex-col-reverse items-center justify-center w-full h-full px-16 py-10 gap-16 relative bg-gray-900'
 			)}
 			id="contactus"
 		>
-			<div className="flex flex-col items-center justify-center h-full relative w-1/2">
+			<div className="flex flex-col items-center justify-center h-full relative xl:w-1/2 w-full">
 				<img src="/icons/logo.png" className="w-1/2" alt="" />
 			</div>
-			<div className="flex flex-col items-center justify-center h-full relative w-1/2">
+			<div className="flex flex-col items-center justify-center h-full relative xl:w-1/2 w-full">
 				<form
 					className="flex flex-col items-center gap-4 w-full"
 					onSubmit={sendEmail}
