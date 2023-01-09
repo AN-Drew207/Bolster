@@ -24,7 +24,7 @@ export const Footer = () => {
 				{OficialPages.map((page) => {
 					return (
 						<Link href={page.href}>
-							<div className="flex items-center text-white text-[14px] hover:text-white cursor-pointer">
+							<div className="flex items-center text-white text-[16px] font-bold hover:text-white cursor-pointer">
 								{page.title}
 							</div>
 						</Link>
