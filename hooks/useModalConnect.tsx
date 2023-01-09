@@ -46,7 +46,7 @@ export const useConnectWalletModal = () => {
 									connectWalletUpdateData(dispatch, network, networkName)
 								}
 							>
-								<div className="flex items-center justify-center text-xl Raleway">
+								<div className="flex items-center justify-center md:text-xl text-md Raleway">
 									<img src="/icons/metamask_logo.png" className="w-10" alt="" />{' '}
 									Connect with Metamask
 								</div>
@@ -58,7 +58,7 @@ export const useConnectWalletModal = () => {
 								)}
 								onClick={() => login(dispatch)}
 							>
-								<div className="flex items-center justify-center gap-2 whitespace-nowrap text-xl Raleway">
+								<div className="flex items-center justify-center gap-2 whitespace-nowrap md:text-xl text-md Raleway">
 									<MailOutlined className="text-lg" /> Connect with Email
 								</div>
 							</Button>

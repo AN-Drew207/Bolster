@@ -108,15 +108,15 @@ export const MintModal: React.FC<any> = ({
 									item.value && (
 										<div
 											className={clsx(
-												'w-52 h-60 relative flex flex-col items-center justify-center'
+												'md:w-52 w-32 md:h-60 h-40  relative flex flex-col items-center justify-center'
 											)}
 										>
 											<img
 												src={bottle?.metadata[item?.id - 1]?.image}
-												className="rounded-xl border border-white overflow-hidden h-40 w-40 shrink-0"
+												className="rounded-xl border border-white overflow-hidden md:h-40 md:w-40 h-28 w-28 shrink-0"
 												alt=""
 											/>{' '}
-											<h2 className="p-4 text-center text-white font-bold w-full">
+											<h2 className="p-4 text-center md:text-lg text-[12px]  text-white font-bold w-full">
 												{bottle?.metadata[item?.id - 1]?.name}
 											</h2>
 										</div>
