@@ -529,7 +529,7 @@ export const CollectionComponent = () => {
 												</div>
 												<div className="flex flex-col">
 													<h2 className="text-white">
-														<span className="text-secondary">
+														<span className="text-secondary font-bold">
 															{bottle.price} USD
 														</span>{' '}
 														per NFT
