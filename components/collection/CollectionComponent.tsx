@@ -403,7 +403,7 @@ export const CollectionComponent = () => {
 															<div
 																className={clsx(
 																	{ ['hidden']: !specs },
-																	'flex flex-col h-full justify-between py-4 w-full'
+																	'flex flex-col justify-between py-4 w-full md:h-[400px] h-[300px]'
 																)}
 															>
 																<h2 className="text-md w-full text-white text-center RalewayBold font-bold">
@@ -525,7 +525,8 @@ export const CollectionComponent = () => {
 																</div>
 																<div
 																	className={clsx(
-																		'w-full h-full lg:flex hidden flex-wrap gap-4 items-center justify-center relative'
+																		'w-full h-full lg:flex hidden flex-wrap gap-4 items-center justify-center relative',
+																		'md:h-[400px] h-[300px]'
 																	)}
 																>
 																	{bottle.content.caracteristics.map(
