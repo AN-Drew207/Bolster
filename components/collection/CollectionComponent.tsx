@@ -382,14 +382,14 @@ export const CollectionComponent = () => {
 																Asset Especifications
 															</Button>
 														</a>
-														<Button
+														{/* <Button
 															className={clsx(
 																'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
 																'!rounded-full hover:text-secondary w-64'
 															)}
 														>
 															Collection Options
-														</Button>
+														</Button> */}
 													</div>
 												</div>
 											</div>

@@ -4,6 +4,9 @@ import React from 'react';
 import clsx from 'clsx';
 import { Button } from 'components/common/button';
 import router from 'next/router';
+import { useForm } from 'react-hook-form';
+import { sendForm } from '@emailjs/browser';
+import toast from 'react-hot-toast';
 
 export const MainSectionComponent = () => {
 	return (
@@ -477,7 +480,7 @@ export const HowWeDoItComponent = () => {
 						<br /> To redeem an NFT or a collection of NFTs, you will need to
 						have the complete collection. If the collection has only one NFT, it
 						can be redeemed at any time. By offering this redemption option, we
-						hope to add an extra layer of value and stability to our NFTs.
+						add an extra layer of value and stability to our NFTs.
 					</p>
 				</div>
 			</div>
@@ -689,6 +692,80 @@ export const TypeOfBolsterComponent = () => {
 				<div className="w-1/2 2xl:flex hidden items-center justify-center pl-16">
 					<img src="/img/bg_crypto.jpg" className="w-full" alt="" />
 				</div>
+			</div>
+		</div>
+	);
+};
+
+export const ContactUs: React.FC<any> = () => {
+	const { handleSubmit } = useForm({ mode: 'onChange' });
+	const [formSent, setFormSent] = React.useState(false);
+
+	const sendEmail = (e: any) => {
+		e.preventDefault();
+		sendForm(
+			'service_99nmicq',
+			'template_to8xh8w',
+			e.target,
+			'crkxSdJHxLiYQ8I0F'
+		).then(
+			(result) => {
+				console.log(result.text);
+				toast.success(
+					'The form has been successfully sent, please proceed with your redeem',
+					{ duration: 5000 }
+				);
+				setFormSent(true);
+			},
+			(error) => {
+				console.log(error.text);
+			}
+		);
+	};
+
+	return (
+		<div
+			className={clsx(
+				'flex items-center justify-center w-full h-full px-16 py-10 gap-16 relative bg-gray-900'
+			)}
+			id="contactus"
+		>
+			<div className="flex flex-col items-center justify-center h-full relative w-1/2">
+				<img src="/icons/logo.png" className="w-1/2" alt="" />
+			</div>
+			<div className="flex flex-col items-center justify-center h-full relative w-1/2">
+				<form
+					className="flex flex-col items-center gap-4 w-full"
+					onSubmit={sendEmail}
+				>
+					<h2 className="text-2xl font-semibold text-center text-white">
+						Send us a Message
+					</h2>
+					<input
+						type="text"
+						name="name"
+						placeholder="Name"
+						className="outline-none ring-none border-none rounded-md w-full"
+						required
+					/>
+					<textarea
+						name="message"
+						placeholder="Message"
+						className="outline-none ring-none border-none rounded-md resize-none h-96 w-full"
+						required
+					/>{' '}
+					<div className="w-full flex justify-end">
+						<Button
+							className={clsx(
+								'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-2 text-[14px] text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+								'!rounded-full hover:text-secondary ml-4'
+							)}
+							type="submit"
+						>
+							Send
+						</Button>
+					</div>
+				</form>
 			</div>
 		</div>
 	);
