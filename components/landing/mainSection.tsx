@@ -703,8 +703,8 @@ export const ContactUs: React.FC<any> = () => {
 	const sendEmail = (e: any) => {
 		e.preventDefault();
 		sendForm(
-			'service_99nmicq',
-			'template_to8xh8w',
+			'service_i7w64sf',
+			'template_2zwghz2',
 			e.target,
 			'crkxSdJHxLiYQ8I0F'
 		).then(
@@ -745,6 +745,7 @@ export const ContactUs: React.FC<any> = () => {
 						name="name"
 						placeholder="Name"
 						className="outline-none ring-none border-none rounded-md w-full"
+						disabled={loading}
 						required
 					/>
 					<textarea
