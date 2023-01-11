@@ -755,7 +755,7 @@ export const TypeOfBolsterComponent = () => {
 									required
 								/>
 								<input
-									type="text"
+									type="email"
 									name="email"
 									placeholder="Email"
 									className="outline-none ring-none border-none rounded-md w-full text-[12px]"
@@ -846,7 +846,7 @@ export const ContactUs: React.FC<any> = () => {
 							required
 						/>
 						<input
-							type="text"
+							type="email"
 							name="email"
 							placeholder="Email"
 							className="outline-none ring-none border-none rounded-md w-full text-[12px]"
