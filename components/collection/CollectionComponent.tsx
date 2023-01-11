@@ -906,32 +906,44 @@ export const CollectionNFTItem = ({
 					'relative border-secondary rounded-md p-4 flex flex-col items-center justify-center md:w-52 w-36',
 					{
 						['opacity-50']: !active,
-						['cursor-pointer hover:scale-105 duration-300 transition-all']:
-							active,
+						[' hover:scale-105 duration-300 transition-all']: active,
 						['!md:w-96 w-52']: big,
 					}
 				)}
-				onClick={active ? () => setSelected() : undefined}
+				onMouseOver={() => {
+					setHover(true);
+				}}
+				onMouseLeave={() => {
+					setHover(false);
+				}}
 			>
 				<div
 					className={clsx(
 						{ ['hidden']: !hover },
-						'w-10 h-10 bg-overlay absolute top-3 left-3'
+						'w-6 h-6 bg-overlay absolute top-6 left-8 rounded-full bg-overlay text-white flex items-center justify-center cursor-pointer'
 					)}
+					onClick={(e) => {
+						e.preventDefault();
+						show();
+					}}
 				>
 					<SearchOutlined />
 				</div>
 				{selected && active && (
-					<div className="top-6 right-8 p-1 rounded-full bg-green-600 absolute w-6 text-white ">
+					<div
+						className="top-6 right-8 p-1 rounded-full bg-green-600 absolute w-6 text-white cursor-pointer"
+						onClick={active ? () => setSelected() : undefined}
+					>
 						<CheckIcon />
 					</div>
 				)}
 				{token.image && (
 					<img
 						src={token.image}
+						onClick={active ? () => setSelected() : undefined}
 						className={clsx(
 							{ ['md:!h-96 md:!w-96 !w-52 !h-52']: big },
-							'w-32 h-32 rounded-md border border-white'
+							'w-40 h-40 rounded-md border border-white cursor-pointer'
 						)}
 						alt=""
 					/>
@@ -939,15 +951,19 @@ export const CollectionNFTItem = ({
 				{token.animation_url && (
 					<video
 						src={token.animation_url}
+						onClick={active ? () => setSelected() : undefined}
 						className={clsx(
 							{ ['!md:w-96 !md:h-auto']: big },
-							'md:h-40 h-32 rounded-md border border-white'
+							'md:h-40 h-36 rounded-md border border-white cursor-pointer'
 						)}
 						autoPlay
 						loop
 					/>
 				)}
-				<h2 className="p-4 text-center text-white font-bold md:text-[15px] text-[13px]">
+				<h2
+					className="p-4 text-center text-white font-bold md:text-[15px] text-[13px] cursor-pointer"
+					onClick={active ? () => setSelected() : undefined}
+				>
 					{token.name}
 				</h2>
 			</div>
