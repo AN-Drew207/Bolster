@@ -48,7 +48,7 @@ export const CollectionsLandingComponent = () => {
 	);
 };
 
-export const BottleItem = ({ address, name, video, nfts }: any) => {
+export const BottleItem = ({ address, name, video, nfts, maxSupply }: any) => {
 	const videoRef = React.useRef<any>(null);
 
 	const handleVideo = () => {
@@ -60,6 +60,9 @@ export const BottleItem = ({ address, name, video, nfts }: any) => {
 	React.useEffect(() => {
 		handleVideo();
 	}, [video]);
+
+	console.log(maxSupply, 'supply');
+
 	return (
 		<Link href={`/collections/${address}`}>
 			<div className="sm:w-[400px] w-[320px] flex flex-col border rounded-xl overflow-hidden shadow-xl bg-primary cursor-pointer border-gray-800 hover:border-white hover:scale-105 transition-all duration-500">
@@ -103,10 +106,15 @@ export const BottleItem = ({ address, name, video, nfts }: any) => {
 						</div>
 					</div>
 				</div>
-				<div className="flex flex-col items-center justify-center text-xl text-center font-bold text-white h-20 p-4">
+				<div className="flex flex-col items-center justify-center text-xl text-center font-bold text-white h-20 p-4 gap-2">
 					<h3 className="flex items-center justify-center text-xl text-center font-bold">
 						{name}
 					</h3>{' '}
+					<h3 className="text-center w-full font-bold text-[13px]">
+						Collection Size: <span className="text-secondary">{maxSupply}</span>{' '}
+						NFT
+						{maxSupply > 1 ? 's' : ''}
+					</h3>
 				</div>
 			</div>
 		</Link>

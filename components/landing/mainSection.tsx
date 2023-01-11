@@ -7,6 +7,10 @@ import router from 'next/router';
 import { useForm } from 'react-hook-form';
 import { sendForm } from '@emailjs/browser';
 import toast from 'react-hot-toast';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Zoom } from 'swiper';
+import { title } from 'process';
+import { Dropdown } from 'components/common/dropdown/dropdown';
 
 export const MainSectionComponent = () => {
 	return (
@@ -427,7 +431,6 @@ export const HowWeDoItComponent = () => {
 
 	React.useEffect(() => {
 		setInterval(() => {
-			console.log(active);
 			setActive((prev) => {
 				return prev === 2 ? 0 : prev + 1;
 			});
@@ -587,13 +590,52 @@ export const LegalComponent = () => {
 };
 
 export const TypeOfBolsterComponent = () => {
+	const items = [
+		{ image: 'img/Rare-whisky.jpg', title: 'Rare Whiskies', color: '#C70039' },
+		{
+			image: 'img/painting.jpg',
+			title: 'Physical Paintings',
+			color: '#0070FF',
+		},
+		{ image: 'img/rolex.jpg', title: 'Collective Watches', color: '#BBBBBB' },
+		{ image: 'img/gold.jpg', title: 'Gold', color: '#FFC300' },
+	];
+	const [index, setIndex] = React.useState(0);
+	const [itemSelected, setItemSelected] = React.useState('Rare Whiskies');
+
+	const [formSent, setFormSent] = React.useState(false);
+	const [loading, setLoading] = React.useState(false);
+
+	const sendEmail = (e: any) => {
+		e.preventDefault();
+		setLoading(true);
+		sendForm(
+			'service_i7w64sf',
+			'template_2zwghz2',
+			e.target,
+			'crkxSdJHxLiYQ8I0F'
+		).then(
+			(result) => {
+				toast.success(
+					'The form has been successfully sent, we will reach you asap!',
+					{ duration: 5000 }
+				);
+				setFormSent(true);
+				setLoading(false);
+			},
+			(error) => {
+				setLoading(false);
+			}
+		);
+	};
+
 	return (
 		<div
 			className="md:py-28 py-10 bg-gray-900 relative w-full flex justify-center"
 			id="for_artists"
 		>
 			<div className="w-full 2xl:px-10 md:px-36 px-4 flex justify-center">
-				<div className="flex flex-col gap-4 items-center justify-center 2xl:w-1/2 w-full  h-full">
+				<div className="flex flex-col gap-4 items-center justify-center w-2/3  h-full">
 					<h2 className="text-4xl text-white RalewayBold text-center">
 						Are you an artist or someone developing an NFT project?
 					</h2>
@@ -604,89 +646,106 @@ export const TypeOfBolsterComponent = () => {
 						your fans an additional peace of mind that comes with proper
 						ownership. Bolster makes it easy to legally add value to your work.
 					</p>
-					<div className="flex md:flex-nowrap flex-wrap justify-center gap-6 text-white text-2xl">
-						<div className="md:w-1/4 w-[160px]  flex flex-col relative text-center items-center justify-center gap-2 py-10 px-6 overflow-hidden">
-							<img
-								src="img/bg2.jpg"
-								className="absolute min-w-[500px] top-0"
-								alt=""
-							/>
-							<h1 className="relative">
-								1. <br />
-								<br />
-								Rare Whiskies
-							</h1>
-						</div>
-						<div className="md:w-1/4 w-[160px]  flex flex-col relative text-center items-center gap-2 justify-center py-10 px-6 overflow-hidden">
-							<img
-								src="img/bg2.jpg"
-								className="absolute min-w-[500px] top-0"
-								alt=""
-							/>
-							<h1 className="relative">
-								2. <br />
-								<br />
-								Physical Paintings
-							</h1>
-							<p
-								className="text-[12px] text-gray-200 relative"
-								style={{ lineHeight: '16px' }}
+					<div className="flex gap-4 items-center justify-center w-full  h-full">
+						<div className="lg:w-1/2 w-2/3">
+							<Swiper
+								slidesPerView={1}
+								autoplay={{
+									delay: 5000,
+									disableOnInteraction: false,
+								}}
+								onSlideChange={(slide) => {
+									setIndex(slide.realIndex);
+								}}
+								loop={true}
+								spaceBetween={10}
+								modules={[Zoom, Autoplay]}
 							>
-								(Reach out to us if you are interested)
-							</p>
+								{items.map((item) => {
+									return (
+										<SwiperSlide>
+											<div className="md:w-full rounded-xl  flex flex-col relative text-center items-center justify-center gap-2 overflow-hidden">
+												<img
+													src={item.image}
+													className="w-full opacity-75"
+													alt=""
+												/>
+												<h1
+													className="text-xl w-full absolute bottom-0 py-4 text-2xl R"
+													style={{
+														background: 'rgba(0,0,0,0.8)',
+													}}
+												>
+													{item.title}
+												</h1>
+											</div>
+										</SwiperSlide>
+									);
+								})}
+							</Swiper>
 						</div>
-						<div className="md:w-1/4 w-[160px]  flex flex-col relative text-center items-center gap-2 justify-center py-10 px-6 overflow-hidden">
-							<img
-								src="img/bg2.jpg"
-								className="absolute min-w-[500px] top-0"
-								alt=""
-							/>
-							<h1 className="relative">
-								3. <br />
-								<br />
-								Collective Watches
-							</h1>
-							<p
-								className="text-[12px] text-gray-200 relative"
-								style={{ lineHeight: '16px' }}
+						<div className="lg:w-1/2 w-full flex flex-col items-center justify-center h-full">
+							{' '}
+							<form
+								className="flex flex-col items-center gap-4 lg:px-16 lg:w-full w-96 sm:w-72"
+								onSubmit={sendEmail}
 							>
-								(Coming soon - reach out to us if you are interested)
-							</p>
-						</div>
-						<div className="md:w-1/4 w-[160px] flex flex-col relative text-center items-center gap-2 justify-center py-10 px-6 overflow-hidden">
-							<img
-								src="img/bg2.jpg"
-								className="absolute min-w-[500px] top-0"
-								alt=""
-							/>
-							<h1 className="relative">
-								4. <br />
-								<br />
-								Gold
-							</h1>
-							<p
-								className="text-[12px] text-gray-200 relative"
-								style={{ lineHeight: '16px' }}
-							>
-								(Coming soon - reach out to us if you are interested)
-							</p>
+								<h2
+									className={clsx(
+										'text-xl flex items-center font-semibold text-center text-white'
+									)}
+								>
+									Interested in sell{' '}
+									<span>
+										<Dropdown
+											classTitle={
+												'text-secondary opacity-[0.9] hover:opacity-100'
+											}
+											title={itemSelected}
+										>
+											<div className="flex flex-col rounded-md border border-overlay-border">
+												{items.map((item) => (
+													<div
+														className="p-4 text-center font-bold opacity-[0.6] hover:opacity-100 text-secondary whitespace-nowrap cursor-pointer"
+														onClick={() => setItemSelected(item.title)}
+													>
+														{item.title}
+													</div>
+												))}
+											</div>
+										</Dropdown>
+									</span>
+									? Text us
+								</h2>
+								<input
+									type="text"
+									name="name"
+									placeholder="Name"
+									className="outline-none ring-none border-none rounded-md w-full text-[12px]"
+									disabled={loading}
+									required
+								/>
+								<textarea
+									name="message"
+									placeholder="Message"
+									className="outline-none ring-none border-none rounded-md resize-none h-28 w-full text-[12px]"
+									disabled={loading}
+									required
+								/>{' '}
+								<div className="w-full flex md:justify-end justify-center">
+									<Button
+										className={clsx(
+											'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-2 text-[14px] text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+											'!rounded-full hover:text-secondary ml-4'
+										)}
+										type="submit"
+									>
+										Send
+									</Button>
+								</div>
+							</form>
 						</div>
 					</div>
-					<p className="text-center w-full Raleway text-gray-500">
-						And more to come…
-					</p>
-					<Button
-						className={clsx(
-							'z-10 border border-white bg-secondary RalewayBold font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:scale-[120%] duration-300',
-							'ml-4'
-						)}
-						href={'/#contactus'}
-					>
-						Contact Us
-					</Button>
-				</div>
-				<div className="w-1/2 2xl:flex hidden items-center justify-center pl-16">
-					<img src="/img/bg_crypto.jpg" className="w-full" alt="" />
 				</div>
 			</div>
 		</div>
@@ -707,7 +766,6 @@ export const ContactUs: React.FC<any> = () => {
 			'crkxSdJHxLiYQ8I0F'
 		).then(
 			(result) => {
-				console.log(result.text);
 				toast.success(
 					'The form has been successfully sent, we will reach you asap!',
 					{ duration: 5000 }
@@ -716,7 +774,6 @@ export const ContactUs: React.FC<any> = () => {
 				setLoading(false);
 			},
 			(error) => {
-				console.log(error.text);
 				setLoading(false);
 			}
 		);
@@ -724,49 +781,53 @@ export const ContactUs: React.FC<any> = () => {
 
 	return (
 		<div
-			className={clsx(
-				'flex xl:flex-row flex-col-reverse items-center justify-center w-full h-full px-16 py-10 gap-16 relative bg-gray-900'
-			)}
+			className={clsx('w-full bg-gray-900 flex items-center justify-center')}
 			id="contactus"
 		>
-			<div className="flex flex-col items-center justify-center h-full relative xl:w-1/2 w-full">
-				<img src="/icons/logo.png" className="w-1/2" alt="" />
-			</div>
-			<div className="flex flex-col items-center justify-center h-full relative xl:w-1/2 w-full">
-				<form
-					className="flex flex-col items-center gap-4 w-full"
-					onSubmit={sendEmail}
-				>
-					<h2 className="text-2xl font-semibold text-center text-white">
-						Send us a Message
-					</h2>
-					<input
-						type="text"
-						name="name"
-						placeholder="Name"
-						className="outline-none ring-none border-none rounded-md w-full"
-						disabled={loading}
-						required
+			<div className="flex md:flex-row flex-col-reverse items-center md:justify-between justify-center w-full h-full px-16 py-10 gap-16 relative  xl:w-2/3">
+				<div className="flex flex-col items-center justify-center h-full relative w-auto">
+					<img
+						src="/icons/logo.png"
+						className="md:w-[300px] w-[200px]"
+						alt=""
 					/>
-					<textarea
-						name="message"
-						placeholder="Message"
-						className="outline-none ring-none border-none rounded-md resize-none h-96 w-full"
-						disabled={loading}
-						required
-					/>{' '}
-					<div className="w-full flex justify-end">
-						<Button
-							className={clsx(
-								'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-2 text-[14px] text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
-								'!rounded-full hover:text-secondary ml-4'
-							)}
-							type="submit"
-						>
-							Send
-						</Button>
-					</div>
-				</form>
+				</div>
+				<div className="flex flex-col items-center justify-center h-full relative w-auto">
+					<form
+						className="flex flex-col items-center gap-4 md:w-96 w-72"
+						onSubmit={sendEmail}
+					>
+						<h2 className="text-2xl font-semibold text-center text-white">
+							Send us a Message
+						</h2>
+						<input
+							type="text"
+							name="name"
+							placeholder="Name"
+							className="outline-none ring-none border-none rounded-md w-full"
+							disabled={loading}
+							required
+						/>
+						<textarea
+							name="message"
+							placeholder="Message"
+							className="outline-none ring-none border-none rounded-md resize-none h-28 w-full"
+							disabled={loading}
+							required
+						/>{' '}
+						<div className="w-full flex justify-end">
+							<Button
+								className={clsx(
+									'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-2 text-[14px] text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+									'!rounded-full hover:text-secondary ml-4'
+								)}
+								type="submit"
+							>
+								Send
+							</Button>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
 	);

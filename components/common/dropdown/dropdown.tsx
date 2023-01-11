@@ -1,8 +1,7 @@
 import { Menu, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 import clsx from 'clsx';
-// import { Typography } from '../typography';
-// import Styles from '../../landing/styles.module.scss';
+import { CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons';
 
 export const Dropdown: React.FC<any> = ({ classTitle, title, children }) => {
 	return (
@@ -13,16 +12,17 @@ export const Dropdown: React.FC<any> = ({ classTitle, title, children }) => {
 					return (
 						<>
 							<div>
-								<Menu.Button className="inline-flex justify-center w-full font-medium bg-transparent focus:outline-none">
+								<Menu.Button className="inline-flex justify-center font-bold RalewayBold bg-transparent focus:outline-none">
 									<div
 										className={clsx(
-											'flex justify-center items-center cursor-pointer rounded-md sm:px-4 px-2 py-2 relative',
+											'flex justify-center items-center cursor-pointer rounded-md',
 											classTitle
 										)}
 									>
-										<p className={clsx('!text-md text-secondary Raleway')}>
+										<span className="ml-1 text-xl whitespace-nowrap">
 											{title}
-										</p>
+										</span>
+										{open ? <CaretUpOutlined /> : <CaretDownOutlined />}
 									</div>
 								</Menu.Button>
 							</div>
@@ -35,7 +35,7 @@ export const Dropdown: React.FC<any> = ({ classTitle, title, children }) => {
 								leaveFrom="transform opacity-100 scale-100"
 								leaveTo="transform opacity-0 scale-95"
 							>
-								<Menu.Items className="absolute top-4 right-3 z-20 md:mt-7 origin-top-right bg-overlay divide-y shadow-lg rounded-[6px] focus:outline-none">
+								<Menu.Items className="absolute top-0 right-3 z-20 md:mt-7 origin-top-right bg-overlay divide-y shadow-lg rounded-[6px] focus:outline-none">
 									<div>{children}</div>
 								</Menu.Items>
 							</Transition>

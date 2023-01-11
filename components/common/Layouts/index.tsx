@@ -52,10 +52,12 @@ export const updateDataExchanged = async (dispatch: any) => {
 			bottles[i].address
 		);
 		let supply = await bottle.methods.supply().call();
+		let maxSupply = await bottle.methods.maxSupply().call();
 		dispatch(
 			updateBottleState({
 				index: i,
 				supply: supply,
+				maxSupply: maxSupply,
 			})
 		);
 	}
