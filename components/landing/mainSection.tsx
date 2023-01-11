@@ -11,6 +11,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Zoom } from 'swiper';
 import { title } from 'process';
 import { Dropdown } from 'components/common/dropdown/dropdown';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export const MainSectionComponent = () => {
 	return (
@@ -518,46 +520,72 @@ export const WhyShouldComponent = () => {
 	const items = [
 		{
 			text: 'The world is full of incredible artists just waiting to be discovered. Let us help you find them.',
+			image: 'img/world.png',
 		},
 		{
 			text: 'We partner with hand-selected, talented artists to bring you unique, high-quality pieces',
 			subTexts:
 				'Our experienced art curator, Yvonne, has over 20 years of experience in the field. Not only has she worked with galleries and exhibitions, but she has also built a network of artists who are eager to collaborate with us. Her expertise ensures that our collections and exhibitions are of the highest caliber.',
+			image: 'img/artist.jpg',
 		},
 		{
 			text: 'Authenticity Guarantee on all our Backstop physical products',
 			subTexts:
 				'We are confident in the authenticity of our physical assets because we either purchase them directly from the brands or through our team of industry experts who carefully curate our selection. Our thorough procurement process ensures that we can provide an authenticity guarantee on all of our physical assets.',
+			image: 'img/authenticity.png',
 		},
 		{
 			text: 'The legal rights that the NFT(s) have to be redeemed to the physical assets are backed by UK law',
 			subTexts:
 				'The NFT(s) are legally backed by UK law and can be redeemed for the physical assets they represent.',
+			image: 'img/law.jpg',
 		},
 	];
 
+	React.useEffect(() => {
+		AOS.init({ once: true });
+	}, []);
+
 	return (
-		<div className="md:py-28 py-10 px-4 bg-gray-900 relative w-full flex flex-col gap-10 items-center justify-center">
-			<h2 className="text-4xl text-white RalewayBold text-center">
-				Why you should come with us?
-			</h2>
-			<div className="flex gap-16 justify-center items-center">
-				<div className="xl:w-1/2 xl:flex hidden items-center justify-center xl:pl-36">
-					<img src="icons/bolster.png" className="w-80" alt="" />
-				</div>
-				<div className="flex flex-col gap-4 items-center justify-center xl:w-1/2 w-full lg:px-0 md:px-16  Raleway xl:pr-36">
-					{items.map((item) => {
-						return (
-							<div className="flex flex-col gap-2 w-full xl:text-justify text-center">
-								<h2 className="text-[17px] RalewayBold text-white">
-									<span className="xl:inline hidden ">&#8226;</span> {item.text}
-								</h2>
-								<p className="text-[15px] text-gray-500 Montserrat pl-4">
-									{item.subTexts}
-								</p>
-							</div>
-						);
-					})}
+		<div className="md:py-28 py-10 px-4 bg-gray-900 flex flex-col gap-10 relative items-center justify-center">
+			<div className="md:w-2/3 flex flex-col gap-10 relative items-center justify-center">
+				<h2 className="text-4xl text-white RalewayBold text-center">
+					Why you should come with us?
+				</h2>
+				<div className="flex gap-16 justify-center items-center overflow-hidden w-full">
+					<div className="flex flex-col items-center justify-center w-full md:px-16  Raleway ">
+						{items.map((item, index) => {
+							return (
+								<div
+									className={clsx(
+										{ '!lg:flex-row-reverse': index % 2 == 0 },
+										'min-h-72 flex lg:flex-row flex-col justify-between items-center w-full py-8 gap-10'
+									)}
+									data-aos={`fade-${index % 2 == 0 ? 'left' : 'right'}`}
+									data-aos-duration="1000"
+									data-aos-easing="ease-in-out"
+									data-aos-mirror="true"
+									data-aos-once="false"
+								>
+									<div className="flex flex-col gap-2 w-full xl:text-justify text-center">
+										<h2 className="text-[17px] Raleway text-white">
+											{item.text}
+										</h2>
+										<p className="text-[15px] text-gray-500 Montserrat pl-4">
+											{item.subTexts}
+										</p>
+									</div>
+									<div className="flex flex-col gap-2 w-full items-center justify-center">
+										<img
+											src={item.image}
+											className="md:w-2/3 md:min-w-[300px] w-1/2 rounded-full"
+											alt=""
+										/>
+									</div>
+								</div>
+							);
+						})}
+					</div>
 				</div>
 			</div>
 		</div>
@@ -634,8 +662,8 @@ export const TypeOfBolsterComponent = () => {
 			className="md:py-28 py-10 bg-gray-900 relative w-full flex justify-center"
 			id="for_artists"
 		>
-			<div className="w-full 2xl:px-10 md:px-36 px-4 flex justify-center">
-				<div className="flex flex-col gap-4 items-center justify-center w-2/3  h-full">
+			<div className="w-full 2xl:px-10 lg:px-36 px-4 flex justify-center">
+				<div className="flex flex-col gap-4 items-center justify-center 2xl:w-2/3 w-full  h-full">
 					<h2 className="text-4xl text-white RalewayBold text-center">
 						Are you an artist or someone developing an NFT project?
 					</h2>
@@ -646,8 +674,8 @@ export const TypeOfBolsterComponent = () => {
 						your fans an additional peace of mind that comes with proper
 						ownership. Bolster makes it easy to legally add value to your work.
 					</p>
-					<div className="flex gap-4 items-center justify-center w-full  h-full">
-						<div className="lg:w-1/2 w-2/3">
+					<div className="flex lg:flex-row flex-col gap-4 items-center justify-center w-full  h-full">
+						<div className="lg:w-1/2 sm:w-2/3 w-full">
 							<Swiper
 								slidesPerView={1}
 								autoplay={{
@@ -684,19 +712,19 @@ export const TypeOfBolsterComponent = () => {
 								})}
 							</Swiper>
 						</div>
-						<div className="lg:w-1/2 w-full flex flex-col items-center justify-center h-full">
+						<div className="lg:w-1/2 w-full max-w-[600px] flex flex-col items-center justify-center h-full">
 							{' '}
 							<form
-								className="flex flex-col items-center gap-4 lg:px-16 lg:w-full w-96 sm:w-72"
+								className="flex flex-col items-center gap-4 2xl:px-16 w-full"
 								onSubmit={sendEmail}
 							>
 								<h2
 									className={clsx(
-										'text-xl flex items-center font-semibold text-center text-white'
+										'text-lg flex flex-wrap gap-1 items-center justify-center font-semibold text-center text-white'
 									)}
 								>
-									Interested in sell{' '}
-									<span>
+									<span className="flex gap-1 whitespace-nowrap">
+										Interested in sell{' '}
 										<Dropdown
 											classTitle={
 												'text-secondary opacity-[0.9] hover:opacity-100'
@@ -714,13 +742,22 @@ export const TypeOfBolsterComponent = () => {
 												))}
 											</div>
 										</Dropdown>
+										?
 									</span>
-									? Text us
+									<span>Text us</span>
 								</h2>
 								<input
 									type="text"
 									name="name"
 									placeholder="Name"
+									className="outline-none ring-none border-none rounded-md w-full text-[12px]"
+									disabled={loading}
+									required
+								/>
+								<input
+									type="text"
+									name="email"
+									placeholder="Email"
 									className="outline-none ring-none border-none rounded-md w-full text-[12px]"
 									disabled={loading}
 									required
@@ -805,6 +842,14 @@ export const ContactUs: React.FC<any> = () => {
 							name="name"
 							placeholder="Name"
 							className="outline-none ring-none border-none rounded-md w-full"
+							disabled={loading}
+							required
+						/>
+						<input
+							type="text"
+							name="email"
+							placeholder="Email"
+							className="outline-none ring-none border-none rounded-md w-full text-[12px]"
 							disabled={loading}
 							required
 						/>

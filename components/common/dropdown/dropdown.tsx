@@ -19,7 +19,7 @@ export const Dropdown: React.FC<any> = ({ classTitle, title, children }) => {
 											classTitle
 										)}
 									>
-										<span className="ml-1 text-xl whitespace-nowrap">
+										<span className="ml-1 text-lg whitespace-nowrap">
 											{title}
 										</span>
 										{open ? <CaretUpOutlined /> : <CaretDownOutlined />}
