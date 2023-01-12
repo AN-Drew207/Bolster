@@ -20,7 +20,7 @@ export const MainSectionComponent = () => {
 			<div className="w-full flex justify-center items-center absolute h-full overflow-hidden">
 				<img
 					src="/img/bg1.jpg"
-					className="w-full rounded-md min-w-[1200px]"
+					className="w-full rounded-md min-w-[1920px]"
 					alt=""
 				/>
 			</div>
@@ -456,7 +456,7 @@ export const HowWeDoItComponent = () => {
 							<div
 								className={clsx(
 									{ ['hidden']: item.id !== active + 1 },
-									'w-full flex items-center justify-center md:min-h-none min-h-[500px] max-h-[500px] md:max-h-none'
+									'w-full flex items-center justify-center md:min-h-none min-h-[400px] max-h-[400px] md:max-h-none'
 								)}
 							>
 								{item.component}
@@ -659,7 +659,7 @@ export const TypeOfBolsterComponent = () => {
 			<div className="w-full 2xl:px-10 lg:px-36 px-4 flex justify-center">
 				<div className="flex flex-col gap-4 items-center justify-center 2xl:w-2/3 w-full  h-full">
 					<h2 className="text-4xl text-white RalewayBold text-center">
-						Are you an artist or someone developing an NFT project?
+						Let's Collaborate
 					</h2>
 					<p className="text-center Raleway text-gray-500 text-[17px]">
 						Enhance your collectibles with Bolster! Our hassle-free service
@@ -712,34 +712,6 @@ export const TypeOfBolsterComponent = () => {
 								className="flex flex-col items-center gap-4 2xl:px-16 w-full"
 								onSubmit={sendEmail}
 							>
-								<h2
-									className={clsx(
-										'text-lg flex flex-wrap gap-1 items-center justify-center font-semibold text-center text-white'
-									)}
-								>
-									<span className="flex gap-1 whitespace-nowrap">
-										Interested in sell{' '}
-										<Dropdown
-											classTitle={
-												'text-secondary opacity-[0.9] hover:opacity-100'
-											}
-											title={itemSelected}
-										>
-											<div className="flex flex-col rounded-md border border-overlay-border">
-												{items.map((item) => (
-													<div
-														className="p-4 text-center font-bold opacity-[0.6] hover:opacity-100 text-secondary whitespace-nowrap cursor-pointer"
-														onClick={() => setItemSelected(item.title)}
-													>
-														{item.title}
-													</div>
-												))}
-											</div>
-										</Dropdown>
-										?
-									</span>
-									<span>Text us</span>
-								</h2>
 								<input
 									type="text"
 									name="name"
