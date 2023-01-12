@@ -4,7 +4,7 @@ import {
 	CTAComponent,
 	WhyShouldComponent,
 	LegalComponent,
-	TypeOfBolsterComponent,
+	ArtistsComponent,
 	ContactUs,
 } from 'components/landing/mainSection';
 import * as React from 'react';
@@ -18,7 +18,7 @@ const Home = () => {
 			<HowWeDoItComponent />
 			{/* <TestimonialsComponent /> */}
 			<CTAComponent />
-			<TypeOfBolsterComponent />
+			<ArtistsComponent />
 			{/* <ArtistsAndProjectsComponent /> */}
 			<LegalComponent />
 			<ContactUs />

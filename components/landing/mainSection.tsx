@@ -13,6 +13,7 @@ import { title } from 'process';
 import { Dropdown } from 'components/common/dropdown/dropdown';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { SelectInput } from 'components/common/form/SelectInput';
 
 export const MainSectionComponent = () => {
 	return (
@@ -611,7 +612,7 @@ export const LegalComponent = () => {
 	);
 };
 
-export const TypeOfBolsterComponent = () => {
+export const ArtistsComponent = () => {
 	const items = [
 		{ image: 'img/Rare-whisky.jpg', title: 'Rare Whiskies', color: '#C70039' },
 		{
@@ -728,6 +729,16 @@ export const TypeOfBolsterComponent = () => {
 									disabled={loading}
 									required
 								/>
+								<SelectInput
+									name="type"
+									title="Are you an ...?"
+									values={[
+										{ name: 'Artist', value: 'artist' },
+										{ name: 'NFT Project', value: 'nft_project' },
+										{ name: 'Collector', value: 'collector' },
+										{ name: 'General Inquiries', value: 'general_inquiries' },
+									]}
+								></SelectInput>
 								<textarea
 									name="message"
 									placeholder="Message"
@@ -764,7 +775,7 @@ export const ContactUs: React.FC<any> = () => {
 			className={clsx('w-full bg-primary flex items-center justify-center')}
 			id="contactus"
 		>
-			<div className="flex md:flex-row flex-col-reverse items-center md:justify-between justify-center w-full h-full px-16 py-10 gap-16 relative  xl:w-2/3">
+			<div className="flex flex-col items-center justify-center w-full h-full px-16 py-10 gap-16 relative  xl:w-2/3">
 				<div className="flex flex-col items-center justify-center h-full relative w-auto">
 					<img
 						src="/icons/logo.png"
@@ -772,7 +783,14 @@ export const ContactUs: React.FC<any> = () => {
 						alt=""
 					/>
 				</div>
-				<div className="flex flex-col items-center justify-center h-full relative w-auto"></div>
+				<div className="flex items-center justify-center h-full relative w-auto">
+					{[
+						{ image: '', link: '' },
+						{ image: '', link: '' },
+					].map((item) => {
+						return <a className=""></a>;
+					})}
+				</div>
 			</div>
 		</div>
 	);

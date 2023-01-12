@@ -425,7 +425,7 @@ export const CollectionComponent = () => {
 										className="rounded-xl border-white h-auto md:w-2/3 w-full"
 										ref={video}
 									></video> */}
-									<h2 className="text-white pt-6 w-full Montserrat pl-10">
+									<h2 className="text-white pt-6 w-full Montserrat pl-10 font-bold text-xl">
 										{selectedNFTs() > 0 ? (
 											<p>
 												<span className="text-secondary">{selectedNFTs()}</span>{' '}

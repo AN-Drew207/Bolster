@@ -26,11 +26,11 @@ export const SelectInput: React.FC<
 	return (
 		<div
 			className={clsx(
-				'flex flex-col relative w-full',
+				'flex flex-col relative w-full cursor-pointer',
 				classNameContainer && classNameContainer
 			)}
 		>
-			{title && (
+			{/* {title && (
 				<label
 					className={clsx(
 						'block ml-2 text-lg mb-2 font-bold',
@@ -40,12 +40,12 @@ export const SelectInput: React.FC<
 				>
 					{title && title}
 				</label>
-			)}
+			)} */}
 			<select
 				name={name}
 				ref={registerInput && registerInput.ref}
 				className={clsx(
-					'block text-xl bg-transparent text focus:outline-none focus:ring-primary focus:border-primary w-full rounded-lg f-18',
+					'block text-xl bg-white text focus:outline-none focus:ring-primary focus:border-primary w-full rounded-lg text-[12px]',
 					{ [' border-status-error border ']: error },
 					{ [' border-white border ']: !error },
 
@@ -59,7 +59,7 @@ export const SelectInput: React.FC<
 				}}
 			>
 				<option className="text-primary" value="">
-					Select an option{' '}
+					{title}
 				</option>
 				{values?.map((item: any) => (
 					<option
