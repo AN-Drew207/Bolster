@@ -535,6 +535,13 @@ export const WhyShouldComponent = () => {
 			text: 'The world is full of incredible artists just waiting to be discovered. Let us help you find them.',
 			image: 'img/world.png',
 		},
+
+		{
+			text: 'Effortless Redemption Process',
+			subTexts:
+				'You can make the redemption of your assets whenever you want by our easy process and receive it!',
+			image: 'img/effortless.jpg',
+		},
 		{
 			text: 'Access a diverse array of stunning artistic creations by artists worldwide. We partner with hand-selected, talented artists to bring you unique, high-quality pieces.',
 			subTexts:
