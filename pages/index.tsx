@@ -1,5 +1,4 @@
 import {
-	OfferComponent,
 	MainSectionComponent,
 	HowWeDoItComponent,
 	CTAComponent,
@@ -14,13 +13,13 @@ const Home = () => {
 	return (
 		<>
 			<MainSectionComponent />
-			<OfferComponent />
+			<WhyShouldComponent />
+
 			<HowWeDoItComponent />
 			{/* <TestimonialsComponent /> */}
 			<CTAComponent />
 			<TypeOfBolsterComponent />
 			{/* <ArtistsAndProjectsComponent /> */}
-			<WhyShouldComponent />
 			<LegalComponent />
 			<ContactUs />
 		</>

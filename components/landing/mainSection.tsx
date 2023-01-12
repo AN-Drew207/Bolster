@@ -56,7 +56,7 @@ export const MainSectionComponent = () => {
 export const OfferComponent = () => {
 	const items = [
 		{
-			text: 'Access a diverse array of stunning artistic creations',
+			text: '',
 
 			iconSVG: (
 				<svg
@@ -242,16 +242,16 @@ export const HowWeDoItComponent = () => {
 		{
 			id: 1,
 			component: (
-				<div className="relative xl:w-1/2 w-full flex flex-col gap-2">
+				<div className="relative xl:w-1/2 w-full xl:min-h-none min-h-[400px] max-h-[400px] xl:max-h-none flex flex-col items-center justify-center gap-2">
 					<img
 						src="/img/Rosebank_1991 cask_2112.png"
 						className={clsx(
 							{ ['scale-110']: hover },
-							'absolute top-0 bottom-0 left-0 right-0 m-auto w-80 z-10 transition-all duration-1000'
+							'absolute top-0 bottom-0 left-0 right-0 m-auto 2xl:w-80 w-60 z-10 transition-all duration-1000'
 						)}
 						alt=""
 					/>
-					<div className="w-full flex px-5 items-center gap-4 justify-center">
+					<div className="w-full  flex px-5 items-center gap-4 justify-center">
 						<img
 							src="https://bafybeig4l3mp2rh2v6xchi7kuoamvxfsgcmvozcaidhhokxkk5nyeqimhu.ipfs.nftstorage.link/1.png"
 							alt=""
@@ -259,7 +259,7 @@ export const HowWeDoItComponent = () => {
 								{
 									['rotate-6neg top-[-40px] left-[-40px]']: hover,
 								},
-								'w-1/2 rounded-md top-0 left-0 relative transition-all duration-1000'
+								'2xl:w-1/2 sm:w-40 w-32 rounded-md top-0 left-0 relative transition-all duration-1000'
 							)}
 						/>
 						<img
@@ -269,11 +269,11 @@ export const HowWeDoItComponent = () => {
 								{
 									['rotate-6 top-[-40px] left-[40px]']: hover,
 								},
-								'w-1/2 rounded-md top-0 left-0 relative transition-all duration-1000'
+								'2xl:w-1/2 sm:w-40 w-32 rounded-md top-0 left-0 relative transition-all duration-1000'
 							)}
 						/>
 					</div>{' '}
-					<div className="w-full flex gap-12 items-center justify-center">
+					<div className="w-full 2xl:flex hidden gap-12 items-center justify-center">
 						<img
 							src="https://bafybeig4l3mp2rh2v6xchi7kuoamvxfsgcmvozcaidhhokxkk5nyeqimhu.ipfs.nftstorage.link/4.png"
 							alt=""
@@ -303,7 +303,7 @@ export const HowWeDoItComponent = () => {
 								{
 									['rotate-4neg top-[40px] left-[-40px]']: hover,
 								},
-								'w-1/2 rounded-md top-0 left-0 relative transition-all duration-1000'
+								'2xl:w-1/2 sm:w-40 w-32 rounded-md top-0 left-0 relative transition-all duration-1000'
 							)}
 						/>
 						<img
@@ -313,7 +313,7 @@ export const HowWeDoItComponent = () => {
 								{
 									['rotate-3 top-[40px] left-[40px]']: hover,
 								},
-								'w-1/2 rounded-md top-0 left-0 relative transition-all duration-1000'
+								'2xl:w-1/2 sm:w-40 w-32 rounded-md top-0 left-0 relative transition-all duration-1000'
 							)}
 						/>
 					</div>
@@ -323,12 +323,12 @@ export const HowWeDoItComponent = () => {
 		{
 			id: 2,
 			component: (
-				<div className="relative xl:w-1/2 w-full flex flex-col gap-2">
+				<div className="relative xl:w-1/2 w-full xl:min-h-none min-h-[400px] max-h-[400px] xl:max-h-none flex flex-col items-center justify-center gap-2">
 					<img
 						src="/img/Karuizawa_1972.png"
 						className={clsx(
 							{ ['scale-110']: hover },
-							'absolute top-0 bottom-0 left-0 right-0 m-auto w-80 z-10 transition-all duration-1000'
+							'absolute top-0 bottom-0 left-0 right-0 m-auto 2xl:w-80 w-60  z-10 transition-all duration-1000'
 						)}
 						alt=""
 					/>
@@ -340,7 +340,7 @@ export const HowWeDoItComponent = () => {
 								{
 									['rotate-6neg top-[-40px] left-[-40px]']: hover,
 								},
-								'w-1/2 rounded-md top-0 left-0 relative transition-all duration-1000'
+								'2xl:w-1/2 sm:w-40 w-32 rounded-md top-0 left-0 relative transition-all duration-1000'
 							)}
 						/>
 						<img
@@ -350,11 +350,11 @@ export const HowWeDoItComponent = () => {
 								{
 									['rotate-6 top-[-40px] left-[40px]']: hover,
 								},
-								'w-1/2 rounded-md top-0 left-0 relative transition-all duration-1000'
+								'2xl:w-1/2 sm:w-40 w-32 rounded-md top-0 left-0 relative transition-all duration-1000'
 							)}
 						/>
 					</div>{' '}
-					<div className="w-full flex gap-12 items-center justify-center">
+					<div className="w-full 2xl:flex hidden gap-12 items-center justify-center">
 						<img
 							src="https://bafybeih76ssazli4lxp7vvwx4mxshohaurenc2phv6jhcsvchxv4yvcsbu.ipfs.nftstorage.link/8.png"
 							alt=""
@@ -362,7 +362,7 @@ export const HowWeDoItComponent = () => {
 								{
 									[' top-[0px] left-[-40px]']: hover,
 								},
-								'w-1/2 rounded-md top-0 left-0 relative transition-all duration-1000'
+								'2xl:w-1/2 sm:w-80 w-60 rounded-md top-0 left-0 relative transition-all duration-1000'
 							)}
 						/>
 						<img
@@ -372,7 +372,7 @@ export const HowWeDoItComponent = () => {
 								{
 									['rotate-3 top-[0px] left-[40px]']: hover,
 								},
-								'w-1/2 rounded-md top-0 left-0 relative transition-all duration-1000'
+								'2xl:w-1/2 sm:w-80 w-60 rounded-md top-0 left-0 relative transition-all duration-1000'
 							)}
 						/>
 					</div>{' '}
@@ -384,7 +384,7 @@ export const HowWeDoItComponent = () => {
 								{
 									['rotate-4neg top-[40px] left-[-40px]']: hover,
 								},
-								'w-1/2 rounded-md top-0 left-0 relative transition-all duration-1000'
+								'2xl:w-1/2 sm:w-40 w-32 rounded-md top-0 left-0 relative transition-all duration-1000'
 							)}
 						/>
 						<img
@@ -394,7 +394,7 @@ export const HowWeDoItComponent = () => {
 								{
 									['rotate-3 top-[40px] left-[40px]']: hover,
 								},
-								'w-1/2 rounded-md top-0 left-0 relative transition-all duration-1000'
+								'2xl:w-1/2 sm:w-40 w-32 rounded-md top-0 left-0 relative transition-all duration-1000'
 							)}
 						/>
 					</div>
@@ -441,9 +441,9 @@ export const HowWeDoItComponent = () => {
 
 	return (
 		<div className="py-28 bg-black-1 relative text-white  w-full flex flex-col items-center justify-center transition-all duration-1000 min-h-[100vh]">
-			<div className="flex xl:flex-row flex-col-reverse gap-24 items-center justify-center w-full md:px-16 transition-all duration-1000">
+			<div className="flex 2xl:flex-row flex-col-reverse gap-24 items-center justify-center w-full md:px-16 transition-all duration-1000">
 				<div
-					className="xl:w-1/2 w-3/5 flex items-center justify-center relative transition-all duration-1000"
+					className="2xl:w-1/2 w-3/5 flex items-center justify-center relative transition-all duration-1000"
 					onMouseOver={() => {
 						setHover(true);
 					}}
@@ -456,7 +456,7 @@ export const HowWeDoItComponent = () => {
 							<div
 								className={clsx(
 									{ ['hidden']: item.id !== active + 1 },
-									'w-full flex items-center justify-center'
+									'w-full flex items-center justify-center md:min-h-none min-h-[500px] max-h-[500px] md:max-h-none'
 								)}
 							>
 								{item.component}
@@ -464,8 +464,8 @@ export const HowWeDoItComponent = () => {
 						);
 					})}
 				</div>
-				<div className="xl:w-1/2 w-full flex flex-col items-center justify-center">
-					<p className="xl:text-justify text-center Montserrat md:text-[18px] text-[13px] md:w-2/3 w-full md:px-0 px-4">
+				<div className="2xl:w-1/2 w-full flex flex-col items-center justify-center">
+					<p className="2xl:text-justify text-center Montserrat md:text-[18px] text-[13px] md:w-2/3 w-full md:px-0 px-4">
 						At Bolster, we believe that NFTs are a valuable tool for promoting
 						culture and art. However, we also recognize that the prices of NFTs
 						can be extremely volatile and have suffered significant losses
@@ -496,7 +496,7 @@ export const CTAComponent = () => {
 			<div className="flex flex-col gap-4 items-center justify-center md:w-2/3 md:px-0 px-4">
 				<p className="text-center RalewayBold text-[17px]">
 					Buy an NFT with us and get a Global Membership that gives you 24-hour
-					early access to our exclusive drops. <br /> Limited to the first 100
+					early access to our exclusive drops. <br /> Limited to our early
 					members.
 				</p>
 				<span className="text-gray-500 Montserrat font-[400]">
@@ -519,16 +519,6 @@ export const CTAComponent = () => {
 export const WhyShouldComponent = () => {
 	const items = [
 		{
-			text: 'The world is full of incredible artists just waiting to be discovered. Let us help you find them.',
-			image: 'img/world.png',
-		},
-		{
-			text: 'We partner with hand-selected, talented artists to bring you unique, high-quality pieces',
-			subTexts:
-				'Our experienced art curator, Yvonne, has over 20 years of experience in the field. Not only has she worked with galleries and exhibitions, but she has also built a network of artists who are eager to collaborate with us. Her expertise ensures that our collections and exhibitions are of the highest caliber.',
-			image: 'img/artist.jpg',
-		},
-		{
 			text: 'Authenticity Guarantee on all our Backstop physical products',
 			subTexts:
 				'We are confident in the authenticity of our physical assets because we either purchase them directly from the brands or through our team of industry experts who carefully curate our selection. Our thorough procurement process ensures that we can provide an authenticity guarantee on all of our physical assets.',
@@ -540,6 +530,16 @@ export const WhyShouldComponent = () => {
 				'The NFT(s) are legally backed by UK law and can be redeemed for the physical assets they represent.',
 			image: 'img/law.jpg',
 		},
+		{
+			text: 'The world is full of incredible artists just waiting to be discovered. Let us help you find them.',
+			image: 'img/world.png',
+		},
+		{
+			text: 'Access a diverse array of stunning artistic creations by artists worldwide. We partner with hand-selected, talented artists to bring you unique, high-quality pieces.',
+			subTexts:
+				'Our experienced art curator, Yvonne, has over 20 years of experience in the field. Not only has she worked with galleries and exhibitions, but she has also built a network of artists who are eager to collaborate with us. Her expertise ensures that our collections and exhibitions are of the highest caliber.',
+			image: 'img/artist.jpg',
+		},
 	];
 
 	React.useEffect(() => {
@@ -548,17 +548,14 @@ export const WhyShouldComponent = () => {
 
 	return (
 		<div className="md:py-28 py-10 px-4 bg-gray-900 flex flex-col gap-10 relative items-center justify-center">
-			<div className="md:w-2/3 flex flex-col gap-10 relative items-center justify-center">
-				<h2 className="text-4xl text-white RalewayBold text-center">
-					Why you should come with us?
-				</h2>
+			<div className="2xl:w-2/3 flex flex-col gap-10 relative items-center justify-center">
 				<div className="flex gap-16 justify-center items-center overflow-hidden w-full">
 					<div className="flex flex-col items-center justify-center w-full md:px-16  Raleway ">
 						{items.map((item, index) => {
 							return (
 								<div
 									className={clsx(
-										{ '!lg:flex-row-reverse': index % 2 == 0 },
+										{ 'lg:!flex-row-reverse': index % 2 == 0 },
 										'min-h-72 flex lg:flex-row flex-col justify-between items-center w-full py-8 gap-10'
 									)}
 									data-aos={`fade-${index % 2 == 0 ? 'left' : 'right'}`}
@@ -594,13 +591,10 @@ export const WhyShouldComponent = () => {
 
 export const LegalComponent = () => {
 	return (
-		<div className="py-24 bg-gray-900 relative text-white  w-full flex flex-col items-center justify-center">
+		<div className="py-10 bg-gradient-to-b from-gray-900 to-primary relative text-white  w-full flex flex-col items-center justify-center">
 			<div className="flex flex-col gap-6 items-center justify-center w-full lg:px-56 px-10">
-				<h2 className="text-4xl RalewayBold">Disclaimer</h2>
-				<p
-					className="text-center Montserrat lg:text-[15px] text-[14px] text-gray-500"
-					style={{ lineHeight: '35px' }}
-				>
+				<h2 className="text-2xl RalewayBold">Disclaimer</h2>
+				<p className="text-center Montserrat text-[13px] text-gray-500">
 					The information and materials provided on our website are for general
 					informational purposes only and do not constitute investment advice.
 					We do not guarantee the accuracy, completeness, reliability,
@@ -793,32 +787,9 @@ export const ContactUs: React.FC<any> = () => {
 	const [formSent, setFormSent] = React.useState(false);
 	const [loading, setLoading] = React.useState(false);
 
-	const sendEmail = (e: any) => {
-		e.preventDefault();
-		setLoading(true);
-		sendForm(
-			'service_i7w64sf',
-			'template_2zwghz2',
-			e.target,
-			'crkxSdJHxLiYQ8I0F'
-		).then(
-			(result) => {
-				toast.success(
-					'The form has been successfully sent, we will reach you asap!',
-					{ duration: 5000 }
-				);
-				setFormSent(true);
-				setLoading(false);
-			},
-			(error) => {
-				setLoading(false);
-			}
-		);
-	};
-
 	return (
 		<div
-			className={clsx('w-full bg-gray-900 flex items-center justify-center')}
+			className={clsx('w-full bg-primary flex items-center justify-center')}
 			id="contactus"
 		>
 			<div className="flex md:flex-row flex-col-reverse items-center md:justify-between justify-center w-full h-full px-16 py-10 gap-16 relative  xl:w-2/3">
@@ -829,50 +800,7 @@ export const ContactUs: React.FC<any> = () => {
 						alt=""
 					/>
 				</div>
-				<div className="flex flex-col items-center justify-center h-full relative w-auto">
-					<form
-						className="flex flex-col items-center gap-4 md:w-96 w-72"
-						onSubmit={sendEmail}
-					>
-						<h2 className="text-2xl font-semibold text-center text-white">
-							Send us a Message
-						</h2>
-						<input
-							type="text"
-							name="name"
-							placeholder="Name"
-							className="outline-none ring-none border-none rounded-md w-full"
-							disabled={loading}
-							required
-						/>
-						<input
-							type="email"
-							name="email"
-							placeholder="Email"
-							className="outline-none ring-none border-none rounded-md w-full text-[12px]"
-							disabled={loading}
-							required
-						/>
-						<textarea
-							name="message"
-							placeholder="Message"
-							className="outline-none ring-none border-none rounded-md resize-none h-28 w-full"
-							disabled={loading}
-							required
-						/>{' '}
-						<div className="w-full flex justify-end">
-							<Button
-								className={clsx(
-									'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-2 text-[14px] text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
-									'!rounded-full hover:text-secondary ml-4'
-								)}
-								type="submit"
-							>
-								Send
-							</Button>
-						</div>
-					</form>
-				</div>
+				<div className="flex flex-col items-center justify-center h-full relative w-auto"></div>
 			</div>
 		</div>
 	);
