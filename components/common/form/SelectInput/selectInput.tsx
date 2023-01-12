@@ -13,7 +13,7 @@ export const SelectInput: React.FC<
 	onChangeCustom,
 	register,
 	className,
-	labelProps,
+	// labelProps,
 	values,
 	name,
 	defaultValue,
