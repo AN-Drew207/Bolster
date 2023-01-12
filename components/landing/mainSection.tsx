@@ -404,8 +404,8 @@ export const HowWeDoItComponent = () => {
 		{
 			id: 3,
 			component: (
-				<div className="relative flex items-center justify-center w-full flex gap-2">
-					<div className="w-1/2 flex items-center justify-center relative">
+				<div className="relative flex items-center justify-center w-full flex gap-2 xl:min-h-none min-h-[400px] max-h-[400px] xl:max-h-none">
+					<div className="xl:w-1/2 flex items-center justify-center relative">
 						<video
 							src="https://bafybeiezbjlf7jwelm2lwmtnh2oozbh2zxdxc46y7gjx7ykozyvfwqhi6i.ipfs.nftstorage.link/"
 							className={clsx(
@@ -421,7 +421,7 @@ export const HowWeDoItComponent = () => {
 							src="/img/Rosebank_16 Cask_1511.png"
 							className={clsx(
 								{ ['scale-110']: hover },
-								'w-96 absolute right-[-35%] bottom-[-20%] z-10 transition-all duration-1000'
+								'md:w-80 w-60 absolute right-[-35%] bottom-[-20%] z-10 transition-all duration-1000'
 							)}
 							alt=""
 						/>{' '}
