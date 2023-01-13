@@ -184,7 +184,7 @@ export default function AppLayout() {
 
 					{address && typeOfWallet == 'magic' ? (
 						<>
-							<Dropdown title="ACCOUNT">
+							<Dropdown title="ACCOUNT" className="text-lg text-secondary">
 								<div className="flex flex-col gap-4 p-4 w-72">
 									<Button
 										className={clsx(

@@ -33,6 +33,7 @@ import {
 	DoubleRightOutlined,
 	SearchOutlined,
 } from '@ant-design/icons';
+import { XIcon } from '@heroicons/react/solid';
 
 export const CollectionComponent = () => {
 	const [isLoading, setIsLoading] = React.useState(false);
@@ -55,6 +56,19 @@ export const CollectionComponent = () => {
 	const { approveBottle, mint } = useMagicLink();
 
 	const { modal, show: showConnect } = useConnectWalletModal();
+
+	const {
+		Modal: ModalArtist,
+		isShow: isShowArtist,
+		show: showArtist,
+		hide: hideArtist,
+	} = useModal();
+	const {
+		Modal: ModalBottle,
+		isShow: isShowBottle,
+		show: showBottle,
+		hide: hideBottle,
+	} = useModal();
 
 	const dispatch = useDispatch();
 
@@ -287,16 +301,298 @@ export const CollectionComponent = () => {
 						</div>
 					</div>
 				</Modal>
+				<ModalBottle isShow={isShowBottle} hasBg>
+					<div className="min-h-[100vh] flex flex-col items-center justify-center w-full mt-16">
+						<div className="pb-4 w-full flex justify-end px-6">
+							<XIcon
+								className="text-white w-5 h-5 cursor-pointer"
+								onClick={() => {
+									hideBottle();
+								}}
+							></XIcon>
+						</div>
+						<div className="flex flex-col  pt-10 gap-4 border-secondary px-8 shrink-0 xl:w-1/2 w-full">
+							<h3 className="text-white text-2xl font-bold text-center Raleway">
+								Physical asset backing up this collection
+							</h3>
+							<div className="p-2 relative border-white bg-gray-900 border-4 border-primary rounded-md flex items-center justify-center">
+								<img
+									src={bottle.image}
+									alt=""
+									className={clsx('md:h-[400px] h-[300px]', {
+										['absolute top-0 opacity-[0.15]']: specs,
+									})}
+								/>
+								{bottle.content && (
+									<div
+										className={clsx(
+											{ ['hidden']: !specs },
+											'flex flex-col justify-between py-4 w-full md:h-[400px] h-[300px]'
+										)}
+									>
+										<h2 className="text-md w-full text-white text-center RalewayBold font-bold">
+											{bottle.bottle_name}
+										</h2>
+										<div
+											className={clsx(
+												'w-full h-full lg:hidden sm:flex hidden relative overflow-hidden'
+											)}
+										>
+											<div className="w-full bg-transparent">
+												{' '}
+												<Swiper
+													slidesPerView={1}
+													autoplay={{
+														delay: 2500,
+														disableOnInteraction: false,
+													}}
+													loop={true}
+													modules={[Zoom, Autoplay]}
+													className="bg-transparent"
+												>
+													{new Array(
+														bottle?.content?.caracteristics?.length / 6
+													)
+														.fill(false)
+														.map((i, index: any) => (
+															<SwiperSlide>
+																<div className="bg-transparent flex flex-wrap gap-4 w-full h-full items-center justify-center">
+																	{bottle.content.caracteristics
+																		.filter(
+																			(i: any, ix: any) =>
+																				ix <= (index + 1) * 6 && ix > index * 6
+																		)
+																		.map((item: any, index: any) => (
+																			<div
+																				key={'caracteristic-' + index}
+																				className="flex xl:flex-row flex-col items-center justify-start w-40 gap-4"
+																			>
+																				<div className="flex items-center justify-center w-[40px]">
+																					<img
+																						className="max-w-[24px] max-h-16"
+																						src={item.icon}
+																						alt=""
+																					/>
+																				</div>
+																				<p className="xl:text-[14px] text-[18px] text-white text-center font-bold w-full">
+																					{item.caption}
+																				</p>
+																			</div>
+																		))}
+																</div>
+															</SwiperSlide>
+														))}
+												</Swiper>
+											</div>
+										</div>
+										<div
+											className={clsx(
+												'w-full h-full sm:hidden flex relative overflow-hidden'
+											)}
+										>
+											<div className="w-full bg-transparent">
+												{' '}
+												<Swiper
+													slidesPerView={1}
+													autoplay={{
+														delay: 2500,
+														disableOnInteraction: false,
+													}}
+													loop={true}
+													modules={[Zoom, Autoplay]}
+													className="bg-transparent"
+												>
+													{new Array(bottle.content.caracteristics.length / 4)
+														.fill(false)
+														.map((i, index: any) => (
+															<SwiperSlide>
+																<div className="bg-transparent flex flex-wrap gap-4 w-full h-full items-center justify-center">
+																	{bottle.content.caracteristics
+																		.filter(
+																			(i: any, ix: any) =>
+																				ix <= (index + 1) * 4 && ix > index * 4
+																		)
+																		.map((item: any, index: any) => (
+																			<div
+																				key={'caracteristic-' + index}
+																				className="flex xl:flex-row flex-col items-center justify-start w-32 gap-4"
+																			>
+																				<div className="flex items-center justify-center w-[20px]">
+																					<img
+																						className="max-w-[12px] max-h-8"
+																						src={item.icon}
+																						alt=""
+																					/>
+																				</div>
+																				<p className="xl:text-[14px] text-[12px] text-white text-center font-bold w-full">
+																					{item.caption}
+																				</p>
+																			</div>
+																		))}
+																</div>
+															</SwiperSlide>
+														))}
+												</Swiper>
+											</div>
+										</div>
+										<div
+											className={clsx(
+												'w-full h-full lg:flex hidden flex-wrap gap-4 items-center justify-center relative',
+												'md:h-[400px] h-[300px]'
+											)}
+										>
+											{bottle.content.caracteristics.map(
+												(item: any, index: any) => {
+													return (
+														<div
+															key={'caracteristic-' + index}
+															className="flex xl:flex-row flex-col items-center justify-start w-36 gap-4"
+														>
+															<div className="flex items-center justify-center w-[20px]">
+																<img
+																	className="max-w-[16px] max-h-12"
+																	src={item.icon}
+																	alt=""
+																/>
+															</div>
+															<p className="xl:text-[14px] text-[12px] text-white text-center font-bold w-full">
+																{item.caption}
+															</p>
+														</div>
+													);
+												}
+											)}
+										</div>
+										<h2 className="text-md w-full text-white text-center RalewayBold font-bold relative">
+											Look at it in{' '}
+											<a
+												className="text-secondary"
+												target="_blank"
+												href={bottle.litepaper}
+											>
+												WhiskyStats
+											</a>
+										</h2>
+									</div>
+								)}
+							</div>
+							<div className="flex gap-10 items-center justify-center">
+								{/* <a
+															href={bottle.litepaper}
+															target="_blank"
+															className="flex items-center justify-center"
+														> */}
+								<Button
+									className={clsx(
+										'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+										'!rounded-full hover:text-secondary w-64'
+									)}
+									onClick={() => {
+										setSpecs((prev) => !prev);
+									}}
+								>
+									{!specs ? 'Asset Especifications' : 'Bottle View'}
+								</Button>
+							</div>
+						</div>
+					</div>
+				</ModalBottle>
+				<ModalArtist isShow={isShowArtist} hasBg>
+					<div className="min-h-[100vh] flex flex-col items-center justify-center w-full mt-16 relative">
+						<div className="pb-4 w-full flex justify-end px-6">
+							<XIcon
+								className="text-white w-5 h-5 cursor-pointer"
+								onClick={() => {
+									hideArtist();
+								}}
+							></XIcon>
+						</div>
+						<div className="flex rounded-xl flex-col items-center w-full border-4 border-primary py-10 xl:px-16 lg:px-8 gap-4 transition-all duration-1000">
+							<div className="flex flex-col items-center  w-full gap-4">
+								<div className="w-4/5 gap-4 flex flex-col items-center justify-center">
+									{' '}
+									<div className="flex flex-col w-full transition-all duration-1000">
+										<h2 className="text-center font-bold text-2xl text-white">
+											{bottle?.artist?.name}
+										</h2>
+
+										<caption className="text-center text-sm text-white">
+											Collection Artist
+										</caption>
+										<div className="w-full flex items-center justify-center py-2">
+											<a
+												href={bottle.artist?.profile}
+												className=""
+												target="_blank"
+											>
+												<Button
+													className={clsx(
+														'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-2 text-white text-[14px] transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+														'!rounded-full hover:text-secondary w-40'
+													)}
+												>
+													Artist Profile
+												</Button>
+											</a>
+										</div>
+										<div className="flex flex-col w-full items-center justify-center gap-2 mt-2 transition-all duration-1000">
+											{bottle?.artist?.paragraphs.map((paragraph: any) => {
+												return (
+													<ParagraphArtist
+														title={paragraph.title}
+														text={paragraph.text}
+													/>
+												);
+											})}
+										</div>
+									</div>
+									<div className="2xl:w-[400px] w-[300px] gap-6 flex flex-col items-center justify-center rounded-xl overflow-hidden bg-gray-900">
+										<div className="2xl:w-2/3 w-full flex items-center justify-center rounded-xl overflow-hidden bg-gray-900">
+											<Swiper
+												slidesPerView={1}
+												autoplay={{
+													delay: 2500,
+													disableOnInteraction: false,
+												}}
+												spaceBetween={10}
+												modules={[Zoom, Autoplay]}
+											>
+												{bottle?.artist?.photo.map((photo: any) => (
+													<SwiperSlide>
+														<img
+															className="border w-full borderMain rounded-xl bg-gray-900"
+															src={photo}
+															alt=""
+														/>
+													</SwiperSlide>
+												))}
+											</Swiper>
+										</div>
+										{bottle?.artist?.social_media && (
+											<div className="flex items-center gap-6 justify-center p-4">
+												{bottle.artist?.social_media?.map((item: any) => (
+													<a target="_blank" href={item.link} className="h-8">
+														<img className="h-8" src={item.icon} alt="" />
+													</a>
+												))}
+											</div>
+										)}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</ModalArtist>
 				{/* <img
 					src="/img/bg_membership.jpg"
 					className="fixed h-full w-full"
 					alt=""
 				/> */}
 				{!isLoading && bottle && bottle.address ? (
-					<div className="flex justify-center items-start w-full ">
+					<div className="flex justify-center items-start w-full">
 						<div
 							className={clsx(
-								'min-h-screen  flex flex-col gap-4 items-center pt-32 pb-10 xl:w-[95%] w-full xl:px-0 md:px-8 px-2 justify-start relative'
+								'min-h-screen  flex flex-col gap-4 items-center pt-32 pb-10 w-full md:px-8 px-2 justify-start relative'
 							)}
 						>
 							<div className="flex justify-between w-full">
@@ -314,109 +610,80 @@ export const CollectionComponent = () => {
 											['!w-full !border-none']:
 												bottle && bottle.metadata.length > 0 && screen == 'pay',
 										},
-										'flex rounded-xl flex-col items-center justify-center w-full border-secondary py-8'
+										'flex rounded-xl lg:flex-row flex-col justify-center w-full border-secondary py-8'
 									)}
 								>
 									{screen == 'menu' && (
-										<>
-											<h2 className="text-3xl text-white font-bold pb-4">
+										<div className="flex flex-col gap-6 items-center px-2 xl:w-[450px] lg:w-[350px] shrink-0 w-full lg:pr-8 min-h-[100vh] pt-12">
+											<h2 className="text-3xl text-white font-bold text-center">
 												{bottle.name}
 											</h2>
-											<div className="flex rounded-xl flex-col items-center w-full border-4 border-primary py-10 xl:px-16 lg:px-8 gap-4 transition-all duration-1000">
-												<div className="flex flex-col items-center  w-full gap-4">
-													<div className="w-4/5 gap-4 flex flex-col items-center justify-center">
-														{' '}
-														<div className="flex flex-col w-full transition-all duration-1000">
-															<h2 className="text-center font-bold text-2xl text-white">
-																{bottle.artist.name}
-															</h2>
-
-															<caption className="text-center text-sm text-white">
-																Collection Artist
-															</caption>
-															<div className="w-full flex items-center justify-center py-2">
-																<a
-																	href={bottle.artist?.profile}
-																	className=""
-																	target="_blank"
-																>
-																	<Button
-																		className={clsx(
-																			'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-2 text-white text-[14px] transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
-																			'!rounded-full hover:text-secondary w-40'
-																		)}
-																	>
-																		Artist Profile
-																	</Button>
-																</a>
-															</div>
-															<div className="flex flex-col w-full items-center justify-center gap-2 mt-2 transition-all duration-1000">
-																{bottle.artist.paragraphs.map(
-																	(paragraph: any) => {
-																		return (
-																			<ParagraphArtist
-																				title={paragraph.title}
-																				text={paragraph.text}
-																			/>
-																		);
-																	}
-																)}
-															</div>
-														</div>
-														<div className="2xl:w-[400px] w-[300px] gap-6 flex flex-col items-center justify-center rounded-xl overflow-hidden bg-gray-900">
-															<div className="2xl:w-2/3 w-full flex items-center justify-center rounded-xl overflow-hidden bg-gray-900">
-																<Swiper
-																	slidesPerView={1}
-																	autoplay={{
-																		delay: 2500,
-																		disableOnInteraction: false,
-																	}}
-																	spaceBetween={10}
-																	modules={[Zoom, Autoplay]}
-																>
-																	{bottle.artist.photo.map((photo: any) => (
-																		<SwiperSlide>
-																			<img
-																				className="border w-full borderMain rounded-xl bg-gray-900"
-																				src={photo}
-																				alt=""
-																			/>
-																		</SwiperSlide>
-																	))}
-																</Swiper>
-															</div>
-															{bottle.artist.social_media && (
-																<div className="flex items-center gap-6 justify-center p-4">
-																	{bottle.artist?.social_media?.map(
-																		(item: any) => (
-																			<a
-																				target="_blank"
-																				href={item.link}
-																				className="h-8"
-																			>
-																				<img
-																					className="h-8"
-																					src={item.icon}
-																					alt=""
-																				/>
-																			</a>
-																		)
-																	)}
-																</div>
-															)}
-														</div>
-													</div>
-												</div>
-												<div className="flex flex-col">
-													<h2 className="text-white">
-														<span className="text-secondary font-bold">
-															{bottle.price} USD
-														</span>{' '}
-														per NFT
+											<div className="flex flex-col">
+												<h2 className="text-white">
+													<span className="text-secondary font-bold">
+														{bottle.price} USD
+													</span>{' '}
+													per NFT
+												</h2>
+											</div>
+											<div className="flex lg:flex-col items-center justify-center sm:flex-row flex-col gap-4 w-full">
+												<div className="lg:w-3/4 sm:w-[300px] sm:h-[400px] gap-2 w-[200px] gap-4 items-center justify-center flex flex-col">
+													<Swiper
+														slidesPerView={1}
+														autoplay={{
+															delay: 2500,
+															disableOnInteraction: false,
+														}}
+														spaceBetween={10}
+														modules={[Zoom, Autoplay]}
+													>
+														{bottle?.artist?.photo.map((photo: any) => (
+															<SwiperSlide>
+																<img
+																	className="border w-full borderMain rounded-xl bg-gray-900"
+																	src={photo}
+																	alt=""
+																/>
+															</SwiperSlide>
+														))}
+													</Swiper>
+													<h2 className="text-center font-bold text-2xl text-white">
+														{bottle?.artist?.name}
 													</h2>
+													<Button
+														className={clsx(
+															'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-2 text-white text-[14px] transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+															'!rounded-full hover:text-secondary w-40'
+														)}
+														onClick={() => showArtist()}
+													>
+														View Artist
+													</Button>
+												</div>
+
+												<div className="sm:w-[300px] sm:h-[400px] w-[200px] flex flex-col gap-2 relative rounded-md flex items-center justify-center w-full">
+													<img
+														src={bottle.image}
+														alt=""
+														className={clsx('sm:w-[290px]', {
+															['absolute top-0 opacity-[0.15]']: specs,
+														})}
+													/>
+													<h2 className="text-center font-bold text-2xl text-white">
+														{bottle?.name}
+													</h2>
+													<Button
+														className={clsx(
+															'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-2 text-white text-[14px] transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+															'!rounded-full hover:text-secondary w-40'
+														)}
+														onClick={() => showBottle()}
+													>
+														View Bottle
+													</Button>
 												</div>
 											</div>
-										</>
+										</div>
 									)}
 									{/* <video
 										src={bottle.image}
@@ -425,399 +692,219 @@ export const CollectionComponent = () => {
 										className="rounded-xl border-white h-auto md:w-2/3 w-full"
 										ref={video}
 									></video> */}
-									<h2 className="text-white pt-6 w-full Montserrat pl-10 font-bold text-xl">
-										{selectedNFTs() > 0 ? (
-											<p>
-												<span className="text-secondary">{selectedNFTs()}</span>{' '}
-												NFT{selectedNFTs() > 1 && 's'} Selected
-											</p>
-										) : (
-											'Select the NFTs you want to buy'
-										)}
-									</h2>
-									{bottle && bottle.metadata.length > 0 && screen == 'menu' ? (
-										<div className="flex xl:flex-row flex-col-reverse xl:items-start items-center  border-secondary w-full">
-											<div className="flex flex-col gap-4 items-center md:px-8 w-full">
-												<div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-4 md:p-4 py-10">
-													{bottle.metadata
-														.filter((token: any) => !token.sold)
-														.map((token: any, i: any) => {
-															return (
-																<CollectionNFTItem
-																	big={
-																		bottle.metadata.filter(
-																			(token: any) => !token.sold
-																		).length == 1
-																	}
-																	active={true}
-																	token={token}
-																	network={network}
-																	networkName={networkName}
-																	bottle={bottle}
-																	setBottle={setBottle}
-																	setIsLoading={setIsLoading}
-																	typeOfWallet={typeOfWallet}
-																	selected={
-																		selected.filter((item: any) => {
-																			return item.id == token.id;
-																		})[0]?.value
-																	}
-																	setSelected={() => {
-																		setSelected((prev: any[]) =>
-																			prev.map((status) =>
-																				token.id == status.id
-																					? {
-																							value: !status.value,
-																							id: status.id,
-																					  }
-																					: {
-																							value: status.value,
-																							id: status.id,
-																					  }
-																			)
-																		);
-																	}}
-																/>
-															);
-														})}
-												</div>
-												{bottle.metadata.filter((token: any) => token.sold)
-													.length > 0 && (
-													<h2 className="w-full text-center py-4 text-2xl text-white RalewayBold">
-														NFTs Bought
-													</h2>
-												)}
-												<div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-4 p-4 py-10">
-													{bottle.metadata
-														.filter((token: any) => token.sold)
-														.map((token: any, i: any) => {
-															return (
-																<CollectionNFTItem
-																	active={false}
-																	token={token}
-																	network={network}
-																	networkName={networkName}
-																	bottle={bottle}
-																	setBottle={setBottle}
-																	setIsLoading={setIsLoading}
-																	typeOfWallet={typeOfWallet}
-																	selected={
-																		selected.filter((item: any) => {
-																			return item.id == token.id;
-																		})[0]?.value
-																	}
-																	setSelected={() => {
-																		setSelected((prev: any[]) =>
-																			prev.map((status, id) =>
-																				token.id == status.id
-																					? {
-																							value: !status.value,
-																							id: status.id,
-																					  }
-																					: {
-																							value: status.value,
-																							id: status.id,
-																					  }
-																			)
-																		);
-																	}}
-																/>
-															);
-														})}
+									<div className="flex flex-col gap-4 w-full">
+										<h2 className="text-white pt-6 w-full Montserrat pl-10 font-bold text-xl">
+											{selectedNFTs() > 0 ? (
+												<p>
+													<span className="text-secondary">
+														{selectedNFTs()}
+													</span>{' '}
+													NFT{selectedNFTs() > 1 && 's'} Selected
+												</p>
+											) : (
+												'Select the NFTs you want to buy'
+											)}
+										</h2>
+										{bottle &&
+										bottle.metadata.length > 0 &&
+										screen == 'menu' ? (
+											<div className="flex xl:flex-row flex-col-reverse xl:items-start items-center  border-secondary w-full">
+												<div className="flex flex-col gap-4 items-center md:px-4 w-full">
+													<div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-4 py-10">
+														{bottle.metadata
+															.filter((token: any) => !token.sold)
+															.map((token: any, i: any) => {
+																return (
+																	<CollectionNFTItem
+																		big={
+																			bottle.metadata.filter(
+																				(token: any) => !token.sold
+																			).length == 1
+																		}
+																		active={true}
+																		token={token}
+																		network={network}
+																		networkName={networkName}
+																		bottle={bottle}
+																		setBottle={setBottle}
+																		setIsLoading={setIsLoading}
+																		typeOfWallet={typeOfWallet}
+																		selected={
+																			selected.filter((item: any) => {
+																				return item.id == token.id;
+																			})[0]?.value
+																		}
+																		setSelected={() => {
+																			setSelected((prev: any[]) =>
+																				prev.map((status) =>
+																					token.id == status.id
+																						? {
+																								value: !status.value,
+																								id: status.id,
+																						  }
+																						: {
+																								value: status.value,
+																								id: status.id,
+																						  }
+																				)
+																			);
+																		}}
+																	/>
+																);
+															})}
+													</div>
+													{bottle.metadata.filter((token: any) => token.sold)
+														.length > 0 && (
+														<h2 className="w-full text-center py-4 text-2xl text-white RalewayBold">
+															NFTs Bought
+														</h2>
+													)}
+													<div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-4 p-4 py-10">
+														{bottle.metadata
+															.filter((token: any) => token.sold)
+															.map((token: any, i: any) => {
+																return (
+																	<CollectionNFTItem
+																		active={false}
+																		token={token}
+																		network={network}
+																		networkName={networkName}
+																		bottle={bottle}
+																		setBottle={setBottle}
+																		setIsLoading={setIsLoading}
+																		typeOfWallet={typeOfWallet}
+																		selected={
+																			selected.filter((item: any) => {
+																				return item.id == token.id;
+																			})[0]?.value
+																		}
+																		setSelected={() => {
+																			setSelected((prev: any[]) =>
+																				prev.map((status, id) =>
+																					token.id == status.id
+																						? {
+																								value: !status.value,
+																								id: status.id,
+																						  }
+																						: {
+																								value: status.value,
+																								id: status.id,
+																						  }
+																				)
+																			);
+																		}}
+																	/>
+																);
+															})}
+													</div>
 												</div>
 											</div>
-										</div>
-									) : bottle &&
-									  bottle.metadata.length > 0 &&
-									  screen == 'pay' ? (
-										<div
-											className={clsx(
-												'flex flex-col items-center justify-center w-full h-full relative border-secondary rounded-xl'
-											)}
-										>
-											<MintModal
-												priceusd={priceUSD}
-												priceMATIC={priceMATIC}
-												allowance={bottle.allowance}
-												quantity={selected.filter((q: any) => q.value).length}
-												bottle={bottle}
-												hide={() => setScreen('menu')}
-												approve={(address: any) => {
-													if (typeOfWallet !== 'metamask') {
-														approveBottle(dispatch, bottleContract, address);
-													}
-												}}
-												selected={selected}
-												typeOfWallet={typeOfWallet}
-												Mint={async (data: any, address: any) => {
-													delete data.currency;
-													// data.id = 3;
-													data.created_at = moment().format(
-														'YYYY-MM-DD hh:mm:ss'
-													);
-													data.updated_at = moment().format(
-														'YYYY-MM-DD hh:mm:ss'
-													);
-													data.deleted_at = null;
-
-													if (typeOfWallet == 'metamask') {
-														console.log('meta');
-														await Mint(
-															selected
-																.map((value: any, id: number) => {
-																	return {
-																		value: value.value,
-																		id: value.id,
-																	};
-																})
-																.filter((q: any) => q.value)
-																.map((nft: any) => nft.id),
-															address,
-															setIsLoading,
-															bottleContract,
-															setMessage,
-															// accounts,
-															dispatch,
-															network,
-															networkName,
-															hide,
-															showCongrats,
-															setMinted,
-															data
-														);
-													} else {
-														await mint(
-															bottleContract,
-															selected
-																.map((value: any, id: number) => {
-																	return {
-																		value: value.value,
-																		id: value.id,
-																	};
-																})
-																.filter((q: any) => q.value)
-																.map((nft: any) => nft.id),
-															address,
-															dispatch,
-															setMessage,
-															hide,
-															showCongrats,
-															setMinted,
-															data
-														);
-													}
-													window.location.reload();
-													setScreen('menu');
-												}}
-												currencies={[
-													{
-														name: 'USDC',
-														value: process.env.NEXT_PUBLIC_USDC_ADDRESS,
-														image: '/img/usd-coin-usdc-logo.png',
-													},
-													{
-														name: 'MATIC',
-														value: process.env.NEXT_PUBLIC_WMATIC_ADDRESS,
-														image: '/img/polygon-matic-logo.png',
-													},
-												]}
-												quantityMinted={quantity}
-												maxSupply={maxSupply}
-												accounts={accounts}
-												isLoading={isLoading}
-												show={show}
-												connectWallet={connectWallet}
-												message={message}
-											/>
-										</div>
-									) : (
-										<Loading />
-									)}
-									<div className="flex flex-col  pt-10 gap-4 border-secondary px-8 shrink-0 xl:w-1/2 w-full">
-										<h3 className="text-white text-2xl font-bold text-center Raleway">
-											Physical asset backing up this collection
-										</h3>
-										<div className="p-2 relative border-white bg-gray-900 border-4 border-primary rounded-md flex items-center justify-center">
-											<img
-												src={bottle.image}
-												alt=""
-												className={clsx('md:h-[400px] h-[300px]', {
-													['absolute top-0 opacity-[0.15]']: specs,
-												})}
-											/>
+										) : bottle &&
+										  bottle.metadata.length > 0 &&
+										  screen == 'pay' ? (
 											<div
 												className={clsx(
-													{ ['hidden']: !specs },
-													'flex flex-col justify-between py-4 w-full md:h-[400px] h-[300px]'
+													'flex flex-col items-center justify-center w-full h-full relative border-secondary rounded-xl'
 												)}
 											>
-												<h2 className="text-md w-full text-white text-center RalewayBold font-bold">
-													{bottle.bottle_name}
-												</h2>
-												<div
-													className={clsx(
-														'w-full h-full lg:hidden sm:flex hidden relative overflow-hidden'
-													)}
-												>
-													<div className="w-full bg-transparent">
-														{' '}
-														<Swiper
-															slidesPerView={1}
-															autoplay={{
-																delay: 2500,
-																disableOnInteraction: false,
-															}}
-															loop={true}
-															modules={[Zoom, Autoplay]}
-															className="bg-transparent"
-														>
-															{new Array(
-																bottle.content.caracteristics.length / 6
-															)
-																.fill(false)
-																.map((i, index: any) => (
-																	<SwiperSlide>
-																		<div className="bg-transparent flex flex-wrap gap-4 w-full h-full items-center justify-center">
-																			{bottle.content.caracteristics
-																				.filter(
-																					(i: any, ix: any) =>
-																						ix <= (index + 1) * 6 &&
-																						ix > index * 6
-																				)
-																				.map((item: any, index: any) => (
-																					<div
-																						key={'caracteristic-' + index}
-																						className="flex xl:flex-row flex-col items-center justify-start w-40 gap-4"
-																					>
-																						<div className="flex items-center justify-center w-[40px]">
-																							<img
-																								className="max-w-[24px] max-h-16"
-																								src={item.icon}
-																								alt=""
-																							/>
-																						</div>
-																						<p className="xl:text-[14px] text-[18px] text-white text-center font-bold w-full">
-																							{item.caption}
-																						</p>
-																					</div>
-																				))}
-																		</div>
-																	</SwiperSlide>
-																))}
-														</Swiper>
-													</div>
-												</div>
-												<div
-													className={clsx(
-														'w-full h-full sm:hidden flex relative overflow-hidden'
-													)}
-												>
-													<div className="w-full bg-transparent">
-														{' '}
-														<Swiper
-															slidesPerView={1}
-															autoplay={{
-																delay: 2500,
-																disableOnInteraction: false,
-															}}
-															loop={true}
-															modules={[Zoom, Autoplay]}
-															className="bg-transparent"
-														>
-															{new Array(
-																bottle.content.caracteristics.length / 4
-															)
-																.fill(false)
-																.map((i, index: any) => (
-																	<SwiperSlide>
-																		<div className="bg-transparent flex flex-wrap gap-4 w-full h-full items-center justify-center">
-																			{bottle.content.caracteristics
-																				.filter(
-																					(i: any, ix: any) =>
-																						ix <= (index + 1) * 4 &&
-																						ix > index * 4
-																				)
-																				.map((item: any, index: any) => (
-																					<div
-																						key={'caracteristic-' + index}
-																						className="flex xl:flex-row flex-col items-center justify-start w-32 gap-4"
-																					>
-																						<div className="flex items-center justify-center w-[20px]">
-																							<img
-																								className="max-w-[12px] max-h-8"
-																								src={item.icon}
-																								alt=""
-																							/>
-																						</div>
-																						<p className="xl:text-[14px] text-[12px] text-white text-center font-bold w-full">
-																							{item.caption}
-																						</p>
-																					</div>
-																				))}
-																		</div>
-																	</SwiperSlide>
-																))}
-														</Swiper>
-													</div>
-												</div>
-												<div
-													className={clsx(
-														'w-full h-full lg:flex hidden flex-wrap gap-4 items-center justify-center relative',
-														'md:h-[400px] h-[300px]'
-													)}
-												>
-													{bottle.content.caracteristics.map(
-														(item: any, index: any) => {
-															return (
-																<div
-																	key={'caracteristic-' + index}
-																	className="flex xl:flex-row flex-col items-center justify-start w-36 gap-4"
-																>
-																	<div className="flex items-center justify-center w-[20px]">
-																		<img
-																			className="max-w-[16px] max-h-12"
-																			src={item.icon}
-																			alt=""
-																		/>
-																	</div>
-																	<p className="xl:text-[14px] text-[12px] text-white text-center font-bold w-full">
-																		{item.caption}
-																	</p>
-																</div>
+												<MintModal
+													priceusd={priceUSD}
+													priceMATIC={priceMATIC}
+													allowance={bottle.allowance}
+													quantity={selected.filter((q: any) => q.value).length}
+													bottle={bottle}
+													hide={() => setScreen('menu')}
+													approve={(address: any) => {
+														if (typeOfWallet !== 'metamask') {
+															approveBottle(dispatch, bottleContract, address);
+														}
+													}}
+													selected={selected}
+													typeOfWallet={typeOfWallet}
+													Mint={async (data: any, address: any) => {
+														delete data.currency;
+														// data.id = 3;
+														data.created_at = moment().format(
+															'YYYY-MM-DD hh:mm:ss'
+														);
+														data.updated_at = moment().format(
+															'YYYY-MM-DD hh:mm:ss'
+														);
+														data.deleted_at = null;
+
+														if (typeOfWallet == 'metamask') {
+															console.log('meta');
+															await Mint(
+																selected
+																	.map((value: any, id: number) => {
+																		return {
+																			value: value.value,
+																			id: value.id,
+																		};
+																	})
+																	.filter((q: any) => q.value)
+																	.map((nft: any) => nft.id),
+																address,
+																setIsLoading,
+																bottleContract,
+																setMessage,
+																// accounts,
+																dispatch,
+																network,
+																networkName,
+																hide,
+																showCongrats,
+																setMinted,
+																data
+															);
+														} else {
+															await mint(
+																bottleContract,
+																selected
+																	.map((value: any, id: number) => {
+																		return {
+																			value: value.value,
+																			id: value.id,
+																		};
+																	})
+																	.filter((q: any) => q.value)
+																	.map((nft: any) => nft.id),
+																address,
+																dispatch,
+																setMessage,
+																hide,
+																showCongrats,
+																setMinted,
+																data
 															);
 														}
-													)}
-												</div>
-												<h2 className="text-md w-full text-white text-center RalewayBold font-bold relative">
-													Look at it in{' '}
-													<a
-														className="text-secondary"
-														target="_blank"
-														href={bottle.litepaper}
-													>
-														WhiskyStats
-													</a>
-												</h2>
+														window.location.reload();
+														setScreen('menu');
+													}}
+													currencies={[
+														{
+															name: 'USDC',
+															value: process.env.NEXT_PUBLIC_USDC_ADDRESS,
+															image: '/img/usd-coin-usdc-logo.png',
+														},
+														{
+															name: 'MATIC',
+															value: process.env.NEXT_PUBLIC_WMATIC_ADDRESS,
+															image: '/img/polygon-matic-logo.png',
+														},
+													]}
+													quantityMinted={quantity}
+													maxSupply={maxSupply}
+													accounts={accounts}
+													isLoading={isLoading}
+													show={show}
+													connectWallet={connectWallet}
+													message={message}
+												/>
 											</div>
-										</div>
-										<div className="flex gap-10 items-center justify-center">
-											{/* <a
-															href={bottle.litepaper}
-															target="_blank"
-															className="flex items-center justify-center"
-														> */}
-											<Button
-												className={clsx(
-													'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
-													'!rounded-full hover:text-secondary w-64'
-												)}
-												onClick={() => {
-													setSpecs((prev) => !prev);
-												}}
-											>
-												{!specs ? 'Asset Especifications' : 'Bottle View'}
-											</Button>
-										</div>
+										) : (
+											<Loading />
+										)}
 									</div>
 								</div>
 							</>
@@ -863,6 +950,7 @@ export const CollectionNFTItem = ({
 	big,
 }: any) => {
 	const { Modal, isShow, show, hide } = useModal();
+
 	const [hover, setHover] = React.useState(false);
 	return (
 		<>
@@ -887,6 +975,7 @@ export const CollectionNFTItem = ({
 					</div>
 				</div>
 			</Modal>
+
 			{/* <Link href={'/bottle/' + bottle.address + '/token/' + token.id}> */}
 			<div
 				className={clsx(
@@ -929,8 +1018,8 @@ export const CollectionNFTItem = ({
 						src={token.image}
 						onClick={active ? () => setSelected() : undefined}
 						className={clsx(
-							{ ['md:!h-96 md:!w-96 !w-52 !h-52']: big },
-							'w-40 h-40 rounded-md border border-white cursor-pointer'
+							{ ['md:!w-96 !w-52']: big },
+							'w-40 rounded-md border border-white cursor-pointer'
 						)}
 						alt=""
 					/>
