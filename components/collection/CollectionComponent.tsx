@@ -635,8 +635,7 @@ export const CollectionComponent = () => {
 									)}
 									<div className="flex flex-col  pt-10 gap-4 border-secondary px-8 shrink-0 xl:w-1/2 w-full">
 										<h3 className="text-white text-2xl font-bold text-center Raleway">
-											Physical asset backing up the floor price for this
-											collection
+											Physical asset backing up this collection
 										</h3>
 										<div className="p-2 relative border-white bg-gray-900 border-4 border-primary rounded-md flex items-center justify-center">
 											<img
