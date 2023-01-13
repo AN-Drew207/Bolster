@@ -446,7 +446,7 @@ export const HowWeDoItComponent = () => {
 			<div className="flex 2xl:flex-row flex-col-reverse gap-24 items-center justify-center w-full md:px-16 transition-all duration-1000">
 				<Link href="/collections">
 					<div
-						className="2xl:w-1/2 w-3/5 flex items-center justify-center relative transition-all duration-1000"
+						className="2xl:w-1/2 w-3/5 flex items-center justify-center relative transition-all duration-1000 cursor-pointer"
 						onMouseOver={() => {
 							setHover(true);
 						}}
