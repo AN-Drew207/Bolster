@@ -444,16 +444,16 @@ export const HowWeDoItComponent = () => {
 	return (
 		<div className="py-28 bg-black-1 relative text-white  w-full flex flex-col items-center justify-center transition-all duration-1000 min-h-[100vh]">
 			<div className="flex 2xl:flex-row flex-col-reverse gap-24 items-center justify-center w-full md:px-16 transition-all duration-1000">
-				<div
-					className="2xl:w-1/2 w-3/5 flex items-center justify-center relative transition-all duration-1000"
-					onMouseOver={() => {
-						setHover(true);
-					}}
-					onMouseLeave={() => {
-						setHover(false);
-					}}
-				>
-					<Link href="/collections">
+				<Link href="/collections">
+					<div
+						className="2xl:w-1/2 w-3/5 flex items-center justify-center relative transition-all duration-1000"
+						onMouseOver={() => {
+							setHover(true);
+						}}
+						onMouseLeave={() => {
+							setHover(false);
+						}}
+					>
 						{bottles.map((item) => {
 							return (
 								<div
@@ -466,8 +466,8 @@ export const HowWeDoItComponent = () => {
 								</div>
 							);
 						})}
-					</Link>
-				</div>
+					</div>
+				</Link>
 				<div className="2xl:w-1/2 w-full flex flex-col items-center justify-center">
 					<p className="2xl:text-justify text-center Montserrat md:text-[18px] text-[13px] md:w-2/3 w-full md:px-0 px-4">
 						At Bolster, we believe that NFTs are a valuable tool for promoting
