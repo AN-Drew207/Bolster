@@ -877,18 +877,6 @@ export const CollectionNFTItem = ({
 							>
 								Back
 							</div>
-							<a
-								href={`https://${
-									network != '137' ? 'testnets.' : ''
-								}opensea.io/assets/${networkName}/${bottle.address}/${
-									token.id
-								}`}
-								target="_blank"
-								className="text-secondary font-bold flex items-center gap-2"
-							>
-								View in{' '}
-								<img src="/icons/opensea.svg" className="h-4 w-4" alt="" />
-							</a>
 						</div>
 						<div className="flex gap-8 h-full items-center justify-center w-full">
 							<img
