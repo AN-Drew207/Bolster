@@ -14,6 +14,7 @@ import { Dropdown } from 'components/common/dropdown/dropdown';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { SelectInput } from 'components/common/form/SelectInput';
+import Link from 'next/link';
 
 export const MainSectionComponent = () => {
 	return (
@@ -452,18 +453,20 @@ export const HowWeDoItComponent = () => {
 						setHover(false);
 					}}
 				>
-					{bottles.map((item) => {
-						return (
-							<div
-								className={clsx(
-									{ ['hidden']: item.id !== active + 1 },
-									'w-full flex items-center justify-center md:min-h-none min-h-[400px] max-h-[400px] md:max-h-none'
-								)}
-							>
-								{item.component}
-							</div>
-						);
-					})}
+					<Link href="/collections">
+						{bottles.map((item) => {
+							return (
+								<div
+									className={clsx(
+										{ ['hidden']: item.id !== active + 1 },
+										'w-full flex items-center justify-center md:min-h-none min-h-[400px] max-h-[400px] md:max-h-none'
+									)}
+								>
+									{item.component}
+								</div>
+							);
+						})}
+					</Link>
 				</div>
 				<div className="2xl:w-1/2 w-full flex flex-col items-center justify-center">
 					<p className="2xl:text-justify text-center Montserrat md:text-[18px] text-[13px] md:w-2/3 w-full md:px-0 px-4">
