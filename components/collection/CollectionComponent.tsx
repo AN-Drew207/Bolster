@@ -302,7 +302,7 @@ export const CollectionComponent = () => {
 					</div>
 				</Modal>
 				<ModalBottle isShow={isShowBottle} hasBg>
-					<div className="min-h-[100vh] flex flex-col items-center justify-center w-full mt-16">
+					<div className="min-h-[100vh] flex flex-col items-center justify-center w-full mt-20 mb-20">
 						<div className="pb-4 w-full flex justify-end px-6">
 							<XIcon
 								className="text-white w-5 h-5 cursor-pointer"
@@ -311,188 +311,217 @@ export const CollectionComponent = () => {
 								}}
 							></XIcon>
 						</div>
-						<div className="flex flex-col  pt-10 gap-4 border-secondary px-8 shrink-0 xl:w-1/2 w-full">
-							<h3 className="text-white text-2xl font-bold text-center Raleway">
-								Physical asset backing up this collection
-							</h3>
-							<div className="p-2 relative border-white bg-gray-900 border-4 border-primary rounded-md flex items-center justify-center">
-								<img
-									src={bottle.image}
-									alt=""
-									className={clsx('md:h-[400px] h-[300px]', {
-										['absolute top-0 opacity-[0.15]']: specs,
-									})}
-								/>
-								{bottle.content && (
-									<div
-										className={clsx(
-											{ ['hidden']: !specs },
-											'flex flex-col justify-between py-4 w-full md:h-[400px] h-[300px]'
-										)}
-									>
-										<h2 className="text-md w-full text-white text-center RalewayBold font-bold">
-											{bottle.bottle_name}
-										</h2>
+						<div className="flex xl:flex-row flex-col justify-between w-full gap-10">
+							<div className="flex flex-col  pt-10 gap-4 border-secondary px-8 shrink-0 xl:w-1/2 w-full">
+								<h3 className="text-white text-2xl font-bold text-center Raleway">
+									Physical asset backing up this collection
+								</h3>
+								<div className="p-2 relative border-white bg-gray-900 border-4 border-primary rounded-md flex items-center justify-center">
+									<img
+										src={bottle.image}
+										alt=""
+										className={clsx('md:h-[400px] h-[300px]', {
+											['absolute top-0 opacity-[0.15]']: specs,
+										})}
+									/>
+									{bottle.content && (
 										<div
 											className={clsx(
-												'w-full h-full lg:hidden sm:flex hidden relative overflow-hidden'
+												{ ['hidden']: !specs },
+												'flex flex-col justify-between py-4 w-full md:h-[400px] h-[300px]'
 											)}
 										>
-											<div className="w-full bg-transparent">
-												{' '}
-												<Swiper
-													slidesPerView={1}
-													autoplay={{
-														delay: 2500,
-														disableOnInteraction: false,
-													}}
-													loop={true}
-													modules={[Zoom, Autoplay]}
-													className="bg-transparent"
-												>
-													{new Array(
-														bottle?.content?.caracteristics?.length / 6
-													)
-														.fill(false)
-														.map((i, index: any) => (
-															<SwiperSlide>
-																<div className="bg-transparent flex flex-wrap gap-4 w-full h-full items-center justify-center">
-																	{bottle.content.caracteristics
-																		.filter(
-																			(i: any, ix: any) =>
-																				ix <= (index + 1) * 6 && ix > index * 6
-																		)
-																		.map((item: any, index: any) => (
-																			<div
-																				key={'caracteristic-' + index}
-																				className="flex xl:flex-row flex-col items-center justify-start w-40 gap-4"
-																			>
-																				<div className="flex items-center justify-center w-[40px]">
-																					<img
-																						className="max-w-[24px] max-h-16"
-																						src={item.icon}
-																						alt=""
-																					/>
-																				</div>
-																				<p className="xl:text-[14px] text-[18px] text-white text-center font-bold w-full">
-																					{item.caption}
-																				</p>
-																			</div>
-																		))}
-																</div>
-															</SwiperSlide>
-														))}
-												</Swiper>
-											</div>
-										</div>
-										<div
-											className={clsx(
-												'w-full h-full sm:hidden flex relative overflow-hidden'
-											)}
-										>
-											<div className="w-full bg-transparent">
-												{' '}
-												<Swiper
-													slidesPerView={1}
-													autoplay={{
-														delay: 2500,
-														disableOnInteraction: false,
-													}}
-													loop={true}
-													modules={[Zoom, Autoplay]}
-													className="bg-transparent"
-												>
-													{new Array(bottle.content.caracteristics.length / 4)
-														.fill(false)
-														.map((i, index: any) => (
-															<SwiperSlide>
-																<div className="bg-transparent flex flex-wrap gap-4 w-full h-full items-center justify-center">
-																	{bottle.content.caracteristics
-																		.filter(
-																			(i: any, ix: any) =>
-																				ix <= (index + 1) * 4 && ix > index * 4
-																		)
-																		.map((item: any, index: any) => (
-																			<div
-																				key={'caracteristic-' + index}
-																				className="flex xl:flex-row flex-col items-center justify-start w-32 gap-4"
-																			>
-																				<div className="flex items-center justify-center w-[20px]">
-																					<img
-																						className="max-w-[12px] max-h-8"
-																						src={item.icon}
-																						alt=""
-																					/>
-																				</div>
-																				<p className="xl:text-[14px] text-[12px] text-white text-center font-bold w-full">
-																					{item.caption}
-																				</p>
-																			</div>
-																		))}
-																</div>
-															</SwiperSlide>
-														))}
-												</Swiper>
-											</div>
-										</div>
-										<div
-											className={clsx(
-												'w-full h-full lg:flex hidden flex-wrap gap-4 items-center justify-center relative',
-												'md:h-[400px] h-[300px]'
-											)}
-										>
-											{bottle.content.caracteristics.map(
-												(item: any, index: any) => {
-													return (
-														<div
-															key={'caracteristic-' + index}
-															className="flex xl:flex-row flex-col items-center justify-start w-36 gap-4"
-														>
-															<div className="flex items-center justify-center w-[20px]">
-																<img
-																	className="max-w-[16px] max-h-12"
-																	src={item.icon}
-																	alt=""
-																/>
-															</div>
-															<p className="xl:text-[14px] text-[12px] text-white text-center font-bold w-full">
-																{item.caption}
-															</p>
-														</div>
-													);
-												}
-											)}
-										</div>
-										<h2 className="text-md w-full text-white text-center RalewayBold font-bold relative">
-											Look at it in{' '}
-											<a
-												className="text-secondary"
-												target="_blank"
-												href={bottle.litepaper}
+											<h2 className="text-md w-full text-white text-center RalewayBold font-bold">
+												{bottle.bottle_name}
+											</h2>
+											<div
+												className={clsx(
+													'w-full h-full lg:hidden sm:flex hidden relative overflow-hidden'
+												)}
 											>
-												WhiskyStats
-											</a>
-										</h2>
-									</div>
-								)}
-							</div>
-							<div className="flex gap-10 items-center justify-center">
-								{/* <a
+												<div className="w-full bg-transparent">
+													{' '}
+													<Swiper
+														slidesPerView={1}
+														autoplay={{
+															delay: 2500,
+															disableOnInteraction: false,
+														}}
+														loop={true}
+														modules={[Zoom, Autoplay]}
+														className="bg-transparent"
+													>
+														{new Array(
+															bottle?.content?.caracteristics?.length / 6
+														)
+															.fill(false)
+															.map((i, index: any) => (
+																<SwiperSlide>
+																	<div className="bg-transparent flex flex-wrap gap-4 w-full h-full items-center justify-center">
+																		{bottle.content.caracteristics
+																			.filter(
+																				(i: any, ix: any) =>
+																					ix <= (index + 1) * 6 &&
+																					ix > index * 6
+																			)
+																			.map((item: any, index: any) => (
+																				<div
+																					key={'caracteristic-' + index}
+																					className="flex xl:flex-row flex-col items-center justify-start w-40 gap-4"
+																				>
+																					<div className="flex items-center justify-center w-[40px]">
+																						<img
+																							className="max-w-[24px] max-h-16"
+																							src={item.icon}
+																							alt=""
+																						/>
+																					</div>
+																					<p className="xl:text-[14px] text-[18px] text-white text-center font-bold w-full">
+																						{item.caption}
+																					</p>
+																				</div>
+																			))}
+																	</div>
+																</SwiperSlide>
+															))}
+													</Swiper>
+												</div>
+											</div>
+											<div
+												className={clsx(
+													'w-full h-full sm:hidden flex relative overflow-hidden'
+												)}
+											>
+												<div className="w-full bg-transparent">
+													{' '}
+													<Swiper
+														slidesPerView={1}
+														autoplay={{
+															delay: 2500,
+															disableOnInteraction: false,
+														}}
+														loop={true}
+														modules={[Zoom, Autoplay]}
+														className="bg-transparent"
+													>
+														{new Array(bottle.content.caracteristics.length / 4)
+															.fill(false)
+															.map((i, index: any) => (
+																<SwiperSlide>
+																	<div className="bg-transparent flex flex-wrap gap-4 w-full h-full items-center justify-center">
+																		{bottle.content.caracteristics
+																			.filter(
+																				(i: any, ix: any) =>
+																					ix <= (index + 1) * 4 &&
+																					ix > index * 4
+																			)
+																			.map((item: any, index: any) => (
+																				<div
+																					key={'caracteristic-' + index}
+																					className="flex xl:flex-row flex-col items-center justify-start w-32 gap-4"
+																				>
+																					<div className="flex items-center justify-center w-[20px]">
+																						<img
+																							className="max-w-[12px] max-h-8"
+																							src={item.icon}
+																							alt=""
+																						/>
+																					</div>
+																					<p className="xl:text-[14px] text-[12px] text-white text-center font-bold w-full">
+																						{item.caption}
+																					</p>
+																				</div>
+																			))}
+																	</div>
+																</SwiperSlide>
+															))}
+													</Swiper>
+												</div>
+											</div>
+											<div
+												className={clsx(
+													'w-full h-full lg:flex hidden flex-wrap gap-4 items-center justify-center relative',
+													'md:h-[400px] h-[300px]'
+												)}
+											>
+												{bottle.content.caracteristics.map(
+													(item: any, index: any) => {
+														return (
+															<div
+																key={'caracteristic-' + index}
+																className="flex xl:flex-row flex-col items-center justify-start w-36 gap-4"
+															>
+																<div className="flex items-center justify-center w-[20px]">
+																	<img
+																		className="max-w-[16px] max-h-12"
+																		src={item.icon}
+																		alt=""
+																	/>
+																</div>
+																<p className="xl:text-[14px] text-[12px] text-white text-center font-bold w-full">
+																	{item.caption}
+																</p>
+															</div>
+														);
+													}
+												)}
+											</div>
+											<h2 className="text-md w-full text-white text-center RalewayBold font-bold relative">
+												Look at it in{' '}
+												<a
+													className="text-secondary"
+													target="_blank"
+													href={bottle.litepaper}
+												>
+													WhiskyStats
+												</a>
+											</h2>
+										</div>
+									)}
+								</div>
+								<div className="flex gap-10 items-center justify-center">
+									{/* <a
 															href={bottle.litepaper}
 															target="_blank"
 															className="flex items-center justify-center"
 														> */}
-								<Button
-									className={clsx(
-										'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
-										'!rounded-full hover:text-secondary w-64'
+									<Button
+										className={clsx(
+											'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+											'!rounded-full hover:text-secondary w-64'
+										)}
+										onClick={() => {
+											setSpecs((prev) => !prev);
+										}}
+									>
+										{!specs ? 'Asset Especifications' : 'Bottle View'}
+									</Button>
+								</div>
+							</div>
+							<div className="flex flex-col w-full gap-8 text-white">
+								<div className="flex flex-col">
+									{bottle.content?.title && (
+										<h2 className="md:text-2xl text-xl text-secondary font-bold text-left">
+											{bottle?.content?.title}
+										</h2>
 									)}
-									onClick={() => {
-										setSpecs((prev) => !prev);
-									}}
-								>
-									{!specs ? 'Asset Especifications' : 'Bottle View'}
-								</Button>
+									{bottle?.content?.caption && (
+										<caption className="text-sm text-white w-full text-left">
+											{bottle?.content?.caption}
+										</caption>
+									)}
+								</div>
+								{bottle?.content?.paragraphs &&
+									bottle?.content?.paragraphs.map((item: any, index: any) => {
+										return (
+											<p
+												key={'paragraph-' + index}
+												className="text-md font-bold text-justify"
+											>
+												{item}
+											</p>
+										);
+									})}
 							</div>
 						</div>
 					</div>
@@ -958,17 +987,17 @@ export const CollectionNFTItem = ({
 				<div className="min-h-[100vh] flex flex-col items-center justify-center w-full">
 					<div className="min-h-[50vh] rounded-md p-6 2xl:min-w-[50vw] min-w-full">
 						<div className="flex justify-between mb-4 w-1/2">
-							<div
-								className="text-secondary font-bold cursor-pointer"
+							<button
+								className="text-white font-bold cursor-pointer border-none outline-none"
 								onClick={hide}
 							>
-								Back
-							</div>
+								<XIcon />
+							</button>
 						</div>
 						<div className="flex gap-8 h-full items-center justify-center w-full">
 							<img
 								src={token.image}
-								className="min-w-full max-w-[400px] shrink-0 rounded-xl border-white"
+								className="max-h-[80vh] w-full md:max-w-[400px] max-w-[600px] shrink-0 rounded-xl border-white"
 								alt=""
 							/>
 						</div>
