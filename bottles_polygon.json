@@ -8,7 +8,6 @@
 		"image": "/img/Rosebank_1991 cask_2112.png",
 		"videoDemo": "/videos/Karuizawa_1972.mp4",
 		"litepaper": "https://www.whiskystats.com/whisky/14296",
-		"profile": "https://www.linkedin.com/in/luis-antonio-morales-19a6737a/",
 		"artist": {
 			"name": "Antonio Morales",
 			"paragraphs": [
@@ -4094,6 +4093,16 @@
 				"/img/team_karmele.jpg",
 				"/img/karmele_2.jpg",
 				"/img/karmele_3.jpg"
+			],
+			"social_media": [
+				{
+					"icon": "/icons/instagram.png",
+					"link": "https://www.instagram.com/karmele.art/"
+				},
+				{
+					"icon": "/icons/twitter.png",
+					"link": "https://twitter.com/kar_mele"
+				}
 			]
 		},
 		"content": {
@@ -5183,7 +5192,17 @@
 					]
 				}
 			],
-			"photo": ["/img/team_karmele.jpg"]
+			"photo": ["/img/team_karmele.jpg"],
+			"social_media": [
+				{
+					"icon": "/icons/instagram.png",
+					"link": "https://www.instagram.com/karmele.art/"
+				},
+				{
+					"icon": "/icons/twitter.png",
+					"link": "https://twitter.com/kar_mele"
+				}
+			]
 		},
 		"content": {
 			"title": "The Story Of Rosebank Destilery",
