@@ -363,7 +363,7 @@ export const CollectionComponent = () => {
 						{bottle.content && (
 							<div
 								className={clsx(
-									'flex flex-col justify-between py-4 w-full md:h-[400px] h-[300px]'
+									'flex flex-col justify-between py-4 w-full gap-4'
 								)}
 							>
 								<h2 className="text-md w-full text-white text-center RalewayBold font-bold">
@@ -396,6 +396,9 @@ export const CollectionComponent = () => {
 											);
 										}
 									)}
+								</div>
+								<div className="text-xl text-secondary py-6 w-full text-center">
+									Asset securely stored in {bottle.stored}.
 								</div>
 								<h2 className="text-md w-full text-white text-center RalewayBold font-bold relative">
 									Look at it in{' '}

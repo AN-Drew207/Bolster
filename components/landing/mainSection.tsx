@@ -55,141 +55,6 @@ export const MainSectionComponent = () => {
 	);
 };
 
-export const OfferComponent = () => {
-	const items = [
-		{
-			text: '',
-
-			iconSVG: (
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
-					strokeWidth={1.5}
-					stroke="currentColor"
-					className="md:w-12 w-8 md:h-12 h-8"
-				>
-					<path
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
-					/>
-				</svg>
-			),
-		},
-		{
-			iconSVG: (
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
-					strokeWidth={1.5}
-					stroke="currentColor"
-					className="md:w-12 w-8 md:h-12 h-8"
-				>
-					<path
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0"
-					/>
-				</svg>
-			),
-			text: 'Your NFTs grant you the legal right to redeem them for a collectable physical asset in the UK',
-		},
-
-		{
-			text: 'Effortless redemption process',
-			iconSVG: (
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
-					strokeWidth={1.5}
-					stroke="currentColor"
-					className="md:w-12 w-8 md:h-12 h-8"
-				>
-					<path
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"
-					/>
-				</svg>
-			),
-		},
-		{
-			text: 'No maintenance or warehousing cost on physical assets',
-			subTexts: [
-				'No need to worry about the upkeep or storage of physical assets with our service',
-				'Enjoy the convenience of not having to worry about maintenance or warehousing costs.',
-			],
-			iconSVG: (
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
-					strokeWidth={1.5}
-					stroke="currentColor"
-					className="md:w-12 w-8 md:h-12 h-8"
-				>
-					<path
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
-					/>
-				</svg>
-			),
-		},
-		{
-			text: 'Authenticity guarantee on physical assets',
-			subTexts: [
-				'Backed by our authenticity guarantee: your physical assets are the real deal',
-			],
-			iconSVG: (
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
-					strokeWidth={1.5}
-					stroke="currentColor"
-					className="md:w-12 w-8 md:h-12 h-8"
-				>
-					<path
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"
-					/>
-				</svg>
-			),
-		},
-	];
-	return (
-		<div className="py-28 bg-gray-900 relative text-secondary flex flex-col gap-24 items-center justify-center w-full">
-			<h2 className="text-4xl text-white RalewayBold">Offer</h2>
-			<div className="flex flex-wrap gap-10 justify-center w-full">
-				{items.map((item) => {
-					return (
-						<div className="flex flex-col gap-6 md:w-[450px] w-[250px] p-10 border-2 border-secondary rounded-md items-center ">
-							<div className="md:p-4 p-2 rounded-md bg-secondary text-white text-xl">
-								{item.iconSVG}
-							</div>
-							<div className="flex flex-col gap-2">
-								<h3 className="lg:text-xl text-lg Raleway text-center text-white h-full flex items-center justify-center">
-									{item.text}
-								</h3>
-								{item?.subTexts?.map((item) => (
-									<p className="lg:text-lg text-md Raleway text-center text-gray-500 h-full flex items-center justify-center">
-										{item}
-									</p>
-								))}
-							</div>
-						</div>
-					);
-				})}
-			</div>
-		</div>
-	);
-};
-
 export const TestimonialsComponent = () => {
 	const items = [
 		{
@@ -523,13 +388,13 @@ export const CTAComponent = () => {
 export const WhyShouldComponent = () => {
 	const items = [
 		{
-			text: 'Authenticity Guarantee on all our Backstop physical products',
+			text: 'Authenticity Guarantee on all our Backstop physical products.',
 			subTexts:
 				'We are confident in the authenticity of our physical assets because we either purchase them directly from the brands or through our team of industry experts who carefully curate our selection. Our thorough procurement process ensures that we can provide an authenticity guarantee on all of our physical assets.',
 			image: 'img/authenticity.png',
 		},
 		{
-			text: 'The legal rights that the NFT(s) have to be redeemed to the physical assets are backed by UK law',
+			text: 'The legal rights that the NFT(s) have to be redeemed to the physical assets are backed by UK law.',
 			subTexts:
 				'The NFT(s) are legally backed by UK law and can be redeemed for the physical assets they represent.',
 			image: 'img/law.jpg',
@@ -540,10 +405,16 @@ export const WhyShouldComponent = () => {
 		},
 
 		{
-			text: 'Effortless Redemption Process',
+			text: 'Effortless Redemption Process.',
 			subTexts:
 				'You can make the redemption of your assets whenever you want by our easy process and receive it!',
 			image: 'img/effortless.jpg',
+		},
+		{
+			text: 'Our Assets are securely stored.',
+			subTexts:
+				"We have them reseved and secure, when the owner wants to redeem it, we'll send him the asset from there.",
+			image: 'img/stored.jpeg',
 		},
 		{
 			text: 'Access a diverse array of stunning artistic creations by artists worldwide. We partner with hand-selected, talented artists to bring you unique, high-quality pieces.',
