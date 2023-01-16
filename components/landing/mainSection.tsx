@@ -36,13 +36,29 @@ export const MainSectionComponent = () => {
 					<h2 className="Raleway w-full text-center text-md font-thin max-w-[700px]">
 						NFTs with peace of mind
 					</h2>
-					<div className="flex justify-center gap-10">{}</div>
+					<div className="flex items-center justify-center h-full relative w-auto gap-4">
+						{[
+							{
+								image: 'icons/twitter.png',
+								link: 'https://twitter.com/nftbolster',
+							},
+							{
+								image: 'icons/telegram.png',
+								link: 'https://t.me/+aURuJ12GWZg2MTdk',
+							},
+						].map((item) => {
+							return (
+								<a className={item.link} target="_blank">
+									<img src={item.image} className="w-6 h-6" />{' '}
+								</a>
+							);
+						})}
+					</div>
 					<div className="flex justify-center gap-10">
 						{' '}
 						<Button
 							className={clsx(
-								'z-10 border border-white bg-secondary RalewayBold font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:scale-[120%] duration-300',
-								'ml-4'
+								'z-10 border border-white bg-secondary RalewayBold font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:scale-[120%] duration-300'
 							)}
 							href={'/collections'}
 						>
@@ -664,12 +680,22 @@ export const ContactUs: React.FC<any> = () => {
 						alt=""
 					/>
 				</div>
-				<div className="flex items-center justify-center h-full relative w-auto">
+				<div className="flex items-center justify-center h-full relative w-auto gap-4">
 					{[
-						{ image: '', link: '' },
-						{ image: '', link: '' },
+						{
+							image: 'icons/twitter.png',
+							link: 'https://twitter.com/nftbolster',
+						},
+						{
+							image: 'icons/telegram.png',
+							link: 'https://t.me/+aURuJ12GWZg2MTdk',
+						},
 					].map((item) => {
-						return <a className=""></a>;
+						return (
+							<a className={item.link} target="_blank">
+								<img src={item.image} className="w-6 h-6" />{' '}
+							</a>
+						);
 					})}
 				</div>
 			</div>

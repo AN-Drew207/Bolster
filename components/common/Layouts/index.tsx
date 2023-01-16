@@ -17,6 +17,7 @@ import { Dropdown } from '../dropdown/dropdown';
 import useMagicLink from 'hooks/useMagicLink';
 import { useMetamask } from 'hooks/useMetamask';
 import { useConnectWalletModal } from 'hooks/useModalConnect';
+import ReactGA from 'react-ga';
 
 const bottles =
 	process.env.NEXT_PUBLIC_NETWORK_NAME == 'mumbai'
@@ -83,6 +84,8 @@ export default function AppLayout() {
 	const { modal, show } = useConnectWalletModal();
 
 	const { magicReload } = useRouter().query;
+
+	ReactGA.initialize('G-VCWK2Y55KR');
 
 	const chainChangedHandler = () => {
 		// reload the page to avoid any errors with chain change mid use of application
