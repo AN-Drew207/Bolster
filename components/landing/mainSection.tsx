@@ -680,7 +680,7 @@ export const ContactUs: React.FC<any> = () => {
 						alt=""
 					/>
 				</div>
-				<div className="flex items-center justify-center h-full relative w-auto gap-4">
+				<div className="flex items-center justify-center h-full relative w-auto gap-4 ">
 					{[
 						{
 							image: 'icons/twitter.png',
