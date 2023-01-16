@@ -692,7 +692,7 @@ export const ContactUs: React.FC<any> = () => {
 						},
 					].map((item) => {
 						return (
-							<a className={item.link} target="_blank">
+							<a href={item.link} target="_blank">
 								<img src={item.image} className="w-6 h-6" />{' '}
 							</a>
 						);
