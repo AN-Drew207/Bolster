@@ -663,11 +663,29 @@ export const ArtistsComponent = () => {
 									disabled={loading}
 									required
 								/>{' '}
-								<div className="w-full flex md:justify-end justify-center">
+								<div className="w-full flex md:flex-row flex-col-reverse gap-2 md:justify-between justify-center">
+									<div className="flex items-center justify-center relative w-auto gap-4 ">
+										{[
+											{
+												image: 'icons/twitter.png',
+												link: 'https://twitter.com/nftbolster',
+											},
+											{
+												image: 'icons/telegram.png',
+												link: 'https://t.me/+aURuJ12GWZg2MTdk',
+											},
+										].map((item) => {
+											return (
+												<a href={item.link} target="_blank">
+													<img src={item.image} className="w-6 h-6" />{' '}
+												</a>
+											);
+										})}
+									</div>
 									<Button
 										className={clsx(
 											'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-2 text-[14px] text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
-											'!rounded-full hover:text-secondary ml-4'
+											'!rounded-full hover:text-secondary ml-4 '
 										)}
 										type="submit"
 									>
