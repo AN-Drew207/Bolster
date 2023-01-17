@@ -131,7 +131,7 @@ export const HowWeDoItComponent = () => {
 						src="/img/Rosebank_1991 cask_2112.png"
 						className={clsx(
 							{ ['scale-110']: hover },
-							'absolute top-0 bottom-0 left-0 right-0 m-auto 2xl:w-80 w-60 z-10 transition-all duration-1000'
+							'absolute top-0 bottom-0 left-0 right-0 m-auto 2xl:w-80 md:w-72 w-60 z-10 transition-all duration-1000'
 						)}
 						alt=""
 					/>
@@ -143,7 +143,7 @@ export const HowWeDoItComponent = () => {
 								{
 									['rotate-6neg top-[-40px] left-[-40px]']: hover,
 								},
-								'2xl:w-1/2 sm:w-40 w-32 rounded-md top-0 left-0 relative transition-all duration-1000'
+								'2xl:w-1/2 sm:w-52 lg:w-40 w-32 rounded-md top-0 left-0 relative transition-all duration-1000'
 							)}
 						/>
 						<img
@@ -153,7 +153,7 @@ export const HowWeDoItComponent = () => {
 								{
 									['rotate-6 top-[-40px] left-[40px]']: hover,
 								},
-								'2xl:w-1/2 sm:w-40 w-32 rounded-md top-0 left-0 relative transition-all duration-1000'
+								'2xl:w-1/2 sm:w-52 lg:w-40 w-32 rounded-md top-0 left-0 relative transition-all duration-1000'
 							)}
 						/>
 					</div>{' '}
@@ -187,7 +187,7 @@ export const HowWeDoItComponent = () => {
 								{
 									['rotate-4neg top-[40px] left-[-40px]']: hover,
 								},
-								'2xl:w-1/2 sm:w-40 w-32 rounded-md top-0 left-0 relative transition-all duration-1000'
+								'2xl:w-1/2 sm:w-52 lg:w-40 w-32 rounded-md top-0 left-0 relative transition-all duration-1000'
 							)}
 						/>
 						<img
@@ -197,7 +197,7 @@ export const HowWeDoItComponent = () => {
 								{
 									['rotate-3 top-[40px] left-[40px]']: hover,
 								},
-								'2xl:w-1/2 sm:w-40 w-32 rounded-md top-0 left-0 relative transition-all duration-1000'
+								'2xl:w-1/2 sm:w-52 lg:w-40 w-32 rounded-md top-0 left-0 relative transition-all duration-1000'
 							)}
 						/>
 					</div>
@@ -212,7 +212,7 @@ export const HowWeDoItComponent = () => {
 						src="/img/Karuizawa_1972.png"
 						className={clsx(
 							{ ['scale-110']: hover },
-							'absolute top-0 bottom-0 left-0 right-0 m-auto 2xl:w-80 w-60  z-10 transition-all duration-1000'
+							'absolute top-0 bottom-0 left-0 right-0 m-auto md:w-80 w-60  z-10 transition-all duration-1000'
 						)}
 						alt=""
 					/>
@@ -224,7 +224,7 @@ export const HowWeDoItComponent = () => {
 								{
 									['rotate-6neg top-[-40px] left-[-40px]']: hover,
 								},
-								'2xl:w-1/2 sm:w-40 w-32 rounded-md top-0 left-0 relative transition-all duration-1000'
+								'2xl:w-1/2 sm:w-52 lg:w-40 w-32 rounded-md top-0 left-0 relative transition-all duration-1000'
 							)}
 						/>
 						<img
@@ -234,7 +234,7 @@ export const HowWeDoItComponent = () => {
 								{
 									['rotate-6 top-[-40px] left-[40px]']: hover,
 								},
-								'2xl:w-1/2 sm:w-40 w-32 rounded-md top-0 left-0 relative transition-all duration-1000'
+								'2xl:w-1/2 sm:w-52 lg:w-40 w-32 rounded-md top-0 left-0 relative transition-all duration-1000'
 							)}
 						/>
 					</div>{' '}
@@ -268,7 +268,7 @@ export const HowWeDoItComponent = () => {
 								{
 									['rotate-4neg top-[40px] left-[-40px]']: hover,
 								},
-								'2xl:w-1/2 sm:w-40 w-32 rounded-md top-0 left-0 relative transition-all duration-1000'
+								'2xl:w-1/2 sm:w-52 lg:w-40 w-32 rounded-md top-0 left-0 relative transition-all duration-1000'
 							)}
 						/>
 						<img
@@ -278,7 +278,7 @@ export const HowWeDoItComponent = () => {
 								{
 									['rotate-3 top-[40px] left-[40px]']: hover,
 								},
-								'2xl:w-1/2 sm:w-40 w-32 rounded-md top-0 left-0 relative transition-all duration-1000'
+								'2xl:w-1/2 sm:w-52 lg:w-40 w-32 rounded-md top-0 left-0 relative transition-all duration-1000'
 							)}
 						/>
 					</div>
@@ -536,7 +536,7 @@ export const ArtistsComponent = () => {
 			title: 'Physical Paintings',
 			color: '#0070FF',
 		},
-		{ image: 'img/rolex.jpg', title: 'Collective Watches', color: '#BBBBBB' },
+		{ image: 'img/rolex.jpg', title: 'Luxury Watches', color: '#BBBBBB' },
 	];
 	const [index, setIndex] = React.useState(0);
 	const [itemSelected, setItemSelected] = React.useState('Rare Whiskies');
