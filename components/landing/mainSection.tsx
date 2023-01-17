@@ -451,16 +451,18 @@ export const WhyShouldComponent = () => {
 		<div className="md:py-28 py-10 flex flex-col gap-10 relative items-center justify-center bg-gradient-to-b from-gray-900 via-primary to-gray-900">
 			<div className="py-24 pb-36 text-xl RalewayBold flex items-center justify-center w-full">
 				<h2
-					className="Raleway text-xl font-bold text-center w-1/2 text-white"
+					className="Raleway md:text-xl text-lg font-bold text-center md:w-1/2 w-full md:px-0 px-4 text-white"
 					data-aos-duration="1000"
 					data-aos-easing="ease-in-out"
 					data-aos-mirror="true"
 					data-aos-once="false"
 					data-aos="fade-up"
 				>
-					Explore one-of-a-kind NFTs that can be exchanged for exclusive
-					physical treasures, including limited edition whisky, luxury watches,
-					and more.
+					Discover unique NFTs that offer the option to redeem for physical
+					collectibles. This creates a financial incentive to buy the NFT if its
+					value falls below the market value of the physical item, potentially
+					increasing the NFT's value or providing a chance to acquire the
+					collectible at a discounted price.
 				</h2>
 			</div>
 			<div className="px-4 flex flex-col gap-10 relative items-center justify-center">

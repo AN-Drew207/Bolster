@@ -4,7 +4,7 @@ const FAQS = () => {
 	return (
 		<div className="flex flex-col min-h-[100vh] md:px-36 px-4 pt-36 pb-24 bg-overlay">
 			<h2 className="text-white md:text-3xl text-xl RalewayBold font-bold">
-				FAQS
+				FAQs
 			</h2>
 			<div className="flex flex-col gap-4 mt-10">
 				<div className="flex flex-col gap-10">
