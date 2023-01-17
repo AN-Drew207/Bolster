@@ -33,6 +33,7 @@ export const MainSectionComponent = () => {
 					<h2 className="text-center w-full lg:text-7xl text-3xl w-full RalewayBold">
 						Amazing NFT Projects with Backstop Value.
 					</h2>
+
 					<h2 className="Raleway w-full text-center text-md font-thin max-w-[700px]">
 						NFTs with peace of mind
 					</h2>
@@ -377,16 +378,16 @@ export const HowWeDoItComponent = () => {
 
 export const CTAComponent = () => {
 	return (
-		<div className="md:py-28 py-10 bg-gray-900 relative text-white  w-full flex flex-col items-center justify-center">
+		<div className="md:pt-28 pt-10 bg-gray-900 relative text-white  w-full flex flex-col items-center justify-center">
 			<div className="flex flex-col gap-4 items-center justify-center md:w-2/3 md:px-0 px-4">
-				<p className="text-center RalewayBold text-[17px]">
+				{/* <p className="text-center RalewayBold text-[17px]">
 					Buy an NFT with us and get a Global Membership that gives you 24-hour
 					early access to our exclusive drops. <br /> Limited to our early
 					members.
 				</p>
 				<span className="text-gray-500 Montserrat font-[400]">
 					Airdrop date: TBD
-				</span>
+				</span> */}
 				<Button
 					className={clsx(
 						'z-10 border border-white bg-secondary RalewayBold font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:scale-[120%] duration-300',
@@ -394,7 +395,7 @@ export const CTAComponent = () => {
 					)}
 					href={'/collections'}
 				>
-					Get yours here!
+					Get your NFT here!
 				</Button>
 			</div>
 		</div>
@@ -404,39 +405,41 @@ export const CTAComponent = () => {
 export const WhyShouldComponent = () => {
 	const items = [
 		{
-			text: 'Authenticity Guarantee on all our Backstop physical products.',
+			text: 'Authenticity Guarantee',
 			subTexts:
 				'We are confident in the authenticity of our physical assets because we either purchase them directly from the brands or through our team of industry experts who carefully curate our selection. Our thorough procurement process ensures that we can provide an authenticity guarantee on all of our physical assets.',
 			image: 'img/authenticity.png',
 		},
 		{
-			text: 'The legal rights that the NFT(s) have to be redeemed to the physical assets are backed by UK law.',
+			text: 'Legally backed',
 			subTexts:
-				'The NFT(s) are legally backed by UK law and can be redeemed for the physical assets they represent.',
-			image: 'img/law.jpg',
-		},
-		{
-			text: 'The world is full of incredible artists just waiting to be discovered. Let us help you find them.',
-			image: 'img/world.png',
+				'The legal rights for NFTs to be redeemed for the corresponding physical assets are supported by UK law. This means that the owners of our NFTs have the legal right to exchange them for the physical asset they represent.',
+			image: 'img/law.png',
 		},
 
 		{
+			text: 'Securely stored',
+			subTexts:
+				'Our physical assets are securely stored in specialized facilities that are tailored to the specific needs of each asset type.',
+			image: 'img/stored.png',
+		},
+		{
 			text: 'Effortless Redemption Process.',
 			subTexts:
-				'You can make the redemption of your assets whenever you want by our easy process and receive it!',
-			image: 'img/effortless.jpg',
+				'For assistance with redeeming your NFT for the corresponding physical asset, simply reach out to us. Our team will provide personalized support throughout the process.',
+			image: 'img/effortless.png',
 		},
 		{
-			text: 'Our Assets are securely stored.',
+			text: 'Discover new talent',
 			subTexts:
-				"We have them reseved and secure, when the owner wants to redeem it, we'll send him the asset from there.",
-			image: 'img/stored.jpeg',
+				'The world is full of incredible artists just waiting to be discovered. Let us help you find them.',
+			image: 'img/world.png',
 		},
 		{
-			text: 'Access a diverse array of stunning artistic creations by artists worldwide. We partner with hand-selected, talented artists to bring you unique, high-quality pieces.',
+			text: 'Hand-selected artists',
 			subTexts:
 				'Our experienced art curator, Yvonne, has over 20 years of experience in the field. Not only has she worked with galleries and exhibitions, but she has also built a network of artists who are eager to collaborate with us. Her expertise ensures that our collections and exhibitions are of the highest caliber.',
-			image: 'img/artist.jpg',
+			image: 'img/artist.png',
 		},
 	];
 
@@ -445,41 +448,57 @@ export const WhyShouldComponent = () => {
 	}, []);
 
 	return (
-		<div className="md:py-28 py-10 px-4 bg-gray-900 flex flex-col gap-10 relative items-center justify-center">
-			<div className="2xl:w-2/3 flex flex-col gap-10 relative items-center justify-center">
-				<div className="flex gap-16 justify-center items-center overflow-hidden w-full">
-					<div className="flex flex-col items-center justify-center w-full md:px-16  Raleway ">
-						{items.map((item, index) => {
-							return (
-								<div
-									className={clsx(
-										{ 'lg:!flex-row-reverse': index % 2 == 0 },
-										'min-h-72 flex lg:flex-row flex-col justify-between items-center w-full py-8 gap-10'
-									)}
-									data-aos={`fade-${index % 2 == 0 ? 'left' : 'right'}`}
-									data-aos-duration="1000"
-									data-aos-easing="ease-in-out"
-									data-aos-mirror="true"
-									data-aos-once="false"
-								>
-									<div className="flex flex-col gap-2 w-full xl:text-justify text-center">
-										<h2 className="text-[17px] Raleway text-white">
-											{item.text}
-										</h2>
-										<p className="text-[15px] text-gray-500 Montserrat pl-4">
-											{item.subTexts}
-										</p>
+		<div className="md:py-28 py-10 flex flex-col gap-10 relative items-center justify-center bg-gradient-to-b from-gray-900 via-primary to-gray-900">
+			<div className="py-24 pb-36 text-xl RalewayBold flex items-center justify-center w-full">
+				<h2
+					className="Raleway text-xl font-bold text-center w-1/2 text-white"
+					data-aos-duration="1000"
+					data-aos-easing="ease-in-out"
+					data-aos-mirror="true"
+					data-aos-once="false"
+					data-aos="fade-up"
+				>
+					Explore one-of-a-kind NFTs that can be exchanged for exclusive
+					physical treasures, including limited edition whisky, luxury watches,
+					and more.
+				</h2>
+			</div>
+			<div className="px-4 flex flex-col gap-10 relative items-center justify-center">
+				<div className="2xl:w-2/3 flex flex-col gap-10 relative items-center justify-center">
+					<div className="flex gap-16 justify-center items-center overflow-hidden w-full">
+						<div className="flex flex-col items-center justify-center w-full md:px-16  Raleway ">
+							{items.map((item, index) => {
+								return (
+									<div
+										className={clsx(
+											{ 'lg:!flex-row-reverse': index % 2 == 0 },
+											'min-h-72 flex lg:flex-row flex-col justify-between items-center w-full py-8 gap-10'
+										)}
+										data-aos={`fade-${index % 2 == 0 ? 'left' : 'right'}`}
+										data-aos-duration="1000"
+										data-aos-easing="ease-in-out"
+										data-aos-mirror="true"
+										data-aos-once="false"
+									>
+										<div className="flex flex-col gap-2 w-full xl:text-justify text-center">
+											<h2 className="text-[17px] Raleway text-white">
+												{item.text}
+											</h2>
+											<p className="text-[15px] text-gray-500 Montserrat pl-4">
+												{item.subTexts}
+											</p>
+										</div>
+										<div className="flex flex-col gap-2 w-full items-center justify-center bg-transparent">
+											<img
+												src={item.image}
+												className="md:w-2/3 md:min-w-[300px] w-1/2 rounded-full"
+												alt=""
+											/>
+										</div>
 									</div>
-									<div className="flex flex-col gap-2 w-full items-center justify-center">
-										<img
-											src={item.image}
-											className="md:w-2/3 md:min-w-[300px] w-1/2 rounded-full"
-											alt=""
-										/>
-									</div>
-								</div>
-							);
-						})}
+								);
+							})}
+						</div>
 					</div>
 				</div>
 			</div>
@@ -518,7 +537,6 @@ export const ArtistsComponent = () => {
 			color: '#0070FF',
 		},
 		{ image: 'img/rolex.jpg', title: 'Collective Watches', color: '#BBBBBB' },
-		{ image: 'img/gold.jpg', title: 'Gold', color: '#FFC300' },
 	];
 	const [index, setIndex] = React.useState(0);
 	const [itemSelected, setItemSelected] = React.useState('Rare Whiskies');
@@ -529,6 +547,9 @@ export const ArtistsComponent = () => {
 	const sendEmail = (e: any) => {
 		e.preventDefault();
 		setLoading(true);
+
+		console.log(e.target[0].value, e.target[1].value, e.target[2].value);
+
 		sendForm(
 			'service_i7w64sf',
 			'template_2zwghz2',
@@ -557,7 +578,7 @@ export const ArtistsComponent = () => {
 			<div className="w-full 2xl:px-10 lg:px-36 px-4 flex justify-center">
 				<div className="flex flex-col gap-4 items-center justify-center 2xl:w-2/3 w-full  h-full">
 					<h2 className="text-4xl text-white RalewayBold text-center">
-						Let's Collaborate
+						Bolster your NFT(s)
 					</h2>
 					<p className="text-center Raleway text-gray-500 text-[17px]">
 						Enhance your collectibles with Bolster! Our hassle-free service
@@ -627,13 +648,12 @@ export const ArtistsComponent = () => {
 									required
 								/>
 								<SelectInput
-									name="type"
-									title="Are you an ...?"
+									name="to_email"
+									title="Are you ...?"
 									values={[
-										{ name: 'Artist', value: 'artist' },
-										{ name: 'NFT Project', value: 'nft_project' },
-										{ name: 'Collector', value: 'collector' },
-										{ name: 'General Inquiries', value: 'general_inquiries' },
+										{ name: 'An Artist', value: 'art@nftbolster.com' },
+										{ name: 'An NFT Project', value: 'project@nftbolster.com' },
+										{ name: 'A Collector', value: 'hello@nftbolster.com' },
 									]}
 								></SelectInput>
 								<textarea

@@ -13,6 +13,7 @@ const Home = () => {
 	return (
 		<>
 			<MainSectionComponent />
+
 			<WhyShouldComponent />
 
 			<HowWeDoItComponent />
