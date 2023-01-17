@@ -397,8 +397,16 @@ export const CollectionComponent = () => {
 										}
 									)}
 								</div>
-								<div className="text-xl text-secondary py-6 w-full text-center">
-									Asset securely stored in {bottle.stored}.
+								<div className="text-xl text-white py-6 w-full text-center">
+									Asset securely stored at the Hillington facility of{' '}
+									<a
+										href="https://www.lcb.co.uk"
+										target="_blank"
+										className="text-secondary"
+									>
+										London City Bond Ltd
+									</a>
+									, a leading provider of wine and spirit storage solutions.{' '}
 								</div>
 								<h2 className="text-md w-full text-white text-center RalewayBold font-bold relative">
 									Look at it in{' '}
@@ -882,11 +890,23 @@ export const CollectionNFTItem = ({
 							</button>
 						</div>
 						<div className="flex gap-8 h-full items-center justify-center w-full">
-							<img
-								src={token.image}
-								className="max-h-[80vh] w-full md:max-w-[400px] max-w-[600px] shrink-0 rounded-xl border-white"
-								alt=""
-							/>
+							{token.image && (
+								<img
+									src={token.image}
+									onClick={active ? () => setSelected() : undefined}
+									className="max-h-[80vh] w-full md:max-w-[400px] max-w-[600px] shrink-0 rounded-xl border-white"
+									alt=""
+								/>
+							)}
+							{token.animation_url && (
+								<video
+									src={token.animation_url}
+									onClick={active ? () => setSelected() : undefined}
+									className="max-h-[80vh] w-full md:max-w-[400px] max-w-[600px] shrink-0 rounded-xl border-white"
+									autoPlay
+									loop
+								/>
+							)}
 						</div>
 					</div>
 				</div>
@@ -912,7 +932,7 @@ export const CollectionNFTItem = ({
 				<div
 					className={clsx(
 						{ ['hidden']: !hover },
-						'w-6 h-6 bg-overlay absolute top-6 left-8 rounded-full bg-overlay text-white flex items-center justify-center cursor-pointer'
+						'w-6 h-6 bg-overlay absolute top-6 left-8 rounded-full bg-overlay text-white flex items-center justify-center cursor-pointer z-10'
 					)}
 					onClick={(e) => {
 						e.preventDefault();
