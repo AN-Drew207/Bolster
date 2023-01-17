@@ -649,6 +649,7 @@ export const ArtistsComponent = () => {
 								<SelectInput
 									name="to_email"
 									title="Are you ...?"
+									required
 									values={[
 										{ name: 'An Artist', value: 'art@nftbolster.com' },
 										{ name: 'An NFT Project', value: 'project@nftbolster.com' },

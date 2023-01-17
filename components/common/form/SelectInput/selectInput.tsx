@@ -7,13 +7,14 @@ import { InputProps } from './../../../../interfaces/common';
 import { Typography } from 'components/common/typography';
 
 export const SelectInput: React.FC<
-	InputProps & React.ButtonHTMLAttributes<HTMLButtonElement>
+	InputProps & any & React.ButtonHTMLAttributes<HTMLButtonElement>
 > = ({
 	title,
 	onChangeCustom,
 	register,
 	className,
 	// labelProps,
+	required,
 	values,
 	name,
 	defaultValue,
@@ -43,6 +44,7 @@ export const SelectInput: React.FC<
 			)} */}
 			<select
 				name={name}
+				required={required}
 				ref={registerInput && registerInput.ref}
 				className={clsx(
 					'block text-xl bg-white text focus:outline-none focus:ring-primary focus:border-primary w-full rounded-lg text-[12px]',
