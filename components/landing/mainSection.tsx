@@ -547,9 +547,6 @@ export const ArtistsComponent = () => {
 	const sendEmail = (e: any) => {
 		e.preventDefault();
 		setLoading(true);
-
-		console.log(e.target[0].value, e.target[1].value, e.target[2].value);
-
 		sendForm(
 			'service_i7w64sf',
 			'template_2zwghz2',
