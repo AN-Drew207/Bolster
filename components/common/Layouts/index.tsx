@@ -85,8 +85,6 @@ export default function AppLayout() {
 
 	const { magicReload } = useRouter().query;
 
-	ReactGA.initialize('G-VCWK2Y55KR');
-
 	const chainChangedHandler = () => {
 		// reload the page to avoid any errors with chain change mid use of application
 		window.location.reload();
@@ -105,6 +103,11 @@ export default function AppLayout() {
 			login(dispatch);
 		}
 	}, [magicReload]);
+
+	React.useEffect(() => {
+		ReactGA.initialize('G-VCWK2Y55KR');
+		ReactGA.pageview(window.location.pathname + window.location.search);
+	}, []);
 
 	const accountChangedHandler = (newAccounts: any[]) => {
 		if (newAccounts.length == 0) {
