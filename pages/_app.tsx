@@ -20,6 +20,10 @@ import { store } from '../redux/store';
 import { Provider } from 'react-redux';
 import { Footer } from 'components/footer';
 import { Toaster } from 'react-hot-toast';
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('G-VCWK2Y55KR');
+
 function MyApp({
 	Component,
 	pageProps,
@@ -30,6 +34,11 @@ function MyApp({
 	if (!queryClientRef.current) {
 		queryClientRef.current = new QueryClient();
 	}
+
+	React.useEffect(() => {
+		console.log(window.location.pathname + window.location.search);
+		ReactGA.pageview(window.location.pathname + window.location.search);
+	}, []);
 
 	return (
 		<>
@@ -48,6 +57,7 @@ function MyApp({
 				<meta property="og:site_name" content="Bolster" />
 				<meta name="viewport" content="initial-scale=1, width=device-width" />
 			</Head>
+
 			<QueryClientProvider client={queryClientRef.current}>
 				<Provider store={store}>
 					<ThemeContext.Provider value={{ theme, setTheme }}>

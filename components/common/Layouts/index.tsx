@@ -17,7 +17,6 @@ import { Dropdown } from '../dropdown/dropdown';
 import useMagicLink from 'hooks/useMagicLink';
 import { useMetamask } from 'hooks/useMetamask';
 import { useConnectWalletModal } from 'hooks/useModalConnect';
-import ReactGA from 'react-ga';
 
 const bottles =
 	process.env.NEXT_PUBLIC_NETWORK_NAME == 'mumbai'
@@ -103,11 +102,6 @@ export default function AppLayout() {
 			login(dispatch);
 		}
 	}, [magicReload]);
-
-	React.useEffect(() => {
-		ReactGA.initialize('G-VCWK2Y55KR');
-		ReactGA.pageview(window.location.pathname + window.location.search);
-	}, []);
 
 	const accountChangedHandler = (newAccounts: any[]) => {
 		if (newAccounts.length == 0) {
