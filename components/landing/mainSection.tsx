@@ -395,7 +395,7 @@ export const CTAComponent = () => {
 					)}
 					href={'/collections'}
 				>
-					Get your NFT here!
+					Mint NFT!
 				</Button>
 			</div>
 		</div>
