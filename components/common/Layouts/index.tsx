@@ -39,27 +39,29 @@ const navItems = [
 ];
 
 export const updateDataExchanged = async (dispatch: any) => {
-	const provider = new Web3.providers.HttpProvider(
-		process.env.NEXT_PUBLIC_SECONDARY_PROVIDER
-			? process.env.NEXT_PUBLIC_SECONDARY_PROVIDER
-			: 'localhost:8545'
-	);
-	const web3 = new Web3(provider);
-
-	for (let i = 0; i < bottles.length; i++) {
-		let bottle = new web3.eth.Contract(
-			BottleCollectionABI as any,
-			bottles[i].address
+	try {
+		const provider = new Web3.providers.HttpProvider(
+			process.env.NEXT_PUBLIC_SECONDARY_PROVIDER
+				? process.env.NEXT_PUBLIC_SECONDARY_PROVIDER
+				: 'localhost:8545'
 		);
-		let supply = await bottle.methods.supply().call();
-		let maxSupply = await bottle.methods.maxSupply().call();
-		dispatch(
-			updateBottleState({
-				index: i,
-				supply: supply,
-				maxSupply: maxSupply,
-			})
-		);
+		const web3 = new Web3(provider);
+		let num = 0;
+		for await (let i of bottles) {
+			let bottle = new web3.eth.Contract(BottleCollectionABI as any, i.address);
+			let supply = await bottle.methods.supply().call();
+			let maxSupply = await bottle.methods.maxSupply().call();
+			dispatch(
+				updateBottleState({
+					index: num,
+					supply: supply,
+					maxSupply: maxSupply,
+				})
+			);
+			num++;
+		}
+	} catch (error) {
+		console.log(error);
 	}
 };
 

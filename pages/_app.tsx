@@ -29,7 +29,7 @@ function MyApp({
 	const [theme, setTheme] = React.useState<ThemeType>('light');
 	const queryClientRef = React.useRef<QueryClient | null>(null);
 
-	ReactGA.initialize('G-VCWK2Y55KR');
+	ReactGA.initialize('G-GQHGPXF06R');
 
 	if (!queryClientRef.current) {
 		queryClientRef.current = new QueryClient();
