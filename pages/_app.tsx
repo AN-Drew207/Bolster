@@ -20,9 +20,7 @@ import { store } from '../redux/store';
 import { Provider } from 'react-redux';
 import { Footer } from 'components/footer';
 import { Toaster } from 'react-hot-toast';
-import ReactGA from 'react-ga';
-
-ReactGA.initialize('G-VCWK2Y55KR');
+import ReactGA from 'react-ga4';
 
 function MyApp({
 	Component,
@@ -31,13 +29,17 @@ function MyApp({
 	const [theme, setTheme] = React.useState<ThemeType>('light');
 	const queryClientRef = React.useRef<QueryClient | null>(null);
 
+	ReactGA.initialize('G-VCWK2Y55KR');
+
 	if (!queryClientRef.current) {
 		queryClientRef.current = new QueryClient();
 	}
 
 	React.useEffect(() => {
-		console.log(window.location.pathname + window.location.search);
-		ReactGA.pageview(window.location.pathname + window.location.search);
+		ReactGA.send({
+			hitType: 'pageview',
+			page: 'window.location.pathname + window.location.search',
+		});
 	}, []);
 
 	return (
