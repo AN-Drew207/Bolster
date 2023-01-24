@@ -12,9 +12,16 @@ export const CollectionsLandingComponent = () => {
 	console.log(bottlesView, 'botellas');
 	return (
 		<div className="flex flex-col bg-overlay md:px-32 px-4 pb-48 pt-16 gap-12 min-h-[100vh]">
-			<h2 className="RalewayBold md:text-xl text-lg text-secondary">
-				Backed Collections
-			</h2>
+			<div className="flex flex-col w-full gap-2 ">
+				<h2 className="RalewayBold md:text-xl text-lg text-secondary">
+					NFT Collections
+				</h2>
+				<p className="md:text-left text-center text-white Raleway w-full text-[14px]">
+					A set of 1:1 or generative art paired with exclusive collectibles.
+					Only by owning the full collection can the collectibles be redeemed,
+					resulting in the destruction of the NFTs.
+				</p>
+			</div>
 			<div className="flex flex-wrap gap-10 items-center justify-center w-full">
 				{bottlesView
 					.filter((item: any) => item.metadata.length > 1)

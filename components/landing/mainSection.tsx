@@ -399,12 +399,9 @@ export const CTAComponent = () => {
 							</h2>
 						</Link>
 						<p className="md:text-left text-center w-full">
-							A collection of 1:1 or generative art bolstered by one collectible
-							item.
-						</p>
-						<p className="md:text-left text-center  w-full">
-							In order for the item to be redeemed, the user needs to own the
-							full collection.
+							A set of 1:1 or generative art paired with exclusive collectibles.
+							Only by owning the full collection can the collectibles be
+							redeemed, resulting in the destruction of the NFTs.
 						</p>
 					</div>
 					<div className="flex items-center flex-col md:w-2/3 w-full px-[2%] gap-2">
@@ -415,11 +412,9 @@ export const CTAComponent = () => {
 						</Link>
 
 						<p className="md:text-left text-center  w-full">
-							One unique art piece bolstered by one collectible item.
-						</p>
-						<p className="md:text-left text-center  w-full">
-							The item could be redeemed by the NFT owner at any movement.
-							Redemption causes the NFT to be burned.
+							A unique art piece paired with a collectible item. The item can be
+							redeemed by the NFT owner at any time, leading to the burning of
+							the NFT.
 						</p>
 					</div>
 					{/* <p className="text-center RalewayBold text-[17px]">
