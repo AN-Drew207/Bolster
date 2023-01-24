@@ -19,7 +19,7 @@ export const CollectionsLandingComponent = () => {
 				<p className="md:text-left text-center text-white Raleway w-full text-[14px]">
 					A collection of unique 1:1 or generative art pieces, paired with an
 					exclusive collectible that can only be redeemed by owning the entire
-					set. Once redeemed, the NFTs will be burned.
+					set. If redeemed, the NFTs will be burned.
 				</p>
 			</div>
 			<div className="flex flex-wrap gap-10 items-center justify-center w-full">
