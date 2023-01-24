@@ -377,10 +377,47 @@ export const HowWeDoItComponent = () => {
 };
 
 export const CTAComponent = () => {
+	React.useEffect(() => {
+		AOS.init({ once: true });
+	}, []);
+
 	return (
-		<div className="md:pt-28 pt-10 bg-gray-900 relative text-white  w-full flex flex-col items-center justify-center">
-			<div className="flex flex-col gap-4 items-center justify-center md:w-2/3 md:px-0 px-4">
-				{/* <p className="text-center RalewayBold text-[17px]">
+		<div className="md:pt-24 pb-10 pt-10 bg-gray-900 relative text-white  w-full bg-gradient-to-b from-black-1 via-gray-900 to-gray-900 flex flex-col items-center justify-center overflow-hidden">
+			<div className="flex md:flex-row flex-col items-center justify-center gap-10 w-3/4">
+				<div
+					className="flex flex-col gap-10 justify-center md:items-start items-center md:w-1/2 w-full md:px-0 px-4"
+					data-aos-duration="1000"
+					data-aos-easing="ease-in-out"
+					data-aos-mirror="true"
+					data-aos-once="false"
+					data-aos="fade-right"
+				>
+					<div className="flex items-center flex-col md:w-2/3 w-full px-[2%] gap-2">
+						<h2 className="text-2xl RalewayBold text-white font-bold w-full md:text-left text-center ">
+							NFT Collections
+						</h2>
+						<p className="md:text-left text-center w-full">
+							A collection of 1:1 or generative art bolstered by one collectible
+							item.
+						</p>
+						<p className="md:text-left text-center  w-full">
+							In order for the item to be redeemed, the user needs to own the
+							full collection.
+						</p>
+					</div>
+					<div className="flex items-center flex-col md:w-2/3 w-full px-[2%] gap-2">
+						<h2 className="text-2xl RalewayBold text-white font-bold w-full md:text-left text-center ">
+							NFT Singles
+						</h2>
+						<p className="md:text-left text-center  w-full">
+							One unique art piece bolstered by one collectible item.
+						</p>
+						<p className="md:text-left text-center  w-full">
+							The item could be redeemed by the NFT owner at any movement.
+							Redemption causes the NFT to be burned.
+						</p>
+					</div>
+					{/* <p className="text-center RalewayBold text-[17px]">
 					Buy an NFT with us and get a Global Membership that gives you 24-hour
 					early access to our exclusive drops. <br /> Limited to our early
 					members.
@@ -388,15 +425,32 @@ export const CTAComponent = () => {
 				<span className="text-gray-500 Montserrat font-[400]">
 					Airdrop date: TBD
 				</span> */}
-				<Button
-					className={clsx(
-						'z-10 border border-white bg-secondary RalewayBold font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:scale-[120%] duration-300',
-						'ml-4'
-					)}
-					href={'/collections'}
+					<Button
+						className={clsx(
+							'z-10 border border-white bg-secondary RalewayBold font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:scale-[120%] duration-300',
+							'ml-4'
+						)}
+						href={'/collections'}
+					>
+						Mint NFT!
+					</Button>
+				</div>
+				<div
+					className="flex flex-col gap-10 items-center md:w-1/3 w-full md:px-0 px-4"
+					data-aos-duration="1000"
+					data-aos-easing="ease-in-out"
+					data-aos-mirror="true"
+					data-aos-once="false"
+					data-aos="fade-left"
 				>
-					Mint NFT!
-				</Button>
+					<img
+						src="https://bafybeih76ssazli4lxp7vvwx4mxshohaurenc2phv6jhcsvchxv4yvcsbu.ipfs.nftstorage.link/75.png"
+						alt=""
+						className={clsx(
+							'w-full rounded-md top-0 left-0 relative transition-all duration-1000'
+						)}
+					/>
+				</div>
 			</div>
 		</div>
 	);
@@ -448,7 +502,7 @@ export const WhyShouldComponent = () => {
 	}, []);
 
 	return (
-		<div className="md:py-28 py-10 flex flex-col gap-10 relative items-center justify-center bg-gradient-to-b from-gray-900 via-primary to-gray-900">
+		<div className="md:py-16 py-10 flex flex-col gap-10 relative items-center justify-center bg-gradient-to-b from-gray-900 via-primary to-black-1">
 			<div className="py-24 pb-36 text-xl RalewayBold flex items-center justify-center w-full">
 				<h2
 					className="Raleway md:text-xl text-lg font-bold text-center md:w-1/2 w-full md:px-0 px-4 text-white"
@@ -571,7 +625,7 @@ export const ArtistsComponent = () => {
 
 	return (
 		<div
-			className="md:py-28 py-10 bg-gray-900 relative w-full flex justify-center"
+			className="md:py-16 py-10 bg-gray-900 relative w-full flex justify-center"
 			id="for_artists"
 		>
 			<div className="w-full 2xl:px-10 lg:px-36 px-4 flex justify-center">

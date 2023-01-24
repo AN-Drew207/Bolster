@@ -11,12 +11,13 @@ const Bottle = () => {
 export async function getStaticPaths() {
 	const bottles =
 		process.env.NEXT_PUBLIC_POLYGON_ID == '137'
-			? bottlesMainnet.filter((bottle: any) => bottle.metadata.length > 1)
-			: bottlesTestnet.filter((bottle: any) => bottle.metadata.length > 1);
+			? bottlesMainnet.filter((bottle: any) => bottle.metadata.length == 1)
+			: bottlesTestnet.filter((bottle: any) => bottle.metadata.length == 1);
 	const paths = bottles.map((b: any) => {
 		return { params: { id: b.address } };
 	});
 
+	console.log(paths);
 	return {
 		paths: paths,
 		fallback: false, // can also be true or 'blocking'

@@ -7,17 +7,17 @@ import 'swiper/css';
 import { Autoplay } from 'swiper';
 // import bottles from 'bottles.json';
 
-export const CollectionsLandingComponent = () => {
+export const SinglesComponent = () => {
 	const { bottles: bottlesView } = useSelector((state: any) => state.state);
 	console.log(bottlesView, 'botellas');
 	return (
 		<div className="flex flex-col bg-overlay md:px-32 px-4 pb-48 pt-16 gap-12 min-h-[100vh]">
 			<h2 className="RalewayBold md:text-xl text-lg text-secondary">
-				Backed Collections
+				Backed Singles
 			</h2>
 			<div className="flex flex-wrap gap-10 items-center justify-center w-full">
 				{bottlesView
-					.filter((item: any) => item.metadata.length > 1)
+					.filter((item: any) => item.metadata.length == 1)
 					.map(
 						(
 							{
@@ -66,7 +66,7 @@ export const BottleItem = ({ address, name, video, nfts, maxSupply }: any) => {
 	console.log(maxSupply, 'supply');
 
 	return (
-		<Link href={`/collections/${address}`}>
+		<Link href={`/singles/${address}`}>
 			<div className="sm:w-[400px] w-[320px] flex flex-col border rounded-xl overflow-hidden shadow-xl bg-primary cursor-pointer border-gray-800 hover:border-white hover:scale-105 transition-all duration-500">
 				<div className="rounded-xl bg-overlay relative z-10 cursor-pointer">
 					<div className="w-full flex justify-center rounded-xl overflow-hidden">

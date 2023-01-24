@@ -31,7 +31,14 @@ const navItems = [
 		link: '/',
 		icon: <MenuIcon />,
 	},
-	{ name: 'COLLECTIONS', link: '/collections', icon: <MenuIcon /> },
+	{
+		name: 'NFTs',
+		icon: <MenuIcon />,
+		items: [
+			{ name: 'COLLECTIONS', link: '/collections' },
+			{ name: 'SINGLES', link: '/singles' },
+		],
+	},
 	{ name: 'CONTACT US', link: '/#for_artists', icon: <MenuIcon /> },
 	// { name: 'FOR ARTISTS', link: '/artists', icon: <MenuIcon /> },
 	// { name: 'GALLERY', link: '/gallery', icon: <MenuIcon /> },
@@ -173,13 +180,32 @@ export default function AppLayout() {
 					{navItems.map((item, index) => {
 						return (
 							<div key={item.name + index}>
-								<NavbarItem
-									key={index}
-									name={item.name}
-									icon={item.icon}
-									link={item.link}
-									route={router.asPath}
-								/>
+								{item.items ? (
+									<Dropdown
+										title={item.name}
+										classTitle="text-[14px] font-bold text-center RalewayBold text-secondary"
+									>
+										<div className="rounded-md bg-primary p-2 flex flex-col shadow-md shadow-overlay">
+											{item.items.map((link) => {
+												return (
+													<NavbarItem
+														key={index}
+														name={link.name}
+														link={link.link}
+														route={router.asPath}
+													/>
+												);
+											})}
+										</div>
+									</Dropdown>
+								) : (
+									<NavbarItem
+										key={index}
+										name={item.name}
+										link={item.link}
+										route={router.asPath}
+									/>
+								)}
 							</div>
 						);
 					})}

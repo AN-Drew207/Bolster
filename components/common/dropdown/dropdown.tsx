@@ -19,9 +19,7 @@ export const Dropdown: React.FC<any> = ({ classTitle, title, children }) => {
 											classTitle
 										)}
 									>
-										<span className="ml-1 text-lg whitespace-nowrap">
-											{title}
-										</span>
+										<span className="ml-1 whitespace-nowrap">{title}</span>
 										{open ? <CaretUpOutlined /> : <CaretDownOutlined />}
 									</div>
 								</Menu.Button>
@@ -35,7 +33,7 @@ export const Dropdown: React.FC<any> = ({ classTitle, title, children }) => {
 								leaveFrom="transform opacity-100 scale-100"
 								leaveTo="transform opacity-0 scale-95"
 							>
-								<Menu.Items className="absolute top-0 right-3 z-20 md:mt-7 origin-top-right bg-overlay divide-y shadow-lg rounded-[6px] focus:outline-none">
+								<Menu.Items className="absolute top-0 right-0 z-[1000] md:mt-7 origin-top-right bg-overlay divide-y shadow-lg rounded-[6px] focus:outline-none">
 									<div>{children}</div>
 								</Menu.Items>
 							</Transition>
