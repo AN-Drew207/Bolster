@@ -516,7 +516,7 @@ export const CollectionComponent = () => {
 							<div className="flex justify-between w-full">
 								<Link href={maxSupply > 1 ? '/collections' : '/singles'}>
 									<div className="font-bold md:text-xl text-md mb-4  text-white cursor-pointer">
-										Back to Collections
+										Back to {maxSupply > 1 ? 'Collections' : 'Singles'}
 									</div>
 								</Link>
 							</div>
