@@ -393,9 +393,11 @@ export const CTAComponent = () => {
 					data-aos="fade-right"
 				>
 					<div className="flex items-center flex-col md:w-2/3 w-full px-[2%] gap-2">
-						<h2 className="text-2xl RalewayBold text-white font-bold w-full md:text-left text-center ">
-							NFT Collections
-						</h2>
+						<Link href={'/collections'}>
+							<h2 className="text-2xl RalewayBold text-white font-bold w-full md:text-left text-center cursor-pointer hover:text-secondary transition-all ease-in duration-[1000]">
+								NFT Collections
+							</h2>
+						</Link>
 						<p className="md:text-left text-center w-full">
 							A collection of 1:1 or generative art bolstered by one collectible
 							item.
@@ -406,9 +408,12 @@ export const CTAComponent = () => {
 						</p>
 					</div>
 					<div className="flex items-center flex-col md:w-2/3 w-full px-[2%] gap-2">
-						<h2 className="text-2xl RalewayBold text-white font-bold w-full md:text-left text-center ">
-							NFT Singles
-						</h2>
+						<Link href={'/singles'}>
+							<h2 className="text-2xl RalewayBold text-white font-bold w-full md:text-left text-center cursor-pointer hover:text-secondary transition-all ease-in duration-[1000]">
+								NFT Singles
+							</h2>
+						</Link>
+
 						<p className="md:text-left text-center  w-full">
 							One unique art piece bolstered by one collectible item.
 						</p>
@@ -425,7 +430,7 @@ export const CTAComponent = () => {
 				<span className="text-gray-500 Montserrat font-[400]">
 					Airdrop date: TBD
 				</span> */}
-					<Button
+					{/* <Button
 						className={clsx(
 							'z-10 border border-white bg-secondary RalewayBold font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:scale-[120%] duration-300',
 							'ml-4'
@@ -433,7 +438,7 @@ export const CTAComponent = () => {
 						href={'/collections'}
 					>
 						Mint NFT!
-					</Button>
+					</Button> */}
 				</div>
 				<div
 					className="flex flex-col gap-10 items-center md:w-1/3 w-full md:px-0 px-4"
