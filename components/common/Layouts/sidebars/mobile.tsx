@@ -8,6 +8,8 @@ import useMagicLink from 'hooks/useMagicLink';
 import { State } from 'redux/actions';
 import { useSelector } from 'react-redux';
 import { useConnectWalletModal } from 'hooks/useModalConnect';
+import { Dropdown } from 'components/common/dropdown/dropdown';
+import { DropdownMenu } from 'components/common/dropdownMenu';
 
 interface LayoutDashboardProps {
 	title?: string;
@@ -92,7 +94,37 @@ export const SidebarMobile: React.FC<LayoutDashboardProps & any> = ({
 							<div className="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
 								<nav className="mt-5 flex-1 px-7">
 									{navItems.map((item: any, index: number) => {
-										return (
+										return item.items ? (
+											<>
+												<DropdownMenu
+													title={item.name}
+													classTitle="group flex items-center px-3 py-4 font-bold hover:opacity-90 text-md rounded-md  relative text-secondary"
+												>
+													<div className="rounded-md ml-4 flex flex-col shadow-md shadow-overlay">
+														{item.items.map((link: any) => {
+															return (
+																<Fragment key={'nav-mobile-' + index}>
+																	<Link
+																		href={link.link}
+																		key={'nav-desktop-' + index}
+																	>
+																		<p
+																			className={clsx(
+																				'group flex items-center px-3 py-2 font-bold hover:opacity-90 text-[14px] rounded-md  relative text-secondary'
+																			)}
+																			onClick={() => setSidebarOpen(false)}
+																		>
+																			{link.name}
+																		</p>
+																	</Link>
+																</Fragment>
+															);
+														})}
+													</div>
+												</DropdownMenu>
+												<div className="divider mx-3 mt-4"></div>
+											</>
+										) : (
 											<Fragment key={'nav-mobile-' + index}>
 												<Link href={item.link} key={'nav-desktop-' + index}>
 													<p
@@ -108,6 +140,7 @@ export const SidebarMobile: React.FC<LayoutDashboardProps & any> = ({
 											</Fragment>
 										);
 									})}
+
 									{address ? (
 										<>
 											<div>
