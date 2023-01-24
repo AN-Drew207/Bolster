@@ -303,7 +303,7 @@ export const CollectionComponent = () => {
 					</div>
 				</Modal>
 				<ModalBottle isShow={isShowBottle} hasBg>
-					<div className="min-h-[100vh] flex flex-col items-center justify-center  w-full mt-24 mb-20">
+					<div className="min-h-[100vh] flex flex-col items-center justify-center  w-full mt-28 mb-20">
 						<div className="pb-4 w-full flex justify-between px-6 text-secondary">
 							<div
 								className="font-bold md:text-xl text-md mb-4 cursor-pointer"
@@ -312,7 +312,7 @@ export const CollectionComponent = () => {
 								}}
 							>
 								<LeftCircleFilled />
-								Back to Collection
+								Back to to {bottle?.name}
 							</div>
 							<XIcon
 								className=" w-5 h-5 cursor-pointer"
@@ -423,7 +423,7 @@ export const CollectionComponent = () => {
 					</div>
 				</ModalBottle>
 				<ModalArtist isShow={isShowArtist} hasBg>
-					<div className="min-h-[100vh] flex flex-col items-center justify-center w-full mt-16 relative">
+					<div className="min-h-[100vh] flex flex-col items-center justify-center w-full mt-28 relative">
 						<div className="pb-4 w-full flex justify-between px-6">
 							<div
 								className="font-bold md:text-xl text-md mb-4  flex items-center justify-center gap-2 text-secondary cursor-pointer"
@@ -431,7 +431,7 @@ export const CollectionComponent = () => {
 									hideArtist();
 								}}
 							>
-								<LeftCircleFilled /> Back to Collection
+								<LeftCircleFilled /> Back to {bottle?.name}
 							</div>
 							<XIcon
 								className="text-secondary w-5 h-5 cursor-pointer"
@@ -514,9 +514,14 @@ export const CollectionComponent = () => {
 							)}
 						>
 							<div className="flex justify-between w-full">
-								<Link href={maxSupply > 1 ? '/collections' : '/singles'}>
+								<Link
+									href={
+										bottle.metadata.length > 1 ? '/collections' : '/singles'
+									}
+								>
 									<div className="font-bold md:text-xl text-md mb-4  text-white cursor-pointer">
-										Back to {maxSupply > 1 ? 'Collections' : 'Singles'}
+										Back to{' '}
+										{bottle.metadata.length > 1 ? 'Collections' : 'Singles'}
 									</div>
 								</Link>
 							</div>
@@ -966,7 +971,7 @@ export const CollectionNFTItem = ({
 						onClick={active ? () => setSelected() : undefined}
 						className={clsx(
 							{ ['!md:w-96 !md:h-auto']: big },
-							'md:h-40 h-36 rounded-md border border-white cursor-pointer'
+							'rounded-md border border-white cursor-pointer'
 						)}
 						autoPlay
 						loop
