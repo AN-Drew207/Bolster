@@ -43,7 +43,7 @@ export const SidebarMobile: React.FC<LayoutDashboardProps & any> = ({
 				<Dialog
 					as="div"
 					static
-					className="fixed h-screen top-0 right-0 pt-[52px] flex z-40 lg:hidden bg-overlay"
+					className="fixed h-screen top-0 right-0 pt-[52px] flex z-40 lg:hidden bg-primary"
 					open={sidebarOpen}
 					onClose={setSidebarOpen}
 					initialFocus={initialFocus}
@@ -68,7 +68,7 @@ export const SidebarMobile: React.FC<LayoutDashboardProps & any> = ({
 						leaveFrom="translate-x-0"
 						leaveTo="-translate-x-[-300px]"
 					>
-						<div className="bg-overlay relative flex-1 flex flex-col max-w-xs w-full w-64">
+						<div className="bg-primary relative flex-1 flex flex-col max-w-xs w-full w-64">
 							<Transition.Child
 								as={Fragment}
 								enter="ease-in-out duration-300"
