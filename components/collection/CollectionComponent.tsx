@@ -312,7 +312,7 @@ export const CollectionComponent = () => {
 								}}
 							>
 								<LeftCircleFilled />
-								Back to Collections
+								Back to Collection
 							</div>
 							<XIcon
 								className=" w-5 h-5 cursor-pointer"
@@ -431,7 +431,7 @@ export const CollectionComponent = () => {
 									hideArtist();
 								}}
 							>
-								<LeftCircleFilled /> Back to Collections
+								<LeftCircleFilled /> Back to Collection
 							</div>
 							<XIcon
 								className="text-secondary w-5 h-5 cursor-pointer"
@@ -514,7 +514,7 @@ export const CollectionComponent = () => {
 							)}
 						>
 							<div className="flex justify-between w-full">
-								<Link href="/collections">
+								<Link href={maxSupply > 1 ? '/collections' : '/singles'}>
 									<div className="font-bold md:text-xl text-md mb-4  text-white cursor-pointer">
 										Back to Collections
 									</div>
