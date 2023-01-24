@@ -399,9 +399,9 @@ export const CTAComponent = () => {
 							</h2>
 						</Link>
 						<p className="md:text-left text-center w-full">
-							A set of 1:1 or generative art paired with exclusive collectibles.
-							Only by owning the full collection can the collectibles be
-							redeemed, resulting in the destruction of the NFTs.
+							A collection of unique 1:1 or generative art pieces, paired with
+							an exclusive collectible that can only be redeemed by owning the
+							entire set. Once redeemed, the NFTs will be burned.
 						</p>
 					</div>
 					<div className="flex items-center flex-col md:w-2/3 w-full px-[2%] gap-2">
