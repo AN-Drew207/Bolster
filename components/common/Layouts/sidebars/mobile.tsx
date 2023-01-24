@@ -8,7 +8,6 @@ import useMagicLink from 'hooks/useMagicLink';
 import { State } from 'redux/actions';
 import { useSelector } from 'react-redux';
 import { useConnectWalletModal } from 'hooks/useModalConnect';
-import { Dropdown } from 'components/common/dropdown/dropdown';
 import { DropdownMenu } from 'components/common/dropdownMenu';
 
 interface LayoutDashboardProps {
