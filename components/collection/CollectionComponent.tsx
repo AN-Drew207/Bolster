@@ -997,7 +997,7 @@ export const CollectionNFTItem = ({
 					<img
 						src={token.image}
 						onClick={() => {
-							setScreen();
+							setScreen('nft');
 							setNFTView(token);
 						}}
 						className={clsx(
