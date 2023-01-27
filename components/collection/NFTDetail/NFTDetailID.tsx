@@ -31,7 +31,17 @@ const NFTDetailIDComponent: React.FC<any> = ({
 					<div className="w-full flex xl:flex-row flex-col h-full gap-4 justify-center">
 						<div className="flex flex-col gap-2">
 							<div className="flex relative items-center sticky top-20 justify-center xl:w-[500px] w-[320px] rounded-md bg-primary cursor-pointer relative overflow-hidden border border-gray-500">
-								<img src={data.image} className="w-full h-full" alt="" />
+								{data.image && (
+									<img src={data.image} className="w-full h-full" alt="" />
+								)}
+								{data.animation_url && (
+									<video
+										src={data.animation_url}
+										className="w-full h-full"
+										autoPlay
+										loop
+									/>
+								)}
 							</div>
 						</div>
 						<div className="flex flex-col xl:w-[500px] gap-6 w-full pt-4">
