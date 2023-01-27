@@ -574,14 +574,11 @@ export const LegalComponent = () => {
 				<p className="text-center Montserrat text-[13px] text-gray-500">
 					The information and materials provided on our website are for general
 					informational purposes only and do not constitute investment advice.
-					We do not guarantee the accuracy, completeness, reliability,
-					suitability, or timeliness of the information or materials provided,
-					and we are not responsible for any errors or omissions. The market
-					value of our backstop physical products may fluctuate and we cannot
-					predict its behavior. We are not an investment platform and do not
-					offer investment services or products. You should carefully consider
-					your investment objectives and risk tolerance before making any
-					investment decisions.
+					The market value of our backstop physical products may fluctuate and
+					we cannot predict its behavior. We are not an investment platform and
+					do not offer investment services or products. You should carefully
+					consider your investment objectives and risk tolerance before making
+					any investment decisions.
 				</p>
 			</div>
 		</div>
