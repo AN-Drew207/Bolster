@@ -15,6 +15,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { SelectInput } from 'components/common/form/SelectInput';
 import Link from 'next/link';
+import { MailIcon } from '@heroicons/react/outline';
 
 export const MainSectionComponent = () => {
 	return (
@@ -43,10 +44,6 @@ export const MainSectionComponent = () => {
 								image: 'icons/twitter.png',
 								link: 'https://twitter.com/nftbolster',
 							},
-							{
-								image: 'icons/telegram.png',
-								link: 'https://t.me/+aURuJ12GWZg2MTdk',
-							},
 						].map((item) => {
 							return (
 								<a href={item.link} target="_blank">
@@ -54,6 +51,13 @@ export const MainSectionComponent = () => {
 								</a>
 							);
 						})}
+						<a
+							href={'mailto:hello@nftbolster.com'}
+							className="text-white"
+							target="_blank"
+						>
+							<MailIcon className="w-6 h-6" />{' '}
+						</a>
 					</div>
 					<div className="flex justify-center gap-10">
 						{' '}
@@ -724,10 +728,6 @@ export const ArtistsComponent = () => {
 												image: 'icons/twitter.png',
 												link: 'https://twitter.com/nftbolster',
 											},
-											{
-												image: 'icons/telegram.png',
-												link: 'https://t.me/+aURuJ12GWZg2MTdk',
-											},
 										].map((item) => {
 											return (
 												<a href={item.link} target="_blank">
@@ -735,6 +735,13 @@ export const ArtistsComponent = () => {
 												</a>
 											);
 										})}
+										<a
+											href={'mailto:hello@nftbolster.com'}
+											className="text-white"
+											target="_blank"
+										>
+											<MailIcon className="w-6 h-6" />{' '}
+										</a>
 									</div>
 									<Button
 										className={clsx(
@@ -778,10 +785,6 @@ export const ContactUs: React.FC<any> = () => {
 							image: 'icons/twitter.png',
 							link: 'https://twitter.com/nftbolster',
 						},
-						{
-							image: 'icons/telegram.png',
-							link: 'https://t.me/+aURuJ12GWZg2MTdk',
-						},
 					].map((item) => {
 						return (
 							<a href={item.link} target="_blank">
@@ -789,6 +792,13 @@ export const ContactUs: React.FC<any> = () => {
 							</a>
 						);
 					})}
+					<a
+						href={'mailto:hello@nftbolster.com'}
+						className="text-white"
+						target="_blank"
+					>
+						<MailIcon className="w-6 h-6" />{' '}
+					</a>
 				</div>
 			</div>
 		</div>

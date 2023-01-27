@@ -26,7 +26,7 @@ const FAQS = () => {
 							How does the Backstop Value works?
 						</h3>
 						<p className="text-[15px] Montserrat text-white">
-							Our NFTs grant legal ownership of a corresponding physical
+							Our NFTs grant legal right to be redeemed for a physical
 							collectible, such as a rare bottle of whiskey or watch. When the
 							value of the NFT drops below the market value of the physical
 							collectible, there is an economic incentive to purchase the NFT in
@@ -43,9 +43,10 @@ const FAQS = () => {
 							Our physical assets are securely stored in specialized facilities
 							that are tailored to the specific needs of each asset type. For
 							example, a bottle of liquor is stored differently than a watch or
-							painting. Rest assured, UK law protects your ownership rights as
-							the NFT holder and we are responsible for the safekeeping of the
-							physical asset on your behalf. <br />
+							painting. Rest assured, UK law protects your legal rights as the
+							NFT holder and we are responsible for the safekeeping of the
+							physical asset on your behalf.
+							<br />
 							<br /> Our current collection of whisky bottles is securely stored
 							at the Hillington facility of{' '}
 							<a
@@ -124,10 +125,12 @@ const FAQS = () => {
 							What happens to my NFT if I choose to redeem it?
 						</h3>
 						<p className="text-[15px] Montserrat text-white">
-							You can view your NFT purchases in the "account" section of our
-							platform. However, as NFTs are unique and fully owned by you, they
-							can also be viewed on any marketplace that supports the display of
-							NFTs.
+							When you choose to redeem your NFT, it will be permanently
+							destroyed, commonly referred to as "burning." This is because each
+							NFT collection is backed by only one physical asset, and when that
+							asset is redeemed, we lose control of it. As a result, the NFTs
+							associated with that collection must also be destroyed to maintain
+							the one-to-one relationship between digital and physical assets.
 						</p>
 					</div>
 					<div className="flex flex-col gap-2 w-full">
@@ -135,10 +138,8 @@ const FAQS = () => {
 							Which blockchain network is used by Bolster?
 						</h3>
 						<p className="text-[15px] Montserrat text-white">
-							You can view your NFT purchases in the "account" section of our
-							platform. However, as NFTs are unique and fully owned by you, they
-							can also be viewed on any marketplace that supports the display of
-							NFTs.
+							At the moment, Bolster NFTs are built on the Polygon blockchain
+							network.
 						</p>
 					</div>
 					<div className="flex flex-col gap-2">
