@@ -9,6 +9,16 @@ export const Footer = () => {
 			href: '/faqs',
 			title: 'FAQs',
 		},
+		{
+			id: 1,
+			href: '/privacy',
+			title: 'Privacy Policy',
+		},
+		{
+			id: 1,
+			href: '/terms',
+			title: 'Terms & Conditions',
+		},
 	];
 
 	return (
@@ -20,7 +30,7 @@ export const Footer = () => {
 			<p className="text-white Raleway text-base">
 				© 2023 Bolster. All rights reserved
 			</p>
-			<div className="flex items-center gap-4 text-xl  justify-center">
+			<div className="flex items-center gap-x-6 flex-wrap text-xl  justify-center">
 				{OficialPages.map((page) => {
 					return (
 						<Link href={page.href}>

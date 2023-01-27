@@ -20,7 +20,7 @@ import { Loading } from 'components/landing/loadingComponent';
 import useMagicLink from 'hooks/useMagicLink';
 import { useForm } from 'react-hook-form';
 import { useMetamask } from 'hooks/useMetamask';
-import { CheckIcon } from '@heroicons/react/outline';
+import { CheckIcon, PlusIcon } from '@heroicons/react/outline';
 import { MintModal } from 'components/collection/Modals/MintModal';
 import { useConnectWalletModal } from 'hooks/useModalConnect';
 import { ProfileApiService } from 'api';
@@ -35,6 +35,7 @@ import {
 	SearchOutlined,
 } from '@ant-design/icons';
 import { XIcon } from '@heroicons/react/solid';
+import NFTDetailIDComponent from './NFTDetail/NFTDetailID';
 
 export const CollectionComponent = () => {
 	const [isLoading, setIsLoading] = React.useState(false);
@@ -51,6 +52,7 @@ export const CollectionComponent = () => {
 	const [priceMATIC, setPriceMATIC] = React.useState<any>(0);
 	const [message, setMessage] = React.useState('');
 	const [screen, setScreen] = React.useState('menu');
+	const [nftView, setNFTView] = React.useState({ id: 0, name: '', image: '' });
 
 	const { connectWallet, Mint } = useMetamask();
 
@@ -134,6 +136,10 @@ export const CollectionComponent = () => {
 		(window as any).ethereum.on('accountsChanged', accountChangedHandler);
 		(window as any).ethereum.on('chainChanged', chainChangedHandler);
 	};
+
+	React.useEffect(() => {
+		console.log('screen', screen);
+	}, [screen]);
 
 	React.useEffect(() => {
 		if (bottleContract !== undefined) {
@@ -510,21 +516,24 @@ export const CollectionComponent = () => {
 					<div className="flex justify-center items-start w-full">
 						<div
 							className={clsx(
+								{ ['!pt-20']: screen == 'nft' },
 								'min-h-screen  flex flex-col gap-4 items-center pt-32 pb-10 w-full md:px-8 px-2 justify-start relative'
 							)}
 						>
-							<div className="flex justify-between w-full">
-								<Link
-									href={
-										bottle.metadata.length > 1 ? '/collections' : '/singles'
-									}
-								>
-									<div className="font-bold md:text-xl text-md mb-4  text-white cursor-pointer">
-										Back to{' '}
-										{bottle.metadata.length > 1 ? 'Collections' : 'Singles'}
-									</div>
-								</Link>
-							</div>
+							{screen !== 'nft' && (
+								<div className="flex justify-between w-full">
+									<Link
+										href={
+											bottle.metadata.length > 1 ? '/collections' : '/singles'
+										}
+									>
+										<div className="font-bold md:text-xl text-md mb-4  text-white cursor-pointer">
+											Back to{' '}
+											{bottle.metadata.length > 1 ? 'Collections' : 'Singles'}
+										</div>
+									</Link>
+								</div>
+							)}
 
 							<>
 								<div
@@ -622,18 +631,20 @@ export const CollectionComponent = () => {
 										ref={video}
 									></video> */}
 									<div className="flex flex-col gap-4 w-full">
-										<h2 className="text-white pt-6 w-full Montserrat pl-10 font-bold text-xl">
-											{selectedNFTs() > 0 ? (
-												<p>
-													<span className="text-secondary">
-														{selectedNFTs()}
-													</span>{' '}
-													NFT{selectedNFTs() > 1 && 's'} Selected
-												</p>
-											) : (
-												'Select the NFTs you want to buy'
-											)}
-										</h2>
+										{screen !== 'nft' && (
+											<h2 className="text-white pt-6 w-full Montserrat pl-10 font-bold text-xl">
+												{selectedNFTs() > 0 ? (
+													<p>
+														<span className="text-secondary">
+															{selectedNFTs()}
+														</span>{' '}
+														NFT{selectedNFTs() > 1 && 's'} Selected
+													</p>
+												) : (
+													'Select the NFTs you want to buy'
+												)}
+											</h2>
+										)}
 										{bottle &&
 										bottle.metadata.length > 0 &&
 										screen == 'menu' ? (
@@ -658,6 +669,8 @@ export const CollectionComponent = () => {
 																		setBottle={setBottle}
 																		setIsLoading={setIsLoading}
 																		typeOfWallet={typeOfWallet}
+																		setNFTView={setNFTView}
+																		setScreen={setScreen}
 																		selected={
 																			selected.filter((item: any) => {
 																				return item.id == token.id;
@@ -707,6 +720,8 @@ export const CollectionComponent = () => {
 																				return item.id == token.id;
 																			})[0]?.value
 																		}
+																		setScreen={setScreen}
+																		setNFTView={setNFTView}
 																		setSelected={() => {
 																			setSelected((prev: any[]) =>
 																				prev.map((status, id) =>
@@ -728,6 +743,41 @@ export const CollectionComponent = () => {
 													</div>
 												</div>
 											</div>
+										) : bottle &&
+										  bottle.metadata.length > 0 &&
+										  screen == 'nft' ? (
+											<NFTDetailIDComponent
+												data={
+													nftView
+														? {
+																...nftView,
+														  }
+														: { image: '', name: '' }
+												}
+												address={address}
+												id={nftView ? nftView.id : 1}
+												back={() => setScreen('menu')}
+												selected={
+													selected.filter((item: any) => {
+														return item.id == nftView.id;
+													})[0]?.value
+												}
+												addCart={() => {
+													setSelected((prev: any[]) =>
+														prev.map((status) =>
+															nftView.id == status.id
+																? {
+																		value: !status.value,
+																		id: status.id,
+																  }
+																: {
+																		value: status.value,
+																		id: status.id,
+																  }
+														)
+													);
+												}}
+											/>
 										) : bottle &&
 										  bottle.metadata.length > 0 &&
 										  screen == 'pay' ? (
@@ -872,8 +922,8 @@ export const CollectionNFTItem = ({
 	bottle,
 	typeOfWallet,
 	token,
-	setBottle,
-	setIsLoading,
+	setScreen,
+	setNFTView,
 	setSelected,
 	selected,
 	big,
@@ -881,6 +931,7 @@ export const CollectionNFTItem = ({
 	const { Modal, isShow, show, hide } = useModal();
 
 	const [hover, setHover] = React.useState(false);
+
 	return (
 		<>
 			<Modal isShow={isShow} hasBg>
@@ -891,7 +942,7 @@ export const CollectionNFTItem = ({
 								className="text-white font-bold cursor-pointer border-none outline-none"
 								onClick={hide}
 							>
-								<XIcon />
+								<XIcon className="text-white" />
 							</button>
 						</div>
 						<div className="flex gap-8 h-full items-center justify-center w-full">
@@ -920,7 +971,7 @@ export const CollectionNFTItem = ({
 			{/* <Link href={'/bottle/' + bottle.address + '/token/' + token.id}> */}
 			<div
 				className={clsx(
-					'relative border-secondary rounded-md p-4 flex flex-col items-center justify-center md:w-52 w-36',
+					'relative border-secondary rounded-md flex flex-col items-center justify-center bg-primary md:w-52 w-36 cursor-pointer border',
 					{
 						['opacity-50']: !active,
 						[' hover:scale-105 duration-300 transition-all']: active,
@@ -933,34 +984,25 @@ export const CollectionNFTItem = ({
 				onMouseLeave={() => {
 					setHover(false);
 				}}
+				// onClick={
+				// 	active
+				// 		? () => {
+				// 				setScreen('nft');
+				// 				setNFTView(token);
+				// 		  }
+				// 		: undefined
+				// }
 			>
-				<div
-					className={clsx(
-						{ ['hidden']: !hover },
-						'w-6 h-6 bg-overlay absolute top-6 left-8 rounded-full bg-overlay text-white flex items-center justify-center cursor-pointer z-10'
-					)}
-					onClick={(e) => {
-						e.preventDefault();
-						show();
-					}}
-				>
-					<SearchOutlined />
-				</div>
-				{selected && active && (
-					<div
-						className="top-6 right-8 p-1 rounded-full bg-green-600 absolute w-6 text-white cursor-pointer"
-						onClick={active ? () => setSelected() : undefined}
-					>
-						<CheckIcon />
-					</div>
-				)}
 				{token.image && (
 					<img
 						src={token.image}
-						onClick={active ? () => setSelected() : undefined}
+						onClick={() => {
+							setScreen();
+							setNFTView(token);
+						}}
 						className={clsx(
 							{ ['md:!w-96 !w-52']: big },
-							'w-40 rounded-md border border-white cursor-pointer'
+							'w-full rounded-md  cursor-pointer'
 						)}
 						alt=""
 					/>
@@ -968,21 +1010,69 @@ export const CollectionNFTItem = ({
 				{token.animation_url && (
 					<video
 						src={token.animation_url}
-						onClick={active ? () => setSelected() : undefined}
+						onClick={
+							active
+								? () => {
+										setScreen('nft');
+										setNFTView(token);
+								  }
+								: undefined
+						}
 						className={clsx(
 							{ ['!md:w-96 !md:h-auto']: big },
-							'rounded-md border border-white cursor-pointer'
+							'rounded-md w-full  cursor-pointer'
 						)}
 						autoPlay
 						loop
 					/>
 				)}
-				<h2
-					className="p-4 text-center text-white font-bold md:text-[15px] text-[13px] cursor-pointer"
-					onClick={active ? () => setSelected() : undefined}
-				>
-					{token.name}
-				</h2>
+				<div className="flex justify-between items-center w-full px-2">
+					<h2
+						className="text-left text-white font-bold md:text-[15px] text-[13px] cursor-pointer md:py-4 py-2"
+						onClick={
+							active
+								? () => {
+										setScreen('nft');
+										setNFTView(token);
+								  }
+								: undefined
+						}
+					>
+						{token.name}
+					</h2>
+					{selected && active ? (
+						<div
+							className="p-1 rounded-full bg-green-600 w-6 h-6 text-white cursor-pointer z-10"
+							onClick={
+								active
+									? (e) => {
+											e.preventDefault();
+											setSelected();
+									  }
+									: undefined
+							}
+						>
+							<CheckIcon />
+						</div>
+					) : (
+						active && (
+							<div
+								className="p-1 rounded-full bg-gray-900 w-6 h-6 text-white cursor-pointer z-10"
+								onClick={
+									active
+										? (e) => {
+												e.preventDefault();
+												setScreen('menu');
+												setSelected();
+										  }
+										: undefined
+								}
+							>
+								<PlusIcon />
+							</div>
+						)
+					)}
+				</div>
 			</div>
 			{/* </Link> */}
 		</>
