@@ -16,9 +16,7 @@ const FAQS = () => {
 							Bolster is a platform that offers NFTs, each with a stop value
 							backed by luxury collectibles. Customers have the ability to
 							redeem their NFT for the physical item, and Bolster ensures
-							safekeeping of the physical item until redemption. Utilizing the
-							Polygon Blockchain, Bolster guarantees the authenticity of all
-							NFTs and maintains a transparent record of all transactions.
+							safekeeping of the physical item until redemption.
 						</p>
 					</div>
 					<div className="flex flex-col gap-2 w-full">
