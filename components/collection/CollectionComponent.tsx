@@ -754,7 +754,7 @@ export const CollectionComponent = () => {
 														  }
 														: { image: '', name: '' }
 												}
-												address={address}
+												address={bottle.address}
 												id={nftView ? nftView.id : 1}
 												back={() => setScreen('menu')}
 												selected={
