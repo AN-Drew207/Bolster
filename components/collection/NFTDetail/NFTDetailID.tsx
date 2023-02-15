@@ -46,13 +46,13 @@ const NFTDetailIDComponent: React.FC<any> = ({
 						</div>
 						<div className="flex flex-col xl:w-[500px] gap-6 w-full pt-4">
 							<div className="flex flex-col  w-full">
-								<div className="flex justify-between">
+								<div className="flex justify-between items-center">
 									<h1 className="text-white uppercase md:text-4xl text-3xl font-bold">
 										{data.name}
 									</h1>
 									<Button
 										className={clsx(
-											'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-2 text-[14px] text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+											'z-10 border border-secondary whitespace-nowrap bg-secondary RalewayBold font-bold px-4 py-2 text-[14px] text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
 											'!rounded-full hover:text-secondary ml-4'
 										)}
 										onClick={() => addCart()}
