@@ -32,6 +32,7 @@ import {
 	DoubleLeftOutlined,
 	DoubleRightOutlined,
 	LeftCircleFilled,
+	LoadingOutlined,
 	SearchOutlined,
 } from '@ant-design/icons';
 import { XIcon } from '@heroicons/react/solid';
@@ -552,12 +553,20 @@ export const CollectionComponent = () => {
 													{bottle.name}
 												</h2>
 												<div className="flex flex-col">
-													<h2 className="text-white">
-														<span className="text-secondary font-bold">
-															{bottle.price} USDC
-														</span>{' '}
-														per NFT
-													</h2>
+													{priceMATIC !== 0 ? (
+														<h2 className="text-white">
+															<span className="text-secondary font-bold">
+																{priceMATIC?.substring(
+																	0,
+																	priceMATIC?.indexOf('.') + 3
+																)}{' '}
+																MATIC
+															</span>{' '}
+															per NFT
+														</h2>
+													) : (
+														<LoadingOutlined className="text-secondary text-xl" />
+													)}
 												</div>
 												<div className="flex lg:flex-col items-center justify-center sm:flex-row flex-col gap-10 w-full">
 													<div className="lg:w-[250px] gap-2 gap-4 items-center justify-center flex flex-col">
