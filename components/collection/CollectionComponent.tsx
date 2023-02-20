@@ -29,6 +29,8 @@ import { Autoplay, Navigation, Zoom } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import {
+	CheckCircleOutlined,
+	CheckOutlined,
 	DoubleLeftOutlined,
 	DoubleRightOutlined,
 	LeftCircleFilled,
@@ -190,6 +192,14 @@ export const CollectionComponent = () => {
 							}
 						}),
 					});
+					setSelected(
+						new Array(item.metadata.length)
+							.fill(false)
+							.map((token, i) => {
+								return { value: false, id: item.metadata[i]?.id };
+							})
+							.filter((item) => !tokensInSell.includes(item.id.toString()))
+					);
 				}
 			});
 		}
@@ -215,28 +225,23 @@ export const CollectionComponent = () => {
 		}
 	}, [modalShow]);
 
-	const getNFTsOneBottle = async () => {
-		// console.log(tokensMetadata, 'metadata');
-		setIsLoading(true);
-		bottles.map(async (item, index) => {
-			console.log(item, (bottleContract as string).toLowerCase(), 'compare');
-			if (
-				item.address.toLowerCase() == (bottleContract as string).toLowerCase()
-			) {
-				setBottle(item);
-				setSelected(
-					new Array(item.metadata.length).fill(false).map((token, i) => {
-						return { value: false, id: item.metadata[i]?.id };
-					})
-				);
-			}
-		});
-		setIsLoading(false);
-	};
+	// const getNFTsOneBottle = async () => {
+	// 	// console.log(tokensMetadata, 'metadata');
+	// 	setIsLoading(true);
+	// 	bottles.map(async (item, index) => {
+	// 		console.log(item, (bottleContract as string).toLowerCase(), 'compare');
+	// 		if (
+	// 			item.address.toLowerCase() == (bottleContract as string).toLowerCase()
+	// 		) {
+	// 			setBottle(item);
+	// 		}
+	// 	});
+	// 	setIsLoading(false);
+	// };
 
-	React.useEffect(() => {
-		getNFTsOneBottle();
-	}, [bottleContract, bottles, address]);
+	// React.useEffect(() => {
+	// 	getNFTsOneBottle();
+	// }, [bottleContract, bottles, address]);
 
 	const video = React.useRef<any>(null);
 
@@ -271,6 +276,28 @@ export const CollectionComponent = () => {
 	};
 
 	console.log(selected);
+
+	const selectAll = () => {
+		setSelected((prev: any[]) =>
+			prev.map((status, id) => {
+				return {
+					value: true,
+					id: status.id,
+				};
+			})
+		);
+	};
+
+	const selectNone = () => {
+		setSelected((prev: any[]) =>
+			prev.map((status, id) => {
+				return {
+					value: false,
+					id: status.id,
+				};
+			})
+		);
+	};
 
 	return (
 		<>
@@ -641,18 +668,59 @@ export const CollectionComponent = () => {
 									></video> */}
 									<div className="flex flex-col gap-4 w-full">
 										{screen !== 'nft' && (
-											<h2 className="text-white pt-6 w-full Montserrat pl-10 font-bold text-xl">
-												{selectedNFTs() > 0 ? (
-													<p>
-														<span className="text-secondary">
-															{selectedNFTs()}
-														</span>{' '}
-														NFT{selectedNFTs() > 1 && 's'} Selected
-													</p>
-												) : (
-													'Select the NFTs you want to buy'
-												)}
-											</h2>
+											<div className="flex xl:flex-row flex-col gap-10 pt-6 pl-10 items-center justify-between">
+												<h2 className="text-white  Montserrat  font-bold text-xl">
+													{selectedNFTs() > 0 ? (
+														<p>
+															<span className="text-secondary">
+																{selectedNFTs()}
+															</span>{' '}
+															NFT{selectedNFTs() > 1 && 's'} Selected
+														</p>
+													) : (
+														'Select the NFTs you want to buy'
+													)}
+												</h2>
+												<div className="flex gap-4 items-center">
+													<h2 className="text-md text-white">
+														{selected.length > 0 &&
+														selected.reduce(
+															(acc: any, { value }: any) => value && acc
+														)
+															? 'Unselect All'
+															: 'Select All'}
+													</h2>
+													<div
+														className={clsx(
+															{
+																['bg-secondary']:
+																	selected.length > 0 &&
+																	selected.reduce(
+																		(acc: any, { value }: any) => value && acc
+																	),
+															},
+															'w-6 h-6 rounded-md border-[2px] border-secondary flex items-center justify-center p-1 cursor-pointer text-white'
+														)}
+														onClick={
+															selected.length > 0 &&
+															selected.reduce(
+																(acc: any, { value }: any) => value && acc
+															)
+																? () => selectNone()
+																: () => selectAll()
+														}
+													>
+														{selected.length > 0 &&
+														selected.reduce(
+															(acc: any, { value }: any) => value && acc
+														) ? (
+															<CheckOutlined />
+														) : (
+															''
+														)}
+													</div>
+												</div>
+											</div>
 										)}
 										{bottle &&
 										bottle.metadata.length > 0 &&
@@ -707,7 +775,7 @@ export const CollectionComponent = () => {
 													{bottle.metadata.filter((token: any) => token.sold)
 														.length > 0 && (
 														<h2 className="w-full text-center py-4 text-2xl text-white RalewayBold">
-															NFTs Bought
+															NFTs Sold
 														</h2>
 													)}
 													<div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-4 p-4 py-10">

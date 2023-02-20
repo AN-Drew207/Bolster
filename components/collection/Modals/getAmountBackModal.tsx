@@ -3,7 +3,6 @@ import { Button } from 'components/common/button';
 import * as React from 'react';
 import { useForm } from 'react-hook-form';
 import { Loading } from '../../landing/loadingComponent';
-import Styles from '../styles.module.scss';
 
 export const GetAmountBackModal: React.FC<any> = ({
 	setOptions,
@@ -68,8 +67,8 @@ export const GetAmountBackModal: React.FC<any> = ({
 						) : (
 							<Button
 								className={clsx(
-									'z-10 border borderMain mt-4 px-16 py-4 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
-									Styles.button
+									'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-2 text-[14px] text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+									'!rounded-full hover:text-secondary ml-4'
 								)}
 								type="submit"
 							>
@@ -112,8 +111,8 @@ export const GetAmountBackModal: React.FC<any> = ({
 					<div className="flex items-center justify-center">
 						<Button
 							className={clsx(
-								'z-10 border borderMain mt-4 px-16 py-4 text-secondary transition ease-in-out delay-150 hover:-translate-y-1   hover:shadow-button hover:scale-110 duration-300  ',
-								Styles.button
+								'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-2 text-[14px] text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+								'!rounded-full hover:text-secondary ml-4'
 							)}
 							onClick={() => setAcceptedConditions(true)}
 						>

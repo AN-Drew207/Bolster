@@ -18,6 +18,14 @@ import { useModal } from 'hooks/modal';
 import { useMetamask } from 'hooks/useMetamask';
 import { useForm } from 'react-hook-form';
 import { LoadingOutlined } from '@ant-design/icons';
+import { MakeAnOfferModal } from 'components/collection/Modals/MakeAnOfferModal';
+import { AcceptAnOfferModal } from 'components/collection/Modals/AcceptAnOfferModal';
+import { CancelAnOfferModal } from 'components/collection/Modals/CancelAnOfferModal';
+import { ExchangeCollection } from 'components/collection/Modals/ExchangeCollectionModal';
+import { GetAmountBackModal } from 'components/collection/Modals/getAmountBackModal';
+import Web3 from 'web3';
+import toast from 'react-hot-toast';
+import { useConnectWalletModal } from 'hooks/useModalConnect';
 
 export const EBarComponent: React.FC<any> = () => {
 	const { bottles, address, networkName, network, typeOfWallet } = useSelector(
@@ -152,16 +160,25 @@ export const EBarComponent: React.FC<any> = () => {
 										Bottle NFT Fractions
 									</h2>
 									{bottles?.map((bottle) => {
-										const { id, address, name, image, tokensOfUser } = bottle;
+										const {
+											id,
+											address: addressBottle,
+											name,
+											image,
+											tokensOfUser,
+										} = bottle;
 										return (
 											tokensOfUser?.length > 0 && (
 												<BottleNFTs
 													id={id}
-													address={address}
+													addressUser={address}
+													address={addressBottle}
 													name={name}
 													video={image}
 													tokensOfUser={tokensOfUser}
 													bottle={bottle}
+													networkName={networkName}
+													network={network}
 													setExchanged={(value: boolean) => {
 														console.log(value);
 													}}
@@ -272,6 +289,7 @@ export const BottleNFTs = ({
 	typeOfWallet,
 	network,
 	networkName,
+	addressUser,
 }: // setExchanged,
 any) => {
 	const videoRef = React.useRef<any>(null);
@@ -289,24 +307,476 @@ any) => {
 		handleVideo();
 	}, [video]);
 
-	const { Modal, isShow, hide } = useModal();
+	const [quantity, setQuantity] = React.useState<any>(0);
+	const [decimalsUSD, setDecimalsUSD] = React.useState<any>(0);
+	const [maxSupply, setMaxSupply] = React.useState<any>(-1);
+	const [priceUSD, setPriceUSD] = React.useState<any>(0);
+	const [balanceUSDC, setBalanceUSDC] = React.useState<any>(0);
+	const [balance, setBalance] = React.useState<any>(0);
+	const [message, setMessage] = React.useState('');
+
+	const { Modal, show, isShow, hide } = useModal();
+	const {
+		Modal: ModalOptions,
+		show: showOptions,
+		isShow: isShowOptions,
+		hide: hideOptions,
+	} = useModal();
 	const { transfer } = useMagicLink();
 	const { transferMeta } = useMetamask();
 	const { handleSubmit } = useForm();
 	const [addressSent, setAddress] = useState('');
 	const [isLoading, setIsLoading] = useState(false);
 	const [tokens, setTokens] = useState({ tokensOfUser });
-	const [token] = useState({ id: 0, image: '', name: '' });
+	const [offersActiveMade, setOffersActiveMade] = useState<any>([]);
+	const [offersActiveReceived, setOffersActiveReceived] = useState<any>([]);
+	const [token, setToken] = useState({ id: 0, image: '', name: '' });
+	const [options, setOptions] = React.useState('menu');
+	const [percentageExtraToPayPerToken, setPercentageExtraToPayPerToken] =
+		React.useState<any>(0);
+	const [percentageToMakeAnOffer, setPercentageToMakeAnOffer] =
+		React.useState<any>(0);
+
+	const dispatch = useDispatch();
+
+	const { modal, show: showConnect } = useConnectWalletModal();
+
+	const { acceptAnOffer, cancelAnOffer, exchangeCollection, makeAnOffer } =
+		useMetamask();
+
+	const {
+		acceptAnOfferMagic,
+		cancelAnOfferMagic,
+		exchangeCollectionMagic,
+		makeAnOfferMagic,
+	} = useMagicLink();
 
 	React.useEffect(() => {
 		setTokens({ tokensOfUser });
 	}, [tokensOfUser]);
 
+	React.useEffect(() => {
+		if (bottle.address) {
+			updateData(addressUser);
+		}
+	}, [bottle.address]);
+
+	const getAmountBack = async () => {
+		setIsLoading(true);
+		try {
+			const web3 = await getWeb3();
+			const BottleCollectionContract = new (web3 as any).eth.Contract(
+				BottleCollectionABI,
+				bottle.address
+			);
+			setMessage('Transfering your amount to your address...');
+			await BottleCollectionContract.methods
+				.getOfferAmountBack()
+				.send({ from: addressUser });
+			toast.success(
+				'Your balance in the smart contract was transfered to your address successfully.',
+				{
+					duration: 7000,
+				}
+			);
+			hideOptions();
+		} catch (error) {
+			toast.error(
+				'An error occurred while you made the transaction, please look at the console to more information.',
+				{
+					duration: 7000,
+				}
+			);
+
+			console.log(error);
+		}
+		setMessage('');
+		setIsLoading(false);
+	};
+
+	const updateData = async (address: string) => {
+		const provider = new Web3.providers.HttpProvider(
+			process.env.NEXT_PUBLIC_SECONDARY_PROVIDER
+				? process.env.NEXT_PUBLIC_SECONDARY_PROVIDER
+				: 'localhost:8545'
+		);
+		const web3 = new Web3(provider);
+		const contractInstance = new (web3 as any).eth.Contract(
+			BottleCollectionABI,
+			bottle.address
+		);
+		const currentSupply = await contractInstance.methods.supply().call();
+		if (address) {
+			const balance = await contractInstance.methods.balanceOf(address).call();
+			setBalance(balance);
+			const balanceUSDC = await contractInstance.methods
+				.balanceUserOfferTokens(address)
+				.call();
+			setBalanceUSDC(balanceUSDC / 10 ** 6);
+		}
+		const offer = await contractInstance.methods.lastOffer().call();
+		const now = new Date().getTime();
+		const expirationLastOffer = new Date(offer.expirationDate * 1000).getTime();
+
+		const maxSupply = await contractInstance.methods.maxSupply().call();
+		const priceUSD = await contractInstance.methods.usdPrice().call();
+		const decimalsUSD = await contractInstance.methods.decimalsUSD().call();
+		const percentageOffer = await contractInstance.methods
+			.percentageExtraToPayPerToken()
+			.call();
+		const minimumPercentageToOffer = await contractInstance.methods
+			.minimumPercentageToOffer()
+			.call();
+
+		setPercentageExtraToPayPerToken(percentageOffer);
+		setPercentageToMakeAnOffer(minimumPercentageToOffer);
+		setPriceUSD(priceUSD / 10 ** decimalsUSD);
+		setQuantity(currentSupply);
+		setMaxSupply(maxSupply);
+		setDecimalsUSD(decimalsUSD);
+
+		const offersReceived = [];
+		const offersDone = [];
+		if (
+			balance > 0 &&
+			offer.active &&
+			offer.bidder.toLowerCase() != addressUser.toLowerCase() &&
+			expirationLastOffer >= now
+		) {
+			offersReceived.push({
+				title: `You have an offer for your tokens of ${bottle.name} Collection`,
+				offer: offer,
+				address: bottle.address,
+				externalLink: `/bottle/${bottle.address}?offer=true`,
+				icon: (
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						className="h-5 w-5"
+						viewBox="0 0 20 20"
+						fill="#fff"
+					>
+						<path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
+					</svg>
+				),
+			});
+		} else if (
+			balance > 0 &&
+			offer.active &&
+			offer.bidder.toLowerCase() == addressUser.toLowerCase() &&
+			expirationLastOffer >= now
+		) {
+			offersDone.push({
+				title: `You have done an offer for all the tokens of ${bottle.name} Collection`,
+				address: bottle.address,
+				offer: offer,
+				externalLink: `/bottle/${bottle.address}`,
+				icon: (
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						className="h-5 w-5"
+						viewBox="0 0 20 20"
+						fill="#fff"
+					>
+						<path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
+					</svg>
+				),
+			});
+		}
+
+		setOffersActiveMade(offersDone);
+		setOffersActiveReceived(offersReceived);
+	};
+
 	return (
 		<>
+			{modal}
+			<ModalOptions
+				isShow={isShowOptions}
+				hasBg
+				onClose={() => setOptions('menu')}
+			>
+				<div
+					className={clsx(
+						'flex flex-col items-center justify-center w-full h-full sm:px-10 px-4 pb-10 relative mt-24'
+					)}
+				>
+					{options === 'menu' ? (
+						<div
+							className={clsx(
+								'flex flex-col w-full h-full p-10 relative gap-6 bg-gray-900 rounded-xl border border-white relative'
+							)}
+						>
+							<div className="absolute top-4 left-4 text-xl text-white">
+								<Button
+									onClick={() => {
+										hideOptions();
+									}}
+									className="font-bold"
+								>
+									x
+								</Button>
+							</div>
+							<h2 className="text-2xl w-full text-center font-bold text-white">
+								Collection Options
+							</h2>
+							{maxSupply == balance && (
+								<Button
+									className={clsx(
+										'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-2 text-[14px] text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+										'!rounded-full hover:text-secondary ml-4'
+									)}
+									onClick={() => {
+										setOptions('exchange');
+									}}
+								>
+									REDEEM COLLECTION
+								</Button>
+							)}
+							{(balance * 100) / maxSupply >= percentageToMakeAnOffer &&
+								offersActiveMade.filter(
+									(offer: any) => offer.address === bottle.address
+								).length == 0 &&
+								balance !== maxSupply && (
+									<Button
+										className={clsx(
+											'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-2 text-[14px] text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+											'!rounded-full hover:text-secondary ml-4'
+										)}
+										onClick={() => {
+											setOptions('make offer');
+										}}
+									>
+										MAKE AN OFFER FOR ALL THE COLLECTION
+									</Button>
+								)}
+
+							{offersActiveReceived.filter(
+								(offer: any) => offer.address === bottle.address
+							).length > 0 && (
+								<Button
+									className={clsx(
+										'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-2 text-[14px] text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+										'!rounded-full hover:text-secondary ml-4'
+									)}
+									onClick={() => {
+										setOptions('accept-deny offer');
+									}}
+								>
+									ACCEPT / DENY CURRENT OFFER
+								</Button>
+							)}
+							{offersActiveMade.filter(
+								(offer: any) => offer.address === bottle.address
+							).length > 0 && (
+								<Button
+									className={clsx(
+										'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-2 text-[14px] text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+										'!rounded-full hover:text-secondary ml-4'
+									)}
+									onClick={() => {
+										setOptions('cancel offer');
+									}}
+								>
+									CANCEL YOUR CURRENT OFFER
+								</Button>
+							)}
+
+							<Button
+								className={clsx(
+									'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-2 text-[14px] text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+									'!rounded-full hover:text-secondary ml-4'
+								)}
+								onClick={() => {
+									setOptions('get amount');
+								}}
+							>
+								GET BACK USDC FROM PREVIOUS OFFERS MADE BY YOU
+							</Button>
+						</div>
+					) : options === 'make offer' ? (
+						<MakeAnOfferModal
+							minimumPrice={priceUSD}
+							setOptions={setOptions}
+							quantityLeft={balance}
+							quantityMinted={quantity}
+							maxSupply={maxSupply}
+							message={message}
+							makeAnOffer={(price: any) => {
+								if (address) {
+									if (typeOfWallet == 'metamask') {
+										makeAnOffer(
+											price,
+											bottle.address,
+											setIsLoading,
+											setMessage,
+											dispatch,
+											hideOptions
+										);
+									} else {
+										makeAnOfferMagic(
+											price,
+											bottle.address,
+											setIsLoading,
+											setMessage,
+											hideOptions
+										);
+									}
+								} else {
+									toast.error(
+										'Please connect your wallet before accessing options',
+										{
+											duration: 3000,
+										}
+									);
+									showConnect();
+								}
+							}}
+							isLoading={isLoading}
+							percentage={percentageExtraToPayPerToken}
+						/>
+					) : options === 'accept-deny offer' ? (
+						<AcceptAnOfferModal
+							setOptions={setOptions}
+							acceptAnOffer={(accept: boolean) => {
+								if (address) {
+									if (typeOfWallet == 'metamask') {
+										acceptAnOffer(
+											accept,
+											bottle.address,
+											setIsLoading,
+											setMessage,
+											[addressUser],
+											dispatch,
+											network,
+											networkName,
+											hideOptions
+										);
+									} else {
+										acceptAnOfferMagic(
+											accept,
+											bottle.address,
+											setIsLoading,
+											setMessage,
+											dispatch,
+											network,
+											networkName,
+											hideOptions
+										);
+									}
+								} else {
+									toast.error(
+										'Please connect your wallet before accessing options',
+										{
+											duration: 3000,
+										}
+									);
+									showConnect();
+								}
+							}}
+							balance={balance}
+							message={message}
+							isLoading={isLoading}
+							decimalsUSD={decimalsUSD}
+							offer={
+								offersActiveReceived.filter(
+									(offer: any) => offer.address === bottle.address
+								).length > 0 &&
+								offersActiveReceived.find((offer: any) => {
+									return offer.address === bottle.address;
+								})
+							}
+						/>
+					) : options === 'cancel offer' ? (
+						<CancelAnOfferModal
+							setOptions={setOptions}
+							message={message}
+							isLoading={isLoading}
+							cancelAnOffer={() => {
+								if (address) {
+									if (typeOfWallet == 'metamask') {
+										cancelAnOffer(
+											bottle.address,
+											setIsLoading,
+											setMessage,
+											[addressUser],
+											dispatch,
+											network,
+											networkName,
+											hideOptions
+										);
+									} else {
+										cancelAnOfferMagic(
+											bottle.address,
+											setIsLoading,
+											setMessage,
+											dispatch,
+											hideOptions
+										);
+									}
+								} else {
+									toast.error(
+										'Please connect your wallet before accessing options',
+										{
+											duration: 3000,
+										}
+									);
+									showConnect();
+								}
+							}}
+						/>
+					) : options === 'exchange' ? (
+						<ExchangeCollection
+							setOptions={setOptions}
+							isLoading={isLoading}
+							address={address}
+							name={bottle.short_name}
+							exchangeCollection={() => {
+								if (address) {
+									if (typeOfWallet == 'metamask') {
+										exchangeCollection(
+											bottle.address,
+											setIsLoading,
+											setMessage,
+											[addressUser],
+											dispatch,
+											network,
+											networkName,
+											hideOptions
+										);
+									} else {
+										exchangeCollectionMagic(
+											bottle.address,
+											setIsLoading,
+											setMessage,
+											dispatch,
+											hideOptions
+										);
+									}
+								} else {
+									toast.error(
+										'Please connect your wallet before accessing options',
+										{
+											duration: 3000,
+										}
+									);
+									showConnect();
+								}
+							}}
+						/>
+					) : (
+						<GetAmountBackModal
+							setOptions={setOptions}
+							isLoading={isLoading}
+							message={message}
+							getAmountBack={getAmountBack}
+							balance={balanceUSDC}
+						/>
+					)}
+				</div>
+			</ModalOptions>
 			<Modal isShow={isShow} hasBg>
 				<div className="min-h-[100vh] flex flex-col items-center justify-center w-full">
-					<div className="min-h-[50vh] bg-primary rounded-md p-6 2xl:min-w-[50vw] min-w-full">
+					<div className="min-h-[50vh] bg-primary rounded-md p-6 2xl:min-w-[40vw] w-[500px]">
 						<div className="flex justify-between mb-4">
 							<div
 								className="text-white font-bold cursor-pointer"
@@ -327,7 +797,7 @@ any) => {
 								<img src="/icons/opensea.svg" className="h-4 w-4" alt="" />
 							</a>
 						</div>
-						<div className="flex gap-8 h-full items-center justify-center">
+						<div className="flex flex-col gap-8 h-full items-center justify-center">
 							<img
 								src={token.image}
 								className="w-96 shrink-0 rounded-xl border border-white"
@@ -356,10 +826,10 @@ any) => {
 										);
 									}
 								})}
-								className="w-full flex flex-col items-center justify-center gap-4"
+								className="sm:w-[450px] w-[250px] flex flex-col items-center justify-center gap-4"
 							>
-								<h2 className="text-secondary font-bold text-lg">
-									Transfer NFT {token.name}
+								<h2 className="text-secondary text-center font-bold text-lg">
+									Transfer <span className="text-white"> {token.name}</span>
 								</h2>
 
 								<input
@@ -372,8 +842,8 @@ any) => {
 								/>
 								<Button
 									className={clsx(
-										'z-10 border border-secondary bg-secondary Raleway font-bold px-4 py-3 text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
-										'hover:text-secondary'
+										'z-10 border border-secondary bg-secondary RalewayBold font-bold px-4 py-2 text-[14px] text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+										'!rounded-full hover:text-secondary ml-4'
 									)}
 									type="submit"
 								>
@@ -397,9 +867,20 @@ any) => {
 						</div>
 					) : (
 						<>
-							<h3 className="text-2xl text-left font-bold text-white pb-4 w-full">
-								{name}
-							</h3>
+							<div className="flex xl:flex-row flex-col gap-10 justify-between items-center pb-10">
+								<h3 className="text-2xl text-left font-bold text-white pb-4 w-full">
+									{name}
+								</h3>{' '}
+								<Button
+									className={clsx(
+										'z-10 border border-secondary bg-secondary whitespace-nowrap RalewayBold font-bold px-4 py-2 text-[14px] text-white transition ease-in-out delay-150 hover:bg-white hover:border-secondary duration-300',
+										'!rounded-full hover:text-secondary ml-4'
+									)}
+									onClick={() => showOptions()}
+								>
+									Collection Options
+								</Button>
+							</div>
 							<div className="sm:px-6 pb-10">
 								<Swiper
 									style={styleArrows}
@@ -439,13 +920,14 @@ any) => {
 												>
 													<div
 														className="h-52 relative w-52 w-[50%] flex flex-col rounded-md overflow-hidden items-center lg:ml-[20%] sm:ml-[20%] ml-[25%] 2xl:ml-[25%] xl:ml-[30%] cursor-pointer rounded-md "
-														onClick={() => {
-															// setToken({
-															// 	id: token.id,
-															// 	name: token.name,
-															// 	image: token.image,
-															// });
-															// show();
+														onClick={(e) => {
+															e.preventDefault();
+															setToken({
+																id: token.id,
+																name: token.name,
+																image: token.image,
+															});
+															show();
 														}}
 													>
 														<img
